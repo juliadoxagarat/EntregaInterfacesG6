@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Arcade Time | Inicio de sesión</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap">
+
+    <link rel="stylesheet" href="../css/paginas/login.css">
+    <link rel="stylesheet" href="../css/components/botones.css">
+
+</head>
+<script src="../js/login.js" defer></script>
+
+<body>
+
+    <!-- Fondo general con los fantasmitas -->
+    <div class="fondo-pagina">
+
+
+        <main class="pagina-login">
+
+
+            <div class="pagina-login__contenedor">
+
+
+                <!-- ============================= -->
+                <!-- PANEL IZQUIERDO -->
+                <!-- ============================= -->
+
+                <section class="presentacion-login">
+
+
+                    <!-- Logo / imagen de Arcade Time -->
+                    <div class="presentacion-login__logo">
+
+                        <img src="../img/logo-arcade-time.png" alt="Arcade Time">
+
+                    </div>
+
+
+                    <!-- Botones de redes -->
+                    <div class="presentacion-login__redes">
+
+
+                        <button type="button" class="boton-red-social boton-red-social--facebook">
+
+                            <span class="boton-red-social__icono">f</span>
+
+                            <span>Continuar con Facebook</span>
+
+                        </button>
+
+
+                        <button type="button" class="boton-red-social boton-red-social--google">
+
+                            <span class="boton-red-social__icono">G</span>
+
+                            <span>Continuar con Google</span>
+
+                        </button>
+
+
+                    </div>
+
+
+                </section>
+
+
+                <div class="panel-derecho">
+                    <!-- ============================= -->
+                    <!-- PANEL DERECHO -->
+                    <!-- ============================= -->
+
+                    <section class="login" aria-labelledby="titulo-login">
+
+
+                        <!-- Encabezado -->
+                        <div class="login__encabezado">
+
+
+                            <h1 class="login__titulo" id="titulo-login">
+                                Inicio de sesión
+                            </h1>
+
+
+                            <p class="login__descripcion">
+                                Inicia sesión con tu cuenta de
+                                <strong>Arcade Time.</strong>
+                            </p>
+
+
+                        </div>
+
+
+
+                        <!-- Formulario -->
+                        <form class="formulario-login" action="#" method="post">
+
+
+                            <!-- Email -->
+                            <div class="campo-formulario">
+
+
+                                <label class="campo-formulario__etiqueta" for="email">
+                                    Email
+                                </label>
+
+
+                                <div class="campo-formulario__contenedor-input">
+
+
+                                    <input class="campo-formulario__input" type="email" id="email" name="email"
+                                        placeholder="usuario@emailpropio.com" autocomplete="email" required>
+
+
+                                    <div class="campo-formulario__estado" aria-hidden="true">
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+
+
+
+                            <!-- Contraseña -->
+                            <div class="campo-formulario">
+
+
+                                <label class="campo-formulario__etiqueta" for="contrasena">
+                                    Contraseña
+                                </label>
+
+
+                                <div class="campo-formulario__contenedor-input">
+
+
+                                    <input class="campo-formulario__input" type="password" id="contrasena"
+                                        name="contrasena" placeholder="****************" autocomplete="current-password"
+                                        required>
+
+
+                                </div>
+
+
+                            </div>
+
+
+
+                            <!-- Botón -->
+                            <div class="formulario-login__contenedor-boton">
+
+
+                                <button class="boton boton--principal" type="submit">
+                                    Iniciar sesión
+                                </button>
+
+
+                            </div>
+
+
+                        </form>
+
+
+
+                        <!-- Registro -->
+                        <div class="login__registro">
+
+
+                            <p class="login__registro-texto">
+
+                                ¿No tienes cuenta?
+
+                                <button type="button" class="login__registro-link" id="mostrar-registro">
+                                    Regístrate.
+                                </button>
+
+
+                            </p>
+
+
+                        </div>
+
+
+                    </section>
+
+                    <!--panel derecho registro -->
+                    <section class="registro" aria-labelledby="titulo-registro" id="panel-registro">
+
+
+                        <!-- header del registro -->
+                        <div class="registro__encabezado">
+
+
+                            <h1 class="registro__titulo" id="titulo-registro">
+                                Registrarse
+                            </h1>
+
+
+                            <p class="registro__descripcion">
+                                Ingresa los datos para completar el registro.
+                            </p>
+
+
+                        </div>
+
+
+
+
+                        <!-- formulario de registro -->
+                        <form class="formulario-registro" action="#" method="post">
+
+
+                            <!-- nombre y apellido -->
+                            <div class="campo-formulario">
+
+
+                                <label class="campo-formulario__etiqueta" for="nombre-completo-registro">
+                                    Nombre y apellido*
+                                </label>
+
+
+                                <div class="campo-formulario__contenedor-input">
+
+
+                                    <input class="campo-formulario__input" type="text" id="nombre-completo-registro"
+                                        name="nombreCompleto" autocomplete="name" required>
+
+
+                                    <!-- indicador de validacion(el check rosa) desp mostrar o no con css y js -->
+                                    <div class="campo-formulario__estado" aria-hidden="true"></div>
+
+
+                                </div>
+
+
+                            </div>
+
+
+
+
+                            <!-- nombre de usuario -->
+                            <div class="campo-formulario">
+
+
+                                <label class="campo-formulario__etiqueta" for="nombre-usuario-registro">
+                                    Nombre de usuario
+                                </label>
+
+
+                                <div class="campo-formulario__contenedor-input">
+
+
+                                    <input class="campo-formulario__input" type="text" id="nombre-usuario-registro"
+                                        name="nombreUsuario" autocomplete="username">
+
+
+                                </div>
+
+
+                            </div>
+
+
+
+
+                            <!-- edad -->
+                            <div class="campo-formulario">
+
+
+                                <label class="campo-formulario__etiqueta" for="edad-registro">
+                                    Edad*
+                                </label>
+
+
+                                <div class="campo-formulario__contenedor-input">
+
+
+                                    <input class="campo-formulario__input" type="number" id="edad-registro" name="edad"
+                                        min="1" required>
+
+
+                                </div>
+
+
+                            </div>
+
+
+
+
+                            <!-- email -->
+                            <div class="campo-formulario">
+
+
+                                <label class="campo-formulario__etiqueta" for="email-registro">
+                                    Email*
+                                </label>
+
+
+                                <div class="campo-formulario__contenedor-input">
+
+
+                                    <input class="campo-formulario__input" type="email" id="email-registro" name="email"
+                                        autocomplete="email" required>
+
+
+                                </div>
+
+
+                            </div>
+
+
+
+
+                            <!-- contraseña -->
+                            <div class="campo-formulario">
+
+
+                                <label class="campo-formulario__etiqueta" for="contrasena-registro">
+                                    Contraseña*
+                                </label>
+
+
+                                <div class="campo-formulario__contenedor-input">
+
+
+                                    <input class="campo-formulario__input" type="password" id="contrasena-registro"
+                                        name="contrasena" autocomplete="new-password" required>
+
+
+                                </div>
+
+
+                            </div>
+
+
+
+
+                            <!-- repetir contraseña -->
+                            <div class="campo-formulario">
+
+
+                                <label class="campo-formulario__etiqueta" for="repetir-contrasena-registro">
+                                    Repetir contraseña*
+                                </label>
+
+
+                                <div class="campo-formulario__contenedor-input">
+
+
+                                    <input class="campo-formulario__input" type="password"
+                                        id="repetir-contrasena-registro" name="repetirContrasena"
+                                        autocomplete="new-password" required>
+
+
+                                </div>
+
+
+                            </div>
+
+
+
+
+                            <!-- captcha -->
+                            <div class="formulario-registro__contenedor-captcha">
+
+
+                                <!-- aca iria el captcha, es para darle el tamano q queramos y posicionarlo -->
+                                <div class="formulario-registro__captcha" aria-label="Verificacion de seguridad"></div>
+
+
+                            </div>
+
+
+
+
+                            <!-- boton registrarse -->
+                            <div class="formulario-registro__contenedor-boton">
+
+
+                                <button class="boton boton--principal" type="submit">
+                                    Registrate
+                                </button>
+
+
+                            </div>
+
+
+                        </form>
+
+
+
+
+                        <!-- link para volver al login -->
+                        <div class="registro__inicio-sesion">
+
+
+                            <p class="registro__inicio-sesion-texto">
+
+                                ¿Ya tienes cuenta?
+
+                                <button type="button" class="registro__inicio-sesion-link" id="volver-login">
+                                    Inicia sesión.
+                                </button>
+
+
+                            </p>
+
+
+                        </div>
+
+
+                    </section>
+
+
+                </div>
+
+
+        </main>
+
+
+    </div>
+
+</body>
+
+</html>

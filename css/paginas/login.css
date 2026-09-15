@@ -1,0 +1,747 @@
+/* =========================================
+   RESET
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================
+   FONDO GENERAL
+   ========================================= */
+
+.fondo-pagina {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /*
+     * ACÁ PONÉS TU IMAGEN DE LOS FANTASMITAS
+     */
+    background-image: url("../../img/fondo-fantasmitas.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* =========================================
+   CONTENEDOR GENERAL DEL LOGIN
+   ========================================= */
+
+.pagina-login {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.pagina-login__contenedor {
+    width: 580px;
+    height: 675px;
+
+    display: flex;
+
+    overflow: hidden;
+
+    box-shadow: 0 0 60px 12px rgba(0, 0, 0, 0.8);
+}
+
+
+/* =========================================
+   PANEL IZQUIERDO
+   ========================================= */
+
+.presentacion-login {
+    width: 290px;
+    min-height: 0;
+    height: auto;
+
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #0F172A;
+}
+
+
+/* Logo */
+
+.presentacion-login__logo {
+    width: 230px;
+    height: 410px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 15px;
+}
+
+
+.presentacion-login__logo img {
+    display: block;
+
+    width: 220px;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* =========================================
+   REDES SOCIALES
+   ========================================= */
+
+.presentacion-login__redes {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.boton-red-social {
+    width: 172px;
+    height: 27px;
+
+    border: none;
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 0 9px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: filter 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.boton-red-social:hover {
+    filter: brightness(0.9);
+}
+
+
+.boton-red-social:active {
+    transform: scale(0.98);
+}
+
+
+.boton-red-social__icono {
+    width: 18px;
+    height: 18px;
+
+    margin-right: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* Facebook */
+
+.boton-red-social--facebook {
+    background-color: #1683e8;
+    color: white;
+}
+
+
+.boton-red-social--facebook .boton-red-social__icono {
+    background-color: white;
+    color: #1683e8;
+}
+
+
+/* Google */
+
+.boton-red-social--google {
+    background-color: #f1f1f1;
+    color: #444;
+}
+
+
+.boton-red-social--google .boton-red-social__icono {
+    background-color: white;
+    color: #DB4437;
+}
+
+
+/* =========================================
+   PANEL DERECHO
+   ========================================= */
+
+.login {
+    width: 290px;
+    min-height: 0;
+    height: auto;
+
+    flex-shrink: 0;
+
+    background-color: #CC55A6;
+
+    color: white;
+
+    font-family: 'Rubik', Arial, Helvetica, sans-serif;
+
+    padding: 45px 19px 0;
+}
+
+
+/* =========================================
+   ENCABEZADO
+   ========================================= */
+
+.login__encabezado {
+    width: 100%;
+}
+
+
+.login__titulo {
+    margin: 0 0 32px;
+
+    font-size: 16px;
+    line-height: 1;
+
+    font-weight: bold;
+}
+
+
+.login__descripcion {
+    margin: 0;
+
+    font-size: 13px;
+    line-height: 1.4;
+
+    color: white;
+}
+
+
+.login__descripcion strong {
+    font-weight: bold;
+}
+
+
+/* =========================================
+   FORMULARIO
+   ========================================= */
+
+.formulario-login {
+    width: 100%;
+
+    margin-top: 42px;
+}
+
+
+.campo-formulario {
+    width: 100%;
+
+    margin-bottom: 15px;
+}
+
+
+.campo-formulario__etiqueta {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    color: white;
+}
+
+
+.campo-formulario__contenedor-input {
+    position: relative;
+
+    width: 100%;
+    height: 30px;
+}
+
+
+.campo-formulario__input {
+    width: 100%;
+    height: 30px;
+
+    padding: 0 10px;
+
+    border: 2px solid #e27bc2;
+    border-radius: 7px;
+
+    outline: none;
+
+    background-color: #d3a2c3;
+
+    color: #4d4d4d;
+
+    font-family: 'Rubik', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+
+    transition: border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.campo-formulario__input::placeholder {
+    color: #ffffff;
+    opacity: 0.85;
+}
+
+
+.campo-formulario__input:focus {
+    border-color: #f18bd0;
+
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================================
+   CHECK DE VALIDACIÓN
+   ========================================= */
+
+.campo-formulario__estado {
+    position: absolute;
+
+    right: 7px;
+    top: 50%;
+
+    width: 15px;
+    height: 15px;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background-color: #ff66b8;
+}
+
+
+.campo-formulario__estado::after {
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+    height: 4px;
+
+    left: 3px;
+    top: 4px;
+
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+
+    transform: rotate(-45deg);
+}
+
+
+/* =========================================
+   BOTÓN INICIAR SESIÓN
+   ========================================= */
+
+.formulario-login__contenedor-boton {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    margin-top: 59px;
+}
+
+
+/* =========================================
+   REGISTRO
+   ========================================= */
+
+.login__registro {
+    width: 100%;
+
+    margin-top: 123px;
+
+    text-align: center;
+}
+
+
+.login__registro-texto {
+    font-size: 13px;
+    line-height: 1.4;
+
+    color: white;
+}
+
+
+.login__registro-link {
+    background: none;
+    border: none;
+    padding: 0;
+
+    color: white;
+
+    text-decoration: none;
+
+    font: inherit;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.login__registro-link:hover {
+    text-decoration: underline;
+}
+
+
+.registro__inicio-sesion-link {
+    background: none;
+    border: none;
+    padding: 0;
+
+    color: white;
+
+    font: inherit;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.registro__inicio-sesion-link:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   PANEL DERECHO
+   ========================================= */
+
+.panel-derecho {
+    width: 290px;
+    height: 675px;
+
+    flex-shrink: 0;
+
+    background-color: #CC55A6;
+    color: white;
+
+    font-family: 'Rubik', Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================
+   REGISTRO
+   ========================================= */
+
+.registro {
+    display: none;
+
+    width: 100%;
+    height: 675px;
+
+    padding: 35px 27px 20px;
+}
+
+
+/* =========================================
+   ENCABEZADO REGISTRO
+   ========================================= */
+
+.registro__encabezado {
+    width: 100%;
+}
+
+
+.registro__titulo {
+    margin: 0 0 32px;
+
+    font-size: 16px;
+    line-height: 1;
+
+    font-weight: bold;
+}
+
+
+.registro__descripcion {
+    margin: 0;
+
+    font-size: 13px;
+    line-height: 1.4;
+
+    color: white;
+}
+
+
+/* =========================================
+   FORMULARIO REGISTRO
+   ========================================= */
+
+.formulario-registro {
+    width: 100%;
+
+    margin-top: 13px;
+}
+
+
+.formulario-registro .campo-formulario {
+    width: 100%;
+
+    margin-bottom: 13px;
+}
+
+
+.formulario-registro .campo-formulario__etiqueta {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    color: white;
+}
+
+
+.formulario-registro .campo-formulario__input {
+    width: 100%;
+    height: 30px;
+
+    padding: 0 10px;
+
+    border: 2px solid #e27bc2;
+    border-radius: 7px;
+
+    outline: none;
+
+    background-color: #d3a2c3;
+
+    color: #4d4d4d;
+
+    font-family: 'Rubik', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+
+.formulario-registro .campo-formulario__input:focus {
+    border-color: #f18bd0;
+}
+
+
+.formulario-registro .campo-formulario__input::placeholder {
+    color: white;
+}
+
+
+/* =========================================
+   CAPTCHA
+   ========================================= */
+
+.formulario-registro__contenedor-captcha {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    margin-top: 16px;
+}
+
+
+.formulario-registro__captcha {
+    width: 214px;
+    height: 55px;
+
+    background-color: white;
+
+    border-radius: 9px;
+}
+
+
+/* =========================================
+   BOTÓN REGISTRO
+   ========================================= */
+
+.formulario-registro__contenedor-boton {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 17px;
+}
+
+
+/* =========================================
+   VOLVER AL LOGIN
+   ========================================= */
+
+.registro__inicio-sesion {
+    margin-top: 17px;
+
+    text-align: center;
+}
+
+
+.registro__inicio-sesion-texto {
+    font-size: 13px;
+    line-height: 1.4;
+
+    color: white;
+}
+
+
+.registro__inicio-sesion-link {
+    background: none;
+
+    border: none;
+
+    padding: 0;
+
+    color: white;
+
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.registro__inicio-sesion-link:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   CAMBIO LOGIN / REGISTRO
+   ========================================= */
+
+.registro-activo .login {
+    display: none;
+}
+
+
+.registro-activo .registro {
+    display: block;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 650px) {
+
+    .fondo-pagina {
+        min-height: 100vh;
+    }
+
+
+    .pagina-login {
+        padding: 20px;
+    }
+
+
+    .pagina-login__contenedor {
+        width: 580px;
+        height: 675px;
+        min-height: 0;
+
+        display: flex;
+
+        overflow: hidden;
+
+        box-shadow: 0 0 60px 12px rgba(0, 0, 0, 0.8);
+    }
+
+
+    .presentacion-login {
+        width: 290px;
+        height: 600px;
+
+    }
+
+    .login {
+        width: 290px;
+        height: 675px;
+    }
+
+    @media (max-width: 500px) {
+
+        .pagina-login {
+            padding: 15px;
+        }
+
+
+        .pagina-login__contenedor {
+            flex-direction: column;
+
+            max-width: 290px;
+
+            height: auto;
+        }
+
+
+        .presentacion-login,
+        .login {
+            width: 100%;
+        }
+
+
+        .presentacion-login {
+            height: 300px;
+        }
+
+
+        .presentacion-login__logo {
+            height: 220px;
+        }
+
+
+        .presentacion-login__logo img {
+            width: 150px;
+        }
+
+
+        .login {
+            height: 534px;
+        }
+
+
+
+    }
+}
