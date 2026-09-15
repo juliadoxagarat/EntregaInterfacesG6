@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Arcade Time | Inicio</title>
+
+</head>
+
+
+<body>
+
+
+    <!-- fondo general de toda la pagina -->
+    <div class="fondo-pagina">
+
+
+
+        <!-- header -->
+        <header class="encabezado">
+
+
+            <div class="encabezado__contenedor">
+
+
+
+                <!-- boton hamburguesa -->
+                <button
+                    class="encabezado__menu-boton"
+                    type="button"
+                    aria-label="Abrir menu de categorias"
+                    aria-expanded="false"
+                    aria-controls="menu-categorias"
+                    data-boton-menu
+                >
+
+                    <!-- aca va el icono hamburguesa -->
+
+                </button>
+
+
+
+                <!-- logo y nombre, al tocar vuelve al home -->
+                <a
+                    class="encabezado__logo"
+                    href="index.html"
+                    aria-label="Ir al inicio"
+                >
+
+
+                    <img
+                        class="encabezado__logo-imagen"
+                        src=""
+                        alt=""
+                    >
+
+
+                    <span class="encabezado__nombre">
+                        Arcade Time
+                    </span>
+
+
+                </a>
+
+
+
+                <!-- decoracion q esta al lado del logo -->
+                <div
+                    class="encabezado__separador"
+                    aria-hidden="true"
+                ></div>
+
+
+
+                <!-- buscador -->
+                <form
+                    class="buscador"
+                    action="#"
+                    method="get"
+                    role="search"
+                >
+
+
+                    <label
+                        class="buscador__label"
+                        for="buscar-juego"
+                    >
+                        Buscar juego
+                    </label>
+
+
+                    <div class="buscador__contenedor">
+
+
+                        <input
+                            class="buscador__input"
+                            type="search"
+                            id="buscar-juego"
+                            name="buscar"
+                            placeholder="Buscar juego"
+                        >
+
+
+                        <button
+                            class="buscador__boton"
+                            type="submit"
+                            aria-label="Buscar juego"
+                        >
+
+                            <!-- aca va la lupa -->
+
+                        </button>
+
+
+                    </div>
+
+
+                </form>
+
+
+
+                <!-- boton del perfil -->
+                <button
+                    class="encabezado__perfil-boton"
+                    type="button"
+                    aria-label="Abrir menu de usuario"
+                    aria-expanded="false"
+                    aria-controls="menu-usuario"
+                    data-boton-perfil
+                >
+
+                    <!-- aca va el icono de la personita -->
+
+                </button>
+
+
+            </div>
+
+
+
+
+            <!-- menu q se abre con la hamburguesa -->
+            <nav
+                class="menu-categorias"
+                id="menu-categorias"
+                aria-label="Categorias de juegos"
+                hidden
+            >
+
+
+                <ul class="menu-categorias__lista">
+
+
+                    <li class="menu-categorias__item">
+
+                        <a
+                            class="menu-categorias__link"
+                            href="#accion"
+                        >
+                            Acción
+                        </a>
+
+                    </li>
+
+
+                    <li class="menu-categorias__item">
+
+                        <a
+                            class="menu-categorias__link"
+                            href="#terror"
+                        >
+                            Terror
+                        </a>
+
+                    </li>
+
+
+                    <li class="menu-categorias__item">
+
+                        <a
+                            class="menu-categorias__link"
+                            href="#aventura"
+                        >
+                            Aventura
+                        </a>
+
+                    </li>
+
+
+                    <li class="menu-categorias__item">
+
+                        <a
+                            class="menu-categorias__link"
+                            href="#carreras"
+                        >
+                            Carreras
+                        </a>
+
+                    </li>
+
+
+                    <li class="menu-categorias__item">
+
+                        <a
+                            class="menu-categorias__link"
+                            href="#supervivencia"
+                        >
+                            Supervivencia
+                        </a>
+
+                    </li>
+
+
+                    <li class="menu-categorias__item">
+
+                        <a
+                            class="menu-categorias__link"
+                            href="#superheroes"
+                        >
+                            Superhéroes
+                        </a>
+
+                    </li>
+
+
+                    <li class="menu-categorias__item">
+
+                        <a
+                            class="menu-categorias__link"
+                            href="#dos-jugadores"
+                        >
+                            Dos jugadores
+                        </a>
+
+                    </li>
+
+
+                    <li class="menu-categorias__item">
+
+                        <a
+                            class="menu-categorias__link"
+                            href="#mas-juegos"
+                        >
+                            Más juegos
+                        </a>
+
+                    </li>
+
+
+                </ul>
+
+
+            </nav>
+
+
+
+
+            <!-- menu q se abre con la personita -->
+            <div
+                class="menu-usuario"
+                id="menu-usuario"
+                hidden
+            >
+
+
+                <!-- avatar y nombre -->
+                <div class="menu-usuario__perfil">
+
+
+                    <div class="menu-usuario__avatar-contenedor">
+
+
+                        <img
+                            class="menu-usuario__avatar"
+                            src=""
+                            alt="Avatar del usuario"
+                        >
+
+
+                    </div>
+
+
+                    <p class="menu-usuario__nombre">
+                        Nombre de usuario
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- titulo del menu -->
+                <div class="menu-usuario__encabezado">
+
+
+                    <p class="menu-usuario__titulo">
+                        Configuraciones de la cuenta
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- opciones -->
+                <nav
+                    class="menu-usuario__opciones"
+                    aria-label="Configuraciones de la cuenta"
+                >
+
+
+                    <ul class="menu-usuario__lista">
+
+
+                        <li class="menu-usuario__item">
+
+                            <a
+                                class="menu-usuario__link"
+                                href="#"
+                            >
+                                Contraseña
+                            </a>
+
+                        </li>
+
+
+                        <li class="menu-usuario__item">
+
+                            <a
+                                class="menu-usuario__link"
+                                href="#"
+                            >
+                                Correo electrónico
+                            </a>
+
+                        </li>
+
+
+                        <li class="menu-usuario__item">
+
+                            <a
+                                class="menu-usuario__link"
+                                href="#"
+                            >
+                                Editar avatar
+                            </a>
+
+                        </li>
+
+
+                        <li class="menu-usuario__item">
+
+                            <a
+                                class="menu-usuario__link"
+                                href="#"
+                            >
+                                Editar nombre de usuario
+                            </a>
+
+                        </li>
+
+
+                        <li class="menu-usuario__item">
+
+                            <a
+                                class="menu-usuario__link"
+                                href="#"
+                            >
+                                Idioma
+                            </a>
+
+                        </li>
+
+
+                    </ul>
+
+
+                </nav>
+
+
+            </div>
+
+
+        </header>
+
+
+
+
+
+        <!-- contenido principal -->
+        <main class="pagina-inicio">
+
+
+
+            <!-- destacado -->
+            <section
+                class="destacado"
+                aria-labelledby="titulo-destacado"
+            >
+
+
+                <!-- todo esto va arriba de la img -->
+                <div class="destacado__contenido">
+
+
+                    <img
+                        class="destacado__imagen"
+                        src=""
+                        alt="Peg Solitaire"
+                    >
+
+
+
+                    <h1
+                        class="destacado__titulo"
+                        id="titulo-destacado"
+                    >
+                        Destacado
+                    </h1>
+
+
+
+                    <!-- boton q va arriba de la img -->
+                    <div class="destacado__boton-contenedor">
+
+
+                        <a
+                            class="boton boton--jugar"
+                            href="#"
+                        >
+                            Jugar
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+
+
+            <!-- top 3 seleccion -->
+            <section
+                class="top-seleccion"
+                aria-labelledby="titulo-top-seleccion"
+            >
+
+
+                <!-- fondo rosa del top -->
+                <div class="top-seleccion__contenedor">
+
+
+
+                    <!-- titulo -->
+                    <div class="top-seleccion__encabezado">
+
+
+                        <h2
+                            class="top-seleccion__titulo"
+                            id="titulo-top-seleccion"
+                        >
+                            Top 3 selección
+                        </h2>
+
+
+                        <!-- iconito q esta al lado -->
+                        <div
+                            class="top-seleccion__icono"
+                            aria-hidden="true"
+                        ></div>
+
+
+                    </div>
+
+
+
+
+                    <!-- fantasmita y texto -->
+                    <div class="top-seleccion__presentacion">
+
+
+                        <div class="top-seleccion__fantasma-contenedor">
+
+
+                            <img
+                                class="top-seleccion__fantasma"
+                                src=""
+                                alt=""
+                            >
+
+
+                        </div>
+
+
+
+                        <div class="top-seleccion__texto">
+
+
+                            <p>
+                                Volvé a tus clásicos favoritos y disfrutá
+                                la selección personalizada para vos.
+                            </p>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+                    <!-- los tres juegos -->
+                    <div class="top-seleccion__juegos">
+
+
+
+                        <article class="tarjeta-juego tarjeta-juego--top">
+
+
+                            <a
+                                class="tarjeta-juego__link"
+                                href="#"
+                            >
+
+
+                                <img
+                                    class="tarjeta-juego__imagen"
+                                    src=""
+                                    alt="Tetris"
+                                >
+
+
+                                <h3 class="tarjeta-juego__nombre">
+                                    Tetris
+                                </h3>
+
+
+                            </a>
+
+
+                        </article>
+
+
+
+
+                        <article class="tarjeta-juego tarjeta-juego--top">
+
+
+                            <a
+                                class="tarjeta-juego__link"
+                                href="#"
+                            >
+
+
+                                <img
+                                    class="tarjeta-juego__imagen"
+                                    src=""
+                                    alt="Genesis"
+                                >
+
+
+                                <h3 class="tarjeta-juego__nombre">
+                                    Genesis
+                                </h3>
+
+
+                            </a>
+
+
+                        </article>
+
+
+
+
+                        <article class="tarjeta-juego tarjeta-juego--top">
+
+
+                            <a
+                                class="tarjeta-juego__link"
+                                href="#"
+                            >
+
+
+                                <img
+                                    class="tarjeta-juego__imagen"
+                                    src=""
+                                    alt="Freedom Force"
+                                >
+
+
+                                <h3 class="tarjeta-juego__nombre">
+                                    Freedom Force
+                                </h3>
+
+
+                            </a>
+
+
+                        </article>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+
+
+            <!-- zona de todos los carruseles -->
+            <div class="zona-carruseles">
+
+
+
+
+
+                <!-- carrusel accion -->
+                <section
+                    class="carrusel-juegos"
+                    id="accion"
+                    aria-labelledby="titulo-accion"
+                    data-carrusel
+                >
+
+
+                    <div class="carrusel-juegos__contenedor">
+
+
+                        <h2
+                            class="carrusel-juegos__titulo"
+                            id="titulo-accion"
+                        >
+                            Acción
+                        </h2>
+
+
+
+                        <div class="carrusel-juegos__contenido">
+
+
+
+                            <!-- arranca oculta y js la muestra desp -->
+                            <button
+                                class="carrusel-juegos__flecha carrusel-juegos__flecha--izquierda"
+                                type="button"
+                                aria-label="Ver juegos anteriores"
+                                data-direccion="anterior"
+                                hidden
+                            >
+
+                                <!-- flecha izquierda -->
+
+                            </button>
+
+
+
+
+                            <!-- parte visible del carrusel -->
+                            <div class="carrusel-juegos__ventana">
+
+
+                                <!-- esta lista es la q desp mueve js -->
+                                <div class="carrusel-juegos__lista">
+
+
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Mega Man"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Mega Man
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Juego de accion"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Nombre
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Juego de accion"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Nombre
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Bodes"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Bodes
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+
+
+                                    <!-- aca van los juegos q quedan ocultos al principio -->
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Otro juego"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Otro juego
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+
+                                </div>
+
+
+                            </div>
+
+
+
+
+                            <!-- esta se ve al principio -->
+                            <button
+                                class="carrusel-juegos__flecha carrusel-juegos__flecha--derecha"
+                                type="button"
+                                aria-label="Ver mas juegos"
+                                data-direccion="siguiente"
+                            >
+
+                                <!-- flecha derecha -->
+
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+
+
+
+
+
+                <!-- carrusel terror -->
+                <section
+                    class="carrusel-juegos"
+                    id="terror"
+                    aria-labelledby="titulo-terror"
+                    data-carrusel
+                >
+
+
+                    <div class="carrusel-juegos__contenedor">
+
+
+                        <h2
+                            class="carrusel-juegos__titulo"
+                            id="titulo-terror"
+                        >
+                            Terror
+                        </h2>
+
+
+
+                        <div class="carrusel-juegos__contenido">
+
+
+                            <button
+                                class="carrusel-juegos__flecha carrusel-juegos__flecha--izquierda"
+                                type="button"
+                                aria-label="Ver juegos anteriores"
+                                data-direccion="anterior"
+                                hidden
+                            >
+                                <!-- flecha izquierda -->
+                            </button>
+
+
+
+                            <div class="carrusel-juegos__ventana">
+
+                                <div class="carrusel-juegos__lista">
+
+                                    <!-- aca van todas las cards de terror -->
+
+                                </div>
+
+                            </div>
+
+
+
+                            <button
+                                class="carrusel-juegos__flecha carrusel-juegos__flecha--derecha"
+                                type="button"
+                                aria-label="Ver mas juegos"
+                                data-direccion="siguiente"
+                            >
+                                <!-- flecha derecha -->
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+
+
+
+
+
+                <!-- carrusel aventura -->
+                <section
+                    class="carrusel-juegos"
+                    id="aventura"
+                    aria-labelledby="titulo-aventura"
+                    data-carrusel
+                >
+
+
+                    <div class="carrusel-juegos__contenedor">
+
+
+                        <h2
+                            class="carrusel-juegos__titulo"
+                            id="titulo-aventura"
+                        >
+                            Aventura
+                        </h2>
+
+
+
+                        <div class="carrusel-juegos__contenido">
+
+
+                            <button
+                                class="carrusel-juegos__flecha carrusel-juegos__flecha--izquierda"
+                                type="button"
+                                aria-label="Ver juegos anteriores"
+                                data-direccion="anterior"
+                                hidden
+                            >
+                                <!-- flecha izquierda -->
+                            </button>
+
+
+                            <div class="carrusel-juegos__ventana">
+
+                                <div class="carrusel-juegos__lista">
+
+                                    <!-- aca van las cards de aventura -->
+
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                class="carrusel-juegos__flecha carrusel-juegos__flecha--derecha"
+                                type="button"
+                                aria-label="Ver mas juegos"
+                                data-direccion="siguiente"
+                            >
+                                <!-- flecha derecha -->
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+
+
+
+
+
+                <!-- carrusel carreras -->
+                <section
+                    class="carrusel-juegos"
+                    id="carreras"
+                    aria-labelledby="titulo-carreras"
+                    data-carrusel
+                >
+
+
+                    <div class="carrusel-juegos__contenedor">
+
+
+                        <h2
+                            class="carrusel-juegos__titulo"
+                            id="titulo-carreras"
+                        >
+                            Carreras
+                        </h2>
+
+
+
+                        <div class="carrusel-juegos__contenido">
+
+
+                            <button
+                                class="carrusel-juegos__flecha carrusel-juegos__flecha--izquierda"
+                                type="button"
+                                aria-label="Ver juegos anteriores"
+                                data-direccion="anterior"
+                                hidden
+                            >
+                                <!-- flecha izquierda -->
+                            </button>
+
+
+                            <div class="carrusel-juegos__ventana">
+
+                                <div class="carrusel-juegos__lista">
+
+                                    <!-- aca van las cards de carreras -->
+
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                class="carrusel-juegos__flecha carrusel-juegos__flecha--derecha"
+                                type="button"
+                                aria-label="Ver mas juegos"
+                                data-direccion="siguiente"
+                            >
+                                <!-- flecha derecha -->
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+
+
+
+
+
+                <!-- carrusel supervivencia -->
+                <section
+                    class="carrusel-juegos"
+                    id="supervivencia"
+                    aria-labelledby="titulo-supervivencia"
+                    data-carrusel
+                >
+
+
+                    <div class="carrusel-juegos__contenedor">
+
+
+                        <h2
+                            class="carrusel-juegos__titulo"
+                            id="titulo-supervivencia"
+                        >
+                            Supervivencia
+                        </h2>
+
+
+
+                        <div class="carrusel-juegos__contenido">
+
+
+                            <button
+                                class="carrusel-juegos__flecha carrusel-juegos__flecha--izquierda"
+                                type="button"
+                                aria-label="Ver juegos anteriores"
+                                data-direccion="anterior"
+                                hidden
+                            >
+                                <!-- flecha izquierda -->
+                            </button>
+
+
+                            <div class="carrusel-juegos__ventana">
+
+                                <div class="carrusel-juegos__lista">
+
+                                    <!-- aca van las cards de supervivencia -->
+
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                class="carrusel-juegos__flecha carrusel-juegos__flecha--derecha"
+                                type="button"
+                                aria-label="Ver mas juegos"
+                                data-direccion="siguiente"
+                            >
+                                <!-- flecha derecha -->
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+
+
+
+
+
+                <!-- carrusel superheroes -->
+                <section
+                    class="carrusel-juegos"
+                    id="superheroes"
+                    aria-labelledby="titulo-superheroes"
+                    data-carrusel
+                >
+
+
+                    <div class="carrusel-juegos__contenedor">
+
+
+                        <h2
+                            class="carrusel-juegos__titulo"
+                            id="titulo-superheroes"
+                        >
+                            Superhéroes
+                        </h2>
+
+
+                        <div class="carrusel-juegos__contenido">
+
+
+                            <button
+                                class="carrusel-juegos__flecha carrusel-juegos__flecha--izquierda"
+                                type="button"
+                                aria-label="Ver juegos anteriores"
+                                data-direccion="anterior"
+                                hidden
+                            >
+                                <!-- flecha izquierda -->
+                            </button>
+
+
+                            <div class="carrusel-juegos__ventana">
+
+                                <div class="carrusel-juegos__lista">
+
+                                    <!-- aca van las cards de superheroes -->
+
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                class="carrusel-juegos__flecha carrusel-juegos__flecha--derecha"
+                                type="button"
+                                aria-label="Ver mas juegos"
+                                data-direccion="siguiente"
+                            >
+                                <!-- flecha derecha -->
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+
+
+
+
+
+                <!-- carrusel dos jugadores -->
+                <section
+                    class="carrusel-juegos"
+                    id="dos-jugadores"
+                    aria-labelledby="titulo-dos-jugadores"
+                    data-carrusel
+                >
+
+
+                    <div class="carrusel-juegos__contenedor">
+
+
+                        <h2
+                            class="carrusel-juegos__titulo"
+                            id="titulo-dos-jugadores"
+                        >
+                            Dos jugadores
+                        </h2>
+
+
+                        <div class="carrusel-juegos__contenido">
+
+
+                            <button
+                                class="carrusel-juegos__flecha carrusel-juegos__flecha--izquierda"
+                                type="button"
+                                aria-label="Ver juegos anteriores"
+                                data-direccion="anterior"
+                                hidden
+                            >
+                                <!-- flecha izquierda -->
+                            </button>
+
+
+                            <div class="carrusel-juegos__ventana">
+
+                                <div class="carrusel-juegos__lista">
+
+                                    <!-- aca van las cards de dos jugadores -->
+
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                class="carrusel-juegos__flecha carrusel-juegos__flecha--derecha"
+                                type="button"
+                                aria-label="Ver mas juegos"
+                                data-direccion="siguiente"
+                            >
+                                <!-- flecha derecha -->
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+
+
+
+
+
+                <!-- carrusel mas juegos -->
+                <section
+                    class="carrusel-juegos"
+                    id="mas-juegos"
+                    aria-labelledby="titulo-mas-juegos"
+                    data-carrusel
+                >
+
+
+                    <div class="carrusel-juegos__contenedor">
+
+
+                        <h2
+                            class="carrusel-juegos__titulo"
+                            id="titulo-mas-juegos"
+                        >
+                            Más juegos
+                        </h2>
+
+
+                        <div class="carrusel-juegos__contenido">
+
+
+                            <button
+                                class="carrusel-juegos__flecha carrusel-juegos__flecha--izquierda"
+                                type="button"
+                                aria-label="Ver juegos anteriores"
+                                data-direccion="anterior"
+                                hidden
+                            >
+                                <!-- flecha izquierda -->
+                            </button>
+
+
+                            <div class="carrusel-juegos__ventana">
+
+                                <div class="carrusel-juegos__lista">
+
+                                    <!-- aca van las cards de mas juegos -->
+
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                class="carrusel-juegos__flecha carrusel-juegos__flecha--derecha"
+                                type="button"
+                                aria-label="Ver mas juegos"
+                                data-direccion="siguiente"
+                            >
+                                <!-- flecha derecha -->
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+
+
+            </div>
+
+
+        </main>
+
+
+
+
+
+        <!-- footer -->
+        <footer class="pie-pagina">
+
+
+            <div class="pie-pagina__contenedor">
+
+
+
+                <!-- columna explorar -->
+                <div class="pie-pagina__columna">
+
+
+                    <h2 class="pie-pagina__titulo">
+                        Explora
+                    </h2>
+
+
+                    <ul class="pie-pagina__lista">
+
+                        <li>
+                            <a href="#">Juegos populares</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Nuevos ingresos</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Juego sorpresa</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Clasicos favoritos</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Mas jugados</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Joyitas ocultas</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Arcade de la semana</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Todos los juegos</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Top de los ochentas</a>
+                        </li>
+
+                    </ul>
+
+
+                </div>
+
+
+
+
+                <!-- columna arcade time -->
+                <div class="pie-pagina__columna">
+
+
+                    <h2 class="pie-pagina__titulo">
+                        Arcade time
+                    </h2>
+
+
+                    <ul class="pie-pagina__lista">
+
+                        <li>
+                            <a href="#">Sobre nosotros</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Nuestro equipo</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Trabaja con nosotros</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Producto</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Terminos de servicio</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Reseñas</a>
+                        </li>
+
+                    </ul>
+
+
+
+                    <h2 class="pie-pagina__titulo">
+                        Acerca de
+                    </h2>
+
+
+                    <ul class="pie-pagina__lista">
+
+                        <li>
+                            <a href="#">Como jugar</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Preguntas frecuentes</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Soporte tecnico</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Leer comentarios</a>
+                        </li>
+
+                    </ul>
+
+
+                </div>
+
+
+
+
+                <!-- columna legal y contacto -->
+                <div class="pie-pagina__columna">
+
+
+                    <h2 class="pie-pagina__titulo">
+                        Legal
+                    </h2>
+
+
+                    <ul class="pie-pagina__lista">
+
+                        <li>
+                            <a href="#">Terminos y condiciones</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Licencias y derechos</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Politica de privacidad</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Servicios</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Seguridad</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Centro de atencion</a>
+                        </li>
+
+                    </ul>
+
+
+
+                    <div class="pie-pagina__contacto">
+
+
+                        <h2 class="pie-pagina__titulo">
+                            Contacto
+                        </h2>
+
+
+                        <p>
+                            arcadeinfotime@gmail.com
+                        </p>
+
+
+                        <p>
+                            Tel: +54 2494 655789
+                        </p>
+
+
+                        <a href="#">
+                            Documentacion
+                        </a>
+
+
+                        <a href="#">
+                            Contactar ventas
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+                <!-- redes y logo -->
+                <div class="pie-pagina__columna">
+
+
+                    <div class="pie-pagina__redes">
+
+
+                        <h2 class="pie-pagina__titulo">
+                            Seguinos en
+                        </h2>
+
+
+                        <div class="pie-pagina__redes-lista">
+
+                            <a
+                                href="#"
+                                aria-label="Youtube"
+                            >
+                                <!-- icono youtube -->
+                            </a>
+
+                            <a
+                                href="#"
+                                aria-label="Instagram"
+                            >
+                                <!-- icono instagram -->
+                            </a>
+
+                            <a
+                                href="#"
+                                aria-label="Facebook"
+                            >
+                                <!-- icono facebook -->
+                            </a>
+
+                            <a
+                                href="#"
+                                aria-label="Twitter"
+                            >
+                                <!-- icono twitter -->
+                            </a>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="pie-pagina__descubrir">
+
+
+                        <p>
+
+                            <strong>
+                                INSERT COIN - descubre nuevos juegos,
+                                clasicos y reversionados.
+                            </strong>
+
+                        </p>
+
+
+                    </div>
+
+
+
+                    <div class="pie-pagina__logo">
+
+                        <!-- aca va el logo arcade time -->
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </footer>
+
+
+    </div>
+
+
+</body>
+
+</html>

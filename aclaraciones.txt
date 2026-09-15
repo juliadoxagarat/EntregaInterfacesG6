@@ -1,0 +1,7 @@
+- hay un monton de cosas donde en action esta #, porq todavia no lo hicimos interactivo
+- hay q cargar todas las imagenes, incluidos los fondos y las img de los juegos
+- habria q hacer un archivo o algo con los colores / fuentes de la pag y sacar los valores de ahi 
+- hay q importar los iconos tambien desde alguna libreria, y en el footer los de las redes sociales tambien
+- falta la pag del juego en ejecucion (la q tiene los comentarios) en html
+- hay q poner el nombre de cada juego en las cards :(
+    -preguntar si hay q hacerlo con accesibilidad (lo q puse de aria) o hice todo al pedo!!

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Arcade Time | Registrarse</title>
+
+</head>
+
+
+<body>
+
+
+    <!-- fondo gral de los fantasmitas -->
+    <div class="fondo-pagina">
+
+
+        <main class="pagina-registro">
+
+
+            <!-- div para centrar el form -->
+            <div class="pagina-registro__contenedor">
+
+
+                <!-- contenedor rosa -->
+                <section
+                    class="registro"
+                    aria-labelledby="titulo-registro"
+                >
+
+
+                    <!-- header del registro -->
+                    <div class="registro__encabezado">
+
+
+                        <h1
+                            class="registro__titulo"
+                            id="titulo-registro"
+                        >
+                            Registrarse
+                        </h1>
+
+
+                        <p class="registro__descripcion">
+                            Ingresa los datos para completar el registro.
+                        </p>
+
+
+                    </div>
+
+
+
+
+                    <!-- formulario de registro -->
+                    <form
+                        class="formulario-registro"
+                        action="#"
+                        method="post"
+                    >
+
+
+                        <!-- nombre y apellido -->
+                        <div class="campo-formulario">
+
+
+                            <label
+                                class="campo-formulario__etiqueta"
+                                for="nombre-completo"
+                            >
+                                Nombre y apellido*
+                            </label>
+
+
+                            <div class="campo-formulario__contenedor-input">
+
+
+                                <input
+                                    class="campo-formulario__input"
+                                    type="text"
+                                    id="nombre-completo"
+                                    name="nombreCompleto"
+                                    autocomplete="name"
+                                    required
+                                >
+
+
+                                <!-- indicador de validacion(el check rosa) desp mostrar o no con css y js -->
+                                <div
+                                    class="campo-formulario__estado"
+                                    aria-hidden="true"
+                                ></div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+
+                        <!-- nombre de usuario -->
+                        <div class="campo-formulario">
+
+
+                            <label
+                                class="campo-formulario__etiqueta"
+                                for="nombre-usuario"
+                            >
+                                Nombre de usuario
+                            </label>
+
+
+                            <div class="campo-formulario__contenedor-input">
+
+
+                                <input
+                                    class="campo-formulario__input"
+                                    type="text"
+                                    id="nombre-usuario"
+                                    name="nombreUsuario"
+                                    autocomplete="username"
+                                >
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+
+                        <!-- edad -->
+                        <div class="campo-formulario">
+
+
+                            <label
+                                class="campo-formulario__etiqueta"
+                                for="edad"
+                            >
+                                Edad*
+                            </label>
+
+
+                            <div class="campo-formulario__contenedor-input">
+
+
+                                <input
+                                    class="campo-formulario__input"
+                                    type="number"
+                                    id="edad"
+                                    name="edad"
+                                    min="1"
+                                    required
+                                >
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+
+                        <!-- email -->
+                        <div class="campo-formulario">
+
+
+                            <label
+                                class="campo-formulario__etiqueta"
+                                for="email"
+                            >
+                                Email*
+                            </label>
+
+
+                            <div class="campo-formulario__contenedor-input">
+
+
+                                <input
+                                    class="campo-formulario__input"
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    autocomplete="email"
+                                    required
+                                >
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+
+                        <!-- contraseña -->
+                        <div class="campo-formulario">
+
+
+                            <label
+                                class="campo-formulario__etiqueta"
+                                for="contrasena"
+                            >
+                                Contraseña*
+                            </label>
+
+
+                            <div class="campo-formulario__contenedor-input">
+
+
+                                <input
+                                    class="campo-formulario__input"
+                                    type="password"
+                                    id="contrasena"
+                                    name="contrasena"
+                                    autocomplete="new-password"
+                                    required
+                                >
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+
+                        <!-- repetir contraseña -->
+                        <div class="campo-formulario">
+
+
+                            <label
+                                class="campo-formulario__etiqueta"
+                                for="repetir-contrasena"
+                            >
+                                Repetir contraseña*
+                            </label>
+
+
+                            <div class="campo-formulario__contenedor-input">
+
+
+                                <input
+                                    class="campo-formulario__input"
+                                    type="password"
+                                    id="repetir-contrasena"
+                                    name="repetirContrasena"
+                                    autocomplete="new-password"
+                                    required
+                                >
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+
+                        <!-- captcha -->
+                        <div class="formulario-registro__contenedor-captcha">
+
+
+                            <!-- aca iria el captcha, es para darle el tamano q queramos y posicionarlo -->
+                            <div
+                                class="formulario-registro__captcha"
+                                aria-label="Verificacion de seguridad"
+                            ></div>
+
+
+                        </div>
+
+
+
+
+                        <!-- boton registrarse -->
+                        <div class="formulario-registro__contenedor-boton">
+
+
+                            <button
+                                class="boton boton--principal"
+                                type="submit"
+                            >
+                                Registrate
+                            </button>
+
+
+                        </div>
+
+
+                    </form>
+
+
+
+
+                    <!-- link para volver al login -->
+                    <div class="registro__inicio-sesion">
+
+
+                        <p class="registro__inicio-sesion-texto">
+
+                            ¿Ya tienes cuenta?
+
+                            <a
+                                class="registro__inicio-sesion-link"
+                                href="login.html"
+                            >
+                                Inicia sesión.
+                            </a>
+
+
+                        </p>
+
+
+                    </div>
+
+
+                </section>
+
+
+            </div>
+
+
+        </main>
+
+
+    </div>
+
+
+</body>
+
+</html>
