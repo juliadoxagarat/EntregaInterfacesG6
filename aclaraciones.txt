@@ -5,3 +5,5 @@
 - falta la pag del juego en ejecucion (la q tiene los comentarios) en html
 - hay q poner el nombre de cada juego en las cards :(
     -preguntar si hay q hacerlo con accesibilidad (lo q puse de aria) o hice todo al pedo!!
+
+-usamos el mismo header y footer copiando y pegando el codigo en index y juego, preguntar si esta bien asi
