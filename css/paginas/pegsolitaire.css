@@ -1,0 +1,711 @@
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #12095b;
+
+    color: white;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   FONDO
+   ========================================================= */
+
+.fondo-pagina {
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: #12095b;
+}
+
+
+/* =========================================================
+   CONTENIDO
+   ========================================================= */
+
+.pagina-juego {
+    width: 94vw;
+
+    margin: 0 auto;
+
+    padding-top: 2.5vw;
+    padding-bottom: 3vw;
+}
+
+
+/* =========================================================
+   MIGAS
+   ========================================================= */
+
+.migas-pan {
+    width: 100%;
+
+    margin-bottom: 1vw;
+}
+
+
+.migas-pan__lista {
+    display: flex;
+    align-items: center;
+
+    gap: 0.7vw;
+
+    list-style: none;
+
+    font-size: 1vw;
+}
+
+
+.migas-pan__link {
+    color: white;
+
+    text-decoration: none;
+}
+
+
+.migas-pan__separador {
+    color: #bcb2ff;
+}
+
+
+/* =========================================================
+   ENCABEZADO DEL JUEGO
+   ========================================================= */
+
+.detalle-juego__encabezado {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 1.2vw;
+}
+
+
+.detalle-juego__titulo-valoracion {
+    display: flex;
+
+    align-items: center;
+
+    gap: 2.5vw;
+}
+
+
+.detalle-juego__titulo {
+    color: white;
+
+    font-family: "Arial Black", Arial, sans-serif;
+
+    font-size: 3vw;
+
+    letter-spacing: 0.1vw;
+}
+
+
+.valoracion {
+    display: flex;
+
+    gap: 0.5vw;
+}
+
+
+.valoracion__estrella {
+    color: #f52de8;
+
+    font-size: 3.3vw;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   ACCIONES
+   ========================================================= */
+
+.detalle-juego__acciones {
+    display: flex;
+
+    align-items: center;
+
+    gap: 1vw;
+}
+
+
+.boton--agregar-juego {
+    width: 17vw;
+    height: 2.5vw;
+
+    border: none;
+
+    border-radius: 0.7vw;
+
+    background-color: #f35ae8;
+
+    color: white;
+
+    font-size: 1vw;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.boton--agregar-juego::after {
+    content: "♥";
+
+    margin-left: 0.8vw;
+
+    font-size: 1.3vw;
+}
+
+
+.detalle-juego__compartir {
+    width: 3vw;
+    aspect-ratio: 1;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+.detalle-juego__compartir::before {
+    content: "◆";
+
+    color: #caff00;
+
+    font-size: 2.5vw;
+}
+
+
+/* =========================================================
+   IMAGEN PRINCIPAL
+   ========================================================= */
+
+.detalle-juego__imagen-contenedor {
+    width: 100%;
+
+    aspect-ratio: 2.2 / 1;
+
+    border: 0.4vw solid #f52de8;
+
+    background-color: #0c0744;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    margin-bottom: 2.5vw;
+}
+
+
+.detalle-juego__imagen {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+img[src=""] {
+    visibility: hidden;
+}
+
+
+/* =========================================================
+   DESCRIPCIÓN
+   ========================================================= */
+
+.descripcion-juego {
+    width: 100%;
+
+    margin-bottom: 2vw;
+}
+
+
+.descripcion-juego__titulo,
+.como-jugar__titulo,
+.comentarios__titulo {
+    color: white;
+
+    font-family: "Arial Black", Arial, sans-serif;
+
+    font-size: 1.8vw;
+
+    letter-spacing: 0.1vw;
+
+    margin-bottom: 1.3vw;
+}
+
+
+.descripcion-juego__texto {
+    color: white;
+
+    font-size: 1.35vw;
+
+    line-height: 1.5;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   TARJETAS
+   ========================================================= */
+
+.instrucciones-juego {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1.5vw;
+
+    margin-bottom: 2.5vw;
+}
+
+
+.instrucciones-juego__imagen {
+    width: 100%;
+
+    height: 70%;
+
+    object-fit: contain;
+
+    margin-top: auto;
+}
+
+.instrucciones-juego {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vw;
+}
+
+.instrucciones-juego__imagen {
+    width: 85%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* =========================================================
+   CÓMO JUGAR
+   ========================================================= */
+
+.como-jugar {
+    width: 100%;
+
+    margin-bottom: 4vw;
+}
+
+
+.como-jugar__titulo {
+    margin-left: 0.5vw;
+
+    margin-bottom: 1.2vw;
+}
+
+
+.como-jugar__contenido {
+    width: 70%;
+
+    aspect-ratio: 1.6 / 1;
+
+    border: 0.25vw solid #f1a2ff;
+
+    background-color: #654521;
+
+    overflow: hidden;
+}
+
+
+.como-jugar__video {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    background-color: #654521;
+}
+
+
+/* =========================================================
+   COMENTARIOS
+   ========================================================= */
+
+.comentarios {
+    width: 100%;
+}
+
+
+.comentarios__titulo {
+    margin-left: 1vw;
+
+    margin-bottom: 1.5vw;
+}
+
+
+/* =========================================================
+   FORMULARIO
+   ========================================================= */
+
+.comentarios__formulario {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 1vw;
+
+    margin-bottom: 1vw;
+
+    padding-left: 1vw;
+}
+
+
+.comentarios__avatar-contenedor {
+    width: 4vw;
+
+    aspect-ratio: 1;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background-color: #f52de8;
+
+    border: 0.2vw solid #f52de8;
+
+    overflow: hidden;
+}
+
+
+.comentarios__avatar {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.comentarios__campo {
+    flex: 1;
+
+    height: 3vw;
+
+    position: relative;
+}
+
+
+.comentarios__label {
+    position: absolute;
+
+    width: 0;
+    height: 0;
+
+    overflow: hidden;
+}
+
+
+.comentarios__input {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+
+    border-radius: 2vw;
+
+    background-color: white;
+
+    padding: 0 4vw 0 1.2vw;
+
+    font-size: 1vw;
+
+    outline: none;
+}
+
+
+.comentarios__enviar {
+    position: absolute;
+
+    right: 0.5vw;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 2.5vw;
+    aspect-ratio: 1;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+.comentarios__enviar::before {
+    content: "➤";
+
+    color: #160b61;
+
+    font-size: 1.8vw;
+}
+
+
+/* =========================================================
+   LISTA DE COMENTARIOS
+   ========================================================= */
+
+.comentarios__lista {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.2vw;
+}
+
+
+.comentario {
+    width: 100%;
+
+    min-height: 5vw;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 1vw;
+
+    padding: 0.7vw 1vw;
+
+    background-color: #18105f;
+
+    border-bottom: 0.15vw solid #7b5bbd;
+
+    border-radius: 0.5vw;
+}
+
+
+.comentario__avatar-contenedor {
+    width: 4vw;
+
+    aspect-ratio: 1;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    background-color: #f52de8;
+
+    border: 0.2vw solid #f52de8;
+}
+
+
+.comentario__avatar {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.comentario__contenido {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    min-width: 0;
+}
+
+
+.comentario__principal {
+    min-width: 0;
+}
+
+
+.comentario__usuario {
+    color: white;
+
+    font-size: 1.2vw;
+
+    font-weight: bold;
+
+    margin-bottom: 0.3vw;
+}
+
+
+.comentario__texto {
+    color: white;
+
+    font-size: 1vw;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.comentario__lateral {
+    min-width: 8vw;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 0.3vw;
+}
+
+
+.comentario__fecha {
+    color: white;
+
+    font-size: 0.9vw;
+
+    font-weight: bold;
+}
+
+
+.comentario__acciones {
+    display: flex;
+
+    gap: 0.5vw;
+}
+
+
+.comentario__accion {
+    width: 1.8vw;
+
+    aspect-ratio: 1;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+.comentario__accion--me-gusta::before {
+    content: "♧";
+
+    color: #caff00;
+
+    font-size: 1.7vw;
+}
+
+
+.comentario__accion--no-me-gusta::before {
+    content: "♧";
+
+    color: #caff00;
+
+    font-size: 1.7vw;
+
+    display: inline-block;
+
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .pagina-juego {
+        width: 94vw;
+    }
+
+
+    .detalle-juego__encabezado {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 2vw;
+    }
+
+
+    .detalle-juego__acciones {
+        align-self: flex-end;
+    }
+
+
+    .instrucciones-juego {
+        grid-template-columns: 1fr;
+    }
+
+
+    .instrucciones-juego__tarjeta {
+        aspect-ratio: 1.8 / 1;
+    }
+
+
+    .como-jugar__contenido {
+        width: 100%;
+    }
+
+
+    .comentario__texto {
+        white-space: normal;
+    }
+}

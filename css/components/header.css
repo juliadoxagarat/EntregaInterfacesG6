@@ -1,0 +1,418 @@
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.encabezado {
+    width: 100%;
+    height: 5.7vw;
+
+    background-color: #f52de8;
+
+    position: relative;
+    z-index: 100;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.encabezado__contenedor {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   HAMBURGUESA
+   ========================================================= */
+
+.encabezado__menu-boton {
+    width: 6vw;
+    height: 100%;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    position: relative;
+}
+
+
+.encabezado__menu-boton::before {
+    content: "☰";
+
+    color: #64126d;
+
+    font-size: 2.7vw;
+
+    position: absolute;
+
+    left: 1.8vw;
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.encabezado__logo {
+    width: 15vw;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 0.5vw;
+
+    text-decoration: none;
+}
+
+
+.encabezado__logo-imagen {
+    width: 4vw;
+    height: 4.8vw;
+
+    object-fit: contain;
+}
+
+
+.encabezado__nombre {
+    width: 8vw;
+
+    color: white;
+
+    font-family: "Arial Black", Arial, sans-serif;
+
+    font-size: 1.8vw;
+
+    line-height: 1.1;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+    letter-spacing: -0.05vw;
+
+    text-shadow:
+        0.15vw 0.15vw 0 #3e084d,
+        -0.15vw -0.15vw 0 #3e084d,
+        0.15vw -0.15vw 0 #3e084d,
+        -0.15vw 0.15vw 0 #3e084d;
+}
+
+
+/* =========================================================
+   SEPARADOR
+   ========================================================= */
+
+.encabezado__separador {
+    width: 1vw;
+    height: 5vw;
+
+    margin-left: 0.5vw;
+
+    border-left: 0.2vw dotted #64126d;
+    border-right: 0.2vw dotted #64126d;
+
+    transform: skewY(-25deg);
+}
+
+
+/* =========================================================
+   BUSCADOR
+   ========================================================= */
+
+.buscador {
+    width: 26vw;
+    height: 3.4vw;
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+
+.buscador__label {
+    position: absolute;
+
+    width: 0;
+    height: 0;
+
+    overflow: hidden;
+}
+
+
+.buscador__contenedor {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+}
+
+
+.buscador__input {
+    width: 100%;
+    height: 100%;
+
+    border: 0.15vw solid #888;
+
+    border-radius: 1vw;
+
+    background-color: white;
+
+    padding: 0 4vw 0 1.3vw;
+
+    font-size: 1vw;
+
+    outline: none;
+}
+
+
+.buscador__input::placeholder {
+    color: #666;
+}
+
+
+.buscador__boton {
+    width: 2.8vw;
+    height: 2.8vw;
+
+    position: absolute;
+
+    right: 0.3vw;
+    top: 0.3vw;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: #e832df;
+
+    cursor: pointer;
+}
+
+
+.buscador__boton::before {
+    content: "⌕";
+
+    color: white;
+
+    font-size: 2vw;
+
+    position: absolute;
+
+    left: 0.5vw;
+    top: -0.1vw;
+}
+
+
+/* =========================================================
+   PERFIL
+   ========================================================= */
+
+.encabezado__perfil-boton {
+    width: 6vw;
+    height: 100%;
+
+    margin-left: auto;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    position: relative;
+}
+
+
+.encabezado__perfil-boton::before {
+    content: "♟";
+
+    color: #75136e;
+
+    font-size: 2.8vw;
+
+    position: absolute;
+
+    left: 1.7vw;
+    top: 50%;
+
+    transform: translateY(-50%) rotate(180deg);
+}
+
+
+/* =========================================================
+   MENÚ CATEGORÍAS
+   ========================================================= */
+
+.menu-categorias {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    width: 30vw;
+
+    padding: 2vw;
+
+    background-color: #60116d;
+
+    border: 0.2vw solid #f52de8;
+
+    box-shadow: 0.5vw 0.5vw 0 rgba(0, 0, 0, 0.25);
+
+    z-index: 200;
+}
+
+
+.menu-categorias__lista {
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+}
+
+
+.menu-categorias__item {
+    margin-bottom: 1.2vw;
+}
+
+
+.menu-categorias__link {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 1.7vw;
+
+    font-weight: bold;
+}
+
+
+.menu-categorias__link:hover {
+    color: #f52de8;
+}
+
+
+/* =========================================================
+   MENÚ USUARIO
+   ========================================================= */
+
+.menu-usuario {
+    position: absolute;
+
+    top: 100%;
+    right: 1vw;
+
+    width: 32vw;
+
+    padding: 1.8vw;
+
+    background-color: #160b61;
+
+    border: 0.2vw solid #f52de8;
+
+    box-shadow: 0.5vw 0.5vw 0 rgba(0, 0, 0, 0.25);
+
+    z-index: 200;
+
+    color: white;
+}
+
+
+.menu-usuario__perfil {
+    display: flex;
+    align-items: center;
+
+    gap: 1.2vw;
+
+    padding-bottom: 1.2vw;
+
+    border-bottom: 0.1vw solid #7c5ac9;
+}
+
+
+.menu-usuario__avatar-contenedor {
+    width: 5vw;
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    background-color: #f52de8;
+
+    overflow: hidden;
+}
+
+
+.menu-usuario__avatar {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.menu-usuario__nombre {
+    font-size: 1.6vw;
+
+    font-weight: bold;
+}
+
+
+.menu-usuario__titulo {
+    margin: 1.5vw 0 1vw;
+
+    color: #f52de8;
+
+    font-size: 1.4vw;
+
+    font-weight: bold;
+}
+
+
+.menu-usuario__lista {
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+}
+
+
+.menu-usuario__item {
+    margin-bottom: 1vw;
+}
+
+
+.menu-usuario__link {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 1.4vw;
+}
+
+
+.menu-usuario__link:hover {
+    color: #f52de8;
+}
+
+
+/* =========================================================
+   HIDDEN
+   ========================================================= */
+
+[hidden] {
+    display: none !important;
+}
