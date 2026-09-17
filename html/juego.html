@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Arcade Time | Peg Solitaire</title>
+
+</head>
+
+
+<body>
+
+
+    <!-- fondo general de toda la pagina -->
+    <div class="fondo-pagina">
+
+
+
+        <!-- header -->
+        <header class="encabezado">
+
+
+            <div class="encabezado__contenedor">
+
+
+
+                <!-- boton hamburguesa -->
+                <button
+                    class="encabezado__menu-boton"
+                    type="button"
+                    aria-label="Abrir menu de categorias"
+                    aria-expanded="false"
+                    aria-controls="menu-categorias"
+                    data-boton-menu
+                >
+
+                    <!-- aca va el icono hamburguesa -->
+
+                </button>
+
+
+
+                <!-- logo y nombre, al tocar vuelve al home -->
+                <a
+                    class="encabezado__logo"
+                    href="home.html"
+                    aria-label="Ir al inicio"
+                >
+
+
+                    <img
+                        class="encabezado__logo-imagen"
+                        src=""
+                        alt=""
+                    >
+
+
+                    <span class="encabezado__nombre">
+                        Arcade Time
+                    </span>
+
+
+                </a>
+
+
+
+                <!-- decoracion q esta al lado del logo -->
+                <div
+                    class="encabezado__separador"
+                    aria-hidden="true"
+                ></div>
+
+
+
+                <!-- buscador -->
+                <form
+                    class="buscador"
+                    action="#"
+                    method="get"
+                    role="search"
+                >
+
+
+                    <label
+                        class="buscador__label"
+                        for="buscar-juego"
+                    >
+                        Buscar juego
+                    </label>
+
+
+                    <div class="buscador__contenedor">
+
+
+                        <input
+                            class="buscador__input"
+                            type="search"
+                            id="buscar-juego"
+                            name="buscar"
+                            placeholder="Buscar juego"
+                        >
+
+
+                        <button
+                            class="buscador__boton"
+                            type="submit"
+                            aria-label="Buscar juego"
+                        >
+
+                            <!-- aca va la lupa -->
+
+                        </button>
+
+
+                    </div>
+
+
+                </form>
+
+
+
+                <!-- boton del perfil -->
+                <button
+                    class="encabezado__perfil-boton"
+                    type="button"
+                    aria-label="Abrir menu de usuario"
+                    aria-expanded="false"
+                    aria-controls="menu-usuario"
+                    data-boton-perfil
+                >
+
+                    <!-- aca va el icono de la personita -->
+
+                </button>
+
+
+            </div>
+
+
+
+
+            <!-- menu q se abre con la hamburguesa -->
+            <nav
+                class="menu-categorias"
+                id="menu-categorias"
+                aria-label="Categorias de juegos"
+                hidden
+            >
+
+
+                <ul class="menu-categorias__lista">
+
+
+                    <li class="menu-categorias__item">
+
+                        <a
+                            class="menu-categorias__link"
+                            href="#accion"
+                        >
+                            Acción
+                        </a>
+
+                    </li>
+
+
+                    <li class="menu-categorias__item">
+
+                        <a
+                            class="menu-categorias__link"
+                            href="#terror"
+                        >
+                            Terror
+                        </a>
+
+                    </li>
+
+
+                    <li class="menu-categorias__item">
+
+                        <a
+                            class="menu-categorias__link"
+                            href="#aventura"
+                        >
+                            Aventura
+                        </a>
+
+                    </li>
+
+
+                    <li class="menu-categorias__item">
+
+                        <a
+                            class="menu-categorias__link"
+                            href="#carreras"
+                        >
+                            Carreras
+                        </a>
+
+                    </li>
+
+
+                    <li class="menu-categorias__item">
+
+                        <a
+                            class="menu-categorias__link"
+                            href="#supervivencia"
+                        >
+                            Supervivencia
+                        </a>
+
+                    </li>
+
+
+                    <li class="menu-categorias__item">
+
+                        <a
+                            class="menu-categorias__link"
+                            href="#superheroes"
+                        >
+                            Superhéroes
+                        </a>
+
+                    </li>
+
+
+                    <li class="menu-categorias__item">
+
+                        <a
+                            class="menu-categorias__link"
+                            href="#dos-jugadores"
+                        >
+                            Dos jugadores
+                        </a>
+
+                    </li>
+
+
+                    <li class="menu-categorias__item">
+
+                        <a
+                            class="menu-categorias__link"
+                            href="#mas-juegos"
+                        >
+                            Más juegos
+                        </a>
+
+                    </li>
+
+
+                </ul>
+
+
+            </nav>
+
+
+
+
+            <!-- menu q se abre con la personita -->
+            <div
+                class="menu-usuario"
+                id="menu-usuario"
+                hidden
+            >
+
+
+                <!-- avatar y nombre -->
+                <div class="menu-usuario__perfil">
+
+
+                    <div class="menu-usuario__avatar-contenedor">
+
+
+                        <img
+                            class="menu-usuario__avatar"
+                            src=""
+                            alt="Avatar del usuario"
+                        >
+
+
+                    </div>
+
+
+                    <p class="menu-usuario__nombre">
+                        Nombre de usuario
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- titulo del menu -->
+                <div class="menu-usuario__encabezado">
+
+
+                    <p class="menu-usuario__titulo">
+                        Configuraciones de la cuenta
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- opciones -->
+                <nav
+                    class="menu-usuario__opciones"
+                    aria-label="Configuraciones de la cuenta"
+                >
+
+
+                    <ul class="menu-usuario__lista">
+
+
+                        <li class="menu-usuario__item">
+
+                            <a
+                                class="menu-usuario__link"
+                                href="#"
+                            >
+                                Contraseña
+                            </a>
+
+                        </li>
+
+
+                        <li class="menu-usuario__item">
+
+                            <a
+                                class="menu-usuario__link"
+                                href="#"
+                            >
+                                Correo electrónico
+                            </a>
+
+                        </li>
+
+
+                        <li class="menu-usuario__item">
+
+                            <a
+                                class="menu-usuario__link"
+                                href="#"
+                            >
+                                Editar avatar
+                            </a>
+
+                        </li>
+
+
+                        <li class="menu-usuario__item">
+
+                            <a
+                                class="menu-usuario__link"
+                                href="#"
+                            >
+                                Editar nombre de usuario
+                            </a>
+
+                        </li>
+
+
+                        <li class="menu-usuario__item">
+
+                            <a
+                                class="menu-usuario__link"
+                                href="#"
+                            >
+                                Idioma
+                            </a>
+
+                        </li>
+
+
+                    </ul>
+
+
+                </nav>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- contenido principal -->
+        <main class="pagina-juego">
+
+
+            <!-- breadcrumbs o no me acuerdo como se llamabam lol -->
+            <nav
+                class="migas-pan"
+                aria-label="Ruta de navegacion"
+            >
+
+                <ol class="migas-pan__lista">
+
+                    <li class="migas-pan__item">
+                        <a
+                            class="migas-pan__link"
+                            href="#"
+                        >
+                            Mis juegos
+                        </a>
+                    </li>
+
+                    <li
+                        class="migas-pan__separador"
+                        aria-hidden="true"
+                    >
+                        &gt;
+                    </li>
+
+                    <li class="migas-pan__item">
+                        <a
+                            class="migas-pan__link"
+                            href="#"
+                        >
+                            Dos jugadores
+                        </a>
+                    </li>
+
+                    <li
+                        class="migas-pan__separador"
+                        aria-hidden="true"
+                    >
+                        &gt;
+                    </li>
+
+                    <li
+                        class="migas-pan__item migas-pan__item--actual"
+                        aria-current="page"
+                    >
+                        Peg Solitaire
+                    </li>
+
+                </ol>
+
+            </nav>
+
+
+
+
+            <!-- juego -->
+            <section
+                class="detalle-juego"
+                aria-labelledby="titulo-juego"
+            >
+
+
+                <!-- fila del titulo y acciones -->
+                <div class="detalle-juego__encabezado">
+
+
+                    <div class="detalle-juego__titulo-valoracion">
+
+                        <h1
+                            class="detalle-juego__titulo"
+                            id="titulo-juego"
+                        >
+                            Peg Solitaire
+                        </h1>
+
+
+                        <div
+                            class="valoracion"
+                            aria-label="Valoracion de 5 estrellas"
+                        >
+
+                            <span class="valoracion__estrella" aria-hidden="true">★</span>
+                            <span class="valoracion__estrella" aria-hidden="true">★</span>
+                            <span class="valoracion__estrella" aria-hidden="true">★</span>
+                            <span class="valoracion__estrella" aria-hidden="true">★</span>
+                            <span class="valoracion__estrella" aria-hidden="true">★</span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="detalle-juego__acciones">
+
+                        <button
+                            class="boton boton--agregar-juego"
+                            type="button"
+                            data-boton-favorito
+                        >
+                            Agregar a mis juegos
+
+                            <!-- aca va el corazon -->
+                        </button>
+
+
+                        <button
+                            class="detalle-juego__compartir"
+                            type="button"
+                            aria-label="Compartir juego"
+                            data-boton-compartir
+                        >
+                            <!-- aca va el icono verde de compartir -->
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+
+
+                <!-- imagen principal , FALTA CARGAR-->
+                <div class="detalle-juego__imagen-contenedor">
+
+                    <img
+                        class="detalle-juego__imagen"
+                        src=""
+                        alt="Peg Solitaire"
+                    >
+
+                </div>
+
+
+
+
+                <!-- descripcion -->
+                <section
+                    class="descripcion-juego"
+                    aria-labelledby="titulo-descripcion"
+                >
+
+                    <h2
+                        class="descripcion-juego__titulo"
+                        id="titulo-descripcion"
+                    >
+                        Descripción
+                    </h2>
+
+
+                    <p class="descripcion-juego__texto">
+                        Adéntrate en las profundidades de un templo ancestral dividido en dos dominios opuestos:
+                        el ardiente reino de la lava y la helada caverna de los cristales. Las fuerzas del Fuego
+                        y el Hielo se enfrentan en un combate milenario por el control absoluto del territorio,
+                        y solo una estrategia brillante podrá definir qué elemento prevalecerá en el mapa.
+                        En este desafío de lógica y planificación, cada ficha representa una pequeña esencia
+                        elemental contenida en el tablero. Tu objetivo es guiar a estas criaturas a través de la
+                        cueva, haciendo que una salte sobre otra para absorber su poder y despejar el terreno.
+                        Sin embargo, no se trata solo de mover piezas al azar: cada decisión modifica el campo de
+                        batalla y condiciona los movimientos futuros. Cada partida es una oportunidad para poner
+                        a prueba tu concentración, probar distintas tácticas y aprender de los errores cometidos.
+                        Cuantas menos fichas elementales queden en pie al finalizar el juego, más cerca estarás de
+                        dominar el equilibrio entre el fuego y el hielo.
+                    </p>
+
+                </section>
+
+
+
+
+                <!-- tres tarjetas de instrucciones, FALTAN CARGAR LAS IMG -->
+                <div class="instrucciones-juego">
+
+
+                    <div class="instrucciones-juego__tarjeta">
+
+                        <h3 class="instrucciones-juego__titulo">
+                            Selecciona una ficha
+                        </h3>
+
+                        <p class="instrucciones-juego__subtitulo">
+                            (Fuego o Hielo)
+                        </p>
+
+                        <img
+                            class="instrucciones-juego__imagen"
+                            src=""
+                            alt="Seleccionar una ficha de fuego o hielo"
+                        >
+
+                    </div>
+
+
+
+                    <div class="instrucciones-juego__tarjeta">
+
+                        <h3 class="instrucciones-juego__titulo">
+                            Salta sobre otra
+                        </h3>
+
+                        <img
+                            class="instrucciones-juego__imagen"
+                            src=""
+                            alt="Saltar sobre otra ficha para eliminarla"
+                        >
+
+                    </div>
+
+
+
+                    <div class="instrucciones-juego__tarjeta">
+
+                        <h3 class="instrucciones-juego__titulo">
+                            Objetivo: ¡Reducir al máximo!
+                        </h3>
+
+                        <img
+                            class="instrucciones-juego__imagen"
+                            src=""
+                            alt="Reducir las fichas hasta dejar la menor cantidad posible"
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+
+
+                <!-- como jugar, FALTA CARGAR VIDEO -->
+                <section
+                    class="como-jugar"
+                    aria-labelledby="titulo-como-jugar"
+                >
+
+                    <h2
+                        class="como-jugar__titulo"
+                        id="titulo-como-jugar"
+                    >
+                        Cómo jugar
+                    </h2>
+
+
+                    <div class="como-jugar__contenido">
+
+                        <video
+                            class="como-jugar__video"
+                            controls
+                            preload="metadata"
+                        >
+                            <!-- aca va el video demo -->
+                        </video>
+
+                    </div>
+
+                </section>
+
+
+            </section>
+
+
+
+
+            <!-- comentarios -->
+            <section
+                class="comentarios"
+                aria-labelledby="titulo-comentarios"
+            >
+
+
+                <h2
+                    class="comentarios__titulo"
+                    id="titulo-comentarios"
+                >
+                    Comentarios
+                </h2>
+
+
+
+
+                <!-- agregar comentario -->
+                <form
+                    class="comentarios__formulario"
+                    action="#"
+                    method="post"
+                >
+
+                    <div class="comentarios__avatar-contenedor">
+
+                        <img
+                            class="comentarios__avatar"
+                            src="" <!-- FALTA CARGAR -->
+                            alt="Tu avatar"
+                        >
+
+                    </div>
+
+
+                    <div class="comentarios__campo">
+
+                        <label
+                            class="comentarios__label"
+                            for="nuevo-comentario"
+                        >
+                            Agregar un comentario
+                        </label>
+
+
+                        <input
+                            class="comentarios__input"
+                            type="text"
+                            id="nuevo-comentario"
+                            name="comentario"
+                            placeholder="Agregar un comentario..."
+                            required
+                        >
+
+
+                        <button
+                            class="comentarios__enviar"
+                            type="submit"
+                            aria-label="Publicar comentario"
+                        >
+                            <!-- aca va la flecha -->
+                        </button>
+
+                    </div>
+
+                </form>
+
+
+
+
+                <!-- lista de comentarios, CARGAR AVATARES, ICONOS DE LIKE Y DISLIKE -->
+                <div class="comentarios__lista">
+
+
+                    <article class="comentario">
+
+                        <div class="comentario__avatar-contenedor">
+
+                            <img
+                                class="comentario__avatar"
+                                src=""
+                                alt="Avatar de honeycore"
+                            >
+
+                        </div>
+
+
+                        <div class="comentario__contenido">
+
+                            <div class="comentario__principal">
+
+                                <h3 class="comentario__usuario">
+                                    honeycore
+                                </h3>
+
+                                <p class="comentario__texto">
+                                    ¡Increíble juego, fácil y rápido de entender!
+                                </p>
+
+                            </div>
+
+
+                            <div class="comentario__lateral">
+
+                                <time
+                                    class="comentario__fecha"
+                                    datetime="2026-04-30"
+                                >
+                                    30/04/26
+                                </time>
+
+
+                                <div class="comentario__acciones">
+
+                                    <button
+                                        class="comentario__accion comentario__accion--me-gusta"
+                                        type="button"
+                                        aria-label="Me gusta"
+                                    >
+                                        <!-- icono me gusta -->
+                                    </button>
+
+                                    <button
+                                        class="comentario__accion comentario__accion--no-me-gusta"
+                                        type="button"
+                                        aria-label="No me gusta"
+                                    >
+                                        <!-- icono no me gusta -->
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+
+                    <article class="comentario">
+
+                        <div class="comentario__avatar-contenedor">
+
+                            <img
+                                class="comentario__avatar"
+                                src=""
+                                alt="Avatar de angelbite"
+                            >
+
+                        </div>
+
+
+                        <div class="comentario__contenido">
+
+                            <div class="comentario__principal">
+
+                                <h3 class="comentario__usuario">
+                                    angelbite
+                                </h3>
+
+                                <p class="comentario__texto">
+                                    Que bronca no poder pasar del nivel 12.
+                                </p>
+
+                            </div>
+
+
+                            <div class="comentario__lateral">
+
+                                <time
+                                    class="comentario__fecha"
+                                    datetime="2026-06-15"
+                                >
+                                    15/06/26
+                                </time>
+
+
+                                <div class="comentario__acciones">
+
+                                    <button
+                                        class="comentario__accion comentario__accion--me-gusta"
+                                        type="button"
+                                        aria-label="Me gusta"
+                                    >
+                                        <!-- icono like -->
+                                    </button>
+
+                                    <button
+                                        class="comentario__accion comentario__accion--no-me-gusta"
+                                        type="button"
+                                        aria-label="No me gusta"
+                                    >
+                                        <!-- icono dislike -->
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+
+                    <article class="comentario">
+
+                        <div class="comentario__avatar-contenedor">
+
+                            <img
+                                class="comentario__avatar"
+                                src=""
+                                alt="Avatar de sugarcoma"
+                            >
+
+                        </div>
+
+
+                        <div class="comentario__contenido">
+
+                            <div class="comentario__principal">
+
+                                <h3 class="comentario__usuario">
+                                    sugarcoma
+                                </h3>
+
+                                <p class="comentario__texto">
+                                    Logré entender facilísimo con las instrucciones de abajo.
+                                </p>
+
+                            </div>
+
+
+                            <div class="comentario__lateral">
+
+                                <time
+                                    class="comentario__fecha"
+                                    datetime="2026-04-30"
+                                >
+                                    30/04/26
+                                </time>
+
+
+                                <div class="comentario__acciones">
+
+                                    <button
+                                        class="comentario__accion comentario__accion--me-gusta"
+                                        type="button"
+                                        aria-label="Me gusta"
+                                    >
+                                        <!-- icono me gusta -->
+                                    </button>
+
+                                    <button
+                                        class="comentario__accion comentario__accion--no-me-gusta"
+                                        type="button"
+                                        aria-label="No me gusta"
+                                    >
+                                        <!-- icono no me gusta -->
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+
+                    <article class="comentario">
+
+                        <div class="comentario__avatar-contenedor">
+
+                            <img
+                                class="comentario__avatar"
+                                src=""
+                                alt="Avatar de lovelesly"
+                            >
+
+                        </div>
+
+
+                        <div class="comentario__contenido">
+
+                            <div class="comentario__principal">
+
+                                <h3 class="comentario__usuario">
+                                    lovelesly
+                                </h3>
+
+                                <p class="comentario__texto">
+                                    No puedo ganar nada loco.
+                                </p>
+
+                            </div>
+
+
+                            <div class="comentario__lateral">
+
+                                <time
+                                    class="comentario__fecha"
+                                    datetime="2026-04-09"
+                                >
+                                    9/04/26
+                                </time>
+
+
+                                <div class="comentario__acciones">
+
+                                    <button
+                                        class="comentario__accion comentario__accion--me-gusta"
+                                        type="button"
+                                        aria-label="Me gusta"
+                                    >
+                                        <!-- icono me gusta -->
+                                    </button>
+
+                                    <button
+                                        class="comentario__accion comentario__accion--no-me-gusta"
+                                        type="button"
+                                        aria-label="No me gusta"
+                                    >
+                                        <!-- icono no me gusta -->
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+
+                    <article class="comentario">
+
+                        <div class="comentario__avatar-contenedor">
+
+                            <img
+                                class="comentario__avatar"
+                                src=""
+                                alt="Avatar de sadcherry"
+                            >
+
+                        </div>
+
+
+                        <div class="comentario__contenido">
+
+                            <div class="comentario__principal">
+
+                                <h3 class="comentario__usuario">
+                                    sadcherry
+                                </h3>
+
+                                <p class="comentario__texto">
+                                    Soy melancólico...
+                                </p>
+
+                            </div>
+
+
+                            <div class="comentario__lateral">
+
+                                <time
+                                    class="comentario__fecha"
+                                    datetime="2026-04-07"
+                                >
+                                    7/04/26
+                                </time>
+
+
+                                <div class="comentario__acciones">
+
+                                    <button
+                                        class="comentario__accion comentario__accion--me-gusta"
+                                        type="button"
+                                        aria-label="Me gusta"
+                                    >
+                                        <!-- icono like -->
+                                    </button>
+
+                                    <button
+                                        class="comentario__accion comentario__accion--no-me-gusta"
+                                        type="button"
+                                        aria-label="No me gusta"
+                                    >
+                                        <!-- icono dislike -->
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- footer -->
+        <footer class="pie-pagina">
+
+
+            <div class="pie-pagina__contenedor">
+
+
+
+                <!-- columna explorar -->
+                <div class="pie-pagina__columna">
+
+
+                    <h2 class="pie-pagina__titulo">
+                        Explora
+                    </h2>
+
+
+                    <ul class="pie-pagina__lista">
+
+                        <li>
+                            <a href="#">Juegos populares</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Nuevos ingresos</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Juego sorpresa</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Clasicos favoritos</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Mas jugados</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Joyitas ocultas</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Arcade de la semana</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Todos los juegos</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Top de los ochentas</a>
+                        </li>
+
+                    </ul>
+
+
+                </div>
+
+
+
+
+                <!-- columna arcade time -->
+                <div class="pie-pagina__columna">
+
+
+                    <h2 class="pie-pagina__titulo">
+                        Arcade time
+                    </h2>
+
+
+                    <ul class="pie-pagina__lista">
+
+                        <li>
+                            <a href="#">Sobre nosotros</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Nuestro equipo</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Trabaja con nosotros</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Producto</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Terminos de servicio</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Reseñas</a>
+                        </li>
+
+                    </ul>
+
+
+
+                    <h2 class="pie-pagina__titulo">
+                        Acerca de
+                    </h2>
+
+
+                    <ul class="pie-pagina__lista">
+
+                        <li>
+                            <a href="#">Como jugar</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Preguntas frecuentes</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Soporte tecnico</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Leer comentarios</a>
+                        </li>
+
+                    </ul>
+
+
+                </div>
+
+
+
+
+                <!-- columna legal y contacto -->
+                <div class="pie-pagina__columna">
+
+
+                    <h2 class="pie-pagina__titulo">
+                        Legal
+                    </h2>
+
+
+                    <ul class="pie-pagina__lista">
+
+                        <li>
+                            <a href="#">Terminos y condiciones</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Licencias y derechos</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Politica de privacidad</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Servicios</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Seguridad</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Centro de atencion</a>
+                        </li>
+
+                    </ul>
+
+
+
+                    <div class="pie-pagina__contacto">
+
+
+                        <h2 class="pie-pagina__titulo">
+                            Contacto
+                        </h2>
+
+
+                        <p>
+                            arcadeinfotime@gmail.com
+                        </p>
+
+
+                        <p>
+                            Tel: +54 2494 655789
+                        </p>
+
+
+                        <a href="#">
+                            Documentacion
+                        </a>
+
+
+                        <a href="#">
+                            Contactar ventas
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+                <!-- redes y logo -->
+                <div class="pie-pagina__columna">
+
+
+                    <div class="pie-pagina__redes">
+
+
+                        <h2 class="pie-pagina__titulo">
+                            Seguinos en
+                        </h2>
+
+
+                        <div class="pie-pagina__redes-lista">
+
+                            <a
+                                href="#"
+                                aria-label="Youtube"
+                            >
+                                <!-- icono youtube -->
+                            </a>
+
+                            <a
+                                href="#"
+                                aria-label="Instagram"
+                            >
+                                <!-- icono instagram -->
+                            </a>
+
+                            <a
+                                href="#"
+                                aria-label="Facebook"
+                            >
+                                <!-- icono facebook -->
+                            </a>
+
+                            <a
+                                href="#"
+                                aria-label="Twitter"
+                            >
+                                <!-- icono twitter -->
+                            </a>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="pie-pagina__descubrir">
+
+
+                        <p>
+
+                            <strong>
+                                INSERT COIN - descubre nuevos juegos,
+                                clasicos y reversionados.
+                            </strong>
+
+                        </p>
+
+
+                    </div>
+
+
+
+                    <div class="pie-pagina__logo">
+
+                        <!-- aca va el logo arcade time -->
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </footer>
+
+
+    </div>
+
+
+</body>
+
+</html>

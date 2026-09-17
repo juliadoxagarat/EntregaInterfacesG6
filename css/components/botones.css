@@ -1,0 +1,47 @@
+/* =========================================
+   BOTÓN INICIAR SESIÓN
+   ========================================= */
+
+.boton {
+    width: 137px;
+    height: 21px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #6e2458;
+    border-radius: 7px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+
+/* Botón principal */
+
+.boton--principal {
+    background-color: #E62E7F;
+    color: white;
+}
+
+
+/* Al pasar el mouse */
+
+.boton--principal:hover {
+    background-color: #342C83;
+    color: #FE9CF6;
+}
+
+
+/* Al hacer click */
+
+.boton--principal:active {
+    transform: scale(0.98);
+}
