@@ -1,5 +1,4 @@
-
-* {
+﻿* {
     box-sizing: border-box;
 
     margin: 0;
@@ -179,21 +178,21 @@ input {
 
     gap: 2vw;
 
-    margin-bottom: 3vw;
+    margin-bottom: 1vw;
 }
 
 
 .top-seleccion__titulo {
     font-family: "Arial Black", Arial, sans-serif;
 
-    font-size: 5vw;
+    font-size: small;
 
-    letter-spacing: 0.1vw;
+    letter-spacing: 0.03vw;
 }
 
 
 .top-seleccion__icono {
-    width: 6vw;
+    width: 4vw;
 
     aspect-ratio: 1;
 
@@ -206,23 +205,21 @@ input {
 .top-seleccion__icono i {
     color: #cdfe00;
 
-    font-size: 4.5vw;
+    font-size: 3.2vw;
 }
 
 
 .top-seleccion__presentacion {
-    width: 100%;
+    width: 30%;
 
-    position: relative;
-
-    z-index: 1;
+    flex-shrink: 0;
 
     display: flex;
     align-items: center;
 
-    gap: 3vw;
+    gap: 1.5vw;
 
-    margin-bottom: 4vw;
+    margin-bottom: 0;
 }
 
 
@@ -256,14 +253,21 @@ input {
 
 
 .top-seleccion__juegos {
-    width: 100%;
-
-    position: relative;
-
-    z-index: 1;
+    flex: 1;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+
+    gap: 1.5vw;
+}
+
+.top-seleccion__contenido {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
     gap: 3vw;
 }
@@ -282,7 +286,7 @@ input {
 
     border-radius: 1.8vw;
 
-    background-color: #18105f;
+    background-color: rgba(0, 0, 0, 0.43);
 
     transition:
         transform 0.15s ease,
@@ -294,6 +298,13 @@ input {
     transform: translateY(-0.5vw);
 
     box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.28);
+}
+
+
+.tarjeta-juego:hover .tarjeta-juego__nombre {
+    color: #000000;
+
+    background-color: #FF64F2;
 }
 
 
@@ -328,6 +339,9 @@ input {
 
     display: flex;
     align-items: center;
+    justify-content: center;
+
+    text-align: center;
 
     padding: 1.5vw 2vw;
 
@@ -338,15 +352,17 @@ input {
 
 
 .tarjeta-juego--top {
-    width: 100%;
+    width: 30%;
 
-    flex: 0 0 100%;
+    flex: 1;
+
+    min-width: 0;
 
     border: 0.4vw solid rgba(255, 255, 255, 0.65);
 
     border-radius: 1.5vw;
 
-    background-color: #12095b;
+    background-color: rgba(0, 0, 0, 0.43);
 }
 
 
@@ -383,9 +399,17 @@ input {
 
 
 .carrusel-juegos__contenedor {
-    width: 94vw;
+    width: 90vw;
 
     margin: 0 auto;
+
+    padding: 2.5vw 1.5vw 3vw;
+
+    box-sizing: border-box;
+
+    background-color: #1B117F;
+
+    border-radius: 2.5vw;
 }
 
 
@@ -456,6 +480,20 @@ input {
     transition:
         transform 0.15s ease,
         background-color 0.15s ease;
+}
+
+
+/* la flecha oculta reserva su lugar para cuando se muestre */
+.carrusel-juegos__flecha[hidden] {
+    display: flex;
+
+    visibility: hidden;
+}
+
+
+/* mientras no haya JS, la izquierda queda invisible pero ocupando el espacio */
+.carrusel-juegos__flecha--izquierda {
+    visibility: hidden;
 }
 
 
@@ -543,22 +581,22 @@ img[src=""] {
     .top-seleccion__encabezado {
         gap: 1.2vw;
 
-        margin-bottom: 2vw;
+        margin-bottom: 0.8vw;
     }
 
 
     .top-seleccion__titulo {
-        font-size: 2.8vw;
+        font-size: x-large;
     }
 
 
     .top-seleccion__icono {
-        width: 3.5vw;
+        width: 2.8vw;
     }
 
 
     .top-seleccion__icono i {
-        font-size: 2.6vw;
+        font-size: 2vw;
     }
 
 
@@ -675,7 +713,7 @@ img[src=""] {
 @media (min-width: 900px) {
 
     .pagina-inicio {
-        padding-bottom: 4vw;
+        padding-bottom: 2.6vw;
     }
 
 
@@ -684,38 +722,38 @@ img[src=""] {
        ========================================================= */
 
     .destacado {
-        margin: 2.5vw auto 3vw;
+        margin: 1.63vw auto 1.95vw;
     }
 
 
     .destacado__contenido {
-        aspect-ratio: 2.55 / 1;
+        aspect-ratio: 3.6 / 1;
 
-        border: 0.25vw solid #f52de8;
+        border: 0.16vw solid #f52de8;
 
-        border-radius: 0.8vw;
+        border-radius: 0.52vw;
     }
 
 
     .destacado__titulo {
-        left: 2vw;
-        top: 1.5vw;
+        left: 1.3vw;
+        top: 0.98vw;
 
-        font-size: 2.3vw;
+        font-size: 1.5vw;
 
-        letter-spacing: 0.08vw;
+        letter-spacing: 0.05vw;
 
-        text-shadow: 0 0.18vw 0.5vw rgba(0, 0, 0, 0.65);
+        text-shadow: 0 0.12vw 0.33vw rgba(0, 0, 0, 0.65);
     }
 
 
     .destacado__boton-contenedor {
-        bottom: 2vw;
+        bottom: 1.3vw;
     }
 
 
     .boton--jugar {
-       /*TO DO*/
+        /*TO DO*/
     }
 
 
@@ -723,106 +761,91 @@ img[src=""] {
        TOP 3
        ========================================================= */
 
-    .top-seleccion {
-        margin-bottom: 3.5vw;
-    }
-
-
     .top-seleccion__contenedor {
-        min-height: 20vw;
-
-        padding: 1.8vw 2vw 2vw;
-
-        border-radius: 0.9vw;
+        min-height: 13vw;
+        padding: 1vw 2vw 1.5vw;
+        border-radius: 0.59vw;
     }
 
-
-    .top-seleccion__encabezado {
-        gap: 0.9vw;
-        margin-bottom: 0;
+    .top-seleccion__contenido {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2vw;
     }
-
-
-    .top-seleccion__titulo {
-        font-size: 2.1vw;
-
-        letter-spacing: 0.05vw;
-    }
-
-
-    .top-seleccion__icono {
-        width: 2.4vw;
-    }
-
-
-    .top-seleccion__icono i {
-        font-size: 1.8vw;
-    }
-
 
     .top-seleccion__presentacion {
-        width: 25vw;
+        /* Quita la posición absoluta para que no tape las tarjetas */
+        position: static;
+        transform: none;
 
-        position: absolute;
-
-        left: 2vw;
-
+        width: 35%;
         display: flex;
-
-        gap: 1vw;
-
+        align-items: center;
+        gap: 1.2vw;
         margin-bottom: 0;
     }
 
-
     .top-seleccion__fantasma-contenedor {
-        width: 8vw;
+        width: 6vw;
+        flex-shrink: 0;
     }
-
 
     .top-seleccion__texto {
-        padding-bottom: 0.5vw;
-
-        font-size: 1vw;
+        font-size: 0.95vw;
+        line-height: 1.3;
     }
 
-
     .top-seleccion__juegos {
-        width: 62vw;
-
-        margin-left: auto;
-
+        width: 60%;
+        margin: 0;
         display: flex;
         align-items: center;
         justify-content: flex-end;
-
-        gap: 1.4vw;
+        gap: 1vw;
     }
 
+    .top-seleccion__encabezado {
+        margin-bottom: 0.5vw;
+    }
+
+    .top-seleccion__icono {
+        width: 1.6vw;
+    }
+
+    .top-seleccion__icono i {
+        font-size: 1.2vw; 
+    }
 
     /* =========================================================
        TARJETAS NORMALES
        ========================================================= */
 
     .tarjeta-juego {
-        width: 15.3vw;
+        width: 9.8vw;
 
-        aspect-ratio: 1.5 / 1;
+        flex: 0 0 9.8vw;
 
-        flex: 0 0 15.3vw;
+        border-radius: 0.46vw;
+    }
 
-        border-radius: 0.7vw;
+
+    .tarjeta-juego__imagen {
+        aspect-ratio: 1.8 / 1;
     }
 
 
     .tarjeta-juego__nombre {
-        min-height: 3vw;
+        min-height: 2.2vw;
 
-        padding: 0.55vw 0.8vw;
+        width: 100%;
 
-        font-size: 1vw;
+        box-sizing: border-box;
 
-        align-self: center;
+        padding: 0.45vw 0.6vw;
+
+        font-size: 0.85vw;
 
     }
 
@@ -833,68 +856,75 @@ img[src=""] {
        ========================================================= */
 
     .tarjeta-juego--top {
-    width: 18.7vw;
+        width: 12.16vw;
 
-    flex: 0 0 18.7vw;
+        flex: 0 0 12.16vw;
 
-    border: 0.18vw solid rgba(255, 255, 255, 0.65);
+        border: 0.12vw solid rgba(255, 255, 255, 0.65);
 
-    border-radius: 0.7vw;
-}
-
-
-.tarjeta-juego--top .tarjeta-juego__imagen {
-    width: 100%;
-
-    aspect-ratio: 2 / 1;
-
-    object-fit: cover;
-}
+        border-radius: 0.46vw;
+    }
 
 
-.tarjeta-juego--top .tarjeta-juego__nombre {
-    min-height: 3.2vw;
+    .tarjeta-juego--top .tarjeta-juego__imagen {
+        width: 100%;
 
-    padding: 0.55vw 0.8vw;
+        aspect-ratio: 2 / 1;
 
-    font-size: 1.05vw;
-}
+        object-fit: cover;
+    }
+
+
+    .tarjeta-juego--top .tarjeta-juego__nombre {
+        min-height: 2.08vw;
+
+        padding: 0.36vw 0.52vw;
+
+        font-size: 0.68vw;
+    }
 
 
     /* carruseles */
 
     .carrusel-juegos {
-        margin-bottom: 3.5vw;
+        margin-bottom: 1.2vw;
+    }
+
+
+    .carrusel-juegos__contenedor {
+        width: 85vw;
+
+        padding: 1.5vw 1vw 2vw;
     }
 
 
     .carrusel-juegos__titulo {
-        margin-left: 3.8vw;
-        margin-bottom: 1.2vw;
+        margin-left: 2.47vw;
+        margin-bottom: 0.78vw;
 
-        font-size: 1.8vw;
+        font-size: 1.17vw;
 
-        letter-spacing: 0.06vw;
+        letter-spacing: 0.04vw;
     }
 
 
     .carrusel-juegos__contenido {
-        gap: 0.8vw;
+        gap: 0.52vw;
     }
 
 
     .carrusel-juegos__ventana {
-        padding: 0.5vw 0;
+        padding: 0.33vw 0;
     }
 
 
     .carrusel-juegos__lista {
-        gap: 1.35vw;
+        gap: 0.88vw;
     }
 
 
     .carrusel-juegos__flecha {
-        width: 3vw;
+        width: 2.8vw;
 
         font-size: 2vw;
 
