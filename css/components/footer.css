@@ -183,35 +183,12 @@
    ========================================================= */
 
 .pie-pagina__logo {
-    width: 100%;
+    width: 10vw;
+    aspect-ratio: 1;
 
-    aspect-ratio: 3 / 1;
+    margin-top: 1.5vw;
 
-    margin-top: 1vw;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    color: white;
-
-    font-family: "Arial Black", Arial, sans-serif;
-
-    font-size: 1.8vw;
-
-    text-transform: uppercase;
-
-    text-shadow:
-        0.15vw 0.15vw 0 #3e084d,
-        -0.15vw -0.15vw 0 #3e084d,
-        0.15vw -0.15vw 0 #3e084d,
-        -0.15vw 0.15vw 0 #3e084d;
-}
-
-
-.pie-pagina__logo::before {
-    content: "ARCADE TIME";
+    object-fit: contain;
 }
 
 

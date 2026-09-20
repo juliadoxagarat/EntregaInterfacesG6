@@ -42,22 +42,9 @@
     position: relative;
 }
 
-
-.encabezado__menu-boton::before {
-    content: "☰";
-
-    color: #64126d;
-
-    font-size: 2.7vw;
-
-    position: absolute;
-
-    left: 1.8vw;
-    top: 50%;
-
-    transform: translateY(-50%);
+.fa-bars{
+    font-size: 30px;
 }
-
 
 /* =========================================================
    LOGO
@@ -77,35 +64,9 @@
 
 
 .encabezado__logo-imagen {
-    width: 4vw;
-    height: 4.8vw;
+    width: 25vw;
 
-    object-fit: contain;
-}
-
-
-.encabezado__nombre {
-    width: 8vw;
-
-    color: white;
-
-    font-family: "Arial Black", Arial, sans-serif;
-
-    font-size: 1.8vw;
-
-    line-height: 1.1;
-
-    text-align: center;
-
-    text-transform: uppercase;
-
-    letter-spacing: -0.05vw;
-
-    text-shadow:
-        0.15vw 0.15vw 0 #3e084d,
-        -0.15vw -0.15vw 0 #3e084d,
-        0.15vw -0.15vw 0 #3e084d,
-        -0.15vw 0.15vw 0 #3e084d;
+    object-fit:contain;
 }
 
 
@@ -113,17 +74,6 @@
    SEPARADOR
    ========================================================= */
 
-.encabezado__separador {
-    width: 1vw;
-    height: 5vw;
-
-    margin-left: 0.5vw;
-
-    border-left: 0.2vw dotted #64126d;
-    border-right: 0.2vw dotted #64126d;
-
-    transform: skewY(-25deg);
-}
 
 
 /* =========================================================
@@ -202,19 +152,10 @@
     cursor: pointer;
 }
 
-
-.buscador__boton::before {
-    content: "⌕";
-
-    color: white;
-
-    font-size: 2vw;
-
-    position: absolute;
-
-    left: 0.5vw;
-    top: -0.1vw;
+.fa-magnifying-glass{
+    font-size: 15px;
 }
+
 
 
 /* =========================================================
@@ -236,20 +177,8 @@
     position: relative;
 }
 
-
-.encabezado__perfil-boton::before {
-    content: "♟";
-
-    color: #75136e;
-
-    font-size: 2.8vw;
-
-    position: absolute;
-
-    left: 1.7vw;
-    top: 50%;
-
-    transform: translateY(-50%) rotate(180deg);
+.fa-user{
+    font-size: 20px;
 }
 
 
