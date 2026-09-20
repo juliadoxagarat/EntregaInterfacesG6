@@ -34,7 +34,7 @@
 
                 <!-- boton hamburguesa -->
                 <button class="encabezado__menu-boton" type="button" aria-label="Abrir menu de categorias"
-                    aria-expanded="false" aria-controls="menu-categorias" data-boton-menu>
+                    aria-expanded="false">
 
                     <!-- aca va el icono hamburguesa -->
                      <i class="fa-solid fa-bars"></i>
@@ -44,7 +44,7 @@
 
 
                 <!-- logo y nombre, al tocar vuelve al home -->
-                <a class="encabezado__logo" href="home.html" aria-label="Ir al inicio">
+                <a class="encabezado__logo" href="home.html">
 
 
                     <img class="encabezado__logo-imagen" src="C:\Users\usuario\Downloads\EntregaInterfacesG6\img\logo (2).png" alt="Arcade Time">
@@ -55,7 +55,7 @@
 
 
                 <!-- decoracion q esta al lado del logo -->
-                <div class="encabezado__separador" aria-hidden="true"></div>
+                <div class="encabezado__separador"></div>
 
 
 
@@ -75,7 +75,7 @@
                             placeholder="Buscar juego">
 
 
-                        <button class="buscador__boton" type="submit" aria-label="Buscar juego">
+                        <button class="buscador__boton" type="submit">
 
                             <!-- aca va la lupa -->
                              <i class="fa-solid fa-magnifying-glass"></i>
@@ -92,7 +92,7 @@
 
                 <!-- boton del perfil -->
                 <button class="encabezado__perfil-boton" type="button" aria-label="Abrir menu de usuario"
-                    aria-expanded="false" aria-controls="menu-usuario" data-boton-perfil>
+                    aria-expanded="false">
 
                     <!-- aca va el icono de la personita -->
                     <i class="fa-solid fa-user"></i>
@@ -106,7 +106,7 @@
 
 
             <!-- menu q se abre con la hamburguesa -->
-            <nav class="menu-categorias" id="menu-categorias" aria-label="Categorias de juegos" hidden>
+            <nav class="menu-categorias" id="menu-categorias" hidden>
 
 
                 <ul class="menu-categorias__lista">
@@ -114,7 +114,7 @@
 
                     <li class="menu-categorias__item">
 
-                        <a class="menu-categorias__link" href="#accion">
+                        <a class="menu-categorias__link" href="./home.html#accion">
                             Acción
                         </a>
 
@@ -123,7 +123,7 @@
 
                     <li class="menu-categorias__item">
 
-                        <a class="menu-categorias__link" href="#terror">
+                        <a class="menu-categorias__link" href="./home.html#terror">
                             Terror
                         </a>
 
@@ -132,7 +132,7 @@
 
                     <li class="menu-categorias__item">
 
-                        <a class="menu-categorias__link" href="#aventura">
+                        <a class="menu-categorias__link" href="./home.html#aventura">
                             Aventura
                         </a>
 
@@ -141,7 +141,7 @@
 
                     <li class="menu-categorias__item">
 
-                        <a class="menu-categorias__link" href="#carreras">
+                        <a class="menu-categorias__link" href="./home.html#carreras">
                             Carreras
                         </a>
 
@@ -150,7 +150,7 @@
 
                     <li class="menu-categorias__item">
 
-                        <a class="menu-categorias__link" href="#supervivencia">
+                        <a class="menu-categorias__link" href="./home.html#supervivencia">
                             Supervivencia
                         </a>
 
@@ -159,7 +159,7 @@
 
                     <li class="menu-categorias__item">
 
-                        <a class="menu-categorias__link" href="#superheroes">
+                        <a class="menu-categorias__link" href="./home.html#superheroes">
                             Superhéroes
                         </a>
 
@@ -168,7 +168,7 @@
 
                     <li class="menu-categorias__item">
 
-                        <a class="menu-categorias__link" href="#dos-jugadores">
+                        <a class="menu-categorias__link" href="./home.html#dos-jugadores">
                             Dos jugadores
                         </a>
 
@@ -177,7 +177,7 @@
 
                     <li class="menu-categorias__item">
 
-                        <a class="menu-categorias__link" href="#mas-juegos">
+                        <a class="menu-categorias__link" href="./home.html#mas-juegos">
                             Más juegos
                         </a>
 
@@ -232,7 +232,7 @@
 
 
                 <!-- opciones -->
-                <nav class="menu-usuario__opciones" aria-label="Configuraciones de la cuenta">
+                <nav class="menu-usuario__opciones" >
 
 
                     <ul class="menu-usuario__lista">
@@ -300,8 +300,8 @@
         <main class="pagina-juego">
 
 
-            <!-- breadcrumbs o no me acuerdo como se llamabam lol -->
-            <nav class="breadcrumbs" aria-label="Ruta de navegacion">
+            <!-- breadcrumbs -->
+            <nav class="breadcrumbs">
 
                 <ol class="breadcrumbs__lista">
 
@@ -311,21 +311,21 @@
                         </a>
                     </li>
 
-                    <li class="breadcrumbs__separador" aria-hidden="true">
+                    <li class="breadcrumbs__separador" >
                         &gt;
                     </li>
 
                     <li class="breadcrumbs__item">
-                        <a class="breadcrumbs__link" href="#">
+                        <a class="breadcrumbs__link" href="./home.html#dos-jugadores">
                             Dos jugadores
                         </a>
                     </li>
 
-                    <li class="breadcrumbs__separador" aria-hidden="true">
-                        &gt;
+                    <li class="breadcrumbs__separador">
+                        &gt; <!--hace el caracter >   -->
                     </li>
 
-                    <li class="breadcrumbs__item breadcrumbs__item--actual" aria-current="page">
+                    <li class="breadcrumbs__item breadcrumbs__item--actual">
                         Peg Solitaire
                     </li>
 
@@ -351,13 +351,13 @@
                         </h1>
 
 
-                        <div class="valoracion" aria-label="Valoracion de 5 estrellas">
+                        <div class="valoracion">
 
-                            <span class="valoracion__estrella" aria-hidden="true">★</span>
-                            <span class="valoracion__estrella" aria-hidden="true">★</span>
-                            <span class="valoracion__estrella" aria-hidden="true">★</span>
-                            <span class="valoracion__estrella" aria-hidden="true">★</span>
-                            <span class="valoracion__estrella" aria-hidden="true">★</span>
+                            <span class="valoracion__estrella">★</span>
+                            <span class="valoracion__estrella">★</span>
+                            <span class="valoracion__estrella">★</span>
+                            <span class="valoracion__estrella">★</span>
+                            <span class="valoracion__estrella">★</span>
 
                         </div>
 
@@ -369,14 +369,12 @@
 
                         <button class="boton boton--agregar-juego" type="button" data-boton-favorito>
                             Agregar a mis juegos
-
-                            <!-- aca va el corazon -->
                         </button>
 
 
-                        <button class="detalle-juego__compartir" type="button" aria-label="Compartir juego"
-                            data-boton-compartir>
+                        <button class="detalle-juego__compartir" type="button">
                             <!-- aca va el icono verde de compartir -->
+                             <i class="fa-solid fa-share-nodes"></i>
                         </button>
 
                     </div>
@@ -398,7 +396,7 @@
 
 
                 <!-- descripcion -->
-                <section class="descripcion-juego" aria-labelledby="titulo-descripcion">
+                <section class="descripcion-juego">
 
                     <h2 class="descripcion-juego__titulo" id="titulo-descripcion">
                         Descripción
@@ -437,7 +435,7 @@
 
 
                 <!-- como jugar, FALTA CARGAR VIDEO -->
-                <section class="como-jugar" aria-labelledby="titulo-como-jugar">
+                <section class="como-jugar">
 
                     <h2 class="como-jugar__titulo" id="titulo-como-jugar">
                         Cómo jugar
@@ -468,7 +466,7 @@
 
 
             <!-- comentarios -->
-            <section class="comentarios" aria-labelledby="titulo-comentarios">
+            <section class="comentarios">
 
 
                 <h2 class="comentarios__titulo" id="titulo-comentarios">
@@ -499,7 +497,7 @@
                             placeholder="Agregar un comentario..." required>
 
 
-                        <button class="comentarios__enviar" type="submit" aria-label="Publicar comentario">
+                        <button class="comentarios__enviar" type="submit" >
                             <!-- aca va la flecha -->
                         </button>
 
@@ -604,13 +602,13 @@
                                 <div class="comentario__acciones">
 
                                     <div class="comentario__accion comentario__accion--me-gusta" type="button"
-                                        aria-label="Me gusta">
+                                        >
                                         <!-- icono like -->
                                         <i class="fa-regular fa-thumbs-up"></i>
                                     </div>
 
                                     <div class="comentario__accion comentario__accion--no-me-gusta" type="button"
-                                        aria-label="No me gusta">
+                                        >
                                         <!-- icono dislike -->
                                         <i class="fa-regular fa-thumbs-down"></i>
                                     </div>
@@ -660,13 +658,13 @@
                                 <div class="comentario__acciones">
 
                                     <div class="comentario__accion comentario__accion--me-gusta" type="button"
-                                        aria-label="Me gusta">
+                                        >
                                         <!-- icono me gusta -->
                                         <i class="fa-regular fa-thumbs-up"></i>
                                     </div>
 
                                     <div class="comentario__accion comentario__accion--no-me-gusta" type="button"
-                                        aria-label="No me gusta">
+                                        >
                                         <!-- icono no me gusta -->
                                         <i class="fa-regular fa-thumbs-down"></i>
                                     </div>
@@ -716,13 +714,13 @@
                                 <div class="comentario__acciones">
 
                                     <div class="comentario__accion comentario__accion--me-gusta" type="button"
-                                        aria-label="Me gusta">
+                                        >
                                         <!-- icono me gusta -->
                                         <i class="fa-regular fa-thumbs-up"></i>
                                     </div>
 
                                     <div class="comentario__accion comentario__accion--no-me-gusta" type="button"
-                                        aria-label="No me gusta">
+                                        >
                                         <!-- icono no me gusta -->
                                         <i class="fa-regular fa-thumbs-down"></i>
                                     </div>
@@ -772,13 +770,13 @@
                                 <div class="comentario__acciones">
 
                                     <div class="comentario__accion comentario__accion--me-gusta" type="button"
-                                        aria-label="Me gusta">
+                                        >
                                         <!-- icono like -->
                                         <i class="fa-regular fa-thumbs-up"></i>
                                     </div>
 
                                     <div class="comentario__accion comentario__accion--no-me-gusta" type="button"
-                                        aria-label="No me gusta">
+                                        >
                                         <!-- icono dislike -->
                                         <i class="fa-regular fa-thumbs-down"></i>
                                     </div>
@@ -1024,19 +1022,19 @@
 
                         <div class="pie-pagina__redes-lista">
 
-                            <a href="#" aria-label="Youtube">
+                            <a href="#">
                                 <!-- icono youtube -->
                             </a>
 
-                            <a href="#" aria-label="Instagram">
+                            <a href="#">
                                 <!-- icono instagram -->
                             </a>
 
-                            <a href="#" aria-label="Facebook">
+                            <a href="#">
                                 <!-- icono facebook -->
                             </a>
 
-                            <a href="#" aria-label="Twitter">
+                            <a href="#">
                                 <!-- icono twitter -->
                             </a>
 

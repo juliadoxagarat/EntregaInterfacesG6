@@ -184,15 +184,6 @@ input {
 }
 
 
-.boton--agregar-juego::after {
-    content: "♥";
-
-    margin-left: 0.8vw;
-
-    font-size: 1.3vw;
-}
-
-
 .detalle-juego__compartir {
     width: 3vw;
     aspect-ratio: 1;
@@ -202,6 +193,11 @@ input {
     background: transparent;
 
     cursor: pointer;
+}
+
+.fa-share-nodes{
+    color: white;
+    font-size: 1.5vw;
 }
 
 

@@ -1,6 +1,3 @@
-/* =========================================================
-   RESET
-   ========================================================= */
 
 * {
     box-sizing: border-box;
@@ -38,9 +35,8 @@ input {
 }
 
 
-/* =========================================================
-   FONDO
-   ========================================================= */
+/*
+   FONDO */
 
 .fondo-pagina {
     width: 100%;
@@ -53,10 +49,10 @@ input {
 }
 
 
-/* =========================================================
+/*
    CONTENIDO PRINCIPAL
    MOBILE FIRST
-   ========================================================= */
+*/
 
 .pagina-inicio {
     width: 100%;
@@ -65,9 +61,8 @@ input {
 }
 
 
-/* =========================================================
-   DESTACADO
-   ========================================================= */
+/* 
+   DESTACADO */
 
 .destacado {
     width: 94vw;
@@ -90,24 +85,6 @@ input {
     border-radius: 2vw;
 
     background-color: #0c0744;
-}
-
-
-.destacado__contenido::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background: linear-gradient(
-        to top,
-        rgba(15, 9, 79, 0.78) 0%,
-        rgba(15, 9, 79, 0.12) 45%,
-        rgba(15, 9, 79, 0.08) 100%
-    );
-
-    pointer-events: none;
 }
 
 
@@ -168,14 +145,12 @@ input {
 
 
 
-/* =========================================================
-   TOP 3 SELECCION
-   ========================================================= */
+/*
+   TOP 3 */
 
 .top-seleccion {
     width: 94vw;
-
-    margin: 0 auto 7vw;
+    margin: 0 auto;
 }
 
 
@@ -276,7 +251,6 @@ input {
     font-size: 3.2vw;
 
     line-height: 1.4;
-
     font-weight: bold;
 }
 
@@ -755,7 +729,7 @@ img[src=""] {
 
 
     .top-seleccion__contenedor {
-        min-height: 24vw;
+        min-height: 20vw;
 
         padding: 1.8vw 2vw 2vw;
 
@@ -765,8 +739,7 @@ img[src=""] {
 
     .top-seleccion__encabezado {
         gap: 0.9vw;
-
-        margin-bottom: 1.5vw;
+        margin-bottom: 0;
     }
 
 
@@ -793,10 +766,8 @@ img[src=""] {
         position: absolute;
 
         left: 2vw;
-        bottom: 2vw;
 
         display: flex;
-        align-items: flex-end;
 
         gap: 1vw;
 

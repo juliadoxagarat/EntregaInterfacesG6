@@ -1,11 +1,12 @@
 
 
 -q sean los menus desplegables con js
+-animaciones de carrouseles con js
 
 
 
 
 -boton de jugar en home(hacer en css , en los tres tamanos de pantalla)
--cambiar la fuente de home
+-cambiar las fuentes
 -poner el nombre de cada juego en las cards :(
--arreglar top 3 en las 3 pantallas
+-falta centrar el texto y fantaasmita en el top 3 q no pude hacerlo
