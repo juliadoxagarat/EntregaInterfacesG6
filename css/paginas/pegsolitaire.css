@@ -67,14 +67,14 @@ input {
    MIGAS
    ========================================================= */
 
-.migas-pan {
+.breadcrumbs {
     width: 100%;
 
     margin-bottom: 1vw;
 }
 
 
-.migas-pan__lista {
+.breadcrumbs__lista {
     display: flex;
     align-items: center;
 
@@ -86,14 +86,14 @@ input {
 }
 
 
-.migas-pan__link {
+.breadcrumbs__link {
     color: white;
 
     text-decoration: none;
 }
 
 
-.migas-pan__separador {
+.breadcrumbs__separador {
     color: #bcb2ff;
 }
 
@@ -184,15 +184,6 @@ input {
 }
 
 
-.boton--agregar-juego::after {
-    content: "♥";
-
-    margin-left: 0.8vw;
-
-    font-size: 1.3vw;
-}
-
-
 .detalle-juego__compartir {
     width: 3vw;
     aspect-ratio: 1;
@@ -202,6 +193,11 @@ input {
     background: transparent;
 
     cursor: pointer;
+}
+
+.fa-share-nodes{
+    color: white;
+    font-size: 1.5vw;
 }
 
 
@@ -283,19 +279,6 @@ img[src=""] {
 /* =========================================================
    TARJETAS
    ========================================================= */
-
-.instrucciones-juego {
-    width: 100%;
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 1.5vw;
-
-    margin-bottom: 2.5vw;
-}
-
 
 .instrucciones-juego__imagen {
     width: 100%;

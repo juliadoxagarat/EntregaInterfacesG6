@@ -11,7 +11,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>Arcade Time | Inicio</title>
-
+    <link rel="stylesheet" href="../css/components/header.css">
+    <link rel="stylesheet" href="../css/paginas/home.css">
+    <link rel="stylesheet" href="../css/components/footer.css">
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -40,13 +42,11 @@
                 <button
                     class="encabezado__menu-boton"
                     type="button"
-                    aria-label="Abrir menu de categorias"
-                    aria-expanded="false"
-                    aria-controls="menu-categorias"
                     data-boton-menu
                 >
 
                     <!-- aca va el icono hamburguesa -->
+                     <i class="fa-solid fa-bars"></i>
 
                 </button>
 
@@ -55,22 +55,16 @@
                 <!-- logo y nombre, al tocar vuelve al home -->
                 <a
                     class="encabezado__logo"
-                    href="index.html"
+                    href="home.html"
                     aria-label="Ir al inicio"
                 >
 
 
                     <img
                         class="encabezado__logo-imagen"
-                        src=""
-                        alt=""
+                        src="C:\Users\usuario\Downloads\EntregaInterfacesG6\img\logo (2).png"
+                        alt="Arcade Time"
                     >
-
-
-                    <span class="encabezado__nombre">
-                        Arcade Time
-                    </span>
-
 
                 </a>
 
@@ -79,7 +73,6 @@
                 <!-- decoracion q esta al lado del logo -->
                 <div
                     class="encabezado__separador"
-                    aria-hidden="true"
                 ></div>
 
 
@@ -116,10 +109,10 @@
                         <button
                             class="buscador__boton"
                             type="submit"
-                            aria-label="Buscar juego"
                         >
 
                             <!-- aca va la lupa -->
+                             <i class="fa-solid fa-magnifying-glass"></i>
 
                         </button>
 
@@ -135,13 +128,11 @@
                 <button
                     class="encabezado__perfil-boton"
                     type="button"
-                    aria-label="Abrir menu de usuario"
-                    aria-expanded="false"
-                    aria-controls="menu-usuario"
                     data-boton-perfil
                 >
 
                     <!-- aca va el icono de la personita -->
+                     <i class="fa-solid fa-user"></i>
 
                 </button>
 
@@ -155,7 +146,6 @@
             <nav
                 class="menu-categorias"
                 id="menu-categorias"
-                aria-label="Categorias de juegos"
                 hidden
             >
 
@@ -284,7 +274,7 @@
 
                         <img
                             class="menu-usuario__avatar"
-                            src=""
+                            src="C:\Users\usuario\Downloads\EntregaInterfacesG6\img\avatares\avatar6.png"
                             alt="Avatar del usuario"
                         >
 
@@ -433,6 +423,7 @@
 
 
                     <!-- boton q va arriba de la img -->
+                     <!--HACER EN CSS!!-->
                     <div class="destacado__boton-contenedor">
 
 
@@ -459,7 +450,6 @@
             <!-- top 3 seleccion -->
             <section
                 class="top-seleccion"
-                aria-labelledby="titulo-top-seleccion"
             >
 
 
@@ -483,8 +473,9 @@
                         <!-- iconito q esta al lado -->
                         <div
                             class="top-seleccion__icono"
-                            aria-hidden="true"
-                        ></div>
+                        >
+                            <i class="fa-solid fa-star"></i>
+                        </div>
 
 
                     </div>
@@ -496,19 +487,6 @@
                     <div class="top-seleccion__presentacion">
 
 
-                        <div class="top-seleccion__fantasma-contenedor">
-
-
-                            <img
-                                class="top-seleccion__fantasma"
-                                src=""
-                                alt=""
-                            >
-
-
-                        </div>
-
-
 
                         <div class="top-seleccion__texto">
 
@@ -517,6 +495,18 @@
                                 Volvé a tus clásicos favoritos y disfrutá
                                 la selección personalizada para vos.
                             </p>
+
+
+                        </div>
+
+                        <div class="top-seleccion__fantasma-contenedor">
+
+
+                            <img
+                                class="top-seleccion__fantasma"
+                                src="C:\Users\usuario\Downloads\EntregaInterfacesG6\img\fantasmita.png"
+                                alt="Arcade Time"
+                            >
 
 
                         </div>
@@ -640,7 +630,6 @@
                 <section
                     class="carrusel-juegos"
                     id="accion"
-                    aria-labelledby="titulo-accion"
                     data-carrusel
                 >
 
@@ -665,12 +654,12 @@
                             <button
                                 class="carrusel-juegos__flecha carrusel-juegos__flecha--izquierda"
                                 type="button"
-                                aria-label="Ver juegos anteriores"
                                 data-direccion="anterior"
                                 hidden
                             >
 
                                 <!-- flecha izquierda -->
+                                 <i class="fa-solid fa-chevron-left"></i>
 
                             </button>
 
@@ -837,11 +826,11 @@
                             <button
                                 class="carrusel-juegos__flecha carrusel-juegos__flecha--derecha"
                                 type="button"
-                                aria-label="Ver mas juegos"
                                 data-direccion="siguiente"
                             >
 
                                 <!-- flecha derecha -->
+                                 <i class="fa-solid fa-chevron-right"></i>
 
                             </button>
 
@@ -862,7 +851,6 @@
                 <section
                     class="carrusel-juegos"
                     id="terror"
-                    aria-labelledby="titulo-terror"
                     data-carrusel
                 >
 
@@ -889,7 +877,7 @@
                                 data-direccion="anterior"
                                 hidden
                             >
-                                <!-- flecha izquierda -->
+                                <i class="fa-solid fa-chevron-left"></i>
                             </button>
 
 
@@ -899,6 +887,133 @@
                                 <div class="carrusel-juegos__lista">
 
                                     <!-- aca van todas las cards de terror -->
+                                     <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <!-- aca van los juegos q quedan ocultos al principio -->
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Otro juego"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Otro juego
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
 
                                 </div>
 
@@ -909,10 +1024,9 @@
                             <button
                                 class="carrusel-juegos__flecha carrusel-juegos__flecha--derecha"
                                 type="button"
-                                aria-label="Ver mas juegos"
                                 data-direccion="siguiente"
                             >
-                                <!-- flecha derecha -->
+                                <i class="fa-solid fa-chevron-right"></i>
                             </button>
 
 
@@ -932,7 +1046,6 @@
                 <section
                     class="carrusel-juegos"
                     id="aventura"
-                    aria-labelledby="titulo-aventura"
                     data-carrusel
                 >
 
@@ -955,11 +1068,10 @@
                             <button
                                 class="carrusel-juegos__flecha carrusel-juegos__flecha--izquierda"
                                 type="button"
-                                aria-label="Ver juegos anteriores"
                                 data-direccion="anterior"
                                 hidden
                             >
-                                <!-- flecha izquierda -->
+                                <i class="fa-solid fa-chevron-left"></i>
                             </button>
 
 
@@ -968,6 +1080,129 @@
                                 <div class="carrusel-juegos__lista">
 
                                     <!-- aca van las cards de aventura -->
+                                     <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <!-- aca van los juegos q quedan ocultos al principio -->
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Otro juego"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Otro juego
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
 
                                 </div>
 
@@ -977,10 +1212,9 @@
                             <button
                                 class="carrusel-juegos__flecha carrusel-juegos__flecha--derecha"
                                 type="button"
-                                aria-label="Ver mas juegos"
                                 data-direccion="siguiente"
                             >
-                                <!-- flecha derecha -->
+                                <i class="fa-solid fa-chevron-right"></i>
                             </button>
 
 
@@ -1000,7 +1234,6 @@
                 <section
                     class="carrusel-juegos"
                     id="carreras"
-                    aria-labelledby="titulo-carreras"
                     data-carrusel
                 >
 
@@ -1023,11 +1256,10 @@
                             <button
                                 class="carrusel-juegos__flecha carrusel-juegos__flecha--izquierda"
                                 type="button"
-                                aria-label="Ver juegos anteriores"
                                 data-direccion="anterior"
                                 hidden
                             >
-                                <!-- flecha izquierda -->
+                                <i class="fa-solid fa-chevron-left"></i>
                             </button>
 
 
@@ -1036,6 +1268,134 @@
                                 <div class="carrusel-juegos__lista">
 
                                     <!-- aca van las cards de carreras -->
+                                     <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+
+                                    <!-- aca van los juegos q quedan ocultos al principio -->
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Otro juego"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Otro juego
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
 
                                 </div>
 
@@ -1045,10 +1405,9 @@
                             <button
                                 class="carrusel-juegos__flecha carrusel-juegos__flecha--derecha"
                                 type="button"
-                                aria-label="Ver mas juegos"
                                 data-direccion="siguiente"
                             >
-                                <!-- flecha derecha -->
+                                <i class="fa-solid fa-chevron-right"></i>
                             </button>
 
 
@@ -1068,7 +1427,6 @@
                 <section
                     class="carrusel-juegos"
                     id="supervivencia"
-                    aria-labelledby="titulo-supervivencia"
                     data-carrusel
                 >
 
@@ -1091,11 +1449,10 @@
                             <button
                                 class="carrusel-juegos__flecha carrusel-juegos__flecha--izquierda"
                                 type="button"
-                                aria-label="Ver juegos anteriores"
                                 data-direccion="anterior"
                                 hidden
                             >
-                                <!-- flecha izquierda -->
+                                <i class="fa-solid fa-chevron-left"></i>
                             </button>
 
 
@@ -1105,6 +1462,134 @@
 
                                     <!-- aca van las cards de supervivencia -->
 
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <!-- aca van los juegos q quedan ocultos al principio -->
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Otro juego"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Otro juego
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
                                 </div>
 
                             </div>
@@ -1113,10 +1598,9 @@
                             <button
                                 class="carrusel-juegos__flecha carrusel-juegos__flecha--derecha"
                                 type="button"
-                                aria-label="Ver mas juegos"
                                 data-direccion="siguiente"
                             >
-                                <!-- flecha derecha -->
+                                <i class="fa-solid fa-chevron-right"></i>
                             </button>
 
 
@@ -1136,7 +1620,6 @@
                 <section
                     class="carrusel-juegos"
                     id="superheroes"
-                    aria-labelledby="titulo-superheroes"
                     data-carrusel
                 >
 
@@ -1158,11 +1641,10 @@
                             <button
                                 class="carrusel-juegos__flecha carrusel-juegos__flecha--izquierda"
                                 type="button"
-                                aria-label="Ver juegos anteriores"
                                 data-direccion="anterior"
                                 hidden
                             >
-                                <!-- flecha izquierda -->
+                                <i class="fa-solid fa-chevron-left"></i>
                             </button>
 
 
@@ -1171,6 +1653,133 @@
                                 <div class="carrusel-juegos__lista">
 
                                     <!-- aca van las cards de superheroes -->
+                                     <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <!-- aca van los juegos q quedan ocultos al principio -->
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Otro juego"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Otro juego
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
 
                                 </div>
 
@@ -1180,10 +1789,9 @@
                             <button
                                 class="carrusel-juegos__flecha carrusel-juegos__flecha--derecha"
                                 type="button"
-                                aria-label="Ver mas juegos"
                                 data-direccion="siguiente"
                             >
-                                <!-- flecha derecha -->
+                                <i class="fa-solid fa-chevron-right"></i>
                             </button>
 
 
@@ -1203,7 +1811,6 @@
                 <section
                     class="carrusel-juegos"
                     id="dos-jugadores"
-                    aria-labelledby="titulo-dos-jugadores"
                     data-carrusel
                 >
 
@@ -1225,11 +1832,10 @@
                             <button
                                 class="carrusel-juegos__flecha carrusel-juegos__flecha--izquierda"
                                 type="button"
-                                aria-label="Ver juegos anteriores"
                                 data-direccion="anterior"
                                 hidden
                             >
-                                <!-- flecha izquierda -->
+                                <i class="fa-solid fa-chevron-left"></i>
                             </button>
 
 
@@ -1238,6 +1844,133 @@
                                 <div class="carrusel-juegos__lista">
 
                                     <!-- aca van las cards de dos jugadores -->
+                                     <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <!-- aca van los juegos q quedan ocultos al principio -->
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Otro juego"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Otro juego
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
 
                                 </div>
 
@@ -1247,10 +1980,9 @@
                             <button
                                 class="carrusel-juegos__flecha carrusel-juegos__flecha--derecha"
                                 type="button"
-                                aria-label="Ver mas juegos"
                                 data-direccion="siguiente"
                             >
-                                <!-- flecha derecha -->
+                                <i class="fa-solid fa-chevron-right"></i>
                             </button>
 
 
@@ -1270,7 +2002,6 @@
                 <section
                     class="carrusel-juegos"
                     id="mas-juegos"
-                    aria-labelledby="titulo-mas-juegos"
                     data-carrusel
                 >
 
@@ -1292,11 +2023,10 @@
                             <button
                                 class="carrusel-juegos__flecha carrusel-juegos__flecha--izquierda"
                                 type="button"
-                                aria-label="Ver juegos anteriores"
                                 data-direccion="anterior"
                                 hidden
                             >
-                                <!-- flecha izquierda -->
+                                <i class="fa-solid fa-chevron-left"></i>
                             </button>
 
 
@@ -1305,6 +2035,133 @@
                                 <div class="carrusel-juegos__lista">
 
                                     <!-- aca van las cards de mas juegos -->
+                                     <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Renegade"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Renegade
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
+
+                                    <!-- aca van los juegos q quedan ocultos al principio -->
+
+                                    <article class="tarjeta-juego">
+
+                                        <a
+                                            class="tarjeta-juego__link"
+                                            href="#"
+                                        >
+
+                                            <img
+                                                class="tarjeta-juego__imagen"
+                                                src=""
+                                                alt="Otro juego"
+                                            >
+
+                                            <h3 class="tarjeta-juego__nombre">
+                                                Otro juego
+                                            </h3>
+
+                                        </a>
+
+                                    </article>
 
                                 </div>
 
@@ -1314,10 +2171,9 @@
                             <button
                                 class="carrusel-juegos__flecha carrusel-juegos__flecha--derecha"
                                 type="button"
-                                aria-label="Ver mas juegos"
                                 data-direccion="siguiente"
                             >
-                                <!-- flecha derecha -->
+                                <i class="fa-solid fa-chevron-right"></i>
                             </button>
 
 
@@ -1563,30 +2419,30 @@
 
                             <a
                                 href="#"
-                                aria-label="Youtube"
                             >
                                 <!-- icono youtube -->
+                                 <i class="fa-brands fa-youtube"></i>
                             </a>
 
                             <a
                                 href="#"
-                                aria-label="Instagram"
                             >
                                 <!-- icono instagram -->
+                                <i class="fa-brands fa-instagram"></i>
                             </a>
 
                             <a
                                 href="#"
-                                aria-label="Facebook"
                             >
                                 <!-- icono facebook -->
+                                <i class="fa-brands fa-facebook"></i>
                             </a>
 
                             <a
                                 href="#"
-                                aria-label="Twitter"
                             >
                                 <!-- icono twitter -->
+                                <i class="fa-brands fa-twitter"></i>
                             </a>
 
                         </div>
@@ -1616,6 +2472,8 @@
                     <div class="pie-pagina__logo">
 
                         <!-- aca va el logo arcade time -->
+                        <img src="C:\Users\usuario\Downloads\EntregaInterfacesG6\img\logo (2).png
+                        "alt="Arcade Time">
 
                     </div>
 

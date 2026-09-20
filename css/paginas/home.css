@@ -1,0 +1,902 @@
+
+* {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+html,
+body {
+    width: 100%;
+
+    min-height: 100%;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #12095b;
+
+    color: white;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+/*
+   FONDO */
+
+.fondo-pagina {
+    width: 100%;
+
+    min-height: 100vh;
+
+    background-color: #12095b;
+
+    overflow-x: hidden;
+}
+
+
+/*
+   CONTENIDO PRINCIPAL
+   MOBILE FIRST
+*/
+
+.pagina-inicio {
+    width: 100%;
+
+    padding-bottom: 8vw;
+}
+
+
+/* 
+   DESTACADO */
+
+.destacado {
+    width: 94vw;
+
+    margin: 4vw auto 6vw;
+}
+
+
+.destacado__contenido {
+    width: 100%;
+
+    aspect-ratio: 1.45 / 1;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 0.7vw solid #f52de8;
+
+    border-radius: 2vw;
+
+    background-color: #0c0744;
+}
+
+
+.destacado__imagen {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+.destacado__titulo {
+    position: absolute;
+
+    left: 4vw;
+    top: 3vw;
+
+    z-index: 2;
+
+    font-family: "Arial Black", Arial, sans-serif;
+
+    font-size: 5.5vw;
+
+    letter-spacing: 0.1vw;
+
+    text-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.65);
+}
+
+
+.destacado__boton-contenedor {
+    position: absolute;
+
+    left: 50%;
+    bottom: 4vw;
+
+    z-index: 2;
+
+    transform: translateX(-50%);
+}
+
+
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+
+.boton--jugar {
+    /*TO DO*/
+}
+
+
+
+/*
+   TOP 3 */
+
+.top-seleccion {
+    width: 94vw;
+    margin: 0 auto;
+}
+
+
+.top-seleccion__contenedor {
+    width: 100%;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 4vw;
+
+    border-radius: 2vw;
+
+    background-color: #ed3ee4;
+}
+
+
+.top-seleccion__encabezado {
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+
+    gap: 2vw;
+
+    margin-bottom: 3vw;
+}
+
+
+.top-seleccion__titulo {
+    font-family: "Arial Black", Arial, sans-serif;
+
+    font-size: 5vw;
+
+    letter-spacing: 0.1vw;
+}
+
+
+.top-seleccion__icono {
+    width: 6vw;
+
+    aspect-ratio: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.top-seleccion__icono i {
+    color: #cdfe00;
+
+    font-size: 4.5vw;
+}
+
+
+.top-seleccion__presentacion {
+    width: 100%;
+
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+
+    gap: 3vw;
+
+    margin-bottom: 4vw;
+}
+
+
+.top-seleccion__fantasma-contenedor {
+    width: 18vw;
+
+    aspect-ratio: 1;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.top-seleccion__fantasma {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+.top-seleccion__texto {
+    font-size: 3.2vw;
+
+    line-height: 1.4;
+    font-weight: bold;
+}
+
+
+.top-seleccion__juegos {
+    width: 100%;
+
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3vw;
+}
+
+
+/* =========================================================
+   TARJETAS
+   ========================================================= */
+
+.tarjeta-juego {
+    width: 35vw;
+
+    flex: 0 0 35vw;
+
+    overflow: hidden;
+
+    border-radius: 1.8vw;
+
+    background-color: #18105f;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+
+.tarjeta-juego:hover {
+    transform: translateY(-0.5vw);
+
+    box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.28);
+}
+
+
+.tarjeta-juego__link {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    color: white;
+
+    text-decoration: none;
+}
+
+
+.tarjeta-juego__imagen {
+    width: 100%;
+
+    aspect-ratio: 1.35 / 1;
+
+    display: block;
+
+    object-fit: cover;
+
+    background-color: #0c0744;
+}
+
+
+.tarjeta-juego__nombre {
+    min-height: 9vw;
+
+    display: flex;
+    align-items: center;
+
+    padding: 1.5vw 2vw;
+
+    font-size: 3vw;
+
+    line-height: 1.2;
+}
+
+
+.tarjeta-juego--top {
+    width: 100%;
+
+    flex: 0 0 100%;
+
+    border: 0.4vw solid rgba(255, 255, 255, 0.65);
+
+    border-radius: 1.5vw;
+
+    background-color: #12095b;
+}
+
+
+.tarjeta-juego--top .tarjeta-juego__imagen {
+    aspect-ratio: 1.8 / 1;
+}
+
+
+.tarjeta-juego--top .tarjeta-juego__nombre {
+    min-height: 8vw;
+
+    padding: 1.5vw;
+
+    font-size: 3vw;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   CARRUSELES
+   ========================================================= */
+
+.zona-carruseles {
+    width: 100%;
+}
+
+
+.carrusel-juegos {
+    width: 100%;
+
+    margin-bottom: 7vw;
+}
+
+
+.carrusel-juegos__contenedor {
+    width: 94vw;
+
+    margin: 0 auto;
+}
+
+
+.carrusel-juegos__titulo {
+    margin-left: 10vw;
+    margin-bottom: 2vw;
+
+    font-family: "Arial Black", Arial, sans-serif;
+
+    font-size: 4.5vw;
+
+    letter-spacing: 0.1vw;
+}
+
+
+.carrusel-juegos__contenido {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 1.5vw;
+}
+
+
+.carrusel-juegos__ventana {
+    min-width: 0;
+
+    flex: 1;
+
+    overflow: hidden;
+
+    padding: 1.5vw 0;
+}
+
+
+.carrusel-juegos__lista {
+    display: flex;
+    align-items: stretch;
+
+    gap: 2.5vw;
+
+    transform: translateX(0);
+
+    transition: transform 0.35s ease;
+}
+
+
+.carrusel-juegos__flecha {
+    width: 7vw;
+
+    aspect-ratio: 1;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 3vw;
+
+    transition:
+        transform 0.15s ease,
+        background-color 0.15s ease;
+}
+
+
+
+.carrusel-juegos__flecha i {
+    color: white;
+}
+
+
+.carrusel-juegos__flecha i:hover {
+    color: #FF35F1;
+    transform: scale(1.20);
+}
+
+
+/* =========================================================
+   IMAGENES VACIAS
+   ========================================================= */
+
+img[src=""] {
+    visibility: hidden;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 600px) {
+
+    .pagina-inicio {
+        padding-bottom: 5vw;
+    }
+
+
+    /* destacado */
+
+    .destacado {
+        margin-top: 3vw;
+        margin-bottom: 4vw;
+    }
+
+
+    .destacado__contenido {
+        aspect-ratio: 2 / 1;
+
+        border-width: 0.4vw;
+
+        border-radius: 1.2vw;
+    }
+
+
+    .destacado__titulo {
+        left: 2.5vw;
+        top: 2vw;
+
+        font-size: 3vw;
+    }
+
+
+    .destacado__boton-contenedor {
+        bottom: 2.5vw;
+    }
+
+
+    .boton--jugar {
+        /*TO DO*/
+    }
+
+
+    /* top */
+
+    .top-seleccion {
+        margin-bottom: 4.5vw;
+    }
+
+
+    .top-seleccion__contenedor {
+        padding: 2.5vw;
+
+        border-radius: 1.2vw;
+    }
+
+
+    .top-seleccion__encabezado {
+        gap: 1.2vw;
+
+        margin-bottom: 2vw;
+    }
+
+
+    .top-seleccion__titulo {
+        font-size: 2.8vw;
+    }
+
+
+    .top-seleccion__icono {
+        width: 3.5vw;
+    }
+
+
+    .top-seleccion__icono i {
+        font-size: 2.6vw;
+    }
+
+
+    .top-seleccion__presentacion {
+        gap: 2vw;
+
+        margin-bottom: 2.5vw;
+    }
+
+
+    .top-seleccion__fantasma-contenedor {
+        width: 12vw;
+    }
+
+
+    .top-seleccion__texto {
+        font-size: 1.8vw;
+    }
+
+
+    .top-seleccion__juegos {
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: space-between;
+
+        gap: 2vw;
+    }
+
+
+    .tarjeta-juego--top {
+        width: calc((100% - 4vw) / 3);
+
+        flex: 0 0 calc((100% - 4vw) / 3);
+
+        border-width: 0.25vw;
+
+        border-radius: 1vw;
+    }
+
+
+    .tarjeta-juego--top .tarjeta-juego__imagen {
+        aspect-ratio: 1.35 / 1;
+    }
+
+
+    .tarjeta-juego--top .tarjeta-juego__nombre {
+        min-height: 5vw;
+
+        padding: 1vw 1.2vw;
+
+        font-size: 1.6vw;
+    }
+
+
+    /* carruseles */
+
+    .carrusel-juegos {
+        margin-bottom: 4.5vw;
+    }
+
+
+    .carrusel-juegos__titulo {
+        margin-left: 6vw;
+        margin-bottom: 1.5vw;
+
+        font-size: 2.6vw;
+    }
+
+
+    .carrusel-juegos__contenido {
+        gap: 1vw;
+    }
+
+
+    .carrusel-juegos__ventana {
+        padding: 1vw 0;
+    }
+
+
+    .carrusel-juegos__lista {
+        gap: 1.8vw;
+    }
+
+
+    .tarjeta-juego {
+        width: 22vw;
+
+        flex-basis: 22vw;
+
+        border-radius: 1vw;
+    }
+
+
+    .tarjeta-juego__nombre {
+        min-height: 5vw;
+
+        padding: 1vw 1.2vw;
+
+        font-size: 1.6vw;
+    }
+
+
+    .carrusel-juegos__flecha {
+        width: 4.5vw;
+
+        font-size: 1.8vw;
+    }
+}
+
+/* =========================================================
+   ESCRITORIO
+   ========================================================= */
+
+@media (min-width: 900px) {
+
+    .pagina-inicio {
+        padding-bottom: 4vw;
+    }
+
+
+    /* =========================================================
+       DESTACADO
+       ========================================================= */
+
+    .destacado {
+        margin: 2.5vw auto 3vw;
+    }
+
+
+    .destacado__contenido {
+        aspect-ratio: 2.55 / 1;
+
+        border: 0.25vw solid #f52de8;
+
+        border-radius: 0.8vw;
+    }
+
+
+    .destacado__titulo {
+        left: 2vw;
+        top: 1.5vw;
+
+        font-size: 2.3vw;
+
+        letter-spacing: 0.08vw;
+
+        text-shadow: 0 0.18vw 0.5vw rgba(0, 0, 0, 0.65);
+    }
+
+
+    .destacado__boton-contenedor {
+        bottom: 2vw;
+    }
+
+
+    .boton--jugar {
+       /*TO DO*/
+    }
+
+
+    /* =========================================================
+       TOP 3
+       ========================================================= */
+
+    .top-seleccion {
+        margin-bottom: 3.5vw;
+    }
+
+
+    .top-seleccion__contenedor {
+        min-height: 20vw;
+
+        padding: 1.8vw 2vw 2vw;
+
+        border-radius: 0.9vw;
+    }
+
+
+    .top-seleccion__encabezado {
+        gap: 0.9vw;
+        margin-bottom: 0;
+    }
+
+
+    .top-seleccion__titulo {
+        font-size: 2.1vw;
+
+        letter-spacing: 0.05vw;
+    }
+
+
+    .top-seleccion__icono {
+        width: 2.4vw;
+    }
+
+
+    .top-seleccion__icono i {
+        font-size: 1.8vw;
+    }
+
+
+    .top-seleccion__presentacion {
+        width: 25vw;
+
+        position: absolute;
+
+        left: 2vw;
+
+        display: flex;
+
+        gap: 1vw;
+
+        margin-bottom: 0;
+    }
+
+
+    .top-seleccion__fantasma-contenedor {
+        width: 8vw;
+    }
+
+
+    .top-seleccion__texto {
+        padding-bottom: 0.5vw;
+
+        font-size: 1vw;
+    }
+
+
+    .top-seleccion__juegos {
+        width: 62vw;
+
+        margin-left: auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        gap: 1.4vw;
+    }
+
+
+    /* =========================================================
+       TARJETAS NORMALES
+       ========================================================= */
+
+    .tarjeta-juego {
+        width: 15.3vw;
+
+        aspect-ratio: 1.5 / 1;
+
+        flex: 0 0 15.3vw;
+
+        border-radius: 0.7vw;
+    }
+
+
+    .tarjeta-juego__nombre {
+        min-height: 3vw;
+
+        padding: 0.55vw 0.8vw;
+
+        font-size: 1vw;
+
+        align-self: center;
+
+    }
+
+
+    /* =========================================================
+       TARJETAS DEL TOP 3
+       Van despues para que no las pise .tarjeta-juego
+       ========================================================= */
+
+    .tarjeta-juego--top {
+    width: 18.7vw;
+
+    flex: 0 0 18.7vw;
+
+    border: 0.18vw solid rgba(255, 255, 255, 0.65);
+
+    border-radius: 0.7vw;
+}
+
+
+.tarjeta-juego--top .tarjeta-juego__imagen {
+    width: 100%;
+
+    aspect-ratio: 2 / 1;
+
+    object-fit: cover;
+}
+
+
+.tarjeta-juego--top .tarjeta-juego__nombre {
+    min-height: 3.2vw;
+
+    padding: 0.55vw 0.8vw;
+
+    font-size: 1.05vw;
+}
+
+
+    /* carruseles */
+
+    .carrusel-juegos {
+        margin-bottom: 3.5vw;
+    }
+
+
+    .carrusel-juegos__titulo {
+        margin-left: 3.8vw;
+        margin-bottom: 1.2vw;
+
+        font-size: 1.8vw;
+
+        letter-spacing: 0.06vw;
+    }
+
+
+    .carrusel-juegos__contenido {
+        gap: 0.8vw;
+    }
+
+
+    .carrusel-juegos__ventana {
+        padding: 0.5vw 0;
+    }
+
+
+    .carrusel-juegos__lista {
+        gap: 1.35vw;
+    }
+
+
+    .carrusel-juegos__flecha {
+        width: 3vw;
+
+        font-size: 2vw;
+
+    }
+}
