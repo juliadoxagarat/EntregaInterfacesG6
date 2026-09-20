@@ -1,9 +1,11 @@
-- hay un monton de cosas donde en action esta #, porq todavia no lo hicimos interactivo
-- habria q hacer un archivo o algo con los colores / fuentes de la pag y sacar los valores de ahi 
-- hay q importar los iconos tambien desde alguna libreria, y en el footer los de las redes sociales tambien
-- hay q poner el nombre de cada juego en las cards :(
-    -preguntar si hay q hacerlo con accesibilidad (lo q puse de aria) o hice todo al pedo!!
 
--usamos el mismo header y footer copiando y pegando el codigo en index y juego, preguntar si esta bien asi
 
 -q sean los menus desplegables con js
+
+
+
+
+-boton de jugar en home(hacer en css , en los tres tamanos de pantalla)
+-cambiar la fuente de home
+-poner el nombre de cada juego en las cards :(
+-arreglar top 3 en las 3 pantallas

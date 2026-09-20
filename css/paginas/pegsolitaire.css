@@ -67,14 +67,14 @@ input {
    MIGAS
    ========================================================= */
 
-.migas-pan {
+.breadcrumbs {
     width: 100%;
 
     margin-bottom: 1vw;
 }
 
 
-.migas-pan__lista {
+.breadcrumbs__lista {
     display: flex;
     align-items: center;
 
@@ -86,14 +86,14 @@ input {
 }
 
 
-.migas-pan__link {
+.breadcrumbs__link {
     color: white;
 
     text-decoration: none;
 }
 
 
-.migas-pan__separador {
+.breadcrumbs__separador {
     color: #bcb2ff;
 }
 
@@ -283,19 +283,6 @@ img[src=""] {
 /* =========================================================
    TARJETAS
    ========================================================= */
-
-.instrucciones-juego {
-    width: 100%;
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 1.5vw;
-
-    margin-bottom: 2.5vw;
-}
-
 
 .instrucciones-juego__imagen {
     width: 100%;
