@@ -8,5 +8,4 @@
 
 -boton de jugar en home(hacer en css , en los tres tamanos de pantalla)
 -cambiar las fuentes
--poner el nombre de cada juego en las cards :(
 -falta centrar el texto y fantaasmita en el top 3 q no pude hacerlo
