@@ -553,7 +553,7 @@ img[src=""] {
 
 
     .top-seleccion__contenedor {
-        padding: 1.5vw 0;
+        padding: 1.5vw;
 
         border-radius: 1.2vw;
     }
@@ -748,13 +748,10 @@ img[src=""] {
         margin-bottom: 0;
     }
 
-    .top-seleccion__contenido {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 2vw;
+    .top-seleccion__texto p{
+        font-size: 1.2vw;
     }
+
 
     .top-seleccion__presentacion {
         /* Quita la posición absoluta para que no tape las tarjetas */
@@ -767,6 +764,13 @@ img[src=""] {
         gap: 1.2vw;
         margin-bottom: 0;
 
+    }
+
+    .top-seleccion__contenido {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.2vw;
     }
 
     .top-seleccion__fantasma-contenedor {
