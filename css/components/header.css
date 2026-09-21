@@ -1,11 +1,13 @@
-/* =========================================================
-   HEADER
-   ========================================================= */
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
 
 .encabezado {
     width: 100%;
     height: 5.7vw;
-
+    margin: 0;
     background-color: #f52de8;
 
     position:relative;

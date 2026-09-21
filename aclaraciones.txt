@@ -5,8 +5,9 @@
 
 
 
--cambiar las fuentes
 -hacer los menus iguales al figma
+-hover del boton agregar a mis juegos
 -preguntar sobre el top 4
 -distintivos del top 4 en las cards
+
 

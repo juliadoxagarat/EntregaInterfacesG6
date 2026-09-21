@@ -1,54 +1,91 @@
 const carruseles = document.querySelectorAll("[data-carrusel]");
 
-
 carruseles.forEach((carrusel) => {
 
-    // parte q se ve del carrusel
     const ventana = carrusel.querySelector(".carrusel-juegos__ventana");
+    const lista = carrusel.querySelector(".carrusel-juegos__lista");
+
     const botonAnterior = carrusel.querySelector(
         '[data-direccion="anterior"]'
     );
-
 
     const botonSiguiente = carrusel.querySelector(
         '[data-direccion="siguiente"]'
     );
 
 
-    // al principio la flecha izquierdano se ve
-    botonAnterior.hidden = true;
+    // guarda cuanto se desplazo el carrusel
+    let desplazamiento = 0;
 
 
-    // flecha der
+    function actualizarCarrusel() {
+
+        // limite max al q puede moverse
+        const maximoDesplazamiento =
+            lista.scrollWidth - ventana.clientWidth;
+
+
+        if (desplazamiento > maximoDesplazamiento) {
+            desplazamiento = maximoDesplazamiento;
+        }
+
+
+        lista.style.transform =
+            `translateX(-${desplazamiento}px)`;
+
+
+        // muestra o oculta las flechas segun la pos
+        botonAnterior.hidden = desplazamiento <= 0;
+
+        botonSiguiente.hidden =
+            desplazamiento >= maximoDesplazamiento;
+    }
+
+
     botonSiguiente.addEventListener("click", () => {
 
-        // llevo el carrusel hasta el final
-        ventana.scrollTo({
-            left: ventana.scrollWidth,
-            behavior: "smooth"
-        });
+        // avanza una pagina visible
+        const anchoPagina = ventana.clientWidth;
+
+        const maximoDesplazamiento =
+            lista.scrollWidth - ventana.clientWidth;
 
 
-        botonAnterior.hidden = false;
-        botonSiguiente.hidden = true;
+        desplazamiento += anchoPagina;
 
+
+        if (desplazamiento > maximoDesplazamiento) {
+            desplazamiento = maximoDesplazamiento;
+        }
+
+
+        actualizarCarrusel();
     });
 
 
-
-    // flecha izqu
     botonAnterior.addEventListener("click", () => {
 
-        // vuelvo el carrusel al principio
-        ventana.scrollTo({
-            left: 0,
-            behavior: "smooth"
-        });
-        botonAnterior.hidden = true;
+        // vuelve una pagina visible
+        const anchoPagina = ventana.clientWidth;
+
+        desplazamiento -= anchoPagina;
 
 
-        botonSiguiente.hidden = false;
+        if (desplazamiento < 0) {
+            desplazamiento = 0;
+        }
 
+
+        actualizarCarrusel();
     });
+
+
+    // recalcula si cambia el tam de la pantalla
+    window.addEventListener("resize", () => {
+        actualizarCarrusel();
+    });
+
+
+    actualizarCarrusel();
 
 });
