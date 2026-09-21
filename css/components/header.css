@@ -8,7 +8,7 @@
 
     background-color: #f52de8;
 
-    position: relative;
+    position:relative;
     z-index: 100;
 
     font-family: Arial, Helvetica, sans-serif;
@@ -64,7 +64,8 @@
 
 
 .encabezado__logo-imagen {
-    width: 25vw;
+    width: 100%;
+    max-width: 20vw;
 
     object-fit:contain;
 }
@@ -86,7 +87,7 @@
 
     position: absolute;
 
-    left: 50%;
+    left: 60%;
     top: 50%;
 
     transform: translate(-50%, -50%);
@@ -135,8 +136,8 @@
 
 
 .buscador__boton {
-    width: 2.8vw;
-    height: 2.8vw;
+    width: 2.5vw;
+    height: 2.5vw;
 
     position: absolute;
 
@@ -344,4 +345,118 @@
 
 [hidden] {
     display: none !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE - PANTALLAS CHICAS / MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .encabezado {
+        height: 52px;
+    }
+
+    .encabezado__menu-boton {
+        width: 52px;
+    }
+
+    .encabezado__logo {
+        width: auto;
+        gap: 4px;
+    }
+
+    .encabezado__logo-imagen {
+        width: 90px;
+    }
+
+    .fa-bars {
+        font-size: 20px;
+    }
+
+    .buscador {
+        width: 34vw;
+        height: 26px;
+
+        left: auto;
+        right: 50px;
+        top: 50%;
+
+        transform: translateY(-50%);
+    }
+
+    .buscador__input {
+        border-width: 1.5px;
+        border-radius: 8px;
+        padding: 0 38px 0 10px;
+        font-size: 12px;
+    }
+
+    .buscador__boton {
+        width: 21px;
+        height: 21px;
+        right: 3px;
+        top: 3px;
+    }
+
+    .fa-magnifying-glass {
+        font-size: 11px;
+    }
+
+    .encabezado__perfil-boton {
+        width: 52px;
+    }
+
+    .fa-user {
+        font-size: 16px;
+    }
+
+    /* Menús desplegables más angostos en mobile */
+    .menu-categorias {
+        width: 60vw;
+        padding: 12px;
+        border-width: 1.5px;
+    }
+
+    .menu-categorias__item {
+        margin-bottom: 10px;
+    }
+
+    .menu-categorias__link {
+        font-size: 14px;
+    }
+
+    .menu-usuario {
+        width: 70vw;
+        right: 8px;
+        padding: 12px;
+        border-width: 1.5px;
+    }
+
+    .menu-usuario__perfil {
+        gap: 10px;
+        padding-bottom: 10px;
+    }
+
+    .menu-usuario__avatar-contenedor {
+        width: 36px;
+    }
+
+    .menu-usuario__nombre {
+        font-size: 14px;
+    }
+
+    .menu-usuario__titulo {
+        margin: 12px 0 8px;
+        font-size: 13px;
+    }
+
+    .menu-usuario__item {
+        margin-bottom: 8px;
+    }
+
+    .menu-usuario__link {
+        font-size: 13px;
+    }
 }

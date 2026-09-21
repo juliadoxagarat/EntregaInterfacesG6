@@ -1,4 +1,4 @@
-﻿* {
+﻿﻿* {
     box-sizing: border-box;
 
     margin: 0;
@@ -100,14 +100,14 @@ input {
 .destacado__titulo {
     position: absolute;
 
-    left: 4vw;
-    top: 3vw;
+    left: 3.5vw;
+    top: 0.5vw;
 
     z-index: 2;
 
     font-family: "Arial Black", Arial, sans-serif;
 
-    font-size: 5.5vw;
+    font-size: 3vw;
 
     letter-spacing: 0.1vw;
 
@@ -258,6 +258,8 @@ input {
 
     flex: 0 0 35vw;
 
+    position: relative;
+
     overflow: hidden;
 
     border-radius: 1.8vw;
@@ -277,10 +279,53 @@ input {
 }
 
 
+.tarjeta-juego__nombre {
+    position: relative;
+
+    z-index: 1;
+}
+
+
 .tarjeta-juego:hover .tarjeta-juego__nombre {
     color: #000000;
 
     background-color: #FF64F2;
+
+    overflow: visible;
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    z-index: 10;
+}
+
+
+.tarjeta-juego__nombre span {
+    display: block;
+
+    max-width: 100%;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+.tarjeta-juego:hover .tarjeta-juego__nombre span {
+    white-space: normal;
+
+    overflow: visible;
+
+    text-overflow: clip;
+
+    word-break: break-word;
 }
 
 
@@ -319,6 +364,8 @@ input {
 
     text-align: center;
 
+    overflow: hidden;
+
     padding: 1.5vw 2vw;
 
     font-size: 3vw;
@@ -333,6 +380,8 @@ input {
     flex: 1;
 
     min-width: 0;
+
+    position: relative;
 
     border: 0.4vw solid rgba(255, 255, 255, 0.65);
 
@@ -523,10 +572,10 @@ img[src=""] {
 
 
     .destacado__titulo {
+        font-size: 2vw;
         left: 2.5vw;
-        top: 2vw;
+        top: 0.5vw;
 
-        font-size: 3vw;
     }
 
 
@@ -700,10 +749,10 @@ img[src=""] {
 
 
     .destacado__titulo {
-        left: 1.3vw;
-        top: 0.98vw;
+        left: 1.5vw;
+        top: -0.5vw;
 
-        font-size: 1.5vw;
+        font-size: 2vw;
 
         letter-spacing: 0.05vw;
 

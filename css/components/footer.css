@@ -198,9 +198,43 @@
 
 @media (max-width: 600px) {
 
+    .pie-pagina {
+        padding: 20px 16px 16px;
+    }
+
     .pie-pagina__contenedor {
         grid-template-columns: repeat(2, 1fr);
 
-        gap: 5vw;
+        gap: 20px;
+    }
+
+    .pie-pagina__titulo {
+        font-size: 15px;
+        margin-bottom: 6px;
+    }
+
+    .pie-pagina__lista {
+        margin-bottom: 14px;
+    }
+
+    .pie-pagina__lista a,
+    .pie-pagina__contacto a,
+    .pie-pagina__contacto p,
+    .pie-pagina__descubrir p {
+        font-size: 13px;
+    }
+
+    .pie-pagina__lista li {
+        line-height: 1.5;
+    }
+
+    .pie-pagina__redes-lista a {
+        width: 24px;
+        font-size: 18px;
+    }
+
+    .pie-pagina__logo {
+        width: 60px;
+        margin-top: 10px;
     }
 }

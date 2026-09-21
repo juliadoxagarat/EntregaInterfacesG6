@@ -53,7 +53,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 .boton--jugar {
-    /* Tipografía y texto */
     font-family: 'Press Start 2P', 'Arial Black', sans-serif;
     font-size: 1.1rem;
     font-weight: bold;
@@ -62,49 +61,36 @@
     text-decoration: none;
     letter-spacing: 2px;
     
-    /* Borde negro alrededor del texto tipo pixel art */
     text-shadow: 
         -2px -2px 0 #000,  
          2px -2px 0 #000,
         -2px  2px 0 #000,
          2px  2px 0 #000;
 
-
-
-/* Aumentamos el padding vertical (arriba/abajo) a 1rem o 1.2rem */
-    padding: 1.2rem 4.5rem;
-    min-height: 3rem; /* Le da una altura base adecuada */
-    
-    display: inline-flex;
+    padding: 0.7rem 0.9rem;
+    display: fit-content;
     align-items: center;
     justify-content: center;
-    /* Fondo marrón claro del centro */
+
     background-color: #a6817a;
 
-    /* Bordes redondeados */
     border-radius: 12px;
 
-    /* Doble borde (borde exterior oscuro + borde interior rojo/marrón) */
     border: 4px solid #5a3d38;
     outline: 2px solid #b83328;
     outline-offset: -6px;
 
-    /* Transición suave para el hover */
     transition: all 0.2s ease;
     cursor: pointer;
 }
 
 /* Estado :hover (Tercera foto) */
 .boton--jugar:hover {
-    /* El fondo se aclara ligeramente */
     background-color: #bfa19a;
 
-    /* El marco rojo exterior reemplaza al borde oscuro */
     border-color: #b83328;
 
-    /* Se quita el borde interno para que la caja quede limpia */
     outline: none;
 
-    /* Pequeña elevación */
     transform: translateY(-2px);
 }
