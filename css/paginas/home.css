@@ -458,18 +458,7 @@ input {
 }
 
 
-/* la flecha oculta guarda su lugar para cuando se muestre */
-.carrusel-juegos__flecha[hidden] {
-    display: flex;
 
-    visibility: hidden;
-}
-
-
-/* mientras no haya JS, la izquierda queda invisible pero ocupando el espacio */
-.carrusel-juegos__flecha--izquierda {
-    visibility: hidden;
-}
 
 
 

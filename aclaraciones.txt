@@ -1,6 +1,6 @@
 
 
--animaciones de carrouseles con js
+-animaciones de carrouseles con js (las hice pero no se como se hace la animacion!!)
 
 
 
