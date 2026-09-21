@@ -138,14 +138,9 @@ input {
 }
 
 
-.boton--jugar {
-    /*TO DO*/
-}
-
-
 
 /*
-   TOP 3 */
+   TOP 4 */
 
 .top-seleccion {
     width: 94vw;
@@ -254,9 +249,9 @@ input {
 }
 
 
-/* =========================================================
+/* 
    TARJETAS
-   ========================================================= */
+ */
 
 .tarjeta-juego {
     width: 35vw;
@@ -363,9 +358,8 @@ input {
 }
 
 
-/* =========================================================
-   CARRUSELES
-   ========================================================= */
+/* 
+   CARRUSELES */
 
 .zona-carruseles {
     width: 100%;
@@ -464,7 +458,7 @@ input {
 }
 
 
-/* la flecha oculta reserva su lugar para cuando se muestre */
+/* la flecha oculta guarda su lugar para cuando se muestre */
 .carrusel-juegos__flecha[hidden] {
     display: flex;
 
@@ -490,18 +484,30 @@ input {
 }
 
 
-/* =========================================================
+/* 
    IMAGENES VACIAS
-   ========================================================= */
+ */
 
 img[src=""] {
     visibility: hidden;
 }
 
+/*esto es para q cuando se aprieta el link a esa categoria aparezca en el medio de la pantalla y no arriba*/
+#accion,
+#terror,
+#aventura,
+#carreras,
+#supervivencia,
+#superheroes,
+#dos-jugadores,
+#mas-juegos {
+    scroll-margin-top: 40vh;
+}
 
-/* =========================================================
+
+/* 
    TABLET
-   ========================================================= */
+ */
 
 @media (min-width: 600px) {
 
@@ -538,12 +544,6 @@ img[src=""] {
     .destacado__boton-contenedor {
         bottom: 2.5vw;
     }
-
-
-    .boton--jugar {
-        /*TO DO*/
-    }
-
 
     /* top */
 
@@ -682,9 +682,9 @@ img[src=""] {
     }
 }
 
-/* =========================================================
+/* 
    ESCRITORIO
-   ========================================================= */
+ */
 
 @media (min-width: 900px) {
 
@@ -693,9 +693,8 @@ img[src=""] {
     }
 
 
-    /* =========================================================
-       DESTACADO
-       ========================================================= */
+    /* 
+       DESTACADO */
 
     .destacado {
         margin: 1.63vw auto 1.95vw;
@@ -733,9 +732,9 @@ img[src=""] {
     }
 
 
-    /* =========================================================
-       TOP 3
-       ========================================================= */
+    /* 
+       TOP 4
+     */
 
     .top-seleccion__contenedor {
         min-height: 13vw;
@@ -754,7 +753,7 @@ img[src=""] {
 
 
     .top-seleccion__presentacion {
-        /* Quita la posición absoluta para que no tape las tarjetas */
+        /* Quita la pos absoluta para q no tape las tarjetas */
         position: static;
         transform: none;
 
@@ -799,9 +798,9 @@ img[src=""] {
         align-items: flex-start;
     }
 
-    /* =========================================================
+    /* 
        TARJETAS NORMALES
-       ========================================================= */
+ */
 
     .tarjeta-juego {
         width: 9.8vw;
@@ -831,10 +830,10 @@ img[src=""] {
     }
 
 
-    /* =========================================================
-       TARJETAS DEL TOP 3
-       Van despues para que no las pise .tarjeta-juego
-       ========================================================= */
+    /* 
+       TARJETAS DEL TOP 4
+       Van despues para q no las pise .tarjeta-juego
+ */
 
     .tarjeta-juego--top {
         width: 12.16vw;

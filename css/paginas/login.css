@@ -1,6 +1,3 @@
-/* =========================================
-   RESET
-   ========================================= */
 
 * {
     box-sizing: border-box;
@@ -21,9 +18,9 @@ body {
 }
 
 
-/* =========================================
-   FONDO GENERAL
-   ========================================= */
+/* 
+   FONDO Gral
+    */
 
 .fondo-pagina {
     width: 100%;
@@ -33,9 +30,6 @@ body {
     align-items: center;
     justify-content: center;
 
-    /*
-     * ACÁ PONÉS TU IMAGEN DE LOS FANTASMITAS
-     */
     background-image: url("../../img/fondo-fantasmitas.png");
 
     background-size: cover;
@@ -44,9 +38,8 @@ body {
 }
 
 
-/* =========================================
-   CONTENEDOR GENERAL DEL LOGIN
-   ========================================= */
+/* 
+   CONTENEDOR GENERAL DEL LOGIN */
 
 .pagina-login {
     width: 100%;
@@ -70,9 +63,9 @@ body {
 }
 
 
-/* =========================================
+/* 
    PANEL IZQUIERDO
-   ========================================= */
+    */
 
 .presentacion-login {
     width: 290px;
@@ -113,9 +106,9 @@ body {
 }
 
 
-/* =========================================
+/* 
    REDES SOCIALES
-   ========================================= */
+    */
 
 .presentacion-login__redes {
     width: 100%;
@@ -207,9 +200,9 @@ body {
 }
 
 
-/* =========================================
+/* 
    PANEL DERECHO
-   ========================================= */
+    */
 
 .login {
     width: 290px;
@@ -228,9 +221,9 @@ body {
 }
 
 
-/* =========================================
+/* 
    ENCABEZADO
-   ========================================= */
+ */
 
 .login__encabezado {
     width: 100%;
@@ -262,9 +255,9 @@ body {
 }
 
 
-/* =========================================
+/* 
    FORMULARIO
-   ========================================= */
+    */
 
 .formulario-login {
     width: 100%;
@@ -336,9 +329,9 @@ body {
 }
 
 
-/* =========================================
+/* 
    CHECK DE VALIDACIÓN
-   ========================================= */
+    */
 
 .campo-formulario__estado {
     position: absolute;
@@ -375,9 +368,9 @@ body {
 }
 
 
-/* =========================================
+/* 
    BOTÓN INICIAR SESIÓN
-   ========================================= */
+    */
 
 .formulario-login__contenedor-boton {
     width: 100%;
@@ -389,9 +382,9 @@ body {
 }
 
 
-/* =========================================
+/* 
    REGISTRO
-   ========================================= */
+    */
 
 .login__registro {
     width: 100%;
@@ -449,9 +442,8 @@ body {
     text-decoration: underline;
 }
 
-/* =========================================
-   PANEL DERECHO
-   ========================================= */
+/* 
+   PANEL DERECHO */
 
 .panel-derecho {
     width: 290px;
@@ -466,9 +458,9 @@ body {
 }
 
 
-/* =========================================
+/* 
    REGISTRO
-   ========================================= */
+    */
 
 .registro {
     display: none;
@@ -480,9 +472,9 @@ body {
 }
 
 
-/* =========================================
+/* 
    ENCABEZADO REGISTRO
-   ========================================= */
+ */
 
 .registro__encabezado {
     width: 100%;
@@ -509,9 +501,8 @@ body {
 }
 
 
-/* =========================================
-   FORMULARIO REGISTRO
-   ========================================= */
+/* 
+   FORMULARIO REGISTRO */
 
 .formulario-registro {
     width: 100%;
@@ -569,9 +560,9 @@ body {
 }
 
 
-/* =========================================
-   CAPTCHA
-   ========================================= */
+/* 
+   CAPTCha
+ */
 
 .formulario-registro__contenedor-captcha {
     width: 100%;
@@ -593,9 +584,8 @@ body {
 }
 
 
-/* =========================================
-   BOTÓN REGISTRO
-   ========================================= */
+/* 
+   BOTÓN REGISTRO */
 
 .formulario-registro__contenedor-boton {
     display: flex;
@@ -605,9 +595,9 @@ body {
 }
 
 
-/* =========================================
+/* 
    VOLVER AL LOGIN
-   ========================================= */
+    */
 
 .registro__inicio-sesion {
     margin-top: 17px;
@@ -646,9 +636,9 @@ body {
 }
 
 
-/* =========================================
+/* 
    CAMBIO LOGIN / REGISTRO
-   ========================================= */
+ */
 
 .registro-activo .login {
     display: none;
@@ -659,10 +649,9 @@ body {
     display: block;
 }
 
-
-/* =========================================
+/* 
    RESPONSIVE
-   ========================================= */
+ */
 
 @media (max-width: 650px) {
 
