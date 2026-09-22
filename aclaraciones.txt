@@ -9,5 +9,10 @@
 -hover del boton agregar a mis juegos
 -preguntar sobre el top 4
 -distintivos del top 4 en las cards
+-agregar corazon a boton de agregar a mi juegos
+-hacer que el juego de peg en home tenga borde en la izquierda
+-agregar mas comentarios
+-se agrandan las cards de mi top 4 de seleccion en hover
+-agregar mas cards ( imagen, nombre y html)
 
 

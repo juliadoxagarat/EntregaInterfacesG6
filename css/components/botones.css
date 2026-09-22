@@ -67,7 +67,7 @@
         -2px  2px 0 #000,
          2px  2px 0 #000;
 
-    padding: 0.7rem 0.9rem;
+    padding: 1.3rem 3rem;
     display: fit-content;
     align-items: center;
     justify-content: center;
@@ -94,3 +94,36 @@
 
     transform: translateY(-2px);
 }
+
+/* boton agregar juego en peg */
+
+.boton--agregar-juego {
+    width: 12vw;
+    height: 2vw;
+
+    border: none;
+
+    border-radius: 0.7vw;
+
+    background-color: #FF5CF7;
+
+    color: #0F094F;
+
+    font-size: 0.9vw;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.boton--agregar-juego:hover {
+    background-color: #FF35F1;
+    color: #FFFFFF;
+}
+
+.boton--agregar-juego.agregado {
+    background-color: #9FC500;
+    color: white;
+}
+
+

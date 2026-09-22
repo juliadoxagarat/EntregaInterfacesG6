@@ -195,46 +195,74 @@
 /* =========================================================
    RESPONSIVE
    ========================================================= */
-
 @media (max-width: 600px) {
 
     .pie-pagina {
-        padding: 20px 16px 16px;
+        padding: 24px 16px;
     }
 
+    /* Cambia la grilla de 4 o 2 columnas a 1 sola columna vertical */
     .pie-pagina__contenedor {
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 20px;
+        grid-template-columns: 1fr;
+        gap: 0;
     }
 
+    /* Convierte cada columna en flex col para poder ordenar individualmente subtítulos e hijos */
+    .pie-pagina__columna {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Ajuste de tipografías para legibilidad en celular */
     .pie-pagina__titulo {
-        font-size: 15px;
-        margin-bottom: 6px;
+        font-size: 16px;
+        margin-top: 16px;
+        margin-bottom: 8px;
     }
 
     .pie-pagina__lista {
-        margin-bottom: 14px;
+        margin-bottom: 12px;
+    }
+
+    .pie-pagina__lista li {
+        line-height: 1.6;
     }
 
     .pie-pagina__lista a,
     .pie-pagina__contacto a,
     .pie-pagina__contacto p,
     .pie-pagina__descubrir p {
-        font-size: 13px;
+        font-size: 14px;
     }
 
-    .pie-pagina__lista li {
-        line-height: 1.5;
+    .pie-pagina__contacto {
+        margin-top: 0;
+        margin-bottom: 12px;
+    }
+
+    .pie-pagina__redes {
+        margin-bottom: 12px;
+    }
+
+    .pie-pagina__redes-lista {
+        gap: 16px;
+        margin-top: 6px;
     }
 
     .pie-pagina__redes-lista a {
-        width: 24px;
-        font-size: 18px;
+        width: 28px;
+        font-size: 20px;
+    }
+
+    .pie-pagina__descubrir {
+        margin-top: 8px;
+        margin-bottom: 16px;
     }
 
     .pie-pagina__logo {
-        width: 60px;
+        width: 80px;
         margin-top: 10px;
+        align-self: flex-start;
     }
+
 }

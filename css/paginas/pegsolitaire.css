@@ -57,7 +57,7 @@ input {
 
     margin: 0 auto;
 
-    padding-top: 2.5vw;
+    padding-top: 1.8vw;
     padding-bottom: 3vw;
 }
 
@@ -69,7 +69,8 @@ input {
 .breadcrumbs {
     width: 100%;
 
-    margin-bottom: 1vw;
+    margin-bottom: 0%;
+    margin-top: 0%;
 }
 
 
@@ -81,7 +82,7 @@ input {
 
     list-style: none;
 
-    font-size: 1vw;
+    font-size: 0.8vw;
 }
 
 
@@ -109,7 +110,7 @@ input {
 
     justify-content: space-between;
 
-    margin-bottom: 1.2vw;
+    margin-bottom: 1vw;
 }
 
 
@@ -118,7 +119,7 @@ input {
 
     align-items: center;
 
-    gap: 2.5vw;
+    gap: 1.8vw;
 }
 
 
@@ -127,7 +128,7 @@ input {
 
     font-family: "Arial Black", Arial, sans-serif;
 
-    font-size: 2.5vw;
+    font-size: 1.8vw;
 
     letter-spacing: 0.1vw;
 }
@@ -136,14 +137,14 @@ input {
 .valoracion {
     display: flex;
 
-    gap: 0.5vw;
+    gap: 0.3vw;
 }
 
 
 .valoracion__estrella {
     color: #f52de8;
 
-    font-size: 2.5vw;
+    font-size: 1.8vw;
 
     line-height: 1;
 }
@@ -162,24 +163,6 @@ input {
 }
 
 
-.boton--agregar-juego {
-    width: 17vw;
-    height: 2.5vw;
-
-    border: none;
-
-    border-radius: 0.7vw;
-
-    background-color: #f35ae8;
-
-    color: white;
-
-    font-size: 1vw;
-
-    font-weight: bold;
-
-    cursor: pointer;
-}
 
 
 .detalle-juego__compartir {
@@ -193,7 +176,7 @@ input {
     cursor: pointer;
 }
 
-.fa-share-nodes{
+.fa-share-nodes {
     color: white;
     font-size: 1.5vw;
 }
@@ -205,11 +188,9 @@ input {
  */
 
 .detalle-juego__imagen-contenedor {
-    width: 75%;
-
-    aspect-ratio: 2.2 / 1;
-
-    border: 0.4vw solid #f52de8;
+    width: 70%;
+    height: auto;
+    border: 0.2vw solid #f52de8;
 
     background-color: #0c0744;
 
@@ -220,15 +201,16 @@ input {
 
     overflow: hidden;
     justify-self: center;
-
-    margin-bottom: 2.5vw;
+    margin: 0 auto 2.5vw auto;
+    margin-bottom: 1vw;
 }
 
 
 .detalle-juego__imagen {
     width: 100%;
+    display: block;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 
@@ -244,7 +226,7 @@ img[src=""] {
 .descripcion-juego {
     width: 100%;
 
-    margin-bottom: 2vw;
+    margin-bottom: -0.5vw;
 }
 
 
@@ -255,18 +237,18 @@ img[src=""] {
 
     font-family: "Arial Black", Arial, sans-serif;
 
-    font-size: 1.8vw;
+    font-size: 1.3vw;
 
     letter-spacing: 0.1vw;
 
-    margin-bottom: 1.3vw;
+    margin-bottom: 0.5vw;
 }
 
 
 .descripcion-juego__texto {
     color: white;
 
-    font-size: 1.35vw;
+    font-size: 1vw;
 
     line-height: 1.5;
 
@@ -278,13 +260,12 @@ img[src=""] {
    TARJETAS */
 
 .instrucciones-juego__imagen {
-    width: 100%;
+    width: 45%;
 
-    height: 70%;
+    height: auto;
 
+    display: block;
     object-fit: contain;
-
-    margin-top: auto;
 }
 
 .instrucciones-juego {
@@ -292,11 +273,11 @@ img[src=""] {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2vw;
+    margin-top: 0;
 }
 
 .instrucciones-juego__imagen {
-    width: 85%;
+    width: 65%;
     height: auto;
     display: block;
     object-fit: contain;
@@ -309,35 +290,30 @@ img[src=""] {
 .como-jugar {
     width: 100%;
 
-    margin-bottom: 4vw;
+    margin-bottom: 30px;
 }
 
 
 .como-jugar__titulo {
-    margin-left: 0.5vw;
+    margin-left: 0;
 
     margin-bottom: 1.2vw;
+    text-align: center;
 }
 
-
 .como-jugar__contenido {
-    width: 70%;
-
-    aspect-ratio: 1.6 / 1;
-
-    border: 0.25vw solid #f1a2ff;
-
+    width: 55%;           
+    max-width: 650px;     
+    border: 3px solid #f1a2ff;
     background-color: #654521;
-
     overflow: hidden;
-
-    margin: 0 auto;
+    margin: 0 auto;      
 }
 
 
 .como-jugar__video {
     width: 100%;
-    height: 100%;
+    height: auto;
 
     display: block;
 
@@ -353,74 +329,64 @@ img[src=""] {
 
 .comentarios {
     width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 10px;
 }
 
 
 .comentarios__titulo {
-    margin-left: 1vw;
-
-    margin-bottom: 1.5vw;
+    font-size: 1.2rem;
+    margin-left: 0;
+    margin-bottom: 12px;
 }
-
-
 /* 
    FORMULARIO */
 
 .comentarios__formulario {
     width: 100%;
-
     display: flex;
-
     align-items: center;
-
-    gap: 1vw;
-
-    margin-bottom: 1vw;
-
-    padding-left: 1vw;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-left: 0;
 }
 
 
 .comentarios__avatar-contenedor {
-    width: 4vw;
-
-    aspect-ratio: 1;
-
+    width: 42px;
+    height: 42px;
     flex-shrink: 0;
-
     border-radius: 50%;
-
     background-color: #f52de8;
-
-    border: 0.2vw solid #f52de8;
-
+    border: 2px solid #f52de8;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
 .comentarios__avatar {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
+    display: block;
+    transform: scale(1.7);
 }
 
 
 .comentarios__campo {
     flex: 1;
-
-    height: 3vw;
-
+    height: 38px;
     position: relative;
 }
 
 
 .comentarios__label {
     position: absolute;
-
     width: 0;
     height: 0;
-
     overflow: hidden;
 }
 
@@ -428,46 +394,35 @@ img[src=""] {
 .comentarios__input {
     width: 100%;
     height: 100%;
-
     border: none;
-
-    border-radius: 2vw;
-
+    border-radius: 20px;
     background-color: white;
-
-    padding: 0 4vw 0 1.2vw;
-
-    font-size: 1vw;
-
+    padding: 0 40px 0 14px;
+    font-size: 0.9rem;
     outline: none;
 }
 
 
 .comentarios__enviar {
     position: absolute;
-
-    right: 0.5vw;
+    right: 8px;
     top: 50%;
-
     transform: translateY(-50%);
-
-    width: 2.5vw;
-    aspect-ratio: 1;
-
+    width: 28px;
+    height: 28px;
     border: none;
-
     background: transparent;
-
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
 .comentarios__enviar::before {
     content: "➤";
-
     color: #160b61;
-
-    font-size: 1.8vw;
+    font-size: 1rem;
 }
 
 
@@ -476,80 +431,53 @@ img[src=""] {
 
 .comentarios__lista {
     width: 100%;
-
     display: flex;
-
     flex-direction: column;
-
-    gap: 0.2vw;
+    gap: 8px;
 }
 
 
 .comentario {
     width: 100%;
-
-    min-height: 5vw;
-
+    min-height: auto;
     display: flex;
-
     align-items: center;
-
-    gap: 1vw;
-
-    padding: 0.7vw 1vw;
-
+    gap: 12px;
+    padding: 10px 14px;
     background-color: #18105f;
-
-    border-bottom: 0.15vw solid #7b5bbd;
-
-    border-radius: 0.5vw;
+    border-bottom: 2px solid #7b5bbd;
+    border-radius: 8px;
 }
 
 
 .comentario__avatar-contenedor {
-    width: 4vw;
-
-    aspect-ratio: 1;
-
+    width: 42px;
+    height: 42px;
     flex-shrink: 0;
-
     border-radius: 50%;
-
-    overflow: hidden;
-
     background-color: #f52de8;
-
-    border: 0.2vw solid #f52de8;
-}
-
-.comentario__avatar {
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-
-    transform: scale(1.8);
-    display: block;
+    border: 2px solid #f52de8;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
 .comentario__avatar {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
+    display: block;
+    transform: scale(1.7); /* Agregado para agrandar la imagen dentro del círculo */
 }
 
 
 .comentario__contenido {
     width: 100%;
-
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     min-width: 0;
 }
 
@@ -561,88 +489,76 @@ img[src=""] {
 
 .comentario__usuario {
     color: white;
-
-    font-size: 1.2vw;
-
+    font-size: 0.95rem;
     font-weight: bold;
-
-    margin-bottom: 0.3vw;
+    margin-bottom: 2px;
 }
 
 
 .comentario__texto {
     color: white;
-
-    font-size: 1vw;
-
-    white-space: nowrap;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
+    font-size: 0.85rem;
+    white-space: normal;
+    word-break: break-word;
 }
 
 
 .comentario__lateral {
-    min-width: 8vw;
-
+    min-width: 65px;
     display: flex;
-
     flex-direction: column;
-
     align-items: flex-end;
-
-    gap: 0.3vw;
+    gap: 4px;
 }
 
 
 .comentario__fecha {
-    color: white;
-
-    font-size: 0.9vw;
-
-    font-weight: bold;
+    color: #bcb2ff;
+    font-size: 0.75rem;
 }
 
 
 .comentario__acciones {
     display: flex;
-
-    gap: 0.5vw;
+    gap: 8px;
 }
 
 
 .comentario__accion {
-    width: 1.8vw;
-
-    aspect-ratio: 1;
-
+    width: 16px;
+    height: 16px;
     border: none;
-
     background: transparent;
-
     cursor: pointer;
 }
+
+
+.fa-thumbs-up,
+.fa-thumbs-down {
+    font-size: 0.85rem;
+}
+
 
 .fa-thumbs-up {
     color: white;
     transition: color 0.1s ease;
 }
 
+
 .fa-thumbs-up:hover {
     color: #FF35F1;
 }
+
 
 .fa-thumbs-down {
     color: white;
     transition: color 0.1s ease;
 }
 
+
 .fa-thumbs-down:hover {
     color: #FF35F1;
 }
-
-
 
 /* 
    RESPONSIVE

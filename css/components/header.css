@@ -6,7 +6,7 @@ body {
 
 .encabezado {
     width: 100%;
-    height: 5.7vw;
+    height: 3.2vw;
     margin: 0;
     background-color: #f52de8;
 
@@ -45,7 +45,7 @@ body {
 }
 
 .fa-bars{
-    font-size: 30px;
+    font-size: 20px;
 }
 
 /* =========================================================
@@ -53,39 +53,24 @@ body {
    ========================================================= */
 
 .encabezado__logo {
-    width: 15vw;
-    height: 100%;
+        width: auto; 
+        height: auto;
+    }
 
-    display: flex;
-    align-items: center;
-
-    gap: 0.5vw;
-
-    text-decoration: none;
-}
-
-
-.encabezado__logo-imagen {
-    width: 100%;
-    max-width: 20vw;
-
-    object-fit:contain;
-}
-
-
-/* =========================================================
-   SEPARADOR
-   ========================================================= */
-
-
+    .encabezado__logo-imagen {
+        width: 110px;      
+        max-width: none;  
+        height: auto;
+        object-fit: contain;
+    }
 
 /* =========================================================
    BUSCADOR
    ========================================================= */
 
 .buscador {
-    width: 26vw;
-    height: 3.4vw;
+    width: 22vw;
+    height: 1.9vw;
 
     position: absolute;
 
@@ -118,15 +103,15 @@ body {
     width: 100%;
     height: 100%;
 
-    border: 0.15vw solid #888;
+    border: 0.1vw solid #888;
 
-    border-radius: 1vw;
+    border-radius: 0.7vw;
 
     background-color: white;
 
-    padding: 0 4vw 0 1.3vw;
+    padding: 0 3.2vw 0 1.1vw;
 
-    font-size: 1vw;
+    font-size: 0.9vw;
 
     outline: none;
 }
@@ -138,13 +123,13 @@ body {
 
 
 .buscador__boton {
-    width: 2.5vw;
-    height: 2.5vw;
+    width: 1.4vw;
+    height: 1.4vw;
 
     position: absolute;
 
-    right: 0.3vw;
-    top: 0.3vw;
+    right: 0.25vw;
+    top: 0.25vw;
 
     border: none;
 
@@ -156,7 +141,7 @@ body {
 }
 
 .fa-magnifying-glass{
-    font-size: 15px;
+    font-size: 11px;
 }
 
 
@@ -181,7 +166,7 @@ body {
 }
 
 .fa-user{
-    font-size: 20px;
+    font-size: 15px;
 }
 
 
