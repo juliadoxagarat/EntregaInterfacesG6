@@ -9,10 +9,16 @@
 -hover del boton agregar a mis juegos
 -preguntar sobre el top 4
 -distintivos del top 4 en las cards
--agregar corazon a boton de agregar a mi juegos
--hacer que el juego de peg en home tenga borde en la izquierda
--agregar mas comentarios
--se agrandan las cards de mi top 4 de seleccion en hover
--agregar mas cards ( imagen, nombre y html)
+-agregar corazon a boton de agregar a mi juegos y en agragdo un ok
+-hacer que el juego de peg en home tenga borde en la izquierda ------ LISTO ------
+-agregar mas comentarios  ----- LISTO --------
+-se agrandan las cards de mi top 4 de seleccion en hover (capaz no queda mal)
+-agregar mas cards en los carrusles( imagen, nombre y html)
+-mantener el header al deslizar ------ LISTO -------
+-hacer que desde inicio/registrarse te lleve al home
+-footer en home hacerlo largo ------- LISTO -------
+-arreglar el tema de los tildes
+-que quede un espacio en la izquierda en carruseles donde deberia estar la flecha ---- LISTO ---
+-hacer desde inicio a home el cargando
 
 

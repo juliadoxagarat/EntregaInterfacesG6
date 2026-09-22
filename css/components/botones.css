@@ -2,6 +2,8 @@
    BOTÓN INICIAR SESIÓN
    ========================================= */
 
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 .boton {
     width: 137px;
     height: 21px;
@@ -49,10 +51,10 @@
 
 /* boton jugar en home */
 
-/* Importamos una tipografía pixel/retro (opcional pero recomendada) */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
 .boton--jugar {
+    width: fit-content;
+    height: auto;
+
     font-family: 'Press Start 2P', 'Arial Black', sans-serif;
     font-size: 1.1rem;
     font-weight: bold;
@@ -60,17 +62,14 @@
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 2px;
-    
-    text-shadow: 
-        -2px -2px 0 #000,  
+
+    text-shadow:
+        -2px -2px 0 #000,
          2px -2px 0 #000,
         -2px  2px 0 #000,
          2px  2px 0 #000;
 
     padding: 1.3rem 3rem;
-    display: fit-content;
-    align-items: center;
-    justify-content: center;
 
     background-color: #a6817a;
 
@@ -93,6 +92,23 @@
     outline: none;
 
     transform: translateY(-2px);
+}
+
+
+/* boton jugar en mobile */
+
+@media (max-width: 600px) {
+    .boton--jugar {
+        font-size: 0.7rem;
+
+        letter-spacing: 1px;
+
+        padding: 0.9rem 1.8rem;
+
+        border-width: 3px;
+
+        border-radius: 10px;
+    }
 }
 
 /* boton agregar juego en peg */
