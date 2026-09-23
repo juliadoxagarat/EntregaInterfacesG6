@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Alterna el texto según si tiene la clase o no
             if (botonAgregar.classList.contains('agregado')) {
                 botonAgregar.textContent = 'Agregado';
+                botonAgregar.innerHTML += ' <i class="fa-solid fa-check"></i>';
             } else {
                 botonAgregar.textContent = 'Agregar a mis juegos';
             }

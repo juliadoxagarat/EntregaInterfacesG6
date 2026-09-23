@@ -142,4 +142,17 @@
     color: white;
 }
 
+.boton__enlace{
+    text-decoration: none;
+    color: inherit;
+}
 
+.fa-heart{
+    margin: .3vw;
+    font-size: .9vw;
+}
+
+.fa-check{
+    margin: .3vw;
+    font-size: .9vw;
+}

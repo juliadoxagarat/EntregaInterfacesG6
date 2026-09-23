@@ -180,6 +180,7 @@ input {
 
     width: auto;
 
+
     position: relative;
 
     overflow: visible;
@@ -318,7 +319,7 @@ input {
 }
 
 .tarjeta-juego:hover {
-    transform: translateY(-0.5vw);
+    transform: translateY(-0.3vw);
     box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.28);
 
 }
@@ -438,19 +439,6 @@ input {
 
 }
 
-.tarjeta-juego--top:hover .tarjeta-juego__nombre {
-
-    position: relative;
-
-    left: auto;
-
-    right: auto;
-
-    bottom: auto;
-
-    overflow: hidden;
-
-}
 
 .tarjeta-juego--top:hover .tarjeta-juego__nombre span {
 
@@ -884,17 +872,16 @@ img[src=""] {
     }
 
     .destacado__titulo {
-
         left: 1.5vw;
+        top: 0.7vw;
 
-        top: -0.5vw;
-
-        font-size: 2vw;
+        font-size: 1.7vw;
 
         letter-spacing: 0.05vw;
 
-        text-shadow: 0 0.12vw 0.33vw rgba(0, 0, 0, 0.65);
-
+        text-shadow:
+            0.08vw 0.08vw 0 #000,
+            0 0.12vw 0.3vw rgba(0, 0, 0, 0.7);
     }
 
     .destacado__boton-contenedor {
@@ -1032,8 +1019,9 @@ img[src=""] {
  */
 
     .tarjeta-juego {
-        width: 9vw;
-        flex: 0 0 9.8vw;
+        width: 13vw;
+        flex: 0 0 13vw;
+
         border-radius: 0.46vw;
     }
 
@@ -1147,5 +1135,120 @@ img[src=""] {
         visibility: hidden;
         pointer-events: none;
     }
+
+    /* margenes laterales de la pagina en escritorio */
+
+        .pagina-inicio {
+            width: 80vw;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .destacado,
+        .top-seleccion,
+        .carrusel-juegos__contenedor {
+            width: 100%;
+        }
+
+.top-seleccion__encabezado {
+        width: 32%;
+        flex: 0 0 32%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        margin-bottom: 0;
+    }
+
+
+    .top-seleccion__titulo {
+        margin-bottom: 1vw;
+
+        font-size: 1.5vw;
+    }
+
+
+    .top-seleccion__presentacion {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+
+        gap: 1vw;
+
+        margin-bottom: 0;
+    }
+
+
+    .top-seleccion__fantasma-contenedor {
+        width: 4.5vw;
+
+        flex-shrink: 0;
+    }
+
+
+    .top-seleccion__texto {
+        flex: 1;
+
+        line-height: 1.35;
+    }
+
+
+    .top-seleccion__texto p {
+        margin: 0;
+
+        font-size: 1vw;
+    }
+
+
+    /* zona de las cards */
+    .top-seleccion__contenido {
+        flex: 1;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+
+    .top-seleccion__juegos {
+        width: auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        gap: 1vw;
+    }
+
+
+    /* cards realmente mas chicas */
+    .tarjeta-juego--top {
+        width: 13.5vw;
+        flex: 0 0 13.5vw;
+
+        border-radius: 0.45vw;
+    }
+
+
+    .tarjeta-juego--top .tarjeta-juego__imagen {
+        width: 100%;
+
+        aspect-ratio: 1.8 / 1;
+
+        object-fit: cover;
+    }
+
+
+    .tarjeta-juego--top .tarjeta-juego__nombre {
+        min-height: auto;
+
+        padding: 0.25vw 0.4vw;
+
+        font-size: 0.65vw;
+    }
+
 
 }
