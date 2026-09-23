@@ -49,9 +49,7 @@ input {
 
 .pagina-juego {
     width: 94vw;
-
     margin: 0 auto;
-
     padding-top: 1.8vw;
     padding-bottom: 3vw;
 }
@@ -456,7 +454,8 @@ img[src=""] {
     height: 100%;
     object-fit: cover;
     display: block;
-    transform: scale(1.7); /* Agregado para agrandar la imagen dentro del círculo */
+    transform: scale(1.7);
+    /* Agregado para agrandar la imagen dentro del círculo */
 }
 
 .comentario__contenido {
@@ -521,6 +520,8 @@ img[src=""] {
 .fa-thumbs-up,
 .fa-thumbs-down {
     font-size: 0.78rem;
+    display: inline-block;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .fa-thumbs-up {
@@ -531,12 +532,13 @@ img[src=""] {
 
 .fa-thumbs-up:hover {
     color: #FF35F1;
+    transform: translateY(-3px);
 }
 
 
 .fa-thumbs-down {
     color: white;
-    transition: color 0.1s ease;
+    transform: translateY(3px);
 }
 
 

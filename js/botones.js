@@ -2,33 +2,54 @@ document.addEventListener('DOMContentLoaded', () => {
     const botonAgregar = document.querySelector('[data-boton-favorito]');
 
     if (botonAgregar) {
-        botonAgregar.addEventListener('click', () => {
-            // Alterna la clase CSS para cambiar el color a #9FC500
-            botonAgregar.classList.toggle('agregado');
-
-            // Alterna el texto según si tiene la clase o no
+        function actualizarBoton() {
             if (botonAgregar.classList.contains('agregado')) {
-                botonAgregar.textContent = 'Agregado';
-                botonAgregar.innerHTML += ' <i class="fa-solid fa-check"></i>';
+                botonAgregar.innerHTML = '<span class="corazon">❤️</span> Agregado <i class="fa-solid fa-check"></i>';
             } else {
-                botonAgregar.textContent = 'Agregar a mis juegos';
+                botonAgregar.innerHTML = '<span class="corazon">❤️</span> Agregar a mis juegos';
+            }
+        }
+
+        actualizarBoton();
+
+        botonAgregar.addEventListener('click', () => {
+            // Removemos animaciones previas si el usuario hace clicks muy rápidos
+            botonAgregar.classList.remove('estallido-verde', 'estallido-rosa');
+            void botonAgregar.offsetWidth; // Forzar reflow de CSS para reiniciar la animación
+
+            if (!botonAgregar.classList.contains('agregado')) {
+                // Al pasar a "Agregado" -> destellos verdes
+                botonAgregar.classList.add('agregado', 'estallido-verde');
+            } else {
+                // Al volver a "Agregar a mis juegos" -> destellos rosas
+                botonAgregar.classList.remove('agregado');
+                botonAgregar.classList.add('estallido-rosa');
+            }
+
+            actualizarBoton();
+        });
+
+        // Remueve las clases de animación cuando termina el efecto
+        botonAgregar.addEventListener('animationend', (e) => {
+            if (e.animationName === 'particulasOut') {
+                botonAgregar.classList.remove('estallido-verde', 'estallido-rosa');
             }
         });
     }
-});
 
+    /* BOTON JUGAR */
+    const btnJugar = document.getElementById('btn-jugar');
+    if (btnJugar) {
+        const textoOriginal = btnJugar.textContent;
 
-/* BOTON JUGAR */
+        btnJugar.addEventListener('mouseenter', () => {
+            btnJugar.textContent = '⚔️';
+            btnJugar.classList.add('animar-espadas');
+        });
 
-const btnJugar = document.getElementById('btn-jugar');
-const textoOriginal = btnJugar.textContent;
-
-btnJugar.addEventListener('mouseenter', () => {
-    btnJugar.textContent = '⚔️';
-    btnJugar.classList.add('animar-espadas');
-});
-
-btnJugar.addEventListener('mouseleave', () => {
-    btnJugar.textContent = textoOriginal;
-    btnJugar.classList.remove('animar-espadas');
+        btnJugar.addEventListener('mouseleave', () => {
+            btnJugar.textContent = textoOriginal;
+            btnJugar.classList.remove('animar-espadas');
+        });
+    }
 });

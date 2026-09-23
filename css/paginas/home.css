@@ -1279,3 +1279,31 @@ img[src=""] {
 
 
 }
+
+/* =========================================
+   ANIMACIÓN HOVER DEL FANTASMA (ROTACIÓN)
+   ========================================= */
+
+@keyframes rotarDerechaFantasma {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(15deg);
+        /* Se inclina 15 grados a la derecha */
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Aplicar la animación al hacer hover sobre el fantasma */
+.top-seleccion__fantasma:hover {
+    display: inline-block;
+    transform-origin: center center;
+    /* Garantiza que gire desde su centro */
+    animation: rotarDerechaFantasma 2.5s ease-in-out infinite !important;
+    /* Más lento (2.5s) */
+}

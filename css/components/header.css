@@ -15,30 +15,21 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
 .encabezado__contenedor {
     width: 100%;
     height: 100%;
-
     display: flex;
     align-items: center;
     position: relative;
 }
 
-
-/* 
-   HAMBURGUESA
- */
-
+/* HAMBURGUESA */
 .encabezado__menu-boton {
     width: 6vw;
     height: 100%;
-
     border: none;
     background: transparent;
-
     cursor: pointer;
-
     position: relative;
 }
 
@@ -46,9 +37,7 @@ body {
     font-size: 20px;
 }
 
-/* 
-   LOGO*/
-
+/* LOGO */
 .encabezado__logo {
     width: auto;
     height: auto;
@@ -61,79 +50,53 @@ body {
     object-fit: contain;
 }
 
-/* 
-   BUSCADOR
-    */
-
+/* BUSCADOR */
 .buscador {
     width: 22vw;
     height: 1.9vw;
-
     position: absolute;
-
     left: 50%;
     top: 50%;
-
     transform: translate(-50%, -50%);
 }
 
-
 .buscador__label {
     position: absolute;
-
     width: 0;
     height: 0;
-
     overflow: hidden;
 }
-
 
 .buscador__contenedor {
     width: 100%;
     height: 100%;
-
     position: relative;
 }
-
 
 .buscador__input {
     width: 100%;
     height: 100%;
-
     border: 0.1vw solid #888;
-
     border-radius: 0.7vw;
-
     background-color: white;
-
     padding: 0 3.2vw 0 1.1vw;
-
     font-size: 0.9vw;
-
     outline: none;
 }
-
 
 .buscador__input::placeholder {
     color: #666;
 }
 
-
 .buscador__boton {
     width: 1.4vw;
     height: 1.4vw;
-
     position: absolute;
-
     right: 0.25vw;
     top: 0.25vw;
-
     border: none;
-
     border-radius: 50%;
-
     background-color: #e832df;
-
     cursor: pointer;
 }
 
@@ -141,61 +104,77 @@ body {
     font-size: 11px;
 }
 
-
-
-/* 
-   PERFIL*/
-
+/* PERFIL BOTÓN */
 .encabezado__perfil-boton {
     width: 6vw;
     height: 100%;
-
     margin-left: auto;
-
     border: none;
-
     background: transparent;
-
     cursor: pointer;
-
     position: relative;
+}
+
+/* =========================================================
+   CUADRADO QUE SE DI B U J A ALREDEDOR DEL BOTÓN
+   ========================================================= */
+
+/* Registrar la propiedad personalizada para permitir su transición suave */
+@property --angulo-trazo {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.encabezado__menu-boton,
+.encabezado__perfil-boton {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.encabezado__menu-boton::after,
+.encabezado__perfil-boton::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 34px;
+    height: 34px;
+    margin-top: -17px;
+    margin-left: -17px;
+    border: 2px solid #ffa3da;
+    /* Grosor y color del trazo */
+    box-sizing: border-box;
+    pointer-events: none;
+    opacity: 0;
+
+    --angulo-trazo: 0deg;
+    -webkit-mask: conic-gradient(#000 var(--angulo-trazo), transparent 0deg);
+    mask: conic-gradient(#000 var(--angulo-trazo), transparent 0deg);
+
+    /* Transición de la animación de dibujado (duración 0.4s) */
+    transition: --angulo-trazo 1s linear, opacity 0.15s ease;
+}
+
+/* Al hacer hover, se incrementa el ángulo dibujando el borde */
+.encabezado__menu-boton:hover::after,
+.encabezado__perfil-boton:hover::after {
+    opacity: 1;
+    --angulo-trazo: 360deg;
 }
 
 .fa-user {
     font-size: 15px;
 }
 
+/* =========================================================
+   ESTILOS BASE Y BARRIDO SUAVE EN ENLACES (SIN PARPADEO)
+   ========================================================= */
 
-/* 
-   MENÚ CATEGORÍAS */
-.menu-categorias {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 13vw;
-    min-width: 150px;
-    padding: 0;
-    background-color: #ffbbfd;
-    border: 1px solid #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 200;
-}
-
-.menu-categorias__lista {
-    list-style: none;
-
-    padding: 0;
-    margin: 0;
-}
-
-
-.menu-categorias__item {
-    margin-bottom: 0;
-    border-bottom: 1px solid #ffffff;
-}
-
-
-.menu-categorias__link {
+.menu-categorias__link,
+.menu-usuario__link {
     display: block;
     width: 100%;
     padding: 0.45vw 0.6vw;
@@ -204,21 +183,144 @@ body {
     font-size: 0.8vw;
     font-weight: normal;
     text-align: center;
-    background-color: #ffbbfd;
-    transition: background-color 0.15s ease, font-weight 0.15s ease;
     box-sizing: border-box;
+
+    background-color: #ffb5fd;
+
+    background-image: radial-gradient(circle at center, #ff92f8 0%, #f65fef 100%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0% 100%;
+
+    transition: background-size 0.35s ease-out, font-weight 0.15s ease, color 0.15s ease;
+    position: relative;
+    overflow: hidden;
 }
 
+.menu-usuario__link {
+    font-size: 0.75vw;
+}
 
-.menu-categorias__link:hover {
-    background-color: #ff00ea;
-    color: #000000;
+/* Estado Hover: Barrido estático sin bucles */
+.menu-categorias__link:hover,
+.menu-usuario__link:hover {
     font-weight: bold;
+    color: #000000;
+    background-size: 100% 100%;
 }
 
-/* 
-   MENÚ USUARIO
-    */
+/* =========================================================
+   EMOJIS EN MENÚ CATEGORÍAS (ENTRADA Y SALIDA DESLIZADA)
+   ========================================================= */
+
+.menu-categorias__link::before,
+.menu-categorias__link::after {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 11px;
+    pointer-events: none;
+
+    /* Transición suave para entrar y salir sin parpadear */
+    transition: left 0.3s ease, right 0.3s ease, opacity 0.3s ease;
+}
+
+/* Posición fuera del botón */
+.menu-categorias__link::before {
+    left: -15px;
+}
+
+.menu-categorias__link::after {
+    right: -15px;
+}
+
+/* Al hacer hover entran y quedan fijos */
+.menu-categorias__link:hover::before {
+    opacity: 1;
+    left: 8px;
+}
+
+.menu-categorias__link:hover::after {
+    opacity: 1;
+    right: 8px;
+}
+
+/* Emojis por categoría */
+.menu-categorias__link[href*="#accion"]::before,
+.menu-categorias__link[href*="#accion"]::after {
+    content: "💥";
+}
+
+.menu-categorias__link[href*="#terror"]::before,
+.menu-categorias__link[href*="#terror"]::after {
+    content: "👻";
+}
+
+.menu-categorias__link[href*="#aventura"]::before,
+.menu-categorias__link[href*="#aventura"]::after {
+    content: "🗡️";
+}
+
+.menu-categorias__link[href*="#carreras"]::before,
+.menu-categorias__link[href*="#carreras"]::after {
+    content: "🏎️";
+}
+
+.menu-categorias__link[href*="#supervivencia"]::before,
+.menu-categorias__link[href*="#supervivencia"]::after {
+    content: "⛺";
+}
+
+.menu-categorias__link[href*="#superheroes"]::before,
+.menu-categorias__link[href*="#superheroes"]::after {
+    content: "🦸";
+}
+
+.menu-categorias__link[href*="#dos-jugadores"]::before,
+.menu-categorias__link[href*="#dos-jugadores"]::after {
+    content: "🎮";
+}
+
+.menu-categorias__link[href*="#mas-juegos"]::before,
+.menu-categorias__link[href*="#mas-juegos"]::after {
+    content: "✨";
+}
+
+/* =========================================================
+   MENÚ CATEGORÍAS & MENÚ USUARIO
+   ========================================================= */
+
+.menu-categorias {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 13vw;
+    min-width: 150px;
+    padding: 0;
+    background-color: #fab7f7;
+    border: 1px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 200;
+}
+
+.menu-categorias__lista,
+.menu-usuario__lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-categorias__item,
+.menu-usuario__item {
+    margin-bottom: 0;
+    border-bottom: 1px solid #ffffff;
+}
+
+.menu-usuario__item:last-child,
+.menu-categorias__item:last-child {
+    border-bottom: none;
+}
 
 .menu-usuario {
     position: absolute;
@@ -227,13 +329,12 @@ body {
     width: 15vw;
     min-width: 170px;
     padding: 0;
-    background-color: #ffbbfd;
+    background-color: #fc96f9;
     border: 1px solid #ffffff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 200;
     color: #000000;
 }
-
 
 .menu-usuario__perfil {
     display: flex;
@@ -241,13 +342,12 @@ body {
     justify-content: flex-start;
     gap: 10px;
     padding: 10px 14px;
-    background-color: #ffbbfd;
+    background-color: #fc96f9;
     border-bottom: 1px solid #ffffff;
 }
 
 .menu-usuario__avatar-contenedor {
     width: 56px !important;
-    /* Tamaño visible y destacado en PC */
     height: 56px !important;
     min-width: 56px !important;
     min-height: 56px !important;
@@ -265,9 +365,6 @@ body {
     height: 56px !important;
     max-width: none !important;
     object-fit: cover !important;
-    /* El PNG del avatar tiene mucho espacio transparente alrededor del dibujo:
-       se escala la imagen para que la figura llene el círculo blanco.
-       El overflow:hidden del contenedor recorta el excedente. */
     transform: scale(1.8) !important;
     display: block;
 }
@@ -283,54 +380,16 @@ body {
     display: none;
 }
 
-.menu-usuario__lista {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.menu-usuario__item {
-    margin-bottom: 0;
-    border-bottom: 1px solid #ffffff;
-}
-
-.menu-usuario__item:last-child {
-    border-bottom: none;
-}
-
-.menu-usuario__link {
-    display: block;
-    width: 100%;
-    padding: 0.45vw 0.6vw;
-    color: #000000;
-    text-decoration: none;
-    font-size: 0.75vw;
-    text-align: center;
-    background-color: #ffbbfd;
-    transition: background-color 0.15s ease, font-weight 0.15s ease;
-    box-sizing: border-box;
-}
-
-.menu-usuario__link:hover {
-    background-color: #ff00ea;
-    color: #000000;
-    font-weight: bold;
-}
-
-/*
-   HIDDEN
- */
-
+/* HIDDEN */
 [hidden] {
     display: none !important;
 }
 
-
-/*
-   RESPONSIVE - PANTALLAS CHICAS / MOBILE */
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
 
 @media (max-width: 768px) {
-
     .encabezado {
         height: 52px;
     }
@@ -417,7 +476,6 @@ body {
     .menu-categorias__item,
     .menu-usuario__item {
         margin-bottom: 0;
-        /* Elimina espacio innecesario entre opciones */
         border-bottom: 1px solid #ffffff;
     }
 
@@ -459,6 +517,5 @@ body {
 
     .menu-usuario__titulo {
         display: none;
-        /* Oculto para mantenerlo compacto */
     }
 }
