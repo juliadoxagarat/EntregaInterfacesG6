@@ -16,3 +16,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+/* BOTON JUGAR */
+
+const btnJugar = document.getElementById('btn-jugar');
+const textoOriginal = btnJugar.textContent;
+
+btnJugar.addEventListener('mouseenter', () => {
+    btnJugar.textContent = '⚔️';
+    btnJugar.classList.add('animar-espadas');
+});
+
+btnJugar.addEventListener('mouseleave', () => {
+    btnJugar.textContent = textoOriginal;
+    btnJugar.classList.remove('animar-espadas');
+});

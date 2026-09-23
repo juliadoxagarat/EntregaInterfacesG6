@@ -65,9 +65,9 @@
 
     text-shadow:
         -2px -2px 0 #000,
-         2px -2px 0 #000,
-        -2px  2px 0 #000,
-         2px  2px 0 #000;
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000;
 
     padding: 1.3rem 3rem;
 
@@ -81,19 +81,37 @@
 
     transition: all 0.2s ease;
     cursor: pointer;
+
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-/* Estado :hover (Tercera foto) */
-.boton--jugar:hover {
-    background-color: #bfa19a;
+.boton--jugar.animar-espadas {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    font-size: 45px;
+    transform: translateY(15px);
+    animation: chocandoEspadas 0.8s ease-in-out infinite alternate;
 
-    border-color: #b83328;
-
-    outline: none;
-
-    transform: translateY(-2px);
+    text-shadow: 0 0 10px rgb(255, 0, 183),
+        0 0 20px rgb(255, 0, 149),
+        0 0 30px rgb(255, 0, 0);
 }
 
+@keyframes chocandoEspadas {
+    0% {
+        transform: translateY(15px) scale(1) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(17px) scale(1.05) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(15px) scale(1) rotate(3deg);
+    }
+}
 
 /* boton jugar en mobile */
 
@@ -142,17 +160,17 @@
     color: white;
 }
 
-.boton__enlace{
+.boton__enlace {
     text-decoration: none;
     color: inherit;
 }
 
-.fa-heart{
+.fa-heart {
     margin: .3vw;
     font-size: .9vw;
 }
 
-.fa-check{
+.fa-check {
     margin: .3vw;
     font-size: .9vw;
 }

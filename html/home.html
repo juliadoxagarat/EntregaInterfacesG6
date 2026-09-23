@@ -110,7 +110,7 @@
                         <img class="menu-usuario__avatar" src="../img/avatares/avatar6.png" alt="Avatar del usuario">
                     </div>
                     <p class="menu-usuario__nombre">
-                        interfaces_tudai
+                        Nombre de usuario
                     </p>
                 </div>
 
@@ -168,9 +168,9 @@
 
                     <!-- boton q va arriba de la img -->
                     <div class="destacado__boton-contenedor">
-                        <a class="boton boton--jugar" href="juego.html">
+                        <button class="boton boton--jugar" href="juego.html" id="btn-jugar">
                             Jugar
-                        </a>
+                        </button>
                     </div>
                 </div>
             </section>
@@ -205,20 +205,25 @@
                         <div class="top-seleccion__juegos">
                             <article class="tarjeta-juego tarjeta-juego--top">
                                 <a class="tarjeta-juego__link" href="#">
+                                    <span class="tarjeta-juego__badge-top">Top 3</span>
                                     <img class="tarjeta-juego__imagen" src="../img/juegos/genesis.jpg" alt="Genesis">
                                     <h3 class="tarjeta-juego__nombre"><span>Genesis</span></h3>
                                 </a>
                             </article>
                             <article class="tarjeta-juego tarjeta-juego--top">
                                 <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/freedomforce.jpg" alt="Freedom Force">
+                                    <span class="tarjeta-juego__badge-top">Top 3</span>
+                                    <img class="tarjeta-juego__imagen" src="../img/juegos/freedomforce.jpg"
+                                        alt="Freedom Force">
                                     <h3 class="tarjeta-juego__nombre"><span>Freedom Force</span></h3>
                                 </a>
                             </article>
                             <article class="tarjeta-juego tarjeta-juego--top">
                                 <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img\juegos\MasJuegos\mas-cinco.png" alt="Survival">
-                                    <h3 class="tarjeta-juego__nombre"><span>Survival</span></h3>
+                                    <span class="tarjeta-juego__badge-top">Top 3</span>
+                                    <img class="tarjeta-juego__imagen" src="../img\juegos\MasJuegos/mas-uno.png"
+                                        alt="Pac-man">
+                                    <h3 class="tarjeta-juego__nombre"><span>Pac-man</span></h3>
                                 </a>
                             </article>
                         </div>
@@ -236,80 +241,89 @@
                         </h2>
 
                         <div class="carrusel-juegos__contenido">
-                    <!-- arranca oculta y js la muestra desp -->
+                            <!-- arranca oculta y js la muestra desp -->
                             <button class="carrusel-juegos__flecha carrusel-juegos__flecha--izquierda" type="button"
                                 data-direccion="anterior">
-                        <!-- flecha izquierda -->
+                                <!-- flecha izquierda -->
                                 <i class="fa-solid fa-chevron-left"></i>
                             </button>
 
-                    <!-- parte visible del carrusel -->
+                            <!-- parte visible del carrusel -->
                             <div class="carrusel-juegos__ventana">
-                        <!-- esta lista es la q desp mueve js -->
+                                <!-- esta lista es la q desp mueve js -->
                                 <div class="carrusel-juegos__lista">
                                     <!-- aca van las cards de accion -->
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Accion\accion-uno.png" alt="Space firebird">
-                                    <h3 class="tarjeta-juego__nombre"><span>Space firebird</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Accion\accion-dos.png" alt="Winter Games">
-                                    <h3 class="tarjeta-juego__nombre"><span>Winter Games</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Accion\accion-tres.png" alt="Robocop">
-                                    <h3 class="tarjeta-juego__nombre"><span>Robocop</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Accion\accion-cuatro.png" alt="Master (Kenseiden)">
-                                    <h3 class="tarjeta-juego__nombre"><span>Master (Kenseiden)</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Accion\accion-cinco.png" alt="Dragon Warrior">
-                                    <h3 class="tarjeta-juego__nombre"><span>Dragon Warrior</span></h3>
-                                </a>
-                            </article>
-                        <!-- aca van los juegos q quedan ocultos al principio -->
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Accion\accion-seis.png" alt="Bomb Jack">
-                                    <h3 class="tarjeta-juego__nombre"><span>Bomb Jack</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Accion/accion-siete.png" alt="Full Throttle">
-                                    <h3 class="tarjeta-juego__nombre"><span>Full Throttle</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Accion/accion-ocho.png" alt="Otro juego">
-                                    <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Accion/accion-nueve.png" alt="Otro juego">
-                                    <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
-                                </a>
-                            </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen" src="../img/juegos/Accion\accion-uno.png"
+                                                alt="Space firebird">
+                                            <h3 class="tarjeta-juego__nombre"><span>Space firebird</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen" src="../img/juegos/Accion\accion-dos.png"
+                                                alt="Winter Games">
+                                            <h3 class="tarjeta-juego__nombre"><span>Winter Games</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Accion\accion-tres.png" alt="Robocop">
+                                            <h3 class="tarjeta-juego__nombre"><span>Robocop</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Accion\accion-cuatro.png" alt="Master (Kenseiden)">
+                                            <h3 class="tarjeta-juego__nombre"><span>Master (Kenseiden)</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Accion\accion-cinco.png" alt="Dragon Warrior">
+                                            <h3 class="tarjeta-juego__nombre"><span>Dragon Warrior</span></h3>
+                                        </a>
+                                    </article>
+                                    <!-- aca van los juegos q quedan ocultos al principio -->
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Accion\accion-seis.png" alt="Bomb Jack">
+                                            <h3 class="tarjeta-juego__nombre"><span>Bomb Jack</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Accion/accion-siete.png" alt="Full Throttle">
+                                            <h3 class="tarjeta-juego__nombre"><span>Full Throttle</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Accion/accion-ocho.png" alt="Otro juego">
+                                            <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Accion/accion-nueve.png" alt="Otro juego">
+                                            <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
+                                        </a>
+                                    </article>
                                 </div>
                             </div>
 
-                    <!-- esta se ve al principio -->
+                            <!-- esta se ve al principio -->
                             <button class="carrusel-juegos__flecha carrusel-juegos__flecha--derecha" type="button"
                                 data-direccion="siguiente">
-                        <!-- flecha derecha -->
+                                <!-- flecha derecha -->
                                 <i class="fa-solid fa-chevron-right"></i>
                             </button>
                         </div>
@@ -323,69 +337,80 @@
                         </h2>
 
                         <div class="carrusel-juegos__contenido">
-                            <button class="carrusel-juegos__flecha carrusel-juegos__flecha--izquierda" type="button" aria-label="Ver juegos anteriores"
-                                data-direccion="anterior">
+                            <button class="carrusel-juegos__flecha carrusel-juegos__flecha--izquierda" type="button"
+                                aria-label="Ver juegos anteriores" data-direccion="anterior">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </button>
 
                             <div class="carrusel-juegos__ventana">
                                 <div class="carrusel-juegos__lista">
                                     <!-- aca van las cards de terror -->
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Terror\terror-uno.png" alt="Splatterhouse">
-                                    <h3 class="tarjeta-juego__nombre"><span>Splatterhouse</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Terror\terror-dos.png" alt="Night Trap">
-                                    <h3 class="tarjeta-juego__nombre"><span>Night Trap</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Terror\terror-tres.png" alt="Friday the 13th">
-                                    <h3 class="tarjeta-juego__nombre"><span>Friday the 13th</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Terror\terror-cuatro.png" alt="Video Games of the 1980s (Recopilatorio)">
-                                    <h3 class="tarjeta-juego__nombre"><span>Video Games of the 1980s (Recopilatorio)</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Terror\terror-cuinco.png" alt="Castlevania">
-                                    <h3 class="tarjeta-juego__nombre"><span>Castlevania</span></h3>
-                                </a>
-                            </article>
-                        <!-- aca van los juegos q quedan ocultos al principio -->
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Terror\terror-seis.png" alt="Dead Alive">
-                                    <h3 class="tarjeta-juego__nombre"><span>Dead Alive</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Terror/terror-siete.png" alt="Shadowrun">
-                                    <h3 class="tarjeta-juego__nombre"><span>Shadowrun</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Terror/terror-ocho.png" alt="Otro juego">
-                                    <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Terror/terror-nueve.png" alt="Otro juego">
-                                    <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
-                                </a>
-                            </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen" src="../img/juegos/Terror\terror-uno.png"
+                                                alt="Splatterhouse">
+                                            <h3 class="tarjeta-juego__nombre"><span>Splatterhouse</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen" src="../img/juegos/Terror\terror-dos.png"
+                                                alt="Night Trap">
+                                            <h3 class="tarjeta-juego__nombre"><span>Night Trap</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Terror\terror-tres.png" alt="Friday the 13th">
+                                            <h3 class="tarjeta-juego__nombre"><span>Friday the 13th</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Terror\terror-cuatro.png"
+                                                alt="Video Games of the 1980s (Recopilatorio)">
+                                            <h3 class="tarjeta-juego__nombre"><span>Video Games of the 1980s
+                                                    (Recopilatorio)</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Terror\terror-cuinco.png" alt="Castlevania">
+                                            <h3 class="tarjeta-juego__nombre"><span>Castlevania</span></h3>
+                                        </a>
+                                    </article>
+                                    <!-- aca van los juegos q quedan ocultos al principio -->
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Terror\terror-seis.png" alt="Dead Alive">
+                                            <h3 class="tarjeta-juego__nombre"><span>Dead Alive</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Terror/terror-siete.png" alt="Shadowrun">
+                                            <h3 class="tarjeta-juego__nombre"><span>Shadowrun</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Terror/terror-ocho.png" alt="Otro juego">
+                                            <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Terror/terror-nueve.png" alt="Otro juego">
+                                            <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
+                                        </a>
+                                    </article>
                                 </div>
                             </div>
 
@@ -412,61 +437,73 @@
                             <div class="carrusel-juegos__ventana">
                                 <div class="carrusel-juegos__lista">
                                     <!-- aca van las cards de aventura -->
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Aventura\aventura-uno.png" alt="Adventure (Atari 2600)">
-                                    <h3 class="tarjeta-juego__nombre"><span>Adventure (Atari 2600)</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Aventura\aventura-dos.png" alt="Double Dragon">
-                                    <h3 class="tarjeta-juego__nombre"><span>Double Dragon</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Aventura\aventura-tres.png" alt="Cadillacs and Dinosaurs">
-                                    <h3 class="tarjeta-juego__nombre"><span>Cadillacs and Dinosaurs</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Aventura\aventura-cuatro.png" alt="Xevious">
-                                    <h3 class="tarjeta-juego__nombre"><span>Xevious</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Aventura\aventura-cinco.png" alt="Conan / Barbarian">
-                                    <h3 class="tarjeta-juego__nombre"><span>Conan / Barbarian</span></h3>
-                                </a>
-                            </article>
-                        <!-- aca van los juegos q quedan ocultos al principio -->
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Aventura\aventura-seis.png" alt="Akalabeth">
-                                    <h3 class="tarjeta-juego__nombre"><span>Akalabeth</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Aventura/aventura-siete.png" alt="Adventure">
-                                    <h3 class="tarjeta-juego__nombre"><span>Adventure</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Aventura/aventura-ocho.png" alt="Otro juego">
-                                    <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Aventura/aventura-nueve.png" alt="Otro juego">
-                                    <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
-                                </a>
-                            </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Aventura\aventura-uno.png"
+                                                alt="Adventure (Atari 2600)">
+                                            <h3 class="tarjeta-juego__nombre"><span>Adventure (Atari 2600)</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Aventura\aventura-dos.png" alt="Double Dragon">
+                                            <h3 class="tarjeta-juego__nombre"><span>Double Dragon</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Aventura\aventura-tres.png"
+                                                alt="Cadillacs and Dinosaurs">
+                                            <h3 class="tarjeta-juego__nombre"><span>Cadillacs and Dinosaurs</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego tarjeta-juego--top">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <span class="tarjeta-juego__badge-top">Top 3</span>
+                                            <img class="tarjeta-juego__imagen" src="../img/juegos/genesis.jpg"
+                                                alt="Genesis">
+                                            <h3 class="tarjeta-juego__nombre"><span>Genesis</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Aventura\aventura-cinco.png" alt="Conan / Barbarian">
+                                            <h3 class="tarjeta-juego__nombre"><span>Conan / Barbarian</span></h3>
+                                        </a>
+                                    </article>
+                                    <!-- aca van los juegos q quedan ocultos al principio -->
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Aventura\aventura-seis.png" alt="Akalabeth">
+                                            <h3 class="tarjeta-juego__nombre"><span>Akalabeth</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Aventura/aventura-siete.png" alt="Adventure">
+                                            <h3 class="tarjeta-juego__nombre"><span>Adventure</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Aventura/aventura-ocho.png" alt="Otro juego">
+                                            <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Aventura/aventura-nueve.png" alt="Otro juego">
+                                            <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
+                                        </a>
+                                    </article>
                                 </div>
                             </div>
 
@@ -493,61 +530,72 @@
                             <div class="carrusel-juegos__ventana">
                                 <div class="carrusel-juegos__lista">
                                     <!-- aca van las cards de carreras -->
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Carrera\carrera-uno.png" alt="80's Overdrive">
-                                    <h3 class="tarjeta-juego__nombre"><span>80's Overdrive</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Carrera\carrera-dos.png" alt="Racing Adventure">
-                                    <h3 class="tarjeta-juego__nombre"><span>Racing Adventure</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Carrera\carrera-tres.png" alt="OutRun">
-                                    <h3 class="tarjeta-juego__nombre"><span>OutRun</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Carrera\carrera-cuatro.png" alt="Among Us">
-                                    <h3 class="tarjeta-juego__nombre"><span>Among Us</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Carrera\carrera-cinco.png" alt="Barbarian">
-                                    <h3 class="tarjeta-juego__nombre"><span>Barbarian</span></h3>
-                                </a>
-                            </article>
-                        <!-- aca van los juegos q quedan ocultos al principio -->
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Carrera\carrera-diez.png" alt="GT 2002">
-                                    <h3 class="tarjeta-juego__nombre"><span>GT 2002</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Carrera/carrera-seis.png" alt="Pixel Drift: Retro Car Racing">
-                                    <h3 class="tarjeta-juego__nombre"><span>Pixel Drift: Retro Car Racing</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Carrera/carrera-siete.png" alt="Otro juego">
-                                    <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Carrera/carrera-ocho.png" alt="Otro juego">
-                                    <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
-                                </a>
-                            </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Carrera\carrera-uno.png" alt="80's Overdrive">
+                                            <h3 class="tarjeta-juego__nombre"><span>80's Overdrive</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Carrera\carrera-dos.png" alt="Racing Adventure">
+                                            <h3 class="tarjeta-juego__nombre"><span>Racing Adventure</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Carrera\carrera-tres.png" alt="OutRun">
+                                            <h3 class="tarjeta-juego__nombre"><span>OutRun</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Carrera\carrera-cuatro.png" alt="Among Us">
+                                            <h3 class="tarjeta-juego__nombre"><span>Among Us</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Carrera\carrera-cinco.png" alt="Barbarian">
+                                            <h3 class="tarjeta-juego__nombre"><span>Barbarian</span></h3>
+                                        </a>
+                                    </article>
+                                    <!-- aca van los juegos q quedan ocultos al principio -->
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Carrera\carrera-diez.png" alt="GT 2002">
+                                            <h3 class="tarjeta-juego__nombre"><span>GT 2002</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Carrera/carrera-seis.png"
+                                                alt="Pixel Drift: Retro Car Racing">
+                                            <h3 class="tarjeta-juego__nombre"><span>Pixel Drift: Retro Car Racing</span>
+                                            </h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Carrera/carrera-siete.png" alt="Otro juego">
+                                            <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Carrera/carrera-ocho.png" alt="Otro juego">
+                                            <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
+                                        </a>
+                                    </article>
                                 </div>
                             </div>
 
@@ -574,61 +622,78 @@
                             <div class="carrusel-juegos__ventana">
                                 <div class="carrusel-juegos__lista">
                                     <!-- aca van las cards de supervivencia -->
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Supervivencia\supervivencia-uno.png" alt="Another World">
-                                    <h3 class="tarjeta-juego__nombre"><span>Another World</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Supervivencia\supervivencia-dos.png" alt="Gauntlet">
-                                    <h3 class="tarjeta-juego__nombre"><span>Gauntlet</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Supervivencia\supervivencia-tres.png" alt="Ghosts 'n Goblins">
-                                    <h3 class="tarjeta-juego__nombre"><span>Ghosts 'n Goblins</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Supervivencia\supervivencia-cuatro.png" alt="Prince of Persia">
-                                    <h3 class="tarjeta-juego__nombre"><span>Prince of Persia</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Supervivencia\supervivencia-cinco.png" alt="Karateka">
-                                    <h3 class="tarjeta-juego__nombre"><span>Karateka</span></h3>
-                                </a>
-                            </article>
-                        <!-- aca van los juegos q quedan ocultos al principio -->
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Supervivencia\supervivencia-seis.png" alt="Arcade computer">
-                                    <h3 class="tarjeta-juego__nombre"><span>Arcade computer</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Supervivencia/supervivencia-seis.png" alt="Video computer">
-                                    <h3 class="tarjeta-juego__nombre"><span>Video computer</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Supervivencia/supervivencia-siete.png" alt="Otro juego">
-                                    <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Supervivencia/supervivencia-ocho.png" alt="Otro juego">
-                                    <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
-                                </a>
-                            </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Supervivencia\supervivencia-uno.png"
+                                                alt="Another World">
+                                            <h3 class="tarjeta-juego__nombre"><span>Another World</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Supervivencia\supervivencia-dos.png" alt="Gauntlet">
+                                            <h3 class="tarjeta-juego__nombre"><span>Gauntlet</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Supervivencia\supervivencia-tres.png"
+                                                alt="Ghosts 'n Goblins">
+                                            <h3 class="tarjeta-juego__nombre"><span>Ghosts 'n Goblins</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Supervivencia\supervivencia-cuatro.png"
+                                                alt="Prince of Persia">
+                                            <h3 class="tarjeta-juego__nombre"><span>Prince of Persia</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Supervivencia\supervivencia-cinco.png"
+                                                alt="Karateka">
+                                            <h3 class="tarjeta-juego__nombre"><span>Karateka</span></h3>
+                                        </a>
+                                    </article>
+                                    <!-- aca van los juegos q quedan ocultos al principio -->
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Supervivencia\supervivencia-seis.png"
+                                                alt="Arcade computer">
+                                            <h3 class="tarjeta-juego__nombre"><span>Arcade computer</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Supervivencia/supervivencia-seis.png"
+                                                alt="Video computer">
+                                            <h3 class="tarjeta-juego__nombre"><span>Video computer</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Supervivencia/supervivencia-siete.png"
+                                                alt="Otro juego">
+                                            <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Supervivencia/supervivencia-ocho.png"
+                                                alt="Otro juego">
+                                            <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
+                                        </a>
+                                    </article>
                                 </div>
                             </div>
 
@@ -655,61 +720,74 @@
                             <div class="carrusel-juegos__ventana">
                                 <div class="carrusel-juegos__lista">
                                     <!-- aca van las cards de superheroes -->
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Superheroes\superheroes-uno.png" alt="Superman">
-                                    <h3 class="tarjeta-juego__nombre"><span>Superman</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Superheroes\superheroes-dos.png" alt="Spider-Man (Arcade)">
-                                    <h3 class="tarjeta-juego__nombre"><span>Spider-Man (Arcade)</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Superheroes\superheroes-tres.png" alt="Galaxian">
-                                    <h3 class="tarjeta-juego__nombre"><span>Galaxian</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Superheroes\superheroes-cuatro.png" alt="Mega Man 3">
-                                    <h3 class="tarjeta-juego__nombre"><span>Mega Man 3</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Superheroes\superheroes-cinco.png" alt="Teenage Mutant Ninja Turtles">
-                                    <h3 class="tarjeta-juego__nombre"><span>Teenage Mutant Ninja Turtles</span></h3>
-                                </a>
-                            </article>
-                        <!-- aca van los juegos q quedan ocultos al principio -->
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Superheroes\superheroes-seis.png" alt="Rockman (Mega Man)">
-                                    <h3 class="tarjeta-juego__nombre"><span>Rockman (Mega Man)</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Superheroes/superheroes-nueve.png" alt="Dragon Warrior">
-                                    <h3 class="tarjeta-juego__nombre"><span>Dragon Warrior</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Superheroes/superheroes-siete.png" alt="Otro juego">
-                                    <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/Superheroes/superheroes-ocho.png" alt="Otro juego">
-                                    <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
-                                </a>
-                            </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Superheroes\superheroes-uno.png" alt="Superman">
+                                            <h3 class="tarjeta-juego__nombre"><span>Superman</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Superheroes\superheroes-dos.png"
+                                                alt="Spider-Man (Arcade)">
+                                            <h3 class="tarjeta-juego__nombre"><span>Spider-Man (Arcade)</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Superheroes\superheroes-tres.png" alt="Galaxian">
+                                            <h3 class="tarjeta-juego__nombre"><span>Galaxian</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Superheroes/superheroes-cuatro.png" alt="Mega Man 3">
+                                            <h3 class="tarjeta-juego__nombre"><span>Mega Man 3</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego tarjeta-juego--top">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <span class="tarjeta-juego__badge-top">Top 3</span>
+                                            <img class="tarjeta-juego__imagen" src="../img/juegos/freedomforce.jpg"
+                                                alt="Freedom Force">
+                                            <h3 class="tarjeta-juego__nombre"><span>Freedom Force</span></h3>
+                                        </a>
+                                    </article>
+                                    <!-- aca van los juegos q quedan ocultos al principio -->
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Superheroes\superheroes-seis.png"
+                                                alt="Rockman (Mega Man)">
+                                            <h3 class="tarjeta-juego__nombre"><span>Rockman (Mega Man)</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Superheroes/superheroes-nueve.png"
+                                                alt="Dragon Warrior">
+                                            <h3 class="tarjeta-juego__nombre"><span>Dragon Warrior</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Superheroes/superheroes-siete.png" alt="Otro juego">
+                                            <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/Superheroes/superheroes-ocho.png" alt="Otro juego">
+                                            <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
+                                        </a>
+                                    </article>
                                 </div>
                             </div>
 
@@ -736,61 +814,80 @@
                             <div class="carrusel-juegos__ventana">
                                 <div class="carrusel-juegos__lista">
                                     <!-- aca van las cards de dos jugadores -->
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/DosJugadores\dosjugadores-uno.png" alt="Super Contra 2-Player Co-Op">
-                                    <h3 class="tarjeta-juego__nombre"><span>Super Contra 2-Player Co-Op</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/DosJugadores\dosjugadores-dos.png" alt="Double Dragon II: The Revenge">
-                                    <h3 class="tarjeta-juego__nombre"><span>Double Dragon II: The Revenge</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/DosJugadores\dosjugadores-tres.png" alt="Bubble Bobble">
-                                    <h3 class="tarjeta-juego__nombre"><span>Bubble Bobble</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/DosJugadores\dosjugadores-cuatro.png" alt="Teenage Mutant Ninja Turtles">
-                                    <h3 class="tarjeta-juego__nombre"><span>Teenage Mutant Ninja Turtles</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/DosJugadores\dosjugadores-cinco.png" alt="Rambo">
-                                    <h3 class="tarjeta-juego__nombre"><span>Rambo</span></h3>
-                                </a>
-                            </article>
-                        <!-- aca van los juegos q quedan ocultos al principio -->
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/DosJugadores\dosjugadores-seis.png" alt="Wing Commander">
-                                    <h3 class="tarjeta-juego__nombre"><span>Wing Commander</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/DosJugadores/dosjugadores-siete.png" alt="Street Fighter II">
-                                    <h3 class="tarjeta-juego__nombre"><span>Street Fighter II</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/DosJugadores/dosjugadores-ocho.png" alt="Otro juego">
-                                    <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/DosJugadores/dosjugadores-nueve.png" alt="Otro juego">
-                                    <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
-                                </a>
-                            </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/DosJugadores\dosjugadores-uno.png"
+                                                alt="Super Contra 2-Player Co-Op">
+                                            <h3 class="tarjeta-juego__nombre"><span>Super Contra 2-Player Co-Op</span>
+                                            </h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/DosJugadores\dosjugadores-dos.png"
+                                                alt="Double Dragon II: The Revenge">
+                                            <h3 class="tarjeta-juego__nombre"><span>Double Dragon II: The Revenge</span>
+                                            </h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/DosJugadores\dosjugadores-tres.png"
+                                                alt="Bubble Bobble">
+                                            <h3 class="tarjeta-juego__nombre"><span>Bubble Bobble</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/DosJugadores\dosjugadores-cuatro.png"
+                                                alt="Teenage Mutant Ninja Turtles">
+                                            <h3 class="tarjeta-juego__nombre"><span>Teenage Mutant Ninja Turtles</span>
+                                            </h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/DosJugadores\dosjugadores-cinco.png" alt="Rambo">
+                                            <h3 class="tarjeta-juego__nombre"><span>Rambo</span></h3>
+                                        </a>
+                                    </article>
+                                    <!-- aca van los juegos q quedan ocultos al principio -->
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/DosJugadores\dosjugadores-seis.png"
+                                                alt="Wing Commander">
+                                            <h3 class="tarjeta-juego__nombre"><span>Wing Commander</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/DosJugadores/dosjugadores-siete.png"
+                                                alt="Street Fighter II">
+                                            <h3 class="tarjeta-juego__nombre"><span>Street Fighter II</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/DosJugadores/dosjugadores-ocho.png" alt="Otro juego">
+                                            <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/DosJugadores/dosjugadores-nueve.png"
+                                                alt="Otro juego">
+                                            <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
+                                        </a>
+                                    </article>
                                 </div>
                             </div>
 
@@ -817,61 +914,71 @@
                             <div class="carrusel-juegos__ventana">
                                 <div class="carrusel-juegos__lista">
                                     <!-- aca van las cards de mas juegos -->
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/MasJuegos\mas-uno.png" alt="Pac-Man">
-                                    <h3 class="tarjeta-juego__nombre"><span>Pac-Man</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/MasJuegos\mas-dos.png" alt="Donkey Kong">
-                                    <h3 class="tarjeta-juego__nombre"><span>Donkey Kong</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/MasJuegos\mas-tres.png" alt="OutRun">
-                                    <h3 class="tarjeta-juego__nombre"><span>OutRun</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/MasJuegos\mas-doce.png" alt="Super Mario Bros">
-                                    <h3 class="tarjeta-juego__nombre"><span>Super Mario Bros</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/MasJuegos\mas-cinco.png" alt="Street Fighter">
-                                    <h3 class="tarjeta-juego__nombre"><span>Street Fighter II</span></h3>
-                                </a>
-                            </article>
-                        <!-- aca van los juegos q quedan ocultos al principio -->
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/MasJuegos\mas-once.png" alt="Rush'n Attack">
-                                    <h3 class="tarjeta-juego__nombre"><span>Rush'n Attack</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/MasJuegos/mas-seis.png" alt="Tetris (TETRIK)">
-                                    <h3 class="tarjeta-juego__nombre"><span>Tetris (TETRIK)</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/MasJuegos/mas-nueve.png" alt="Otro juego">
-                                    <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
-                                </a>
-                            </article>
-                        <article class="tarjeta-juego">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/MasJuegos/mas-diez.png" alt="Otro juego">
-                                    <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
-                                </a>
-                            </article>
+                                    <article class="tarjeta-juego tarjeta-juego--top">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <span class="tarjeta-juego__badge-top">Top 3</span>
+                                            <img class="tarjeta-juego__imagen" src="../img/juegos/MasJuegos/mas-uno.png"
+                                                alt="Survival">
+                                            <h3 class="tarjeta-juego__nombre"><span>Pac-man</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen" src="../img/juegos/MasJuegos\mas-dos.png"
+                                                alt="Donkey Kong">
+                                            <h3 class="tarjeta-juego__nombre"><span>Donkey Kong</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/MasJuegos\mas-tres.png" alt="OutRun">
+                                            <h3 class="tarjeta-juego__nombre"><span>OutRun</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/MasJuegos\mas-doce.png" alt="Super Mario Bros">
+                                            <h3 class="tarjeta-juego__nombre"><span>Super Mario Bros</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/MasJuegos\mas-cinco.png" alt="Street Fighter">
+                                            <h3 class="tarjeta-juego__nombre"><span>Street Fighter II</span></h3>
+                                        </a>
+                                    </article>
+                                    <!-- aca van los juegos q quedan ocultos al principio -->
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/MasJuegos\mas-once.png" alt="Rush'n Attack">
+                                            <h3 class="tarjeta-juego__nombre"><span>Rush'n Attack</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/MasJuegos/mas-seis.png" alt="Tetris (TETRIK)">
+                                            <h3 class="tarjeta-juego__nombre"><span>Tetris (TETRIK)</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/MasJuegos/mas-nueve.png" alt="Otro juego">
+                                            <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
+                                        </a>
+                                    </article>
+                                    <article class="tarjeta-juego">
+                                        <a class="tarjeta-juego__link" href="#">
+                                            <img class="tarjeta-juego__imagen"
+                                                src="../img/juegos/MasJuegos/mas-diez.png" alt="Otro juego">
+                                            <h3 class="tarjeta-juego__nombre"><span>Otro juego</span></h3>
+                                        </a>
+                                    </article>
                                 </div>
                             </div>
 
@@ -1019,6 +1126,7 @@
 
     <script src="../js/home.js"></script>
     <script src="../js/carrouseles.js"></script>
+    <script src="../js/botones.js"></script>
 </body>
 
 </html>
