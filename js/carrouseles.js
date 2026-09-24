@@ -1,91 +1,79 @@
+
 const carruseles = document.querySelectorAll("[data-carrusel]");
 
-carruseles.forEach((carrusel) => {
+carruseles.forEach(carrusel => {
 
-    const ventana = carrusel.querySelector(".carrusel-juegos__ventana");
     const lista = carrusel.querySelector(".carrusel-juegos__lista");
 
-    const botonAnterior = carrusel.querySelector(
+    const flechaIzquierda = carrusel.querySelector(
         '[data-direccion="anterior"]'
     );
 
-    const botonSiguiente = carrusel.querySelector(
+    const flechaDerecha = carrusel.querySelector(
         '[data-direccion="siguiente"]'
     );
 
+    let posicion = 0;
 
-    // guarda cuanto se desplazo el carrusel
-    let desplazamiento = 0;
+    function moverCarrusel(direccion) {
 
+        // Reinicia la animación (en las TARJETAS, no en la lista,
+        // porque la animacion del transform de la lista pisaria
+        // el translateX del deslizamiento)
+        lista.classList.remove("animando");
 
-    function actualizarCarrusel() {
+        // Fuerza al navegador a reiniciar la animación
+        void lista.offsetWidth;
 
-        // limite max al q puede moverse
-        const maximoDesplazamiento =
-            lista.scrollWidth - ventana.clientWidth;
+        // Agrega la animación
+        lista.classList.add("animando");
 
+        // Calculamos cuánto mover
+        const tarjeta = lista.querySelector(".tarjeta-juego");
 
-        if (desplazamiento > maximoDesplazamiento) {
-            desplazamiento = maximoDesplazamiento;
+        if (!tarjeta) return;
+
+        const anchoTarjeta = tarjeta.offsetWidth;
+        const gap = parseFloat(getComputedStyle(lista).gap);
+
+        const movimiento = anchoTarjeta + gap;
+
+        if (direccion === "siguiente") {
+            posicion -= movimiento;
+        } else {
+            posicion += movimiento;
         }
 
+        // limites: no pasarse del final ni del inicio
+        const maximoDesplazamiento = lista.scrollWidth - lista.parentElement.clientWidth;
 
-        lista.style.transform =
-            `translateX(-${desplazamiento}px)`;
+        if (posicion < -maximoDesplazamiento) {
+            posicion = -maximoDesplazamiento;
+        }
 
+        if (posicion > 0) {
+            posicion = 0;
+        }
 
-        // muestra o oculta las flechas segun la pos
-        botonAnterior.hidden = desplazamiento <= 0;
+        lista.style.transform = `translateX(${posicion}px)`;
 
-        botonSiguiente.hidden =
-            desplazamiento >= maximoDesplazamiento;
+        // muestra u oculta las flechas segun la pos
+        flechaIzquierda.hidden = posicion >= 0;
+
+        flechaDerecha.hidden = posicion <= -maximoDesplazamiento;
+
+        // Sacamos la clase cuando termina
+        setTimeout(() => {
+            lista.classList.remove("animando");
+        }, 550);
     }
 
-
-    botonSiguiente.addEventListener("click", () => {
-
-        // avanza una pagina visible
-        const anchoPagina = ventana.clientWidth;
-
-        const maximoDesplazamiento =
-            lista.scrollWidth - ventana.clientWidth;
-
-
-        desplazamiento += anchoPagina;
-
-
-        if (desplazamiento > maximoDesplazamiento) {
-            desplazamiento = maximoDesplazamiento;
-        }
-
-
-        actualizarCarrusel();
+    flechaDerecha.addEventListener("click", () => {
+        moverCarrusel("siguiente");
     });
 
-
-    botonAnterior.addEventListener("click", () => {
-
-        // vuelve una pagina visible
-        const anchoPagina = ventana.clientWidth;
-
-        desplazamiento -= anchoPagina;
-
-
-        if (desplazamiento < 0) {
-            desplazamiento = 0;
-        }
-
-
-        actualizarCarrusel();
+    flechaIzquierda.addEventListener("click", () => {
+        moverCarrusel("anterior");
     });
-
-
-    // recalcula si cambia el tam de la pantalla
-    window.addEventListener("resize", () => {
-        actualizarCarrusel();
-    });
-
-
-    actualizarCarrusel();
 
 });

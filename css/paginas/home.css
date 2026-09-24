@@ -1,4 +1,4 @@
-﻿* {
+﻿﻿* {
 
     box-sizing: border-box;
 
@@ -294,9 +294,9 @@ input {
     border-radius: 1.8vw;
     background-color: rgba(0, 0, 0, 0.43);
     transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
-
+        transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1),
+        box-shadow 0.25s ease,
+        opacity 0.4s ease;
 }
 
 .tarjeta-juego:hover {
@@ -373,6 +373,7 @@ input {
     left: 0;
     right: 0;
     bottom: 0;
+    margin: 0;   /* saca el margen default del h3 que lo despegaba del borde */
     z-index: 2;
 
     width: 100%;
@@ -1141,9 +1142,12 @@ img[src=""] {
     }
 
     .carrusel-juegos__lista {
-
+        display: flex;
+        align-items: stretch;
         gap: 0.88vw;
-
+        transform: translateX(0);
+        transition: transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+        will-change: transform;
     }
 
     .carrusel-juegos__flecha {
@@ -1161,6 +1165,41 @@ img[src=""] {
 
         visibility: hidden;
         pointer-events: none;
+    }
+
+    /* =========================================
+   ANIMACIÓN DEL CARRUSEL
+   ========================================= */
+
+    @keyframes tarjetaPulso {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        45% {
+            transform: scale(0.94);
+            opacity: 0.8;
+        }
+
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    /* La animacion va en las TARJETAS, no en la lista:
+       si se anima el transform de la lista, se pisa el
+       translateX del deslizamiento. */
+
+    .carrusel-juegos__lista.animando .tarjeta-juego {
+        animation: tarjetaPulso 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+
+    .carrusel-juegos__lista.animando .tarjeta-juego:nth-child(2),
+    .carrusel-juegos__lista.animando .tarjeta-juego:nth-child(3),
+    .carrusel-juegos__lista.animando .tarjeta-juego:nth-child(4) {
+        animation-delay: 0.06s;
     }
 
     /* margenes laterales de la pagina en escritorio */
