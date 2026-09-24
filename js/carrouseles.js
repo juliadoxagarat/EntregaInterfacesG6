@@ -1,79 +1,162 @@
+﻿// =========================================================
+// CARRUSELES
+// Un solo script para todos los carruseles de la pagina.
+// Deslizamiento suave (translateX con transicion CSS) +
+// animacion de "pulso" en las cards.
+// Mobile: avanza de a una card. Tablet/desktop: una pagina.
+// =========================================================
 
-const carruseles = document.querySelectorAll("[data-carrusel]");
+function iniciarCarruseles() {
 
-carruseles.forEach(carrusel => {
+    const carruseles = document.querySelectorAll("[data-carrusel]");
 
-    const lista = carrusel.querySelector(".carrusel-juegos__lista");
+    carruseles.forEach((carrusel) => {
 
-    const flechaIzquierda = carrusel.querySelector(
-        '[data-direccion="anterior"]'
-    );
+        const ventana = carrusel.querySelector(".carrusel-juegos__ventana");
 
-    const flechaDerecha = carrusel.querySelector(
-        '[data-direccion="siguiente"]'
-    );
+        const lista = carrusel.querySelector(".carrusel-juegos__lista");
 
-    let posicion = 0;
+        const flechaIzquierda = carrusel.querySelector(
+            '[data-direccion="anterior"]'
+        );
 
-    function moverCarrusel(direccion) {
+        const flechaDerecha = carrusel.querySelector(
+            '[data-direccion="siguiente"]'
+        );
 
-        // Reinicia la animación (en las TARJETAS, no en la lista,
-        // porque la animacion del transform de la lista pisaria
-        // el translateX del deslizamiento)
-        lista.classList.remove("animando");
-
-        // Fuerza al navegador a reiniciar la animación
-        void lista.offsetWidth;
-
-        // Agrega la animación
-        lista.classList.add("animando");
-
-        // Calculamos cuánto mover
-        const tarjeta = lista.querySelector(".tarjeta-juego");
-
-        if (!tarjeta) return;
-
-        const anchoTarjeta = tarjeta.offsetWidth;
-        const gap = parseFloat(getComputedStyle(lista).gap);
-
-        const movimiento = anchoTarjeta + gap;
-
-        if (direccion === "siguiente") {
-            posicion -= movimiento;
-        } else {
-            posicion += movimiento;
+        // si al carrusel le falta algo, no lo toca
+        if (!ventana || !lista || !flechaIzquierda || !flechaDerecha) {
+            return;
         }
 
-        // limites: no pasarse del final ni del inicio
-        const maximoDesplazamiento = lista.scrollWidth - lista.parentElement.clientWidth;
 
-        if (posicion < -maximoDesplazamiento) {
-            posicion = -maximoDesplazamiento;
+        // guarda cuanto se desplazo el carrusel (en px, positivo)
+        let desplazamiento = 0;
+
+        // evita que la animacion se corte si hacen click muy rapido
+        let animando = false;
+
+
+        // calcula cuanto tiene q avanzar en cada click
+        function obtenerDesplazamiento() {
+
+            // mobile: avanza una sola card
+            if (window.innerWidth < 600) {
+
+                const tarjeta = lista.querySelector(".tarjeta-juego");
+
+                if (!tarjeta) {
+                    return ventana.clientWidth;
+                }
+
+                // obtiene el gap q tiene la lista en css
+                const estilosLista = getComputedStyle(lista);
+
+                const gap = parseFloat(estilosLista.gap) || 0;
+
+                return tarjeta.offsetWidth + gap;
+            }
+
+
+            // tablet y escritorio: avanza una pagina completa
+            return ventana.clientWidth;
         }
 
-        if (posicion > 0) {
-            posicion = 0;
+
+        function actualizarCarrusel() {
+
+            // limite max al q puede moverse
+            const maximoDesplazamiento =
+                lista.scrollWidth - ventana.clientWidth;
+
+            if (desplazamiento > maximoDesplazamiento) {
+                desplazamiento = maximoDesplazamiento;
+            }
+
+            if (desplazamiento < 0) {
+                desplazamiento = 0;
+            }
+
+
+            // el translateX se anima solo gracias a la
+            // transition del CSS (.carrusel-juegos__lista)
+            lista.style.transform =
+                `translateX(-${desplazamiento}px)`;
+
+
+            // muestra o oculta las flechas segun la pos
+            flechaIzquierda.hidden = desplazamiento <= 0;
+
+            flechaDerecha.hidden =
+                desplazamiento >= maximoDesplazamiento;
         }
 
-        lista.style.transform = `translateX(${posicion}px)`;
 
-        // muestra u oculta las flechas segun la pos
-        flechaIzquierda.hidden = posicion >= 0;
+        function mover(delta) {
 
-        flechaDerecha.hidden = posicion <= -maximoDesplazamiento;
+            const maximoDesplazamiento =
+                lista.scrollWidth - ventana.clientWidth;
 
-        // Sacamos la clase cuando termina
-        setTimeout(() => {
-            lista.classList.remove("animando");
-        }, 550);
-    }
+            // si ya esta en el limite no hace nada
+            if (maximoDesplazamiento <= 0) {
+                return;
+            }
 
-    flechaDerecha.addEventListener("click", () => {
-        moverCarrusel("siguiente");
+            if ((delta > 0 && desplazamiento >= maximoDesplazamiento) ||
+                (delta < 0 && desplazamiento <= 0)) {
+                return;
+            }
+
+
+            // avanza o vuelve
+            const movimiento = obtenerDesplazamiento();
+
+            desplazamiento += delta > 0 ? movimiento : -movimiento;
+
+            actualizarCarrusel();
+
+
+            // animacion de pulso en las cards
+            if (!animando) {
+
+                animando = true;
+                lista.classList.add("animando");
+
+                // debe coincidir con la duracion de la
+                // animation del CSS (0.55s)
+                setTimeout(() => {
+                    lista.classList.remove("animando");
+                    animando = false;
+                }, 550);
+            }
+        }
+
+
+        flechaDerecha.addEventListener("click", () => {
+            mover(1);
+        });
+
+
+        flechaIzquierda.addEventListener("click", () => {
+            mover(-1);
+        });
+
+
+        // recalcula si cambia el tam de la pantalla
+        window.addEventListener("resize", () => {
+            actualizarCarrusel();
+        });
+
+
+        actualizarCarrusel();
+
     });
 
-    flechaIzquierda.addEventListener("click", () => {
-        moverCarrusel("anterior");
-    });
+}
 
-});
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", iniciarCarruseles);
+} else {
+    iniciarCarruseles();
+}
