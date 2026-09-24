@@ -1,4 +1,4 @@
-﻿﻿* {
+﻿* {
 
     box-sizing: border-box;
 
@@ -994,6 +994,8 @@ img[src=""] {
     }
 
     .carrusel-juegos__titulo {
+
+        justify-self: start;
 
         margin-left: .5vw;
 

@@ -40,11 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
     /* BOTON JUGAR */
     const btnJugar = document.getElementById('btn-jugar');
     if (btnJugar) {
-        const textoOriginal = btnJugar.textContent;
+            const textoOriginal = btnJugar.textContent;
 
-        btnJugar.addEventListener('mouseenter', () => {
-            btnJugar.textContent = '⚔️';
+            btnJugar.addEventListener('mouseenter', () => {
+            btnJugar.innerHTML = '<a href= juego.html>⚔️</a>';
+            const link = btnJugar.querySelector('a');
+            link.style.textDecoration = "none";
+            link.style.color = "inherit";
             btnJugar.classList.add('animar-espadas');
+
         });
 
         btnJugar.addEventListener('mouseleave', () => {
