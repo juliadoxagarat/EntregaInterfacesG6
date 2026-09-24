@@ -504,15 +504,13 @@ input {
 }
 
 .carrusel-juegos__titulo {
-
-    margin-left: .5vw;
-
-
-    margin-bottom: 2vw;
+    justify-self: center;
+    
+    margin: 1vw;
 
     font-family: "Arial Black", Arial, sans-serif;
 
-    font-size: 4.5vw;
+    font-size: 4vw;
 
     letter-spacing: 0.1vw;
 
@@ -600,6 +598,99 @@ input {
 
 }
 
+/* 
+   carrouseles del mobile*/
+@media (max-width: 599px) {
+
+
+    .carrusel-juegos__contenido {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 1.5vw;
+    }
+
+
+    /* espacio fijo para las flechas */
+    .carrusel-juegos__flecha {
+        width: 7vw;
+        flex: 0 0 7vw;
+
+        aspect-ratio: 1;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 4vw;
+    }
+
+
+    /* si esta oculta, no se ve,
+       pero sigue reservando el espacio */
+    .carrusel-juegos__flecha[hidden] {
+        display: flex !important;
+        visibility: hidden;
+
+        pointer-events: none;
+    }
+
+
+    /* solamente se ve lo que entra aca */
+    .carrusel-juegos__ventana {
+        min-width: 0;
+
+        flex: 1;
+
+        overflow: hidden;
+
+        padding: 1vw 0;
+    }
+
+
+    .carrusel-juegos__lista {
+        display: flex;
+        align-items: stretch;
+
+        gap: 2vw;
+
+        transform: translateX(0);
+
+        transition: transform 0.35s ease;
+    }
+
+
+    /* UNA sola card ocupa toda la ventana */
+    .carrusel-juegos .tarjeta-juego {
+        width: 100%;
+
+        flex: 0 0 100%;
+
+        border-radius: 1.5vw;
+    }
+
+
+    /* card rectangular como la referencia */
+    .carrusel-juegos .tarjeta-juego__imagen {
+        width: 100%;
+
+        aspect-ratio: 2.2 / 1;
+
+        object-fit: cover;
+    }
+
+
+    .carrusel-juegos .tarjeta-juego__nombre {
+        padding: 1vw;
+
+        font-size: 2.7vw;
+    }
+
+}
+
 /*
 
    IMAGENES VACIAS
@@ -634,225 +725,7 @@ img[src=""] {
 
 }
 
-/*
 
-   TABLET
-
- */
-
-@media (min-width: 600px) {
-
-    .pagina-inicio {
-
-        padding-bottom: 5vw;
-
-    }
-
-    /* destacado */
-
-    .destacado {
-
-        margin-top: 3vw;
-
-        margin-bottom: 4vw;
-
-    }
-
-    .destacado__contenido {
-
-        aspect-ratio: 2 / 1;
-
-        border-width: 0.4vw;
-
-        border-radius: 1.2vw;
-
-    }
-
-    .destacado__titulo {
-
-        font-size: 2vw;
-
-        left: 2.5vw;
-
-        top: 0.5vw;
-
-    }
-
-    .destacado__boton-contenedor {
-
-        bottom: 2.5vw;
-
-    }
-
-    /* top */
-
-    .top-seleccion {
-
-        margin-bottom: 4.5vw;
-
-    }
-
-    .top-seleccion__contenedor {
-
-        width: auto;
-
-        padding: 1.5vw;
-
-        border-radius: 1.2vw;
-
-    }
-
-    .top-seleccion__encabezado {
-
-        gap: 1.2vw;
-
-        justify-content: center;
-
-        margin-bottom: 0.8vw;
-
-        padding: 0;
-
-    }
-
-    .top-seleccion__titulo {
-
-        font-size: x-large;
-
-        margin-bottom: 2.5vw;
-
-    }
-
-    .top-seleccion__texto {
-
-        width: 100%;
-
-    }
-
-    .top-seleccion__presentacion {
-
-        gap: 2vw;
-
-        margin-bottom: 2.5vw;
-
-        width: 50%;
-
-    }
-
-    .top-seleccion__fantasma-contenedor {
-
-        width: 12vw;
-
-    }
-
-    .top-seleccion__texto {
-
-        font-size: 1.8vw;
-
-    }
-
-    .top-seleccion__juegos {
-
-        flex-direction: row;
-
-        align-items: stretch;
-
-        justify-content: space-between;
-
-    }
-
-    .tarjeta-juego--top {
-
-        width: calc((100% - 4.5vw) / 4);
-
-        flex: 0 0 calc((100% - 4.5vw) / 4);
-
-        border-width: 0.25vw;
-
-        border-radius: 1vw;
-
-    }
-
-    .tarjeta-juego--top .tarjeta-juego__imagen {
-
-        aspect-ratio: 1.35 / 1;
-
-    }
-
-    .tarjeta-juego--top .tarjeta-juego__nombre {
-
-        min-height: auto;
-
-        padding: 1vw 1.2vw;
-
-        font-size: 1.6vw;
-
-    }
-
-    /* carruseles */
-
-    .carrusel-juegos__contenedor {
-        padding-top: .8vw;
-    }
-
-    .carrusel-juegos {
-
-        margin-bottom: 4.5vw;
-
-    }
-
-    .carrusel-juegos__titulo {
-
-        margin-left: .5vw;
-
-        margin-bottom: 1.5vw;
-
-        font-size: 2.6vw;
-
-    }
-
-    .carrusel-juegos__contenido {
-
-        gap: 1vw;
-
-    }
-
-    .carrusel-juegos__ventana {
-
-        padding: 1vw 0;
-
-    }
-
-    .carrusel-juegos__lista {
-
-        gap: 1.8vw;
-
-    }
-
-    .tarjeta-juego {
-
-        width: 22vw;
-
-        flex-basis: 22vw;
-
-        border-radius: 1vw;
-
-    }
-
-    .tarjeta-juego__nombre {
-        min-height: auto;
-        padding: 0.4vw 0.6vw;
-        font-size: 1.4vw;
-    }
-
-    .carrusel-juegos__flecha {
-
-        width: 4.5vw;
-
-        font-size: 1.8vw;
-
-    }
-
-}
 
 /*
 
@@ -860,7 +733,7 @@ img[src=""] {
 
  */
 
-@media (min-width: 900px) {
+@media (min-width: 599px) {
 
     .pagina-inicio {
 
@@ -928,6 +801,7 @@ img[src=""] {
         border-radius: 0.59vw;
 
         display: flex;
+        
 
         overflow: visible;
 
@@ -1000,6 +874,8 @@ img[src=""] {
         margin: 0;
 
         display: flex;
+
+        flex-direction: row;
 
         align-items: stretch;
 
