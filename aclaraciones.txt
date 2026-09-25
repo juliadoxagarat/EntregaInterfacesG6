@@ -6,8 +6,7 @@
 
 -hover con animaciones    
     
-    -agregar mas cards en los carrusles( imagen, nombre y html)   perdon tenia sueño:(  
-    -hacer desde inicio a home el cargando
+    -agregar mas cards en los carrusles( imagen, nombre y html)
 
 
 

@@ -13,7 +13,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
-<body>
+<body class="cargando">
+    <!-- loading del home -->
+    <div class="loading" id="loading">
+
+        <div class="loading__contenido">
+
+            <!-- spinner animado -->
+            <div class="loading__spinner"></div>
+
+            <p class="loading__texto">
+                Loading...
+            </p>
+
+            <!-- barra -->
+            <div class="loading__barra">
+                <div class="loading__progreso" id="loading-progreso"></div>
+            </div>
+
+            <!-- porcentaje -->
+            <p class="loading__porcentaje" id="loading-porcentaje">
+                0%
+            </p>
+
+        </div>
+
+    </div>
     <!-- fondo general de toda la pagina -->
     <div class="fondo-pagina">
         <!-- header -->

@@ -42,6 +42,104 @@ input {
 
 }
 
+/* 
+   LOADING */
+
+body.cargando {
+    overflow: hidden;
+}
+
+
+.loading {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #12095b;
+}
+
+
+.loading__contenido {
+    width: 70%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 4vw;
+}
+
+
+.loading__spinner {
+    width: 15vw;
+    aspect-ratio: 1;
+
+    border: 2vw solid #1b117f;
+    border-top-color: #f52de8;
+
+    border-radius: 50%;
+
+    animation: girar 0.8s linear infinite;
+}
+
+
+@keyframes girar {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+.loading__texto {
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 4vw;
+
+    text-align: center;
+}
+
+
+.loading__barra {
+    width: 100%;
+    height: 4vw;
+
+    overflow: hidden;
+
+    border: 0.5vw solid white;
+    border-radius: 3vw;
+
+    background-color: #1b117f;
+}
+
+
+.loading__progreso {
+    width: 0%;
+    height: 100%;
+
+    background-color: #f52de8;
+}
+
+
+.loading__porcentaje {
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: 4vw;
+}
+
 /*
 
    FONDO */
@@ -292,7 +390,7 @@ input {
     position: relative;
     overflow: hidden;
     border-radius: 1.8vw;
-    background-color: rgba(0, 0, 0, 0.43);
+    border: 1px solid rgba(0, 0, 0, 0.8);
     transition:
         transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1),
         box-shadow 0.25s ease,
@@ -385,7 +483,7 @@ input {
     justify-content: center;
     text-align: center;
 
-    background-color: rgba(0, 0, 0, 0.65);
+    
     color: white;
 
     font-size: 2.2vw;
@@ -736,6 +834,37 @@ img[src=""] {
 
 @media (min-width: 599px) {
 
+    .loading__contenido {
+    width: 35%;
+    gap: 1.5vw;
+}
+
+
+.loading__spinner {
+    width: 6vw;
+
+    border-width: 0.7vw;
+    border-top-color: #f52de8;
+}
+
+
+.loading__texto {
+    font-size: 1.5vw;
+}
+
+
+.loading__barra {
+    height: 1.5vw;
+
+    border-width: 0.15vw;
+    border-radius: 2vw;
+}
+
+
+.loading__porcentaje {
+    font-size: 1.5vw;
+}
+
     .pagina-inicio {
 
         padding-bottom: 2.6vw;
@@ -923,9 +1052,9 @@ img[src=""] {
  */
 
     .tarjeta-juego {
+        border: 1px solid rgba(0, 0, 0, 0.8);
         width: 13vw;
         flex: 0 0 13vw;
-
         border-radius: 0.46vw;
     }
 
@@ -1045,9 +1174,8 @@ img[src=""] {
         pointer-events: none;
     }
 
-    /* =========================================
-   ANIMACIÓN DEL CARRUSEL
-   ========================================= */
+    /* 
+   ANIMACIÓN DEL CARRUSEL */
 
     @keyframes tarjetaPulso {
         0% {
@@ -1066,7 +1194,7 @@ img[src=""] {
         }
     }
 
-    /* La animacion va en las TARJETAS, no en la lista:
+    /* La animacion va en las TARJETAS, no en la lista,
        si se anima el transform de la lista, se pisa el
        translateX del deslizamiento. */
 
@@ -1197,9 +1325,8 @@ img[src=""] {
 
 }
 
-/* =========================================
-   ANIMACIÓN HOVER DEL FANTASMA (ROTACIÓN)
-   ========================================= */
+/* 
+   ANIMACIÓN HOVER DEL FANTASMA (ROTACIÓN) */
 
 @keyframes rotarDerechaFantasma {
     0% {

@@ -1,6 +1,5 @@
-/* =========================================
-   BOTÓN INICIAR SESIÓN
-   ========================================= */
+/* 
+   BOTÓN INICIAR SESIÓN */
 
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
@@ -205,9 +204,8 @@
     font-size: .9vw;
 }
 
-/* =========================================================
-   BOTÓN AGREGAR CON CORAZÓN PARPADEANTE Y DESTELLOS EXTERNOS
-   ========================================================= */
+/* 
+   BOTÓN AGREGAR CON CORAZÓN PARPADEANTE Y DESTELLOS EXTERNOS */
 
 .boton--agregar-juego {
     position: relative;
@@ -246,9 +244,8 @@
     color: #ffffff;
 }
 
-/* =========================================================
-   ESTALLIDO DE PÍXELES AL HACER CLICK
-   ========================================================= */
+/* 
+   ESTALLIDO DE PÍXELES AL HACER CLICK */
 
 /* Configuración base de los pseudoelementos (partículas cuadradas) */
 .boton--agregar-juego::before,
