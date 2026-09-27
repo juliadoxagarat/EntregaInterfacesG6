@@ -74,7 +74,7 @@
                 <div class="panel-derecho">
                     <!-- PANEL DER -->
 
-                    <section class="login" aria-labelledby="titulo-login">
+                    <section class="login">
 
 
                         <!-- Encabezado -->
@@ -114,10 +114,6 @@
 
                                     <input class="campo-formulario__input" type="email" id="email" name="email"
                                         placeholder="usuario@emailpropio.com" autocomplete="email" required>
-
-
-                                    <div class="campo-formulario__estado" aria-hidden="true">
-                                    </div>
 
 
                                 </div>
@@ -191,7 +187,7 @@
                     </section>
 
                     <!--panel derecho registro -->
-                    <section class="registro" aria-labelledby="titulo-registro" id="panel-registro">
+                    <section class="registro" id="panel-registro">
 
 
                         <!-- header del registro -->
@@ -214,8 +210,7 @@
 
 
                         <!-- formulario de registro -->
-                        <form class="formulario-registro" action="#" method="post">
-
+                        <form class="formulario-registro" id="form-registro" action="#" method="post">
 
                             <!-- nombre y apellido -->
                             <div class="campo-formulario">
@@ -231,10 +226,6 @@
 
                                     <input class="campo-formulario__input" type="text" id="nombre-completo-registro"
                                         name="nombreCompleto" autocomplete="name" required>
-
-
-                                    <!-- indicador de validacion(el check rosa) desp mostrar o no con css y js -->
-                                    <div class="campo-formulario__estado" aria-hidden="true"></div>
 
 
                                 </div>
@@ -371,7 +362,7 @@
 
 
                                 <!-- aca iria el captcha, es para darle el tamano q queramos y posicionarlo -->
-                                <div class="formulario-registro__captcha" aria-label="Verificacion de seguridad"></div>
+                                <div class="formulario-registro__captcha"></div>
 
 
                             </div>
@@ -392,6 +383,17 @@
 
 
                         </form>
+                        <div class="registro-exitoso" id="registro-exitoso" hidden>
+
+                            <div class="registro-exitoso__check">
+                                            ✓
+                            </div>
+
+                            <h2>¡Registro exitoso!</h2>
+
+                            <p>Tu cuenta fue creada correctamente.</p>
+
+                        </div>
 
 
 

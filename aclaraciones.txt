@@ -1,9 +1,10 @@
 
 
 -animacion del top 3? capaz queda bueno
--agregar mas cards en los carrusles( imagen, nombre y html)
 
 -reorganizar css (y html?)
+ 
+-el tiempo de loading tiene q ser mas largo pero para las pruebas lo acorte
+-captcha??
 
-
-
+-login en mobile 
