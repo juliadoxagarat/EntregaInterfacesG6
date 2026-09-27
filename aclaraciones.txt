@@ -1,12 +1,9 @@
 
 
--animaciones de carrouseles con js (juntas)
 -animacion del top 3? capaz queda bueno
+-agregar mas cards en los carrusles( imagen, nombre y html)
 
-
--hover con animaciones    
-    
-    -agregar mas cards en los carrusles( imagen, nombre y html)
+-reorganizar css (y html?)
 
 
 
