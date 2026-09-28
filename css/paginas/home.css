@@ -483,6 +483,7 @@ body.cargando {
     justify-content: center;
     text-align: center;
 
+    background-color: rgba(0, 0, 0, 0.65);
     
     color: white;
 
@@ -1066,6 +1067,8 @@ img[src=""] {
         min-height: auto;
         padding: 0.3vw 0.4vw;
         font-size: 0.75vw;
+        background-color: rgba(0, 0, 0, 0.65);
+
     }
 
     /*
@@ -1103,6 +1106,8 @@ img[src=""] {
         min-height: auto;
         padding: 0.36vw 0.52vw;
         font-size: 0.68vw;
+        background-color: rgba(0, 0, 0, 0.65);
+
 
     }
 
@@ -1320,6 +1325,8 @@ img[src=""] {
         padding: 0.25vw 0.4vw;
 
         font-size: 0.65vw;
+        background-color: rgba(0, 0, 0, 0.65);
+
     }
 
 

@@ -644,17 +644,23 @@ body {
     display: none;
 }
 
-
 .registro-activo .registro {
     display: block;
 }
 
-.registro-exitoso[hidden] {
+
+/* OCULTAR MENSAJES DE EXITO */
+
+.registro-exitoso[hidden],
+.login-exitoso[hidden] {
     display: none;
 }
 
 
-.registro-exitoso {
+/* MENSAJES DE EXITO */
+
+.registro-exitoso,
+.login-exitoso {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -666,7 +672,10 @@ body {
 }
 
 
-.registro-exitoso__check {
+/* CIRCULOS CON EL CHECK */
+
+.registro-exitoso__check,
+.login-exitoso__check {
     width: 5vw;
     aspect-ratio: 1;
 
@@ -682,9 +691,12 @@ body {
     font-size: 3vw;
     font-weight: bold;
 
-    animation: animacion-check 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: animacion-check 0.6s
+        cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+
+/* ANIMACION DEL MENSAJE */
 
 @keyframes aparecer-registro {
 
@@ -700,6 +712,8 @@ body {
 
 }
 
+
+/* ANIMACION DEL CHECK */
 
 @keyframes animacion-check {
 

@@ -7,13 +7,17 @@ const mostrarRegistro = document.getElementById("mostrar-registro");
 const mostrarLogin = document.getElementById("volver-login");
 
 
-// elementos del registro
+// elementos del registro y login
 const formRegistro = document.querySelector(".formulario-registro");
 const encabezadoRegistro = document.querySelector(".registro__encabezado");
 const inicioSesionRegistro = document.querySelector(".registro__inicio-sesion");
 const registroExitoso = document.querySelector("#registro-exitoso");
 
-
+const formLogin = document.querySelector(".formulario-login");
+const encabezadoLogin = document.querySelector(".login__encabezado");
+const inicioSesionText = document.querySelector(".login__descripcion");
+const loginExitoso = document.querySelector("#login-exitoso");
+const enlaceRegistroLogin = document.querySelector(".login__registro");
 
 
 // MOSTRAR REGISTRO
@@ -96,6 +100,50 @@ formRegistro.addEventListener("submit", function (e) {
 
         }, 500);
 
+
+    }, 2000);
+
+});
+
+
+
+// ENVIAR FORMULARIO DE LOGIN
+
+formLogin.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+
+    // verificamos el formulario
+    if (!formLogin.checkValidity()) {
+
+        formLogin.reportValidity();
+
+        return;
+    }
+
+
+    // ocultamos el encabezado
+    encabezadoLogin.hidden = true;
+
+
+    // ocultamos el formulario
+    formLogin.hidden = true;
+
+
+    // ocultamos el enlace al registro
+    enlaceRegistroLogin.hidden = true;
+
+
+    // mostramos la animacion de exito
+    loginExitoso.hidden = false;
+
+
+    // esperamos 2 segundos
+    setTimeout(function () {
+
+        // redirigimos al Home
+        window.location.href = "home.html";
 
     }, 2000);
 
