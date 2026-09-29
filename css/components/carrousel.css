@@ -277,11 +277,8 @@ img[src=""] {
     }
 
     .carrusel-juegos__contenedor {
-
-        width: 85vw;
-
+        width: 100%;
         padding: 0.8vw 1vw 2vw;
-
     }
 
     .carrusel-juegos__titulo {

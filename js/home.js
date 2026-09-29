@@ -37,7 +37,7 @@ const intervaloLoading = setInterval(() => {
 
     }
 
-}, 15); //aca cambias si queres un tiempo de carga distinto  !!!
+}, 50); //aca cambias si queres un tiempo de carga distinto  !!!
 
 
 //menu HAmburguesa

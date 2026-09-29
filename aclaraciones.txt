@@ -1,2 +1,0 @@
- 
--poner loading en 5seg
