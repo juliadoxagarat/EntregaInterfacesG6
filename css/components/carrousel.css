@@ -1,0 +1,372 @@
+/*
+
+   CARRUSELES */
+
+.zona-carruseles {
+
+    width: 100%;
+
+}
+
+.carrusel-juegos {
+
+    width: 100%;
+
+    margin-bottom: 7vw;
+
+}
+
+.carrusel-juegos__contenedor {
+
+    width: 90vw;
+
+    margin: 0 auto;
+
+    padding: .8vw 1.5vw 3vw;
+
+    box-sizing: border-box;
+
+    background-color: #1B117F;
+
+    border-radius: 2.5vw;
+
+}
+
+.carrusel-juegos__titulo {
+    justify-self: center;
+    
+    margin: 1vw;
+
+    font-family: "Arial Black", Arial, sans-serif;
+
+    font-size: 4vw;
+
+    letter-spacing: 0.1vw;
+
+}
+
+.carrusel-juegos__contenido {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 1.5vw;
+
+}
+
+.carrusel-juegos__ventana {
+
+    min-width: 0;
+
+    flex: 1;
+
+    overflow: hidden;
+
+    padding: 1.5vw 0;
+
+}
+
+.carrusel-juegos__lista {
+
+    display: flex;
+
+    align-items: stretch;
+
+    gap: 2.5vw;
+
+    transform: translateX(0);
+
+    transition: transform 0.35s ease;
+
+}
+
+.carrusel-juegos__flecha {
+
+    width: 2.8vw;
+
+    aspect-ratio: 1;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 3vw;
+
+    transition:
+
+        transform 0.15s ease,
+
+        background-color 0.15s ease;
+
+}
+
+.carrusel-juegos__flecha i {
+
+    color: white;
+
+}
+
+.carrusel-juegos__flecha i:hover {
+
+    color: #FF35F1;
+
+    transform: scale(1.20);
+
+}
+
+/* 
+   carrouseles del mobile*/
+@media (max-width: 599px) {
+
+
+    .carrusel-juegos__contenido {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 1.5vw;
+    }
+
+
+    /* espacio fijo para las flechas */
+    .carrusel-juegos__flecha {
+        width: 7vw;
+        flex: 0 0 7vw;
+
+        aspect-ratio: 1;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 4vw;
+    }
+
+
+    /* si esta oculta, no se ve,
+       pero sigue reservando el espacio */
+    .carrusel-juegos__flecha[hidden] {
+        display: flex !important;
+        visibility: hidden;
+
+        pointer-events: none;
+    }
+
+
+    /* solamente se ve lo que entra aca */
+    .carrusel-juegos__ventana {
+        min-width: 0;
+
+        flex: 1;
+
+        overflow: hidden;
+
+        padding: 1vw 0;
+    }
+
+
+    .carrusel-juegos__lista {
+        display: flex;
+        align-items: stretch;
+
+        gap: 2vw;
+
+        transform: translateX(0);
+
+        transition: transform 0.35s ease;
+    }
+
+
+    /* UNA sola card ocupa toda la ventana */
+    .carrusel-juegos .tarjeta-juego {
+        width: 100%;
+
+        flex: 0 0 100%;
+
+        border-radius: 1.5vw;
+    }
+
+
+    /* card rectangular como la referencia */
+    .carrusel-juegos .tarjeta-juego__imagen {
+        width: 100%;
+
+        aspect-ratio: 2.2 / 1;
+
+        object-fit: cover;
+    }
+
+
+    .carrusel-juegos .tarjeta-juego__nombre {
+        padding: 1vw;
+
+        font-size: 2.7vw;
+    }
+
+}
+
+/*
+
+   IMAGENES VACIAS
+
+ */
+
+img[src=""] {
+
+    visibility: hidden;
+
+}
+
+/*esto es para q cuando se aprieta el link a esa categoria aparezca en el medio de la pantalla y no arriba*/
+
+#accion,
+
+#terror,
+
+#aventura,
+
+#carreras,
+
+#supervivencia,
+
+#superheroes,
+
+#dos-jugadores,
+
+#mas-juegos {
+
+    scroll-margin-top: 40vh;
+
+}
+
+
+
+
+
+
+
+/*
+
+   ESCRITORIO
+
+ */
+
+@media (min-width: 599px) {
+
+/* carruseles */
+
+    .carrusel-juegos {
+
+        margin-bottom: 1.2vw;
+
+    }
+
+    .carrusel-juegos__contenedor {
+
+        width: 85vw;
+
+        padding: 0.8vw 1vw 2vw;
+
+    }
+
+    .carrusel-juegos__titulo {
+
+        justify-self: start;
+
+        margin-left: .5vw;
+
+        margin-bottom: 0.78vw;
+
+        font-size: 1.17vw;
+
+        letter-spacing: 0.04vw;
+
+    }
+
+    .carrusel-juegos__contenido {
+
+        gap: 0.52vw;
+
+    }
+
+    .carrusel-juegos__ventana {
+
+        padding: 0.33vw 0;
+
+    }
+
+    .carrusel-juegos__lista {
+        display: flex;
+        align-items: stretch;
+        gap: 0.88vw;
+        transform: translateX(0);
+        transition: transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+        will-change: transform;
+    }
+
+    .carrusel-juegos__flecha {
+
+        width: 2.8vw;
+
+        font-size: 2vw;
+
+    }
+
+
+    .carrusel-juegos__flecha--izquierda[hidden] {
+
+        display: flex !important;
+
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    /* 
+   ANIMACIÓN DEL CARRUSEL */
+
+    @keyframes tarjetaPulso {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        45% {
+            transform: scale(0.94);
+            opacity: 0.8;
+        }
+
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    /* La animacion va en las TARJETAS, no en la lista,
+       si se anima el transform de la lista, se pisa el
+       translateX del deslizamiento. */
+
+    .carrusel-juegos__lista.animando .tarjeta-juego {
+        animation: tarjetaPulso 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+
+    .carrusel-juegos__lista.animando .tarjeta-juego:nth-child(2),
+    .carrusel-juegos__lista.animando .tarjeta-juego:nth-child(3),
+    .carrusel-juegos__lista.animando .tarjeta-juego:nth-child(4) {
+        animation-delay: 0.06s;
+    }
+}

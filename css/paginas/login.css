@@ -649,6 +649,8 @@ body {
 }
 
 
+/*ANIMACION DE REGISTRO/LOGIN EXITOSO*/
+
 /* OCULTAR MENSAJES DE EXITO */
 
 .registro-exitoso[hidden],
@@ -731,45 +733,3 @@ body {
 
 }
 
-/* 
-   RESPONSIVE
- */
-
-@media (max-width: 650px) {
-
-    .fondo-pagina {
-        min-height: 100vh;
-    }
-
-
-    .pagina-login {
-        padding: 20px;
-    }
-
-
-    .pagina-login__contenedor {
-        width: 580px;
-        height: 675px;
-        min-height: 0;
-
-        display: flex;
-
-        overflow: hidden;
-
-        box-shadow: 0 0 60px 12px rgba(0, 0, 0, 0.8);
-    }
-
-
-    .presentacion-login {
-        width: 290px;
-        height: 600px;
-
-    }
-
-    .login {
-        width: 290px;
-        height: 675px;
-    }
-
-
-}

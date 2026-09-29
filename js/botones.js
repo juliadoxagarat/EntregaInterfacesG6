@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (botonAgregar) {
         function actualizarBoton() {
             if (botonAgregar.classList.contains('agregado')) {
-                botonAgregar.innerHTML = '<span class="corazon">❤️</span> Agregado <i class="fa-solid fa-check"></i>';
+                botonAgregar.innerHTML = 'Agregado <i class="fa-solid fa-check"></i>';
             } else {
                 botonAgregar.innerHTML = '<span class="corazon">❤️</span> Agregar a mis juegos';
             }
