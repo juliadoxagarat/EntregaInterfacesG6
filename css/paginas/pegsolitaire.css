@@ -1,17 +1,14 @@
 * {
     box-sizing: border-box;
-
     margin: 0;
     padding: 0;
 }
-
 
 html,
 body {
     width: 100%;
     min-height: 100%;
 }
-
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -21,11 +18,9 @@ body {
     color: white;
 }
 
-
 img {
     max-width: 100%;
 }
-
 
 button,
 input {
@@ -33,8 +28,10 @@ input {
 }
 
 
-/*
-   FONDO*/
+/* =========================
+   FONDO
+   ========================= */
+
 .fondo-pagina {
     width: 100%;
     min-height: 100vh;
@@ -43,21 +40,23 @@ input {
 }
 
 
-/*
+/* =========================
    CONTENIDO
-    */
+   ========================= */
 
 .pagina-juego {
     width: 94vw;
+
     margin: 0 auto;
+
     padding-top: 1.8vw;
     padding-bottom: 3vw;
 }
 
 
-/*
+/* =========================
    BREADCRUMBS
-   */
+   ========================= */
 
 .breadcrumbs {
     width: 92%;
@@ -65,9 +64,9 @@ input {
     margin: 0 auto;
 }
 
-
 .breadcrumbs__lista {
     display: flex;
+
     align-items: center;
 
     gap: 0.7vw;
@@ -77,36 +76,33 @@ input {
     font-size: 0.8vw;
 }
 
-
 .breadcrumbs__link {
     color: white;
+
     text-decoration: none;
 }
-
 
 .breadcrumbs__separador {
     color: #bcb2ff;
 }
 
 
-/*
-   ENCABEZADO DEL JUEGO */
+/* =========================
+   ENCABEZADO DEL JUEGO
+   ========================= */
 
 .detalle-juego__encabezado {
     width: 92%;
 
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 1vw;
 
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
-
-    margin-bottom: 1vw;
 }
-
 
 .detalle-juego__titulo-valoracion {
     display: flex;
@@ -116,23 +112,21 @@ input {
     gap: 1.5vw;
 }
 
-
 .detalle-juego__titulo {
     color: white;
 
     font-family: "Arial Black", Arial, sans-serif;
 
     font-size: 1.55vw;
+
     letter-spacing: 0.08vw;
 }
-
 
 .valoracion {
     display: flex;
 
     gap: 0.3vw;
 }
-
 
 .valoracion__estrella {
     color: #f52de8;
@@ -143,9 +137,9 @@ input {
 }
 
 
-/*
+/* =========================
    ACCIONES
-    */
+   ========================= */
 
 .detalle-juego__acciones {
     display: flex;
@@ -155,7 +149,6 @@ input {
 
     gap: 0.8vw;
 }
-
 
 .detalle-juego__compartir {
     width: 2.5vw;
@@ -170,16 +163,20 @@ input {
 
 .fa-share-nodes {
     color: white;
+
     font-size: 1.25vw;
 }
 
-/*
+
+/* =========================
    IMAGEN PRINCIPAL
- */
+   ========================= */
 
 .detalle-juego__imagen-contenedor {
     width: 92%;
-    height: auto;
+
+    margin: 0 auto 1vw;
+
     border: 0.2vw solid #f52de8;
 
     background-color: #0c0744;
@@ -190,33 +187,31 @@ input {
     justify-content: center;
 
     overflow: hidden;
-    justify-self: center;
-    margin: 0 auto 1vw;
 }
-
 
 .detalle-juego__imagen {
     width: 100%;
-    display: block;
     height: 100%;
+
+    display: block;
+
     object-fit: contain;
 }
-
 
 img[src=""] {
     visibility: hidden;
 }
 
-/*
+
+/* =========================
    DESCRIPCIÓN
- */
+   ========================= */
 
 .descripcion-juego {
     width: 92%;
 
     margin: 0 auto -0.5vw;
 }
-
 
 .descripcion-juego__titulo,
 .como-jugar__titulo,
@@ -232,9 +227,11 @@ img[src=""] {
     margin-bottom: 0.5vw;
 }
 
-
 .descripcion-juego__texto {
     width: 100%;
+
+    margin-left: 0;
+    margin-right: 0;
 
     color: white;
 
@@ -243,42 +240,46 @@ img[src=""] {
     line-height: 1.5;
 
     text-align: left;
-
-    margin-left: 0;
-    margin-right: 0;
 }
 
 
-/*
-   TARJETAS */
+/* =========================
+   INSTRUCCIONES
+   ========================= */
 
 .instrucciones-juego {
     width: 92%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
     margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
 }
 
 .instrucciones-juego__imagen {
     width: 78%;
     height: auto;
-    display: block;
-    object-fit: contain;
+
     margin-left: auto;
     margin-right: auto;
+
+    display: block;
+
+    object-fit: contain;
 }
 
-/*
+
+/* =========================
    CÓMO JUGAR
-    */
+   ========================= */
 
 .como-jugar {
     width: 92%;
 
     margin: 0 auto 24px;
 }
-
 
 .como-jugar__titulo {
     width: 62%;
@@ -292,12 +293,15 @@ img[src=""] {
 
 .como-jugar__contenido {
     width: 62%;
-    border: 3px solid #f1a2ff;
-    background-color: #654521;
-    overflow: hidden;
-    margin: 0 auto;
-}
 
+    margin: 0 auto;
+
+    border: 3px solid #f1a2ff;
+
+    background-color: #654521;
+
+    overflow: hidden;
+}
 
 .como-jugar__video {
     width: 100%;
@@ -311,11 +315,9 @@ img[src=""] {
 }
 
 
-
-
-/*
+/* =========================
    RESPONSIVE
- */
+   ========================= */
 
 @media (min-width: 900px) {
 
@@ -325,11 +327,6 @@ img[src=""] {
 }
 
 @media (max-width: 600px) {
-
-    .pagina-juego {
-        width: 94vw;
-    }
-
 
     .detalle-juego__encabezado {
         flex-direction: column;
@@ -343,34 +340,17 @@ img[src=""] {
         align-self: flex-end;
     }
 
-
-    .instrucciones-juego {
-        grid-template-columns: 1fr;
-    }
-
-
-    .instrucciones-juego__tarjeta {
-        aspect-ratio: 1.8 / 1;
-    }
-
-
     .breadcrumbs,
     .detalle-juego__encabezado,
     .detalle-juego__imagen-contenedor,
     .descripcion-juego,
     .instrucciones-juego,
-    .como-jugar,
-    .comentarios {
+    .como-jugar {
         width: 100%;
     }
 
     .como-jugar__titulo,
     .como-jugar__contenido {
         width: 100%;
-    }
-
-
-    .comentario__texto {
-        white-space: normal;
     }
 }

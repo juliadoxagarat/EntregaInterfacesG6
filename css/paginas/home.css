@@ -1,58 +1,41 @@
 ﻿* {
-
     box-sizing: border-box;
-
     margin: 0;
-
     padding: 0;
-
 }
 
 html,
-
 body {
-
     width: 100%;
-
     min-height: 100%;
-
 }
 
 body {
-
     font-family: Arial, Helvetica, sans-serif;
-
     background-color: #12095b;
-
     color: white;
-
 }
 
 img {
-
     max-width: 100%;
-
 }
 
 button,
-
 input {
-
     font-family: inherit;
-
 }
 
-/* 
-   LOADING */
+
+/* =========================
+   LOADING
+   ========================= */
 
 body.cargando {
     overflow: hidden;
 }
 
-
 .loading {
     position: fixed;
-
     top: 0;
     left: 0;
 
@@ -68,7 +51,6 @@ body.cargando {
     background-color: #12095b;
 }
 
-
 .loading__contenido {
     width: 70%;
 
@@ -79,22 +61,18 @@ body.cargando {
     gap: 4vw;
 }
 
-
 .loading__spinner {
     width: 15vw;
     aspect-ratio: 1;
 
     border: 2vw solid #1b117f;
     border-top-color: #f52de8;
-
     border-radius: 50%;
 
     animation: girar 0.8s linear infinite;
 }
 
-
 @keyframes girar {
-
     from {
         transform: rotate(0deg);
     }
@@ -102,17 +80,13 @@ body.cargando {
     to {
         transform: rotate(360deg);
     }
-
 }
-
 
 .loading__texto {
-    font-family: 'Arial Black', Arial, sans-serif;
+    font-family: "Arial Black", Arial, sans-serif;
     font-size: 4vw;
-
     text-align: center;
 }
-
 
 .loading__barra {
     width: 100%;
@@ -126,7 +100,6 @@ body.cargando {
     background-color: #1b117f;
 }
 
-
 .loading__progreso {
     width: 0%;
     height: 100%;
@@ -134,157 +107,129 @@ body.cargando {
     background-color: #f52de8;
 }
 
-
 .loading__porcentaje {
     font-family: "Arial Black", Arial, sans-serif;
     font-size: 4vw;
 }
 
-/*
 
-   FONDO */
+/* =========================
+   FONDO
+   ========================= */
 
 .fondo-pagina {
-
     width: 100%;
-
     min-height: 100vh;
 
     background-color: #12095b;
 
     overflow-x: hidden;
-
 }
 
-/*
 
+/* =========================
    CONTENIDO PRINCIPAL
-
    MOBILE FIRST
-
-*/
+   ========================= */
 
 .pagina-inicio {
-
     width: 100%;
-
     padding-bottom: 8vw;
-
 }
 
-/*
 
-   DESTACADO */
+/* =========================
+   DESTACADO
+   ========================= */
 
 .destacado {
-
     width: calc(100% - 6vw);
-
     margin: 4vw auto 6vw;
-
 }
 
 .destacado__contenido {
-
     width: 100%;
-
     aspect-ratio: 1.45 / 1;
 
     position: relative;
-
     overflow: hidden;
 
     border: 0.7vw solid #f52de8;
-
     border-radius: 2vw;
 
     background-color: #0c0744;
-
 }
 
 .destacado__imagen {
-
     width: 100%;
-
     height: 100%;
 
     display: block;
 
     object-fit: cover;
-
 }
 
 .destacado__titulo {
-
     position: absolute;
 
     left: 3.5vw;
-
     top: 0.5vw;
 
     z-index: 2;
 
     font-family: "Arial Black", Arial, sans-serif;
-
     font-size: 3vw;
 
     letter-spacing: 0.1vw;
 
     text-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.65);
-
 }
 
 .destacado__boton-contenedor {
-
     position: absolute;
 
     left: 50%;
-
     bottom: 4vw;
 
     z-index: 2;
 
     transform: translateX(-50%);
-
 }
 
 .boton {
-
     display: inline-flex;
 
     align-items: center;
-
     justify-content: center;
 
     text-decoration: none;
 
     cursor: pointer;
-
 }
 
-/*
 
-   TOP 4 */
+/* =========================
+   TOP 3
+   ========================= */
 
 .top-seleccion {
-
     width: 90vw;
     margin: 0 auto 6vw;
-
 }
 
 .top-seleccion__contenedor {
-
-    width: 100;
     position: relative;
+
     overflow: visible;
+
     padding: 4vw;
+
     border-radius: 2.5vw;
+
     background-color: #ed3ee480;
 }
 
 .top-seleccion__encabezado {
-
     position: relative;
 
     z-index: 1;
@@ -292,106 +237,96 @@ body.cargando {
     display: flex;
 
     align-items: center;
-
     justify-content: left;
 
     gap: 2vw;
 
-    margin-bottom: 0vw;
-
+    margin-bottom: 0;
 }
 
 .top-seleccion__titulo {
-
     font-family: "Arial Black", Arial, sans-serif;
 
     font-size: 3.5vw;
 
     letter-spacing: 0.05vw;
 
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .top-seleccion__presentacion {
-
     display: flex;
-
     align-items: center;
 
     gap: 1.5vw;
 
     margin-bottom: 0;
-
 }
 
 .top-seleccion__fantasma-contenedor {
-
     width: 18vw;
-
     aspect-ratio: 1;
 
     flex-shrink: 0;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
 }
 
 .top-seleccion__fantasma {
-
     width: 100%;
-
     height: 100%;
 
     object-fit: contain;
-
 }
 
 .top-seleccion__texto {
-
-    font-size: 2.5vw;
-
-    line-height: 1.4;
-
     width: 100%;
 
     flex: 1;
 
+    font-size: 2.5vw;
+    line-height: 1.4;
 }
 
 .top-seleccion__juegos {
     flex: 1;
+
     display: flex;
     flex-direction: column;
+
     gap: 3vw;
 }
 
 .top-seleccion__contenido {
     width: 100%;
+
     display: flex;
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
+
     gap: 3vw;
 }
 
-/*
 
+/* =========================
    TARJETAS
-
- */
+   ========================= */
 
 .tarjeta-juego {
-
     width: 35vw;
     flex: 0 0 35vw;
+
     position: relative;
+
     overflow: hidden;
-    border-radius: 1.8vw;
+
     border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 1.8vw;
+
     transition:
         transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1),
         box-shadow 0.25s ease,
@@ -400,32 +335,37 @@ body.cargando {
 
 .tarjeta-juego:hover {
     transform: translateY(-0.3vw);
-    box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.28);
 
+    box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.28);
 }
 
 .tarjeta-juego:hover .tarjeta-juego__nombre {
-    color: #000000;
-    background-color: #FF64F2;
-    overflow: visible;
     position: absolute;
+
     left: 0;
     right: 0;
     bottom: 0;
+
     z-index: 10;
 
+    overflow: visible;
+
+    color: #000000;
+    background-color: #ff64f2;
 }
 
 .tarjeta-juego__nombre span {
     display: block;
+
     max-width: 100%;
+
     overflow: hidden;
+
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
 .tarjeta-juego:hover .tarjeta-juego__nombre span {
-
     white-space: normal;
 
     overflow: visible;
@@ -433,27 +373,21 @@ body.cargando {
     text-overflow: clip;
 
     word-break: break-word;
-
 }
 
 .tarjeta-juego__link {
-
     width: 100%;
-
     height: 100%;
 
     display: flex;
-
     flex-direction: column;
 
     color: white;
 
     text-decoration: none;
-
 }
 
 .tarjeta-juego__imagen {
-
     width: 100%;
     height: 100%;
 
@@ -464,102 +398,136 @@ body.cargando {
     object-fit: cover;
 
     background-color: #0c0744;
-
 }
 
 .tarjeta-juego__nombre {
     position: absolute;
+
     left: 0;
     right: 0;
     bottom: 0;
-    margin: 0;   /* saca el margen default del h3 que lo despegaba del borde */
+
     z-index: 2;
 
     width: 100%;
     min-height: auto;
+
+    margin: 0;
+
     padding: 0.4vw 0.6vw;
 
     display: flex;
+
     align-items: flex-end;
     justify-content: center;
+
     text-align: center;
 
     background-color: rgba(0, 0, 0, 0.65);
-    
+
     color: white;
 
     font-size: 2.2vw;
     line-height: 1.2;
 }
 
+
+/* =========================
+   TARJETAS TOP 3
+   ========================= */
+
 .tarjeta-juego--top {
     position: relative;
+
     width: 100%;
+
     border: 3px solid #c4ff00;
     border-radius: 12px;
+
     background-color: #0c0744;
+
     padding: 3px;
+
     transition: all 0.25s ease-in-out;
+
     overflow: hidden;
 }
 
 .tarjeta-juego__badge-top {
     position: absolute;
+
     top: 8px;
     left: 8px;
+
     z-index: 5;
-    background-color: rgba(0, 0, 0, 0.85);
-    color: #c4ff00;
+
+    padding: 3px 8px;
+
     border: 1.5px solid #c4ff00;
     border-radius: 6px;
-    padding: 3px 8px;
+
+    background-color: rgba(0, 0, 0, 0.85);
+
+    color: #c4ff00;
+
+    font-family: "Arial Black", sans-serif;
     font-size: 11px;
     font-weight: bold;
-    font-family: "Arial Black", sans-serif;
+
     letter-spacing: 0.5px;
 }
 
 .tarjeta-juego--top .tarjeta-juego__imagen {
     width: 100%;
+
     aspect-ratio: 1.35 / 1;
+
     object-fit: cover;
+
     border-radius: 8px;
+
     display: block;
 }
 
 .tarjeta-juego--top .tarjeta-juego__nombre {
     position: absolute;
+
     left: 0;
     right: 0;
     bottom: 0;
+
     z-index: 3;
+
     padding: 0.4vw 0.6vw;
+
     background-color: rgba(0, 0, 0, 0.65);
-    /* Fondo oscuro con transparencia */
+
     color: #ffffff;
+
     font-size: 13px;
     font-weight: bold;
+
     text-align: center;
+
     border-bottom-left-radius: 0.7vw;
     border-bottom-right-radius: 0.7vw;
+
     transition: all 0.25s ease-in-out;
 }
 
 .tarjeta-juego--top:hover {
     transform: translateY(-0.3vw) scale(1.02);
+
     box-shadow: 0 0.8vw 1.5vw rgba(196, 255, 0, 0.35);
-    /* Resplandor neón */
 }
 
 .tarjeta-juego--top:hover .tarjeta-juego__nombre {
     background-color: #c4ff00;
-    /* Fondo completo Neón */
+
     color: #000000;
-    /* Texto en negro */
 }
 
 .tarjeta-juego--top:hover .tarjeta-juego__nombre span {
-
     white-space: nowrap;
 
     overflow: hidden;
@@ -567,74 +535,70 @@ body.cargando {
     text-overflow: ellipsis;
 
     word-break: normal;
-
 }
 
 
-
-/*
-
+/* =========================
    ESCRITORIO
-
- */
+   ========================= */
 
 @media (min-width: 599px) {
 
+    /* Loading */
+
     .loading__contenido {
-    width: 35%;
-    gap: 1.5vw;
-}
-
-
-.loading__spinner {
-    width: 6vw;
-
-    border-width: 0.7vw;
-    border-top-color: #f52de8;
-}
-
-
-.loading__texto {
-    font-size: 1.5vw;
-}
-
-
-.loading__barra {
-    height: 1.5vw;
-
-    border-width: 0.15vw;
-    border-radius: 2vw;
-}
-
-
-.loading__porcentaje {
-    font-size: 1.5vw;
-}
-
-    .pagina-inicio {
-
-        padding-bottom: 2.6vw;
-
+        width: 35%;
+        gap: 1.5vw;
     }
 
-    /*
+    .loading__spinner {
+        width: 6vw;
 
-       DESTACADO */
+        border-width: 0.7vw;
+        border-top-color: #f52de8;
+    }
+
+    .loading__texto {
+        font-size: 1.5vw;
+    }
+
+    .loading__barra {
+        height: 1.5vw;
+
+        border-width: 0.15vw;
+        border-radius: 2vw;
+    }
+
+    .loading__porcentaje {
+        font-size: 1.5vw;
+    }
+
+
+    /* Página */
+
+    .pagina-inicio {
+        width: 80vw;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        padding-bottom: 2.6vw;
+    }
+
+
+    /* Destacado */
 
     .destacado {
+        width: 100%;
 
         margin: 1.63vw auto 1.95vw;
-
     }
 
     .destacado__contenido {
-
         aspect-ratio: 3.6 / 1;
 
         border: 0.16vw solid #f52de8;
-
         border-radius: 0.52vw;
-
     }
 
     .destacado__titulo {
@@ -651,26 +615,20 @@ body.cargando {
     }
 
     .destacado__boton-contenedor {
-
         bottom: 1.3vw;
-
     }
 
-    /*
 
-       TOP 4
-
-     */
+    /* Top 3 */
 
     .top-seleccion {
         width: 100%;
+
         margin-bottom: 3.8vh;
     }
 
     .top-seleccion__contenedor {
-
         width: auto;
-
         min-height: 13vw;
 
         padding: 1vw 2vw 1.5vw;
@@ -678,31 +636,35 @@ body.cargando {
         border-radius: 0.59vw;
 
         display: flex;
-        
 
         overflow: visible;
+    }
 
+    .top-seleccion__encabezado {
+        width: 32%;
+        flex: 0 0 32%;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+        justify-content: center;
+
+        margin-bottom: 0;
     }
 
     .top-seleccion__titulo {
+        margin-bottom: 1vw;
 
-        margin-bottom: 0;
-
+        font-size: 1.5vw;
     }
 
-    .top-seleccion__texto p {
-
-        font-size: 1.2vw;
-
+    #titulo-top-seleccion {
+        margin-bottom: 0;
     }
 
     .top-seleccion__presentacion {
-
-        /* Quita la pos absoluta para q no tape las tarjetas */
-
         position: static;
-
-        transform: none;
 
         width: 100%;
 
@@ -710,103 +672,69 @@ body.cargando {
 
         align-items: center;
 
-        gap: 1.2vw;
+        gap: 1vw;
 
         margin-bottom: 0;
 
+        transform: none;
+    }
+
+    .top-seleccion__fantasma-contenedor {
+        width: 4.5vw;
+
+        flex-shrink: 0;
+    }
+
+    .top-seleccion__texto {
+        flex: 1;
+
+        font-size: 0.95vw;
+        line-height: 1.35;
+    }
+
+    .top-seleccion__texto p {
+        margin: 0;
+
+        font-size: 1vw;
     }
 
     .top-seleccion__contenido {
         flex: 1;
+
         min-width: 0;
 
         display: flex;
+
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-end;
 
         gap: 1.2vw;
-
-    }
-
-    .top-seleccion__fantasma-contenedor {
-
-        width: 6vw;
-
-        flex-shrink: 0;
-
-    }
-
-    .top-seleccion__texto {
-
-        font-size: 0.95vw;
-
-        line-height: 1.3;
-
     }
 
     .top-seleccion__juegos {
+        width: auto;
 
         min-width: 0;
 
         margin: 0;
 
         display: flex;
-
         flex-direction: row;
 
-        align-items: stretch;
-
-        justify-content: space-between;
+        align-items: center;
+        justify-content: flex-end;
 
         gap: 1vw;
-
     }
 
-    .tarjeta-juego__badge-top {
-        top: 0.4vw;
-        left: 0.4vw;
-        border-width: 0.1vw;
-        border-radius: 0.3vw;
-        padding: 0.15vw 0.4vw;
-        font-size: 0.6vw;
-    }
 
-    .tarjeta-juego--top .tarjeta-juego__nombre {
-        padding: 0.25vw 0.4vw;
-        font-size: 0.65vw;
-    }
-
-    .top-seleccion__encabezado {
-
-        width: 30%;
-
-        flex: 0 0 30%;
-
-        margin-bottom: 0;
-
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: flex-start;
-        
-
-    }
-
-    #titulo-top-seleccion{
-        margin-bottom: 0;
-    }
-
-    /*
-
-       TARJETAS NORMALES
-
- */
+    /* Tarjetas normales */
 
     .tarjeta-juego {
-        border: 1px solid rgba(0, 0, 0, 0.8);
         width: 13vw;
         flex: 0 0 13vw;
+
+        border: 1px solid rgba(0, 0, 0, 0.8);
         border-radius: 0.46vw;
     }
 
@@ -816,150 +744,26 @@ body.cargando {
 
     .tarjeta-juego__nombre {
         min-height: auto;
+
         padding: 0.3vw 0.4vw;
+
         font-size: 0.75vw;
+
         background-color: rgba(0, 0, 0, 0.65);
-
-    }
-
-    /*
-
-       TARJETAS DEL TOP 4
-
-       Van despues para q no las pise .tarjeta-juego
-
- */
-
-    .tarjeta-juego--top {
-
-        width: 0;
-        flex: 1 1 0;
-        min-width: 0;
-
-        border: 0.12vw solid rgba(255, 255, 255, 0.65);
-
-        border-radius: 0.46vw;
-
-    }
-
-    .tarjeta-juego--top .tarjeta-juego__imagen {
-
-        width: 100%;
-
-        aspect-ratio: 2 / 1;
-
-        object-fit: cover;
-
-    }
-
-    .tarjeta-juego--top .tarjeta-juego__nombre {
-
-        min-height: auto;
-        padding: 0.36vw 0.52vw;
-        font-size: 0.68vw;
-        background-color: rgba(0, 0, 0, 0.65);
-
-
-    }
-
-    
-
-    /* margenes laterales de la pagina en escritorio */
-
-    .pagina-inicio {
-        width: 80vw;
-        margin-left: auto ; 
-        margin-right: auto ;
-    }
-
-    .destacado,
-    .top-seleccion,
-    .carrusel-juegos__contenedor {
-        width: 100%;
-    }
-
-    .top-seleccion__encabezado {
-        width: 32%;
-        flex: 0 0 32%;
-
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-
-        margin-bottom: 0;
     }
 
 
-    .top-seleccion__titulo {
-        margin-bottom: 1vw;
+    /* Tarjetas Top 3 */
 
-        font-size: 1.5vw;
-    }
-
-
-    .top-seleccion__presentacion {
-        width: 100%;
-
-        display: flex;
-        align-items: center;
-
-        gap: 1vw;
-
-        margin-bottom: 0;
-    }
-
-
-    .top-seleccion__fantasma-contenedor {
-        width: 4.5vw;
-
-        flex-shrink: 0;
-    }
-
-
-    .top-seleccion__texto {
-        flex: 1;
-
-        line-height: 1.35;
-    }
-
-
-    .top-seleccion__texto p {
-        margin: 0;
-
-        font-size: 1vw;
-    }
-
-
-    /* zona de las cards */
-    .top-seleccion__contenido {
-        flex: 1;
-
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-    }
-
-
-    .top-seleccion__juegos {
-        width: auto;
-
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-
-        gap: 1vw;
-    }
-
-
-    /* cards realmente mas chicas */
     .tarjeta-juego--top {
         width: 13.5vw;
         flex: 0 0 13.5vw;
 
+        min-width: 0;
+
+        border: 0.12vw solid rgba(255, 255, 255, 0.65);
         border-radius: 0.45vw;
     }
-
 
     .tarjeta-juego--top .tarjeta-juego__imagen {
         width: 100%;
@@ -969,22 +773,42 @@ body.cargando {
         object-fit: cover;
     }
 
-
     .tarjeta-juego--top .tarjeta-juego__nombre {
         min-height: auto;
 
         padding: 0.25vw 0.4vw;
 
         font-size: 0.65vw;
-        background-color: rgba(0, 0, 0, 0.65);
 
+        background-color: rgba(0, 0, 0, 0.65);
+    }
+
+    .tarjeta-juego__badge-top {
+        top: 0.4vw;
+        left: 0.4vw;
+
+        border-width: 0.1vw;
+        border-radius: 0.3vw;
+
+        padding: 0.15vw 0.4vw;
+
+        font-size: 0.6vw;
     }
 
 
+    /* Contenedores alineados con los márgenes de la página */
+
+    .destacado,
+    .top-seleccion,
+    .carrusel-juegos__contenedor {
+        width: 100%;
+    }
 }
 
-/* 
-   ANIMACIÓN HOVER DEL FANTASMA (ROTACIÓN) */
+
+/* =========================
+   ANIMACIÓN DEL FANTASMA
+   ========================= */
 
 @keyframes rotarDerechaFantasma {
     0% {
@@ -993,7 +817,6 @@ body.cargando {
 
     50% {
         transform: rotate(15deg);
-        /* Se inclina 15 grados a la derecha */
     }
 
     100% {
@@ -1001,11 +824,10 @@ body.cargando {
     }
 }
 
-/* Aplicar la animación al hacer hover sobre el fantasma */
 .top-seleccion__fantasma:hover {
     display: inline-block;
+
     transform-origin: center center;
-    /* Garantiza que gire desde su centro */
+
     animation: rotarDerechaFantasma 2.5s ease-in-out infinite !important;
-    /* Más lento (2.5s) */
 }
