@@ -3,7 +3,7 @@
 // Un solo script para todos los carruseles de la pagina.
 // Deslizamiento suave (translateX con transicion CSS) +
 // animacion de "pulso" en las cards.
-// Mobile: avanza de a una card. Tablet/desktop: una pagina.
+// Mobile: avanza de a una card. Desktop: una pagina.
 // =========================================================
 
 function iniciarCarruseles() {

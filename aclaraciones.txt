@@ -1,9 +1,0 @@
-
-
--animacion del top 3? capaz queda bueno
-
--reorganizar css (y html?)
- 
--el tiempo de loading tiene q ser mas largo pero para las pruebas lo acorte
--captcha??
- 
