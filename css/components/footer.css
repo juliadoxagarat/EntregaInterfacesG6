@@ -81,13 +81,53 @@
 }
 
 
+/* =========================================================
+   ANIMACIÓN DE LINKS
+   ========================================================= */
+
+.pie-pagina__lista a,
+.pie-pagina__contacto a {
+    position: relative;
+    display: inline-block;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 1vw;
+}
+
+/* Línea animada */
+.pie-pagina__lista a::after,
+.pie-pagina__contacto a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -2px;
+
+    width: 100%;
+    height: 1.5px;
+
+    background-color: #ff69ec;
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 0.3s ease;
+}
+
+/* Aparece de izquierda a derecha */
+.pie-pagina__lista a:hover::after,
+.pie-pagina__contacto a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Color del texto */
 .pie-pagina__lista a:hover,
 .pie-pagina__contacto a:hover {
     color: #ff69ec;
-
-    text-decoration: underline;
 }
-
 
 /* =========================================================
    CONTACTO

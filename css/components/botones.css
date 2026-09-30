@@ -21,7 +21,7 @@
     cursor: pointer;
 
     transition: background-color 0.2s ease,
-    transform 0.1s ease;
+        transform 0.1s ease;
 }
 
 
@@ -54,7 +54,7 @@
 .login__boton-animado {
     cursor: pointer;
     transition: transform 0.25s ease,
-                box-shadow 0.25s ease;
+        box-shadow 0.25s ease;
 }
 
 .login__boton-animado:hover {
@@ -131,6 +131,45 @@
 
     transition: background-color 0.2s ease, transform 0.2s ease;
     animation: latidoNeon 2.2s infinite ease-in-out;
+}
+
+.boton--jugar {
+    overflow: hidden;
+    transition:
+        width 0.35s ease,
+        padding 0.35s ease,
+        border-radius 0.35s ease,
+        transform 0.35s ease,
+        background-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.emoji-jugar {
+    display: none;
+}
+
+.boton--jugar.animar-espadas {
+    width: 55px;
+    height: 55px;
+    padding: 0;
+    border-radius: 50%;
+
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+
+    font-size: 45px;
+
+    animation: chocandoEspadas 2.5s ease-in-out infinite alternate;
+}
+
+.boton--jugar.animar-espadas .texto-jugar {
+    display: none;
+}
+
+.boton--jugar.animar-espadas .emoji-jugar {
+    display: block;
 }
 
 @keyframes latidoNeon {
