@@ -297,7 +297,7 @@ body.cargando {
 
     gap: 2vw;
 
-    margin-bottom: 1vw;
+    margin-bottom: 0vw;
 
 }
 
@@ -309,6 +309,7 @@ body.cargando {
 
     letter-spacing: 0.05vw;
 
+    margin-bottom: 0px;
 }
 
 .top-seleccion__presentacion {
