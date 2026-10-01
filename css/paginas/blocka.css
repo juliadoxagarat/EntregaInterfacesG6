@@ -242,78 +242,81 @@ img[src=""] {
     text-align: left;
 }
 
-
-/* =========================
-   INSTRUCCIONES
-   ========================= */
-
 .instrucciones-juego {
-    width: 92%;
-
-    margin: 0 auto;
-
     display: flex;
-
-    align-items: center;
     justify-content: center;
+    width: 100%;
+    margin: 20px 0;
 }
 
-.instrucciones-juego__imagen {
-    width: 78%;
-    height: auto;
-
-    margin-left: auto;
-    margin-right: auto;
-
-    display: block;
-
-    object-fit: contain;
+.instrucciones-juego section {
+    background-color: #11084d;
+    border: 1px solid #1f1271;
+    border-radius: 8px;
+    padding: 25px 30px;
+    max-width: 900px;
+    /* Aumentado para dar espacio a la columna de imágenes */
+    width: 100%;
+    display: flex;
+    /* Distribuye el texto a la izquierda y las imágenes a la derecha */
+    gap: 30px;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-
-/* =========================
-   CÓMO JUGAR
-   ========================= */
-
-.como-jugar {
-    width: 92%;
-
-    margin: 0 auto 24px;
-}
-
-.como-jugar__titulo {
-    width: 62%;
-
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1.2vw;
-
+.contenido-texto {
+    flex: 1;
+    /* Ocupa la mitad izquierda */
     text-align: left;
+    /* Alineación a la izquierda como la referencia */
 }
 
-.como-jugar__contenido {
-    width: 62%;
-
-    margin: 0 auto;
-
-    border: 3px solid #f1a2ff;
-
-    background-color: #654521;
-
-    overflow: hidden;
+.instrucciones-juego h1 {
+    color: #ff00bb;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 12px;
 }
 
-.como-jugar__video {
+.instrucciones-juego p {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.instrucciones-juego p strong {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Párrafo de la ayuda */
+.instrucciones-juego p:nth-of-type(4) {
+    color: #b0a8e0;
+    font-size: 13px;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+/* Grilla de imágenes del lado derecho (2 filas x 3 columnas) */
+.imagenes-grid {
+    flex: 1;
+    /* Ocupa la mitad derecha */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.imagenes-grid img {
     width: 100%;
     height: auto;
-
-    display: block;
-
+    aspect-ratio: 4 / 3;
     object-fit: cover;
-
-    background-color: #654521;
+    border-radius: 6px;
+    border: 1px solid #2d1891;
+    background-color: #0c0538;
+    /* Placeholder visual mientras cargas las imágenes */
 }
-
 
 /* =========================
    RESPONSIVE
