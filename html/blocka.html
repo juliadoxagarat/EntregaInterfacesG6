@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Arcade Time | Blocka</title>
+    <link rel="stylesheet" href="../css/components/header.css">
+    <link rel="stylesheet" href="../css/paginas/blocka.css">
+    <link rel="stylesheet" href="../css/components/footer.css">
+    <link rel="stylesheet" href="../css/components/comentarios.css">
+    <link rel="stylesheet" href="../css/components/botones.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+
+<body>
+
+
+    <!-- fondo general de toda la pagina -->
+    <div class="fondo-pagina">
+        <!-- header -->
+        <header class="encabezado">
+
+
+            <div class="encabezado__contenedor">
+
+
+
+                <!-- boton hamburguesa -->
+                <button class="encabezado__menu-boton" type="button" data-boton-menu>
+
+                    <!-- aca va el icono hamburguesa -->
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+
+                <!-- logo y nombre, al tocar vuelve al home -->
+                <a class="encabezado__logo" href="home.html">
+
+                    <img class="encabezado__logo-imagen" src="../img/logo(2).png" alt="Arcade Time">
+
+                </a>
+
+
+
+                <!-- decoracion q esta al lado del logo -->
+                <div class="encabezado__separador"></div>
+
+
+
+                <!-- buscador -->
+                <form class="buscador" action="#" method="get" role="search">
+
+                    <label class="buscador__label" for="buscar-juego">
+                        Buscar juego
+                    </label>
+
+                    <div class="buscador__contenedor">
+
+                        <input class="buscador__input" type="search" id="buscar-juego" name="buscar"
+                            placeholder="Buscar juego">
+
+                        <button class="buscador__boton" type="submit">
+
+                            <!-- aca va la lupa -->
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+                <!-- boton del perfil -->
+                <button class="encabezado__perfil-boton" type="button" data-boton-perfil>
+
+                    <!-- aca va el icono de la personita -->
+                    <i class="fa-solid fa-user"></i>
+
+                </button>
+
+
+            </div>
+
+
+
+
+            <!-- menu q se abre con la hamburguesa -->
+            <nav class="menu-categorias" id="menu-categorias" hidden>
+
+                <ul class="menu-categorias__lista">
+
+                    <li class="menu-categorias__item">
+
+                        <a class="menu-categorias__link" href="./home.html#accion">
+                            Acción
+                        </a>
+
+                    </li>
+
+
+                    <li class="menu-categorias__item">
+
+                        <a class="menu-categorias__link" href="./home.html#terror">
+                            Terror
+                        </a>
+
+                    </li>
+
+
+                    <li class="menu-categorias__item">
+
+                        <a class="menu-categorias__link" href="./home.html#aventura">
+                            Aventura
+                        </a>
+
+                    </li>
+
+
+                    <li class="menu-categorias__item">
+
+                        <a class="menu-categorias__link" href="./home.html#carreras">
+                            Carreras
+                        </a>
+
+                    </li>
+
+
+                    <li class="menu-categorias__item">
+
+                        <a class="menu-categorias__link" href="./home.html#supervivencia">
+                            Supervivencia
+                        </a>
+
+                    </li>
+
+
+                    <li class="menu-categorias__item">
+
+                        <a class="menu-categorias__link" href="./home.html#superheroes">
+                            Superhéroes
+                        </a>
+
+                    </li>
+
+
+                    <li class="menu-categorias__item">
+
+                        <a class="menu-categorias__link" href="./home.html#dos-jugadores">
+                            Dos jugadores
+                        </a>
+
+                    </li>
+
+
+                    <li class="menu-categorias__item">
+
+                        <a class="menu-categorias__link" href="./home.html#mas-juegos">
+                            Más juegos
+                        </a>
+
+                    </li>
+
+
+                </ul>
+
+            </nav>
+
+
+
+
+            <!-- menu q se abre con la personita -->
+            <div class="menu-usuario" id="menu-usuario" hidden>
+
+
+                <!-- avatar y nombre -->
+                <div class="menu-usuario__perfil">
+
+
+                    <div class="menu-usuario__avatar-contenedor">
+
+                        <img class="menu-usuario__avatar" src="../img/avatares/avatar6.png" alt="Avatar del usuario">
+
+                    </div>
+
+
+                    <p class="menu-usuario__nombre">
+                        i_love_taylor
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- titulo del menu -->
+                <div class="menu-usuario__encabezado">
+
+                    <p class="menu-usuario__titulo">
+                        Configuraciones de la cuenta
+                    </p>
+
+                </div>
+
+
+
+                <!-- opciones -->
+                <nav class="menu-usuario__opciones">
+
+                    <ul class="menu-usuario__lista">
+
+
+                        <li class="menu-usuario__item">
+
+                            <a class="menu-usuario__link" href="#">
+                                Contraseña
+                            </a>
+
+                        </li>
+
+
+                        <li class="menu-usuario__item">
+
+                            <a class="menu-usuario__link" href="#">
+                                Correo electrónico
+                            </a>
+
+                        </li>
+
+
+                        <li class="menu-usuario__item">
+
+                            <a class="menu-usuario__link" href="#">
+                                Editar avatar
+                            </a>
+
+                        </li>
+
+
+                        <li class="menu-usuario__item">
+
+                            <a class="menu-usuario__link" href="#">
+                                Editar nombre de usuario
+                            </a>
+
+                        </li>
+
+
+                        <li class="menu-usuario__item">
+
+                            <a class="menu-usuario__link" href="#">
+                                Idioma
+                            </a>
+
+                        </li>
+
+                        <li class="menu-usuario__item">
+                            <a class="menu-usuario__link" href="./login.html">
+                                Cerrar sesion
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+                </nav>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- contenido principal -->
+        <main class="pagina-juego">
+
+
+            <!-- breadcrumbs -->
+            <nav class="breadcrumbs">
+
+                <ol class="breadcrumbs__lista">
+
+                    <li class="breadcrumbs__item">
+
+                        <a class="breadcrumbs__link" href="#">
+                            Mis juegos
+                        </a>
+
+                    </li>
+
+                    <li class="breadcrumbs__separador">
+                        &gt;
+                    </li>
+
+                    <li class="breadcrumbs__item">
+
+                        <a class="breadcrumbs__link" href="./home.html#dos-jugadores">
+                            Dos jugadores
+                        </a>
+
+                    </li>
+
+                    <li class="breadcrumbs__separador">
+                        &gt; <!--hace el caracter >   -->
+                    </li>
+
+                    <li class="breadcrumbs__item breadcrumbs__item--actual">
+                        Blocka
+                    </li>
+
+                </ol>
+
+            </nav>
+
+
+
+
+            <!-- juego -->
+            <section class="detalle-juego" aria-labelledby="titulo-juego">
+
+
+                <!-- fila del titulo y acciones -->
+                <div class="detalle-juego__encabezado">
+
+
+                    <div class="detalle-juego__titulo-valoracion">
+
+                        <h1 class="detalle-juego__titulo" id="titulo-juego">
+                            Blocka
+                        </h1>
+
+
+                        <div class="valoracion">
+
+                            <span class="valoracion__estrella">★</span>
+                            <span class="valoracion__estrella">★</span>
+                            <span class="valoracion__estrella">★</span>
+                            <span class="valoracion__estrella">★</span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="detalle-juego__acciones">
+
+                        <button class="boton boton--agregar-juego" type="button" data-boton-favorito>
+                            Agregar a mis juegos <span class="corazon">❤️</span>
+                        </button>
+
+
+                        <button class="detalle-juego__compartir" type="button">
+
+                            <!-- aca va el icono verde de compartir -->
+                            <i class="fa-solid fa-share-nodes"></i>
+
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- imagen principal-->
+                 <canvas id="canvasBlocka">
+
+                    
+                 </canvas>
+                <div class="detalle-juego__imagen-contenedor">
+
+                    <img class="detalle-juego__imagen" src="../img/peg-jugando.png" alt="Peg Solitaire">
+
+                </div>
+
+
+
+
+                <!-- descripcion -->
+                <section class="descripcion-juego">
+
+                    <h2 class="descripcion-juego__titulo" id="titulo-descripcion">
+                        Descripción
+                    </h2>
+
+
+                    <p class="descripcion-juego__texto">
+                        Adéntrate en un desafío de lógica y observación donde deberás reconstruir imágenes desordenadas.
+                        En Blocka, cada nivel presenta una imagen dividida en cuatro partes que se encuentran
+                        rotadas respecto a su posición original.
+                        Tu objetivo es girar cada pieza hasta encontrar la orientación correcta y formar nuevamente la
+                        imagen. Para hacerlo, podrás utilizar el mouse: con el clic izquierdo la pieza gira hacia un
+                        lado y con el derecho hacia el otro. Cada movimiento modifica el tablero, por lo que deberás
+                        analizar cuidadosamente cada fragmento y encontrar la combinación correcta de giros para
+                        completar el desafío.
+                    </p>
+
+                </section>
+
+
+
+
+                <!-- instrucciones del juego -->
+                <div class="instrucciones-juego">
+
+                    <img class="instrucciones-juego__imagen" src="../img\cards_descripcion.png"
+                        alt="Instrucciones para jugar a Blocka">
+
+                </div>
+
+
+
+
+                <!-- como jugar, FALTA CARGAR VIDEO -->
+                <section class="como-jugar">
+
+                    <h2 class="como-jugar__titulo" id="titulo-como-jugar">
+                        Cómo jugar
+                    </h2>
+
+
+                    <div class="como-jugar__contenido">
+
+                        <!-- aca va el video demo -->
+                        <a href="https://youtu.be/8aVEFADZ6bU?si=a4qRcN6qIbFcznBi" target="_blank"
+                            rel="noopener noreferrer">
+
+                            <img src="../img\video peg.png" alt="Video de cómo jugar" class="como-jugar__video">
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+            </section>
+
+
+
+
+            <!-- comentarios -->
+            <section class="comentarios">
+
+                <h2 class="comentarios__titulo" id="titulo-comentarios">
+                    Comentarios
+                </h2>
+
+
+
+
+                <!-- agregar comentario -->
+                <form class="comentarios__formulario" action="#" method="post">
+
+                    <div class="comentarios__avatar-contenedor">
+
+                        <img class="comentario__avatar" src="..\img\avatares\avatar6.png" alt="Tu avatar">
+
+                    </div>
+
+
+                    <div class="comentarios__campo">
+
+                        <label class="comentarios__label" for="nuevo-comentario">
+                            Agregar un comentario
+                        </label>
+
+
+                        <input class="comentarios__input" type="text" id="nuevo-comentario" name="comentario"
+                            placeholder="Agregar un comentario..." required>
+
+                        <button class="comentarios__enviar" type="submit">
+
+                            <!-- aca va la flecha -->
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+
+
+
+                <!-- lista de comentarios-->
+                <div class="comentarios__lista">
+
+
+                    <article class="comentario">
+
+                        <div class="comentario__avatar-contenedor">
+
+                            <img class="comentario__avatar" src="../img\avatares\avatar9.png" alt="Avatar de honeycore">
+
+                        </div>
+
+
+                        <div class="comentario__contenido">
+
+                            <div class="comentario__principal">
+
+                                <h3 class="comentario__usuario">
+                                    likingLikes
+                                </h3>
+
+                                <p class="comentario__texto">
+                                    El ultimo nivel era modo imposible 💀💀
+                                </p>
+
+                            </div>
+
+
+                            <div class="comentario__lateral">
+
+                                <time class="comentario__fecha" datetime="2026-04-30">
+                                    03/03/26
+                                </time>
+
+
+                                <div class="comentario__acciones">
+
+                                    <div class="comentario__accion comentario__accion--me-gusta" type="button"
+                                        aria-label="Me gusta">
+
+                                        <!-- icono me gusta -->
+                                        <i class="fa-regular fa-thumbs-up"></i>
+
+                                    </div>
+
+                                    <div class="comentario__accion comentario__accion--no-me-gusta" type="button"
+                                        aria-label="No me gusta">
+
+                                        <!-- icono no me gusta -->
+                                        <i class="fa-regular fa-thumbs-down"></i>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+
+                    <article class="comentario">
+
+                        <div class="comentario__avatar-contenedor">
+
+                            <img class="comentario__avatar" src="../img\avatares\avatar8.png" alt="Avatar de angelbite">
+
+                        </div>
+
+
+                        <div class="comentario__contenido">
+
+                            <div class="comentario__principal">
+
+                                <h3 class="comentario__usuario">
+                                    storyTeller
+                                </h3>
+
+                                <p class="comentario__texto">
+                                    No se si me como mucho, demasiado facil todo
+                                </p>
+
+                            </div>
+
+
+                            <div class="comentario__lateral">
+
+                                <time class="comentario__fecha" datetime="2026-06-15">
+                                    15/02/26
+                                </time>
+
+
+                                <div class="comentario__acciones">
+
+                                    <div class="comentario__accion comentario__accion--me-gusta" type="button">
+
+                                        <!-- icono like -->
+                                        <i class="fa-regular fa-thumbs-up"></i>
+
+                                    </div>
+
+                                    <div class="comentario__accion comentario__accion--no-me-gusta" type="button">
+
+                                        <!-- icono dislike -->
+                                        <i class="fa-regular fa-thumbs-down"></i>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+
+                    <article class="comentario">
+
+                        <div class="comentario__avatar-contenedor">
+
+                            <img class="comentario__avatar" src="../img\avatares\avatar7.png" alt="Avatar de sugarcoma">
+
+                        </div>
+
+
+                        <div class="comentario__contenido">
+
+                            <div class="comentario__principal">
+
+                                <h3 class="comentario__usuario">
+                                    sugarTalking
+                                </h3>
+
+                                <p class="comentario__texto">
+                                    Me encantaaaaaa, quiero que saquen mil niveles
+                                </p>
+
+                            </div>
+
+
+                            <div class="comentario__lateral">
+
+                                <time class="comentario__fecha" datetime="2026-04-30">
+                                    30/01/26
+                                </time>
+
+
+                                <div class="comentario__acciones">
+
+                                    <div class="comentario__accion comentario__accion--me-gusta" type="button">
+
+                                        <!-- icono me gusta -->
+                                        <i class="fa-regular fa-thumbs-up"></i>
+
+                                    </div>
+
+                                    <div class="comentario__accion comentario__accion--no-me-gusta" type="button">
+
+                                        <!-- icono no me gusta -->
+                                        <i class="fa-regular fa-thumbs-down"></i>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+
+                    <article class="comentario">
+
+                        <div class="comentario__avatar-contenedor">
+
+                            <img class="comentario__avatar" src="../img\avatares\avatar6.png" alt="Avatar de lovelesly">
+
+                        </div>
+
+
+                        <div class="comentario__contenido">
+
+                            <div class="comentario__principal">
+
+                                <h3 class="comentario__usuario">
+                                    singinInTheShower
+                                </h3>
+
+                                <p class="comentario__texto">
+                                    Me gustaron las imagenes la verdad
+                                </p>
+
+                            </div>
+
+
+                            <div class="comentario__lateral">
+
+                                <time class="comentario__fecha" datetime="2026-04-09">
+                                    9/01/26
+                                </time>
+
+
+                                <div class="comentario__acciones">
+
+                                    <div class="comentario__accion comentario__accion--me-gusta" type="button">
+
+                                        <!-- icono me gusta -->
+                                        <i class="fa-regular fa-thumbs-up"></i>
+
+                                    </div>
+
+                                    <div class="comentario__accion comentario__accion--no-me-gusta" type="button">
+
+                                        <!-- icono no me gusta -->
+                                        <i class="fa-regular fa-thumbs-down"></i>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+
+                    <article class="comentario">
+
+                        <div class="comentario__avatar-contenedor">
+
+                            <img class="comentario__avatar" src="../img\avatares\avatar5.png" alt="Avatar de sadcherry">
+
+                        </div>
+
+
+                        <div class="comentario__contenido">
+
+                            <div class="comentario__principal">
+
+                                <h3 class="comentario__usuario">
+                                    scarletMaroon
+                                </h3>
+
+                                <p class="comentario__texto">
+                                    Me parece linda la estetica y el juego tmb
+                                </p>
+
+                            </div>
+
+
+                            <div class="comentario__lateral">
+
+                                <time class="comentario__fecha" datetime="2026-04-07">
+                                    7/12/25
+                                </time>
+
+
+                                <div class="comentario__acciones">
+
+                                    <div class="comentario__accion comentario__accion--me-gusta" type="button">
+
+                                        <!-- icono like -->
+                                        <i class="fa-regular fa-thumbs-up"></i>
+
+                                    </div>
+
+                                    <div class="comentario__accion comentario__accion--no-me-gusta" type="button">
+
+                                        <!-- icono dislike -->
+                                        <i class="fa-regular fa-thumbs-down"></i>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+
+                    <article class="comentario">
+
+                        <div class="comentario__avatar-contenedor">
+
+                            <img class="comentario__avatar" src="../img\avatares/avatar7.png"
+                                alt="Avatar de thebestintown">
+
+                        </div>
+
+
+                        <div class="comentario__contenido">
+
+                            <div class="comentario__principal">
+
+                                <h3 class="comentario__usuario">
+                                    heyStephen
+                                </h3>
+
+                                <p class="comentario__texto">
+                                    Mmm no se si fue de mi agrado
+                                </p>
+
+                            </div>
+
+
+                            <div class="comentario__lateral">
+
+                                <time class="comentario__fecha" datetime="2026-04-07">
+                                    6/04/25
+                                </time>
+
+
+                                <div class="comentario__acciones">
+
+                                    <div class="comentario__accion comentario__accion--me-gusta" type="button">
+
+                                        <!-- icono like -->
+                                        <i class="fa-regular fa-thumbs-up"></i>
+
+                                    </div>
+
+                                    <div class="comentario__accion comentario__accion--no-me-gusta" type="button">
+
+                                        <!-- icono dislike -->
+                                        <i class="fa-regular fa-thumbs-down"></i>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+
+                    <article class="comentario">
+
+                        <div class="comentario__avatar-contenedor">
+
+                            <img class="comentario__avatar" src="../img\avatares/avatar8.png"
+                                alt="Avatar de solonglonodon">
+
+                        </div>
+
+
+                        <div class="comentario__contenido">
+
+                            <div class="comentario__principal">
+
+                                <h3 class="comentario__usuario">
+                                    solonglondon
+                                </h3>
+
+                                <p class="comentario__texto">
+                                    increible posta obsesionada
+                                </p>
+
+                            </div>
+
+
+                            <div class="comentario__lateral">
+
+                                <time class="comentario__fecha" datetime="2026-04-07">
+                                    17/03/25
+                                </time>
+
+
+                                <div class="comentario__acciones">
+
+                                    <div class="comentario__accion comentario__accion--me-gusta" type="button">
+
+                                        <!-- icono like -->
+                                        <i class="fa-regular fa-thumbs-up"></i>
+
+                                    </div>
+
+                                    <div class="comentario__accion comentario__accion--no-me-gusta" type="button">
+
+                                        <!-- icono dislike -->
+                                        <i class="fa-regular fa-thumbs-down"></i>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+
+                    <article class="comentario">
+
+                        <div class="comentario__avatar-contenedor">
+
+                            <img class="comentario__avatar" src="../img\avatares/avatar9.png"
+                                alt="Avatar de sunShines4me">
+
+                        </div>
+
+
+                        <div class="comentario__contenido">
+
+                            <div class="comentario__principal">
+
+                                <h3 class="comentario__usuario">
+                                    eternalSunshine4EvernEver
+                                </h3>
+
+                                <p class="comentario__texto">
+                                    entretenido pero hasta ahi
+                                </p>
+
+                            </div>
+
+
+                            <div class="comentario__lateral">
+
+                                <time class="comentario__fecha" datetime="2026-04-07">
+                                    7/01/25
+                                </time>
+
+
+                                <div class="comentario__acciones">
+
+                                    <div class="comentario__accion comentario__accion--me-gusta" type="button">
+
+                                        <!-- icono like -->
+                                        <i class="fa-regular fa-thumbs-up"></i>
+
+                                    </div>
+
+                                    <div class="comentario__accion comentario__accion--no-me-gusta" type="button">
+
+                                        <!-- icono dislike -->
+                                        <i class="fa-regular fa-thumbs-down"></i>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- footer -->
+        <footer class="pie-pagina">
+
+
+            <div class="pie-pagina__contenedor">
+
+
+
+                <!-- columna explorar -->
+                <div class="pie-pagina__columna">
+
+
+                    <h2 class="pie-pagina__titulo">
+                        Explora
+                    </h2>
+
+
+                    <ul class="pie-pagina__lista">
+
+                        <li>
+                            <a href="#">Juegos populares</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Nuevos ingresos</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Juego sorpresa</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Clásicos favoritos</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Más jugados</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Joyitas ocultas</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Arcade de la semana</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Todos los juegos</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Top de los ochentas</a>
+                        </li>
+
+                    </ul>
+
+
+                </div>
+
+
+
+
+                <!-- columna arcade time -->
+                <div class="pie-pagina__columna">
+
+
+                    <h2 class="pie-pagina__titulo">
+                        Arcade time
+                    </h2>
+
+
+                    <ul class="pie-pagina__lista">
+
+                        <li>
+                            <a href="#">Sobre nosotros</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Nuestro equipo</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Trabaja con nosotros</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Producto</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Términos de servicio</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Reseñas</a>
+                        </li>
+
+                    </ul>
+
+
+
+                    <h2 class="pie-pagina__titulo">
+                        Acerca de
+                    </h2>
+
+
+                    <ul class="pie-pagina__lista">
+
+                        <li>
+                            <a href="#">Cómo jugar</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Preguntas frecuentes</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Soporte técnico</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Leer comentarios</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+
+                <!-- columna legal y contacto -->
+                <div class="pie-pagina__columna">
+
+
+                    <h2 class="pie-pagina__titulo">
+                        Legal
+                    </h2>
+
+
+                    <ul class="pie-pagina__lista">
+
+                        <li>
+                            <a href="#">Términos y condiciones</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Licencias y derechos</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Política de privacidad</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Servicios</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Seguridad</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Centro de atención</a>
+                        </li>
+
+                    </ul>
+
+
+
+                    <div class="pie-pagina__contacto">
+
+
+                        <h2 class="pie-pagina__titulo">
+                            Contacto
+                        </h2>
+
+
+                        <p>
+                            arcadeinfotime@gmail.com
+                        </p>
+
+                        <p>
+                            Tel: +54 2494 655789
+                        </p>
+
+
+                        <a href="#">
+                            Documentación
+                        </a>
+
+                        <a href="#">
+                            Contactar ventas
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+
+
+
+                <!-- redes y logo -->
+                <div class="pie-pagina__columna">
+
+                    <div class="pie-pagina__redes">
+
+
+                        <h2 class="pie-pagina__titulo">
+                            Seguinos en
+                        </h2>
+
+
+                        <div class="pie-pagina__redes-lista">
+                            <a href="#">
+                                <!-- icono youtube -->
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                            <a href="#">
+                                <!-- icono instagram -->
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="#">
+                                <!-- icono facebook -->
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="#">
+                                <!-- icono twitter -->
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="pie-pagina__descubrir">
+
+
+                        <p>
+                            <strong>
+                                INSERT COIN - descubre nuevos juegos,
+                                clásicos y reversionados.
+                            </strong>
+                        </p>
+
+
+                    </div>
+
+
+
+                    <div class="pie-pagina__logo">
+
+                        <!-- aca va el logo arcade time -->
+                        <img class="pie-pagina__logo-imagen" src="../img\logo(2).png" alt="Arcade Time">
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </footer>
+
+
+    </div>
+
+    <script src="../js/home.js"></script>
+    <script src="../js/botones.js"></script
+</body>
+
+</html>

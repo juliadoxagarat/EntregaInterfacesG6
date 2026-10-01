@@ -1,0 +1,356 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #12095b;
+
+    color: white;
+}
+
+img {
+    max-width: 100%;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+/* =========================
+   FONDO
+   ========================= */
+
+.fondo-pagina {
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: #12095b;
+}
+
+
+/* =========================
+   CONTENIDO
+   ========================= */
+
+.pagina-juego {
+    width: 94vw;
+
+    margin: 0 auto;
+
+    padding-top: 1.8vw;
+    padding-bottom: 3vw;
+}
+
+
+/* =========================
+   BREADCRUMBS
+   ========================= */
+
+.breadcrumbs {
+    width: 92%;
+
+    margin: 0 auto;
+}
+
+.breadcrumbs__lista {
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.7vw;
+
+    list-style: none;
+
+    font-size: 0.8vw;
+}
+
+.breadcrumbs__link {
+    color: white;
+
+    text-decoration: none;
+}
+
+.breadcrumbs__separador {
+    color: #bcb2ff;
+}
+
+
+/* =========================
+   ENCABEZADO DEL JUEGO
+   ========================= */
+
+.detalle-juego__encabezado {
+    width: 92%;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1vw;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.detalle-juego__titulo-valoracion {
+    display: flex;
+
+    align-items: center;
+
+    gap: 1.5vw;
+}
+
+.detalle-juego__titulo {
+    color: white;
+
+    font-family: "Arial Black", Arial, sans-serif;
+
+    font-size: 1.55vw;
+
+    letter-spacing: 0.08vw;
+}
+
+.valoracion {
+    display: flex;
+
+    gap: 0.3vw;
+}
+
+.valoracion__estrella {
+    color: #f52de8;
+
+    font-size: 1.55vw;
+
+    line-height: 1;
+}
+
+
+/* =========================
+   ACCIONES
+   ========================= */
+
+.detalle-juego__acciones {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 0.8vw;
+}
+
+.detalle-juego__compartir {
+    width: 2.5vw;
+    aspect-ratio: 1;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.fa-share-nodes {
+    color: white;
+
+    font-size: 1.25vw;
+}
+
+
+/* =========================
+   IMAGEN PRINCIPAL
+   ========================= */
+
+.detalle-juego__imagen-contenedor {
+    width: 92%;
+
+    margin: 0 auto 1vw;
+
+    border: 0.2vw solid #f52de8;
+
+    background-color: #0c0744;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.detalle-juego__imagen {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+img[src=""] {
+    visibility: hidden;
+}
+
+
+/* =========================
+   DESCRIPCIÓN
+   ========================= */
+
+.descripcion-juego {
+    width: 92%;
+
+    margin: 0 auto -0.5vw;
+}
+
+.descripcion-juego__titulo,
+.como-jugar__titulo,
+.comentarios__titulo {
+    color: white;
+
+    font-family: "Arial Black", Arial, sans-serif;
+
+    font-size: 1.15vw;
+
+    letter-spacing: 0.1vw;
+
+    margin-bottom: 0.5vw;
+}
+
+.descripcion-juego__texto {
+    width: 100%;
+
+    margin-left: 0;
+    margin-right: 0;
+
+    color: white;
+
+    font-size: 0.9vw;
+
+    line-height: 1.5;
+
+    text-align: left;
+}
+
+
+/* =========================
+   INSTRUCCIONES
+   ========================= */
+
+.instrucciones-juego {
+    width: 92%;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.instrucciones-juego__imagen {
+    width: 78%;
+    height: auto;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   CÓMO JUGAR
+   ========================= */
+
+.como-jugar {
+    width: 92%;
+
+    margin: 0 auto 24px;
+}
+
+.como-jugar__titulo {
+    width: 62%;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.2vw;
+
+    text-align: left;
+}
+
+.como-jugar__contenido {
+    width: 62%;
+
+    margin: 0 auto;
+
+    border: 3px solid #f1a2ff;
+
+    background-color: #654521;
+
+    overflow: hidden;
+}
+
+.como-jugar__video {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    object-fit: cover;
+
+    background-color: #654521;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (min-width: 900px) {
+
+    .pagina-juego {
+        width: 80vw;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .detalle-juego__encabezado {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 2vw;
+    }
+
+    .detalle-juego__acciones {
+        align-self: flex-end;
+    }
+
+    .breadcrumbs,
+    .detalle-juego__encabezado,
+    .detalle-juego__imagen-contenedor,
+    .descripcion-juego,
+    .instrucciones-juego,
+    .como-jugar {
+        width: 100%;
+    }
+
+    .como-jugar__titulo,
+    .como-jugar__contenido {
+        width: 100%;
+    }
+}
