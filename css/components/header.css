@@ -182,8 +182,11 @@ body {
     text-decoration: none;
     font-size: 0.8vw;
     font-weight: normal;
-    text-align: center;
+    text-align: left;
     box-sizing: border-box;
+    /* espacio para q el texto no pise los emojis de los costados */
+    padding-left: 30px;
+    padding-right: 30px;
 
     background-color: #ffb5fd;
 
@@ -215,76 +218,112 @@ body {
 
 .menu-categorias__link::before,
 .menu-categorias__link::after {
-    opacity: 0;
+    opacity: 1;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     font-size: 11px;
     pointer-events: none;
-
-    /* Transición suave para entrar y salir sin parpadear */
-    transition: left 0.3s ease, right 0.3s ease, opacity 0.3s ease;
 }
 
-/* Posición fuera del botón */
+/* Siempre visibles a los costados, sin animacion de hover */
 .menu-categorias__link::before {
-    left: -15px;
-}
-
-.menu-categorias__link::after {
-    right: -15px;
-}
-
-/* Al hacer hover entran y quedan fijos */
-.menu-categorias__link:hover::before {
-    opacity: 1;
     left: 8px;
 }
 
-.menu-categorias__link:hover::after {
-    opacity: 1;
+.menu-categorias__link::after {
     right: 8px;
 }
 
 /* Emojis por categoría */
-.menu-categorias__link[href*="#accion"]::before,
-.menu-categorias__link[href*="#accion"]::after {
+.menu-categorias__link[href*="#accion"]::before {
     content: "💥";
 }
 
-.menu-categorias__link[href*="#terror"]::before,
-.menu-categorias__link[href*="#terror"]::after {
+.menu-categorias__link[href*="#terror"]::before {
     content: "👻";
 }
 
-.menu-categorias__link[href*="#aventura"]::before,
-.menu-categorias__link[href*="#aventura"]::after {
+.menu-categorias__link[href*="#aventura"]::before {
     content: "🗡️";
 }
 
-.menu-categorias__link[href*="#carreras"]::before,
-.menu-categorias__link[href*="#carreras"]::after {
+.menu-categorias__link[href*="#carreras"]::before {
     content: "🏎️";
 }
 
-.menu-categorias__link[href*="#supervivencia"]::before,
-.menu-categorias__link[href*="#supervivencia"]::after {
+.menu-categorias__link[href*="#supervivencia"]::before {
     content: "⛺";
 }
 
-.menu-categorias__link[href*="#superheroes"]::before,
-.menu-categorias__link[href*="#superheroes"]::after {
+.menu-categorias__link[href*="#superheroes"]::before {
     content: "🦸";
 }
 
-.menu-categorias__link[href*="#dos-jugadores"]::before,
-.menu-categorias__link[href*="#dos-jugadores"]::after {
+.menu-categorias__link[href*="#dos-jugadores"]::before {
     content: "🎮";
 }
 
-.menu-categorias__link[href*="#mas-juegos"]::before,
-.menu-categorias__link[href*="#mas-juegos"]::after {
+.menu-categorias__link[href*="#mas-juegos"]::before {
     content: "✨";
+}
+
+/* =========================================================
+   EMOJIS FIJOS EN MENÚ USUARIO (alineado a la izquierda)
+   ========================================================= */
+
+/* La lista del usuario va alineada a la izquierda con su emoji */
+.menu-usuario__link {
+    text-align: left;
+    padding-left: 34px;
+}
+
+/* Emoji a la izquierda segun el texto */
+.menu-usuario__link::before {
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    font-size: 11px;
+    pointer-events: none;
+}
+
+/* Cerrar sesion: texto tirado a la derecha y emoji en la derecha */
+.menu-usuario__link--salir {
+    text-align: right;
+    padding-left: 0.6vw;
+    padding-right: 34px;
+}
+
+.menu-usuario__link--salir::before {
+    left: auto;
+    right: 12px;
+}
+
+/* Emojis por opcion */
+.menu-usuario__item:nth-child(1) .menu-usuario__link::before {
+    content: "🔒";
+}
+
+.menu-usuario__item:nth-child(2) .menu-usuario__link::before {
+    content: "📧";
+}
+
+.menu-usuario__item:nth-child(3) .menu-usuario__link::before {
+    content: "🖼️";
+}
+
+.menu-usuario__item:nth-child(4) .menu-usuario__link::before {
+    content: "✏️";
+}
+
+.menu-usuario__item:nth-child(5) .menu-usuario__link::before {
+    content: "🌐";
+}
+
+.menu-usuario__link--salir::before {
+    content: "🚪";
 }
 
 /* =========================================================
@@ -488,8 +527,29 @@ body {
     .menu-usuario__link {
         font-size: 11px;
         padding: 6px 4px;
-        text-align: center;
         line-height: 1.2;
+    }
+
+    /* En mobile la hamburguesa tambien va alineada a la izquierda,
+       sin pisar el emoji */
+    .menu-categorias__link {
+        text-align: left;
+        padding-left: 26px;
+        padding-right: 26px;
+    }
+
+    /* El menu de usuario mantiene su alineacion:
+       opciones a la izquierda con emoji a la izquierda,
+       Cerrar sesion a la derecha con emoji a la derecha */
+    .menu-usuario__link {
+        text-align: left;
+        padding-left: 34px;
+    }
+
+    .menu-usuario__link--salir {
+        text-align: right;
+        padding-left: 4px;
+        padding-right: 34px;
     }
 
     .menu-usuario__perfil {
