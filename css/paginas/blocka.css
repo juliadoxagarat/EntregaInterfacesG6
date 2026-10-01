@@ -354,3 +354,156 @@ img[src=""] {
         width: 100%;
     }
 }
+
+.blocka__contenedor-juego {
+    width: 90%;
+    max-width: 1400px;
+    min-height: 530px;
+
+    margin: 30px auto;
+    padding: 40px;
+
+    background-color: #223f66;
+
+    border-radius: 18px;
+
+    box-sizing: border-box;
+}
+
+
+/* -------------------------
+   BARRA SUPERIOR
+------------------------- */
+
+.blocka__barra-superior {
+    display: grid;
+
+    grid-template-columns: 1fr auto 1fr;
+
+    align-items: center;
+
+    gap: 30px;
+
+    width: 100%;
+}
+
+
+/* -------------------------
+   NIVEL Y TIEMPO
+------------------------- */
+
+.blocka__info {
+    justify-self: start;
+}
+
+
+.blocka__info h2 {
+    margin: 0;
+
+    color: #ff5ba7;
+
+    font-size: 30px;
+}
+
+
+.blocka__info p {
+    margin: 8px 0 0;
+
+    color: #65c56b;
+
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+/* -------------------------
+   TAMAÑO DEL TABLERO
+------------------------- */
+
+.blocka__tamanios {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+}
+
+
+.blocka__tamanio {
+    min-width: 90px;
+    height: 48px;
+
+    padding: 0 20px;
+
+    background-color: transparent;
+    color: white;
+
+    border: 2px solid #ff4fa3;
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.blocka__tamanio:hover {
+    background-color: #ff4fa3;
+}
+
+
+.blocka__tamanio--activo {
+    background-color: #ff4fa3;
+}
+
+
+/* -------------------------
+   CONTROLES
+------------------------- */
+
+.blocka__controles {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 15px;
+}
+
+
+.blocka__controles .boton {
+    width: auto;
+
+    min-width: 100px;
+    height: 48px;
+
+    padding: 0 20px;
+}
+
+
+/* -------------------------
+   TABLERO
+------------------------- */
+
+.blocka__tablero {
+    width: fit-content;
+
+    margin: 60px auto 0;
+
+    padding: 10px;
+
+    background-color: #102d49;
+
+    border-radius: 12px;
+}
+
+
+#canvas-blocka {
+    display: block;
+
+    width: 600px;
+    height: auto;
+
+    max-width: 100%;
+}
