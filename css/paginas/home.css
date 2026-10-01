@@ -509,9 +509,6 @@ body.cargando {
 
     text-align: center;
 
-    border-bottom-left-radius: 0.7vw;
-    border-bottom-right-radius: 0.7vw;
-
     transition: all 0.25s ease-in-out;
 }
 
