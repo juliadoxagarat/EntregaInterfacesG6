@@ -377,35 +377,39 @@
         <!-- izquierda -->
         <div class="blocka__info">
             <h2>Nivel 1</h2>
-            <p>30:23</p>
+            <p id="cronometro">00:00</p>
         </div>
 
 
-        <!-- centro -->
-        <div class="blocka__tamanios">
+    <div class="blocka__tamanios">
 
-            <button
-                class="blocka__tamanio blocka__tamanio--activo"
-                data-tamanio="4"
-                type="button">
-                4 x 4
-            </button>
+        <button
+            class="blocka__tamanio blocka__tamanio--activo"
+            data-columnas="2"
+            data-filas="2"
+            type="button">
+            2 x 2
+        </button>
 
-            <button
-                class="blocka__tamanio"
-                data-tamanio="6"
-                type="button">
-                6 x 6
-            </button>
 
-            <button
-                class="blocka__tamanio"
-                data-tamanio="8"
-                type="button">
-                8 x 8
-            </button>
+        <button
+            class="blocka__tamanio"
+            data-columnas="3"
+            data-filas="2"
+            type="button">
+            3 x 2
+        </button>
 
-        </div>
+
+        <button
+            class="blocka__tamanio"
+            data-columnas="4"
+            data-filas="2"
+            type="button">
+            4 x 2
+        </button>
+
+    </div>
 
 
         <!-- derecha -->
@@ -415,7 +419,7 @@
                 Ayuda
             </button>
 
-            <button class="boton boton--pausar">
+            <button class="boton boton--pausar" id="boton-pausar"  type="button">
                 Pausar
             </button>
 
