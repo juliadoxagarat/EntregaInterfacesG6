@@ -420,7 +420,8 @@
                         </div>
 
                         <div class="blocka-tamanios-nuevo">
-                            <button class="blocka__tamanio blocka__tamanio--activo" data-columnas="2" data-filas="2" type="button">
+                            <button class="blocka__tamanio blocka__tamanio--activo" data-columnas="2" data-filas="2"
+                                type="button">
                                 <strong>4</strong><span>2 x 2</span>
                             </button>
                             <button class="blocka__tamanio" data-columnas="3" data-filas="3" type="button">
@@ -432,8 +433,10 @@
                         </div>
 
                         <div class="blocka-pantalla__acciones">
-                            <button class="boton boton--blocka-secundario" id="blocka-volver-niveles" type="button">Volver a niveles</button>
-                            <button class="boton boton--blocka-principal" id="blocka-comenzar" type="button">Comenzar</button>
+                            <button class="boton boton--blocka-secundario" id="blocka-volver-niveles"
+                                type="button">Volver a niveles</button>
+                            <button class="boton boton--blocka-principal" id="blocka-comenzar"
+                                type="button">Comenzar</button>
                         </div>
                     </div>
 
@@ -447,10 +450,6 @@
 
                         <div class="blocka-galeria" id="blocka-galeria-lista"></div>
 
-                        <div class="blocka-pantalla__acciones">
-                            <button class="boton boton--blocka-secundario" id="blocka-volver-piezas" type="button">Volver</button>
-                            <button class="boton boton--blocka-principal" id="blocka-azar" type="button">Elegir al azar</button>
-                        </div>
                     </div>
 
                     <!-- JUEGO -->
@@ -467,9 +466,18 @@
                             </div>
 
                             <div class="blocka__controles">
-                                <button class="boton boton--salir" id="blocka-salir" type="button">Salir</button>
-                                <button class="boton boton--pausar" id="boton-pausar" type="button">Pausar</button>
-                                <button class="boton boton--ayuda" id="blocka-ayuda" type="button">Ayuda</button>
+                                <button class="boton boton--salir" id="blocka-salir" type="button">
+                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                    <span>Salir</span>
+                                </button>
+                                <button class="boton boton--pausar" id="boton-pausar" type="button">
+                                    <i class="fa-solid fa-pause"></i>
+                                    <span>Pausar</span>
+                                </button>
+                                <button class="boton boton--ayuda" id="blocka-ayuda" type="button">
+                                    <i class="fa-solid fa-lightbulb"></i>
+                                    <span>Ayuda</span>
+                                </button>
                             </div>
                         </div>
 
@@ -477,12 +485,14 @@
                             <canvas id="canvas-blocka" width="600" height="600"></canvas>
                         </div>
 
-                        <p class="blocka-juego__indicacion">Click izquierdo: gira a la izquierda · Click derecho: gira a la derecha</p>
+                        <p class="blocka-juego__indicacion">Click izquierdo: gira a la izquierda · Click derecho: gira a
+                            la derecha</p>
 
                         <div class="blocka-pausa" id="blocka-pausa" hidden>
                             <div>
                                 <strong>Juego pausado</strong>
-                                <button class="boton boton--blocka-principal" id="blocka-continuar" type="button">Continuar</button>
+                                <button class="boton boton--blocka-principal" id="blocka-continuar"
+                                    type="button">Continuar</button>
                             </div>
                         </div>
                     </div>
@@ -496,9 +506,12 @@
                         <strong class="blocka-tiempo-final" id="blocka-tiempo-final">00:00</strong>
 
                         <div class="blocka-pantalla__acciones blocka-pantalla__acciones--columna">
-                            <button class="boton boton--blocka-principal" id="blocka-siguiente" type="button">Siguiente nivel</button>
-                            <button class="boton boton--blocka-secundario" id="blocka-seleccionar" type="button">Seleccionar nivel</button>
-                            <button class="boton boton--blocka-secundario" id="blocka-menu-final" type="button">Menú principal</button>
+                            <button class="boton boton--blocka-principal" id="blocka-siguiente" type="button">Siguiente
+                                nivel</button>
+                            <button class="boton boton--blocka-secundario" id="blocka-seleccionar"
+                                type="button">Seleccionar nivel</button>
+                            <button class="boton boton--blocka-secundario" id="blocka-menu-final" type="button">Menú
+                                principal</button>
                         </div>
                     </div>
 

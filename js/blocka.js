@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //cargar tres arreglos de img segun el nivel
     const imagenesBlocka = [
         "../img/Simpsons/simpson-uno.png",
+        "../img/Simpsons/simpson-dos.png",
         "../img/Simpsons/simpson-tres.png",
         "../img/Simpsons/simpson-cuatro.jpg",
         "../img/Simpsons/simpson-cinco.png",
@@ -50,13 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const btnComenzar =
         document.querySelector("#blocka-comenzar");
-
-    const btnVolverPiezas =
-        document.querySelector("#blocka-volver-piezas");
-
-    const btnAzar =
-        document.querySelector("#blocka-azar");
-
 
     const btnSalir =
         document.querySelector("#blocka-salir");
@@ -119,6 +113,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const galeria =
         document.querySelector("#blocka-galeria-lista");
+
+    pantallaGaleria
+        .querySelector(".blocka-pantalla__titulo")
+        .remove();
 
     const pausaOverlay =
         document.querySelector("#blocka-pausa");
@@ -274,20 +272,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     });
 
+
                 boton.classList.add(
                     "blocka__tamanio--activo"
                 );
 
+
                 columnas =
-                    Number(boton.dataset.columnas);
+                    Number(
+                        boton.dataset.columnas
+                    );
+
 
                 filas =
-                    Number(boton.dataset.filas);
+                    Number(
+                        boton.dataset.filas
+                    );
+
+
+                /*
+                    =========================================
+                    SELECCIÓN AUTOMÁTICA DE IMAGEN
+                    =========================================
+    
+                    El usuario ya eligió:
+                    - nivel
+                    - cantidad de piezas
+    
+                    Ahora automáticamente mostramos
+                    las 8 imágenes y empieza la animación.
+                */
 
             });
 
         });
-
 
     // =====================================================
     // VOLVER A NIVELES
@@ -308,41 +326,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btnComenzar.addEventListener("click", () => {
 
-        imagenActual =
-            Math.floor(
-                Math.random() *
-                imagenesBlocka.length
-            );
+        /*
+            Primero mostramos la galería para que el jugador
+            pueda ver las 8 imágenes.
+    
+            La imagen todavía NO se elige acá.
+            La elección se hace visualmente mediante
+            la animación de selección.
+        */
 
         mostrarPantalla(
-            pantallaJuego
+            pantallaGaleria
         );
 
-        iniciarJuego();
+        prepararGaleria();
 
     });
-
-
-    btnVolverPiezas.addEventListener("click", () => {
-
-        mostrarPantalla(
-            pantallaPiezas
-        );
-
-    });
-
-
-    btnAzar.addEventListener("click", () => {
-
-        seleccionarImagen(
-            Math.floor(
-                Math.random() *
-                imagenesBlocka.length
-            )
-        );
-
-    });
-
 
     // =====================================================
     // GALERÍA DE IMÁGENES
@@ -352,39 +351,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
         galeria.innerHTML = "";
 
+
+        /*
+            Creamos LAS 8 imágenes.
+        */
+
         imagenesBlocka.forEach(
             (ruta, indice) => {
 
                 const tarjeta =
-                    document.createElement("button");
+                    document.createElement("div");
 
-                tarjeta.type =
-                    "button";
 
                 tarjeta.className =
                     "galeria-card";
 
+
                 tarjeta.innerHTML = `
-                    <span class="galeria-card__numero">
-                        ${indice + 1}
-                    </span>
+                <span class="galeria-card__numero">
+                    ${indice + 1}
+                </span>
 
-                    <img
-                        src="${ruta}"
-                        alt="Imagen ${indice + 1}"
-                    >
-                `;
+                <img
+                    src="${ruta}"
+                    alt="Imagen ${indice + 1}"
+                >
+            `;
 
-                tarjeta.addEventListener(
-                    "click",
-                    () => {
 
-                        seleccionarImagen(
-                            indice
-                        );
+                /*
+                    Ya NO permitimos seleccionar
+                    manualmente una imagen.
+    
+                    La elección es solamente aleatoria.
+                */
 
-                    }
-                );
 
                 galeria.appendChild(
                     tarjeta
@@ -394,46 +395,20 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-        // Elegimos una imagen al azar.
-
-        const indiceAzar =
-            Math.floor(
-                Math.random() *
-                imagenesBlocka.length
-            );
-
+        /*
+            Esperamos un momento para que las
+            8 imágenes sean visibles.
+        */
 
         setTimeout(() => {
 
-            seleccionarImagen(
-                indiceAzar
-            );
+            iniciarSeleccionAleatoria();
 
-        }, 800);
+        }, 500);
 
     }
 
-
-    // =====================================================
-    // SELECCIONAR IMAGEN
-    // =====================================================
-
-    function seleccionarImagen(indice) {
-
-        imagenActual =
-            indice;
-
-
-        document
-            .querySelectorAll(".galeria-card")
-            .forEach(card => {
-
-                card.classList.remove(
-                    "galeria-card--seleccionada"
-                );
-
-            });
-
+    function iniciarSeleccionAleatoria() {
 
         const tarjetas =
             document.querySelectorAll(
@@ -441,24 +416,396 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
 
-        if (tarjetas[indice]) {
+        /*
+            Tenemos que tener las 8 imágenes.
+        */
 
-            tarjetas[indice]
-                .classList
-                .add(
+        if (
+            tarjetas.length !==
+            imagenesBlocka.length
+        ) {
+
+            console.error(
+                "La galería no tiene las 8 imágenes."
+            );
+
+            return;
+        }
+
+
+        /*
+            Elegimos ALEATORIAMENTE cuál será
+            la imagen final.
+        */
+
+        const indiceFinal =
+            Math.floor(
+                Math.random() *
+                imagenesBlocka.length
+            );
+
+
+        /*
+            3 vueltas completas antes de detenerse.
+        */
+
+        const vueltas = 3;
+
+
+        const cantidadPasos =
+            vueltas *
+            tarjetas.length +
+            indiceFinal;
+
+
+        let pasoActual = 0;
+
+
+        function avanzar() {
+
+            /*
+                Sacamos el borde anterior.
+            */
+
+            tarjetas.forEach(
+                tarjeta => {
+
+                    tarjeta.classList.remove(
+                        "galeria-card--recorriendo"
+                    );
+
+                }
+            );
+
+
+            /*
+                Imagen que se está recorriendo.
+            */
+
+            const indiceActual =
+                pasoActual %
+                tarjetas.length;
+
+
+            tarjetas[indiceActual]
+                .classList.add(
+                    "galeria-card--recorriendo"
+                );
+
+
+            pasoActual++;
+
+
+            /*
+                Todavía no terminó.
+            */
+
+            if (
+                pasoActual <=
+                cantidadPasos
+            ) {
+
+                const progreso =
+                    pasoActual /
+                    cantidadPasos;
+
+
+                /*
+                    Empieza rápido y termina
+                    más lentamente.
+                */
+
+                const velocidad =
+                    70 +
+                    Math.floor(
+                        progreso * 180
+                    );
+
+
+                setTimeout(
+                    avanzar,
+                    velocidad
+                );
+
+
+                return;
+            }
+
+
+            /*
+                ======================================
+                IMAGEN FINAL
+                ======================================
+            */
+
+            tarjetas.forEach(
+                tarjeta => {
+
+                    tarjeta.classList.remove(
+                        "galeria-card--recorriendo"
+                    );
+
+                }
+            );
+
+
+            /*
+                Marcamos la imagen que salió.
+            */
+
+            tarjetas[indiceFinal]
+                .classList.add(
                     "galeria-card--seleccionada"
                 );
+
+
+            /*
+                Guardamos cuál fue la elegida.
+            */
+
+            imagenActual =
+                indiceFinal;
+
+
+            /*
+                Esperamos MUY poquito para que
+                se vea cuál salió.
+    
+                Después entra SOLO al juego.
+            */
+
+            setTimeout(() => {
+
+                iniciarJuego();
+
+            }, 700);
 
         }
 
 
-        setTimeout(() => {
-
-            iniciarJuego();
-
-        }, 400);
+        avanzar();
 
     }
+
+    // =====================================================
+    // SELECCIÓN ALEATORIA ANIMADA
+    // =====================================================
+
+    function iniciarSeleccionAleatoria() {
+
+        const tarjetas =
+            document.querySelectorAll(
+                ".galeria-card"
+            );
+
+
+        /*
+            Si por alguna razón no hay tarjetas,
+            no hacemos nada.
+        */
+
+        if (tarjetas.length === 0) {
+            return;
+        }
+
+
+        /*
+            Limpiamos cualquier selección anterior.
+        */
+
+        tarjetas.forEach(
+            tarjeta => {
+
+                tarjeta.classList.remove(
+                    "galeria-card--recorriendo"
+                );
+
+                tarjeta.classList.remove(
+                    "galeria-card--seleccionada"
+                );
+
+            }
+        );
+
+
+        /*
+            ESTA es la elección aleatoria real.
+    
+            Elegimos qué imagen va a terminar
+            siendo el rompecabezas.
+        */
+
+        const indiceFinal =
+            Math.floor(
+                Math.random() *
+                imagenesBlocka.length
+            );
+
+
+        /*
+            Hacemos varias vueltas por las imágenes
+            antes de llegar a la imagen final.
+    
+            3 vueltas completas + posición final.
+        */
+
+        const vueltas = 3;
+
+        const cantidadPasos =
+            vueltas *
+            tarjetas.length +
+            indiceFinal;
+
+
+        let pasoActual = 0;
+
+
+        function avanzarSeleccion() {
+
+            /*
+                Sacamos el borde de todas las tarjetas.
+            */
+
+            tarjetas.forEach(
+                tarjeta => {
+
+                    tarjeta.classList.remove(
+                        "galeria-card--recorriendo"
+                    );
+
+                }
+            );
+
+
+            /*
+                Calculamos qué imagen se está
+                recorriendo en este momento.
+            */
+
+            const indiceActual =
+                pasoActual %
+                tarjetas.length;
+
+
+            /*
+                Le ponemos el borde animado.
+            */
+
+            tarjetas[indiceActual]
+                .classList.add(
+                    "galeria-card--recorriendo"
+                );
+
+
+            pasoActual++;
+
+
+            /*
+                Todavía no llegamos a la imagen final.
+            */
+
+            if (
+                pasoActual <= cantidadPasos
+            ) {
+
+                /*
+                    Al principio pasa rápido.
+    
+                    Cerca del final se vuelve
+                    un poco más lento para dar
+                    sensación de que está por parar.
+                */
+
+                const progreso =
+                    pasoActual /
+                    cantidadPasos;
+
+
+                const velocidad =
+                    80 +
+                    Math.floor(
+                        progreso * 180
+                    );
+
+
+                setTimeout(
+                    avanzarSeleccion,
+                    velocidad
+                );
+
+
+                return;
+            }
+
+
+            /*
+                ==========================================
+                IMAGEN GANADORA
+                ==========================================
+            */
+
+            tarjetas.forEach(
+                tarjeta => {
+
+                    tarjeta.classList.remove(
+                        "galeria-card--recorriendo"
+                    );
+
+                    tarjeta.classList.remove(
+                        "galeria-card--seleccionada"
+                    );
+
+                }
+            );
+
+
+            /*
+                Dejamos marcada la imagen que
+                salió aleatoriamente.
+            */
+
+            tarjetas[indiceFinal]
+                .classList.add(
+                    "galeria-card--seleccionada"
+                );
+
+
+            /*
+                Guardamos el resultado de la
+                selección aleatoria.
+            */
+
+            imagenActual =
+                indiceFinal;
+
+
+            /*
+                Dejamos la imagen ganadora
+                visible un momento.
+            */
+
+            setTimeout(() => {
+
+                iniciarJuego();
+
+            }, 900);
+
+        }
+
+
+        /*
+            Arrancamos la animación.
+        */
+
+        avanzarSeleccion();
+
+    }
+
+    // =====================================================
+    // SELECCIONAR IMAGEN
+    // =====================================================
+
+
 
 
     // =====================================================
@@ -504,6 +851,10 @@ document.addEventListener("DOMContentLoaded", () => {
             '<i class="fa-solid fa-pause"></i><span>Pausar</span>';
 
 
+        mostrarPantalla(
+            pantallaJuego
+        );
+
         cargarImagen();
 
     }
@@ -522,11 +873,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function cargarImagen() {
 
+        const rutaImagen =
+            imagenesBlocka[imagenActual];
+
         imagen = new Image();
 
         imagen.onload = function () {
 
-            aplicarFiltro();
+            try {
+                aplicarFiltro();
+            } catch (error) {
+                console.error("No se pudo aplicar el filtro:", error);
+
+                canvasFiltrado.width = imagen.naturalWidth;
+                canvasFiltrado.height = imagen.naturalHeight;
+
+                ctxFiltrado.drawImage(
+                    imagen,
+                    0,
+                    0
+                );
+            }
 
             crearPiezas();
 
@@ -540,15 +907,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
             console.error(
                 "No se pudo cargar la imagen:",
-                imagenesBlocka[imagenActual]
+                rutaImagen
             );
 
         };
 
 
-        imagen.src =
-            imagenesBlocka[imagenActual];
-            //aca iria el if para cargar el arreglo de img segun el nivel
+        imagen.src = rutaImagen;
+        //aca iria el if para cargar el arreglo de img segun el nivel
     }
 
 
@@ -568,6 +934,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
         canvasFiltrado.height =
             imagen.height;
+
+        const filtrosPorNivel = {
+            1: "grayscale(100%)",
+            2: "brightness(130%)",
+            3: "invert(100%)",
+            4: "blur(5px)"
+        };
+
+        ctxFiltrado.clearRect(
+            0,
+            0,
+            canvasFiltrado.width,
+            canvasFiltrado.height
+        );
+
+        ctxFiltrado.filter =
+            filtrosPorNivel[nivelActual] || "none";
+
+        ctxFiltrado.drawImage(
+            imagen,
+            0,
+            0,
+            canvasFiltrado.width,
+            canvasFiltrado.height
+        );
+
+        ctxFiltrado.filter = "none";
+
+        return;
 
 
         /*
@@ -1449,10 +1844,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const pieza =
                 piezasIncorrectas[
-                    Math.floor(
-                        Math.random() *
-                        piezasIncorrectas.length
-                    )
+                Math.floor(
+                    Math.random() *
+                    piezasIncorrectas.length
+                )
                 ];
 
 

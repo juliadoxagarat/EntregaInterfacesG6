@@ -48,7 +48,7 @@ input {
     width: 94vw;
 
     margin: 0 auto;
-    
+
     padding-top: 1.8vw;
     padding-bottom: 3vw;
 }
@@ -192,16 +192,12 @@ input {
 .blocka__contenedor-juego {
     width: 90%;
     max-width: 1400px;
-    min-height: 530px;
-
+    min-height: 575px;
     margin: 30px auto;
-    padding: 40px;
-
+    padding: 10px 40px 20px;
     background-color: #223f66;
-
     border-radius: 18px;
     box-sizing: border-box;
-
     position: relative;
     overflow: hidden;
 }
@@ -410,18 +406,20 @@ input {
 .blocka__contenedor-juego {
     width: 90%;
     max-width: 1400px;
-    min-height: 530px;
+    height: 575px;
     margin: 30px auto;
-    padding: 40px;
+    padding: 20px 40px;
     background-color: #223f66;
     border-radius: 18px;
     box-sizing: border-box;
     position: relative;
+    overflow: hidden;
 }
 
 .blocka-pantalla {
     width: 100%;
-    min-height: 445px;
+    height: 100%;
+    min-height: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -452,7 +450,7 @@ input {
 }
 
 .blocka-pantalla__titulo span,
-.blocka-pantalla--completado > span,
+.blocka-pantalla--completado>span,
 .blocka-juego__nombre span {
     color: #ff4fa3;
     font-size: 13px;
@@ -622,6 +620,7 @@ input {
 .blocka-pantalla--juego {
     position: relative;
     justify-content: flex-start;
+    padding-top: 0;
 }
 
 .blocka__barra-superior {
@@ -639,13 +638,13 @@ input {
 .blocka__info h2 {
     margin: 0;
     color: #ff5ba7;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .blocka__info p {
-    margin: 8px 0 0;
+    margin: 4px 0 0;
     color: #65c56b;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -668,15 +667,14 @@ input {
 }
 
 .blocka__controles .boton {
-    width: auto;
     min-width: 90px;
-    height: 48px;
-    padding: 0 18px;
+    height: 40px;
+    padding: 0 14px;
 }
 
 .blocka__tablero {
     width: fit-content;
-    margin: 55px auto 0;
+    margin: 14px auto 0;
     padding: 10px;
     background-color: #102d49;
     border-radius: 12px;
@@ -684,16 +682,16 @@ input {
 
 #canvas-blocka {
     display: block;
-    width: 600px;
+    width: 400px;
     max-width: 100%;
     height: auto;
     cursor: pointer;
 }
 
 .blocka-juego__indicacion {
-    margin-top: 15px;
+    margin-top: 8px;
     color: #c9c5e9;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .blocka-pausa {
@@ -707,7 +705,7 @@ input {
     background: rgba(12, 7, 68, .85);
 }
 
-.blocka-pausa > div {
+.blocka-pausa>div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -794,5 +792,265 @@ input {
     .blocka__controles {
         flex-wrap: wrap;
         gap: 8px;
+    }
+}
+
+
+/* =====================================================
+   AJUSTES VISUALES BLOCKA
+   ===================================================== */
+
+/* Selección de cantidad de piezas */
+.blocka-tamanios-nuevo .blocka__tamanio {
+    appearance: none;
+    -webkit-appearance: none;
+    background: linear-gradient(145deg, #102d49, #172b55);
+    border: 2px solid #3b5d8d;
+    border-radius: 14px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, .18);
+    transition: transform .2s ease, border-color .2s ease,
+        background-color .2s ease, box-shadow .2s ease;
+}
+
+.blocka-tamanios-nuevo .blocka__tamanio:hover {
+    border-color: #ff4fa3;
+    background: linear-gradient(145deg, #183b5e, #202e63);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(255, 79, 163, .18);
+}
+
+.blocka-tamanios-nuevo .blocka__tamanio--activo {
+    background: linear-gradient(145deg, #3b1c68, #59205f);
+    border-color: #ff4fa3;
+    box-shadow: 0 0 0 3px rgba(255, 79, 163, .16),
+        0 10px 25px rgba(255, 79, 163, .18);
+}
+
+.blocka-tamanios-nuevo .blocka__tamanio strong {
+    color: #ff4fa3;
+}
+
+.blocka-tamanios-nuevo .blocka__tamanio span {
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   RULETA DE IMÁGENES: 4 ARRIBA + 4 ABAJO
+   ===================================================== */
+
+.blocka-galeria {
+    width: min(760px, 100%);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 25px;
+}
+
+.galeria-card {
+    position: relative;
+    height: 125px;
+    padding: 0;
+    overflow: hidden;
+    border: 3px solid #3b5d8d;
+    border-radius: 12px;
+    background: #102d49;
+    cursor: default;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, .2);
+    transition: border-color .12s ease, transform .12s ease,
+        box-shadow .12s ease;
+}
+
+.galeria-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.galeria-card__numero {
+    position: absolute;
+    z-index: 2;
+    top: 7px;
+    left: 7px;
+    min-width: 25px;
+    height: 25px;
+    padding: 0 6px;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    background: rgba(12, 7, 68, .82);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.galeria-card--recorriendo {
+    border-color: #ffe45e !important;
+    box-shadow: 0 0 0 3px rgba(255, 228, 94, .28),
+        0 0 22px rgba(255, 228, 94, .55);
+    transform: scale(1.045);
+}
+
+.galeria-card--seleccionada {
+    border-color: #ff4fa3 !important;
+    box-shadow: 0 0 0 4px rgba(255, 79, 163, .25),
+        0 0 28px rgba(255, 79, 163, .55);
+    transform: scale(1.045);
+}
+
+.galeria-card:focus {
+    outline: none;
+}
+
+
+/* =====================================================
+   TABLERO: TAMAÑO MÁS CONSIDERABLE
+   ===================================================== */
+
+.blocka__tablero {
+    margin-top: 0;
+    padding: 8px;
+}
+
+#canvas-blocka {
+    width: 400px;
+    max-width: min(400px, 100%);
+}
+
+
+/* =====================================================
+   BOTONES SALIR / PAUSAR / AYUDA
+   ===================================================== */
+
+.blocka__controles {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.blocka__controles .boton {
+    min-width: 100px;
+    height: 42px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 12px;
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: .2px;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, .18);
+    transition: transform .2s ease, background .2s ease,
+        border-color .2s ease, box-shadow .2s ease,
+        color .2s ease;
+}
+
+.blocka__controles .boton i {
+    font-size: 14px;
+}
+
+.blocka__controles .boton--salir {
+    background: rgba(120, 48, 91, .65);
+    border: 2px solid #d96aab;
+}
+
+.blocka__controles .boton--pausar {
+    background: rgba(35, 82, 93, .75);
+    border: 2px solid #65c5c1;
+}
+
+.blocka__controles .boton--ayuda {
+    background: rgba(72, 61, 105, .78);
+    border: 2px solid #a995e8;
+}
+
+.blocka__controles .boton--salir:hover {
+    background: #a83d78;
+    border-color: #ff9bce;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(255, 79, 163, .25);
+}
+
+.blocka__controles .boton--pausar:hover {
+    background: #286c75;
+    border-color: #8af0e9;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(101, 197, 193, .25);
+}
+
+.blocka__controles .boton--ayuda:hover {
+    background: #66539a;
+    border-color: #d3c7ff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(169, 149, 232, .28);
+}
+
+.blocka__controles .boton:active {
+    transform: translateY(0) scale(.97);
+}
+
+.blocka__controles .boton:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Los controles permanecen apilados a la derecha sin aumentar la altura
+   de la cabecera ni desplazar el tablero hacia abajo. */
+.blocka-pantalla--juego {
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.blocka__barra-superior {
+    min-height: 42px;
+}
+
+.blocka__controles {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.blocka__tablero {
+    margin-top: 8px;
+}
+
+
+/* Responsive de la ruleta */
+@media (max-width: 900px) {
+    .blocka-galeria {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .galeria-card {
+        height: 105px;
+    }
+
+    #canvas-blocka {
+        width: 370px;
+    }
+}
+
+@media (max-width: 600px) {
+    .blocka-galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .galeria-card {
+        height: 115px;
+    }
+
+    #canvas-blocka {
+        width: 100%;
+        max-width: 340px;
     }
 }
