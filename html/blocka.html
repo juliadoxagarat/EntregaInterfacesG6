@@ -261,7 +261,7 @@
                         </li>
 
                         <li class="menu-usuario__item">
-                            <a class="menu-usuario__link" href="./login.html">
+                            <a class="menu-usuario__link menu-usuario__link--salir" href="./login.html">
                                 Cerrar sesion
                             </a>
                         </li>
@@ -372,75 +372,137 @@
 
                 <section class="blocka__contenedor-juego">
 
-                    <div class="blocka__barra-superior">
-
-        <!-- izquierda -->
-        <div class="blocka__info">
-            <h2>Nivel 1</h2>
-            <p id="cronometro">00:00</p>
-        </div>
-
-
-    <div class="blocka__tamanios">
-
-        <button
-            class="blocka__tamanio blocka__tamanio--activo"
-            data-columnas="2"
-            data-filas="2"
-            type="button">
-            2 x 2
-        </button>
-
-
-        <button
-            class="blocka__tamanio"
-            data-columnas="3"
-            data-filas="2"
-            type="button">
-            3 x 2
-        </button>
-
-
-        <button
-            class="blocka__tamanio"
-            data-columnas="4"
-            data-filas="2"
-            type="button">
-            4 x 2
-        </button>
-
-    </div>
-
-
-                        <!-- derecha -->
-                        <div class="blocka__controles">
-
-                            <button class="boton boton--ayuda">
-                                Ayuda
-                            </button>
-
-            <button class="boton boton--pausar" id="boton-pausar"  type="button">
-                Pausar
-            </button>
-
-                            <button class="boton boton--salir">
-                                Salir
-                            </button>
-
-                        </div>
-
+                    <!-- PANTALLA INICIAL DEL JUEGO -->
+                    <div class="blocka-pantalla blocka-pantalla--inicio" id="blocka-inicio">
+                        <p>Reconstruí la imagen girando cada pieza.</p>
+                        <button class="boton boton--blocka-principal" id="blocka-jugar" type="button">Jugar</button>
                     </div>
 
+                    <!-- SELECCIÓN DE NIVEL -->
+                    <div class="blocka-pantalla" id="blocka-niveles" hidden>
+                        <div class="blocka-pantalla__titulo">
+                            <span>BLOCKA</span>
+                            <h2>Elegí un nivel</h2>
+                        </div>
 
-                    <div class="blocka__tablero">
+                        <div class="blocka-niveles-grid">
+                            <button class="blocka-nivel" data-nivel="1" type="button">
+                                <strong>Nivel 1</strong>
+                                <span>Escala de grises</span>
+                                <small>Sin colores en la imagen.</small>
+                            </button>
+                            <button class="blocka-nivel" data-nivel="2" type="button">
+                                <strong>Nivel 2</strong>
+                                <span>Brillo al 30%</span>
+                                <small>Una imagen más luminosa.</small>
+                            </button>
+                            <button class="blocka-nivel" data-nivel="3" type="button">
+                                <strong>Nivel 3</strong>
+                                <span>Filtro negativo</span>
+                                <small>Colores invertidos.</small>
+                            </button>
+                            <button class="blocka-nivel" data-nivel="4" type="button">
+                                <strong>Nivel 4</strong>
+                                <span>Imagen borrosa</span>
+                                <small>Menos nitidez.</small>
+                            </button>
+                        </div>
 
-                        <canvas id="canvas-blocka" width="600" height="300">
-                        </canvas>
+                        <button class="boton boton--blocka-secundario" id="blocka-menu" type="button">Menú</button>
+                    </div>
 
+                    <!-- SELECCIÓN DE CANTIDAD DE PIEZAS -->
+                    <div class="blocka-pantalla" id="blocka-piezas" hidden>
+                        <div class="blocka-pantalla__titulo">
+                            <span id="blocka-nivel-label">NIVEL 1</span>
+                            <h2>Elegí las piezas</h2>
+                            <p id="blocka-filtro-label">Escala de grises</p>
+                        </div>
+
+                        <div class="blocka-tamanios-nuevo">
+                            <button class="blocka__tamanio blocka__tamanio--activo" data-columnas="2" data-filas="2" type="button">
+                                <strong>4</strong><span>2 x 2</span>
+                            </button>
+                            <button class="blocka__tamanio" data-columnas="3" data-filas="3" type="button">
+                                <strong>9</strong><span>3 x 3</span>
+                            </button>
+                            <button class="blocka__tamanio" data-columnas="4" data-filas="4" type="button">
+                                <strong>16</strong><span>4 x 4</span>
+                            </button>
+                        </div>
+
+                        <div class="blocka-pantalla__acciones">
+                            <button class="boton boton--blocka-secundario" id="blocka-volver-niveles" type="button">Volver a niveles</button>
+                            <button class="boton boton--blocka-principal" id="blocka-comenzar" type="button">Comenzar</button>
+                        </div>
+                    </div>
+
+                    <!-- SELECCIÓN DE IMAGEN -->
+                    <div class="blocka-pantalla" id="blocka-galeria" hidden>
+                        <div class="blocka-pantalla__titulo">
+                            <span>IMAGEN DEL NIVEL</span>
+                            <h2>Elegí una imagen</h2>
+                            <p>También podés dejar que el juego elija una al azar.</p>
+                        </div>
+
+                        <div class="blocka-galeria" id="blocka-galeria-lista"></div>
+
+                        <div class="blocka-pantalla__acciones">
+                            <button class="boton boton--blocka-secundario" id="blocka-volver-piezas" type="button">Volver</button>
+                            <button class="boton boton--blocka-principal" id="blocka-azar" type="button">Elegir al azar</button>
+                        </div>
+                    </div>
+
+                    <!-- JUEGO -->
+                    <div class="blocka-pantalla blocka-pantalla--juego" id="blocka-juego" hidden>
+                        <div class="blocka__barra-superior">
+                            <div class="blocka__info">
+                                <h2 id="blocka-juego-nivel">Nivel 1</h2>
+                                <p id="cronometro">00:00</p>
+                            </div>
+
+                            <div class="blocka-juego__nombre">
+                                <span>BLOCKA</span>
+                                <strong id="blocka-juego-piezas">4 piezas</strong>
+                            </div>
+
+                            <div class="blocka__controles">
+                                <button class="boton boton--salir" id="blocka-salir" type="button">Salir</button>
+                                <button class="boton boton--pausar" id="boton-pausar" type="button">Pausar</button>
+                                <button class="boton boton--ayuda" id="blocka-ayuda" type="button">Ayuda</button>
+                            </div>
+                        </div>
+
+                        <div class="blocka__tablero">
+                            <canvas id="canvas-blocka" width="600" height="600"></canvas>
+                        </div>
+
+                        <p class="blocka-juego__indicacion">Click izquierdo: gira a la izquierda · Click derecho: gira a la derecha</p>
+
+                        <div class="blocka-pausa" id="blocka-pausa" hidden>
+                            <div>
+                                <strong>Juego pausado</strong>
+                                <button class="boton boton--blocka-principal" id="blocka-continuar" type="button">Continuar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NIVEL COMPLETADO -->
+                    <div class="blocka-pantalla blocka-pantalla--completado" id="blocka-completado" hidden>
+                        <div class="blocka-check">✓</div>
+                        <span>¡IMAGEN COMPLETA!</span>
+                        <h2>Nivel completado</h2>
+                        <p>Tiempo utilizado</p>
+                        <strong class="blocka-tiempo-final" id="blocka-tiempo-final">00:00</strong>
+
+                        <div class="blocka-pantalla__acciones blocka-pantalla__acciones--columna">
+                            <button class="boton boton--blocka-principal" id="blocka-siguiente" type="button">Siguiente nivel</button>
+                            <button class="boton boton--blocka-secundario" id="blocka-seleccionar" type="button">Seleccionar nivel</button>
+                            <button class="boton boton--blocka-secundario" id="blocka-menu-final" type="button">Menú principal</button>
+                        </div>
                     </div>
 
                 </section>
-
 
                 <!-- descripcion -->
                 <section class="descripcion-juego">
