@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // IMÁGENES
     // =====================================================
 
+    //cargar tres arreglos de img segun el nivel
     const imagenesBlocka = [
         "../img/Simpsons/simpson-uno.png",
         "../img/Simpsons/simpson-tres.png",
@@ -547,6 +548,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         imagen.src =
             imagenesBlocka[imagenActual];
+            //aca iria el if para cargar el arreglo de img segun el nivel
     }
 
 
