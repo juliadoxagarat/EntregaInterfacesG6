@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Arcade Time | Peg Solitaire</title>
+    <title>Arcade Time | Blocka</title>
     <link rel="stylesheet" href="../css/components/header.css">
-    <link rel="stylesheet" href="../css/paginas/pegsolitaire.css">
+    <link rel="stylesheet" href="../css/paginas/blocka(2).css">
     <link rel="stylesheet" href="../css/components/footer.css">
     <link rel="stylesheet" href="../css/components/comentarios.css">
     <link rel="stylesheet" href="../css/components/botones.css">
@@ -303,7 +303,7 @@
                     <li class="breadcrumbs__item">
 
                         <a class="breadcrumbs__link" href="./home.html#dos-jugadores">
-                            Dos jugadores
+                            Otros juegos
                         </a>
 
                     </li>
@@ -313,7 +313,7 @@
                     </li>
 
                     <li class="breadcrumbs__item breadcrumbs__item--actual">
-                        Peg Solitaire
+                        Blocka
                     </li>
 
                 </ol>
@@ -324,7 +324,7 @@
 
 
             <!-- juego -->
-            <section class="detalle-juego" aria-labelledby="titulo-juego">
+            <section class="detalle-juego">
 
 
                 <!-- fila del titulo y acciones -->
@@ -334,13 +334,12 @@
                     <div class="detalle-juego__titulo-valoracion">
 
                         <h1 class="detalle-juego__titulo" id="titulo-juego">
-                            Peg Solitaire
+                            Blocka
                         </h1>
 
 
                         <div class="valoracion">
 
-                            <span class="valoracion__estrella">★</span>
                             <span class="valoracion__estrella">★</span>
                             <span class="valoracion__estrella">★</span>
                             <span class="valoracion__estrella">★</span>
@@ -371,16 +370,140 @@
 
                 </div>
 
+                <section class="blocka__contenedor-juego">
 
-                <!-- imagen principal-->
-                <div class="detalle-juego__imagen-contenedor">
+                    <!-- PANTALLA INICIAL DEL JUEGO -->
+                    <div class="blocka-pantalla blocka-pantalla--inicio" id="blocka-inicio">
+                        <h2>BLOCKA</h2>
+                        <p>Reconstruí la imagen girando cada pieza.</p>
+                        <button class="boton boton--blocka-principal" id="blocka-jugar" type="button">Jugar</button>
+                    </div>
 
-                    <img class="detalle-juego__imagen" src="../img/peg-jugando.png" alt="Peg Solitaire">
+                    <!-- SELECCIÓN DE NIVEL -->
+                    <div class="blocka-pantalla" id="blocka-niveles" hidden>
+                        <div class="blocka-pantalla__titulo">
+                            <span>BLOCKA</span>
+                            <h2>Elegí un nivel</h2>
+                        </div>
 
-                </div>
+                        <div class="blocka-niveles-grid">
+                            <button class="blocka-nivel" data-nivel="1" type="button">
+                                <strong>Nivel 1</strong>
+                                <span>Escala de grises</span>
+                                <small>Sin colores en la imagen.</small>
+                            </button>
+                            <button class="blocka-nivel" data-nivel="2" type="button">
+                                <strong>Nivel 2</strong>
+                                <span>Brillo al 30%</span>
+                                <small>Una imagen más luminosa.</small>
+                            </button>
+                            <button class="blocka-nivel" data-nivel="3" type="button">
+                                <strong>Nivel 3</strong>
+                                <span>Filtro negativo</span>
+                                <small>Colores invertidos.</small>
+                            </button>
+                            <button class="blocka-nivel" data-nivel="4" type="button">
+                                <strong>Nivel 4</strong>
+                                <span>Imagen borrosa</span>
+                                <small>Menos nitidez.</small>
+                            </button>
+                        </div>
 
+                        <button class="boton boton--blocka-secundario" id="blocka-menu" type="button">Menú</button>
+                    </div>
 
+                    <!-- SELECCIÓN DE CANTIDAD DE PIEZAS -->
+                    <div class="blocka-pantalla" id="blocka-piezas" hidden>
+                        <div class="blocka-pantalla__titulo">
+                            <span id="blocka-nivel-label">NIVEL 1</span>
+                            <h2>Elegí las piezas</h2>
+                            <p id="blocka-filtro-label">Escala de grises</p>
+                        </div>
 
+                        <div class="blocka-tamanios-nuevo">
+                            <button class="blocka__tamanio blocka__tamanio--activo" data-columnas="2" data-filas="2" type="button">
+                                <strong>4</strong><span>2 x 2</span>
+                            </button>
+                            <button class="blocka__tamanio" data-columnas="3" data-filas="3" type="button">
+                                <strong>9</strong><span>3 x 3</span>
+                            </button>
+                            <button class="blocka__tamanio" data-columnas="4" data-filas="4" type="button">
+                                <strong>16</strong><span>4 x 4</span>
+                            </button>
+                        </div>
+
+                        <div class="blocka-pantalla__acciones">
+                            <button class="boton boton--blocka-secundario" id="blocka-volver-niveles" type="button">Volver a niveles</button>
+                            <button class="boton boton--blocka-principal" id="blocka-comenzar" type="button">Comenzar</button>
+                        </div>
+                    </div>
+
+                    <!-- SELECCIÓN DE IMAGEN -->
+                    <div class="blocka-pantalla" id="blocka-galeria" hidden>
+                        <div class="blocka-pantalla__titulo">
+                            <span>IMAGEN DEL NIVEL</span>
+                            <h2>Elegí una imagen</h2>
+                            <p>También podés dejar que el juego elija una al azar.</p>
+                        </div>
+
+                        <div class="blocka-galeria" id="blocka-galeria-lista"></div>
+
+                        <div class="blocka-pantalla__acciones">
+                            <button class="boton boton--blocka-secundario" id="blocka-volver-piezas" type="button">Volver</button>
+                            <button class="boton boton--blocka-principal" id="blocka-azar" type="button">Elegir al azar</button>
+                        </div>
+                    </div>
+
+                    <!-- JUEGO -->
+                    <div class="blocka-pantalla blocka-pantalla--juego" id="blocka-juego" hidden>
+                        <div class="blocka__barra-superior">
+                            <div class="blocka__info">
+                                <h2 id="blocka-juego-nivel">Nivel 1</h2>
+                                <p id="cronometro">00:00</p>
+                            </div>
+
+                            <div class="blocka-juego__nombre">
+                                <span>BLOCKA</span>
+                                <strong id="blocka-juego-piezas">4 piezas</strong>
+                            </div>
+
+                            <div class="blocka__controles">
+                                <button class="boton boton--salir" id="blocka-salir" type="button">Salir</button>
+                                <button class="boton boton--pausar" id="boton-pausar" type="button">Pausar</button>
+                                <button class="boton boton--ayuda" id="blocka-ayuda" type="button">Ayuda</button>
+                            </div>
+                        </div>
+
+                        <div class="blocka__tablero">
+                            <canvas id="canvas-blocka" width="600" height="600"></canvas>
+                        </div>
+
+                        <p class="blocka-juego__indicacion">Click izquierdo: gira a la izquierda · Click derecho: gira a la derecha</p>
+
+                        <div class="blocka-pausa" id="blocka-pausa" hidden>
+                            <div>
+                                <strong>Juego pausado</strong>
+                                <button class="boton boton--blocka-principal" id="blocka-continuar" type="button">Continuar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NIVEL COMPLETADO -->
+                    <div class="blocka-pantalla blocka-pantalla--completado" id="blocka-completado" hidden>
+                        <div class="blocka-check">✓</div>
+                        <span>¡IMAGEN COMPLETA!</span>
+                        <h2>Nivel completado</h2>
+                        <p>Tiempo utilizado</p>
+                        <strong class="blocka-tiempo-final" id="blocka-tiempo-final">00:00</strong>
+
+                        <div class="blocka-pantalla__acciones blocka-pantalla__acciones--columna">
+                            <button class="boton boton--blocka-principal" id="blocka-siguiente" type="button">Siguiente nivel</button>
+                            <button class="boton boton--blocka-secundario" id="blocka-seleccionar" type="button">Seleccionar nivel</button>
+                            <button class="boton boton--blocka-secundario" id="blocka-menu-final" type="button">Menú principal</button>
+                        </div>
+                    </div>
+
+                </section>
 
                 <!-- descripcion -->
                 <section class="descripcion-juego">
@@ -391,18 +514,14 @@
 
 
                     <p class="descripcion-juego__texto">
-                        Adéntrate en las profundidades de un templo ancestral dividido en dos dominios opuestos:
-                        el ardiente reino de la lava y la helada caverna de los cristales. Las fuerzas del Fuego
-                        y el Hielo se enfrentan en un combate milenario por el control absoluto del territorio,
-                        y solo una estrategia brillante podrá definir qué elemento prevalecerá en el mapa.
-                        En este desafío de lógica y planificación, cada ficha representa una pequeña esencia
-                        elemental contenida en el tablero. Tu objetivo es guiar a estas criaturas a través de la
-                        cueva, haciendo que una salte sobre otra para absorber su poder y despejar el terreno.
-                        Sin embargo, no se trata solo de mover piezas al azar: cada decisión modifica el campo de
-                        batalla y condiciona los movimientos futuros. Cada partida es una oportunidad para poner
-                        a prueba tu concentración, probar distintas tácticas y aprender de los errores cometidos.
-                        Cuantas menos fichas elementales queden en pie al finalizar el juego, más cerca estarás de
-                        dominar el equilibrio entre el fuego y el hielo.
+                        Adéntrate en un desafío de lógica y observación donde deberás reconstruir imágenes desordenadas.
+                        En Blocka, cada nivel presenta una imagen dividida en cuatro partes que se encuentran
+                        rotadas respecto a su posición original.
+                        Tu objetivo es girar cada pieza hasta encontrar la orientación correcta y formar nuevamente la
+                        imagen. Para hacerlo, podrás utilizar el mouse: con el clic izquierdo la pieza gira hacia un
+                        lado y con el derecho hacia el otro. Cada movimiento modifica el tablero, por lo que deberás
+                        analizar cuidadosamente cada fragmento y encontrar la combinación correcta de giros para
+                        completar el desafío.
                     </p>
 
                 </section>
@@ -412,38 +531,29 @@
 
                 <!-- instrucciones del juego -->
                 <div class="instrucciones-juego">
+                    <section>
+                        <div class="contenido-texto">
+                            <h1>Instrucciones</h1>
+                            <p>Objetivo: Rotar todas las piezas de la imagen hasta formar la imagen completa.</p>
 
-                    <img class="instrucciones-juego__imagen" src="../img\cards_descripcion.png"
-                        alt="Instrucciones para jugar a Peg Solitaire">
+                            <p><strong>Click Izquierdo:</strong> Rota la pieza 90° hacia la izquierda.</p>
+                            <p><strong>Click Derecho:</strong> Rota la pieza 90° hacia la derecha.</p>
 
+                            <p>Ayuda: Si el nivel es difícil, puedes usar "Ayuda" para que una pieza se coloque
+                                correctamente.</p>
+                        </div>
+
+                        <!-- Contenedor para las imágenes del lado derecho -->
+                        <div class="imagenes-grid">
+                            <img src="ruta-de-tu-imagen1.jpg" alt="Captura 1">
+                            <img src="ruta-de-tu-imagen2.jpg" alt="Captura 2">
+                            <img src="ruta-de-tu-imagen3.jpg" alt="Captura 3">
+                            <img src="ruta-de-tu-imagen4.jpg" alt="Captura 4">
+                            <img src="ruta-de-tu-imagen5.jpg" alt="Captura 5">
+                            <img src="ruta-de-tu-imagen6.jpg" alt="Captura 6">
+                        </div>
+                    </section>
                 </div>
-
-
-
-
-                <!-- como jugar, FALTA CARGAR VIDEO -->
-                <section class="como-jugar">
-
-                    <h2 class="como-jugar__titulo" id="titulo-como-jugar">
-                        Cómo jugar
-                    </h2>
-
-
-                    <div class="como-jugar__contenido">
-
-                        <!-- aca va el video demo -->
-                        <a href="https://youtu.be/8aVEFADZ6bU?si=a4qRcN6qIbFcznBi" target="_blank"
-                            rel="noopener noreferrer">
-
-                            <img src="../img\video peg.png" alt="Video de cómo jugar" class="como-jugar__video">
-
-                        </a>
-
-                    </div>
-
-                </section>
-
-
             </section>
 
 
@@ -510,11 +620,11 @@
                             <div class="comentario__principal">
 
                                 <h3 class="comentario__usuario">
-                                    honeycore
+                                    likingLikes
                                 </h3>
 
                                 <p class="comentario__texto">
-                                    ¡Increíble juego, fácil y rápido de entender!
+                                    El ultimo nivel era modo imposible 💀💀
                                 </p>
 
                             </div>
@@ -523,7 +633,7 @@
                             <div class="comentario__lateral">
 
                                 <time class="comentario__fecha" datetime="2026-04-30">
-                                    30/04/26
+                                    03/03/26
                                 </time>
 
 
@@ -570,11 +680,11 @@
                             <div class="comentario__principal">
 
                                 <h3 class="comentario__usuario">
-                                    angelbite
+                                    storyTeller
                                 </h3>
 
                                 <p class="comentario__texto">
-                                    Que bronca no poder pasar del nivel 12.
+                                    No se si me como mucho, demasiado facil todo
                                 </p>
 
                             </div>
@@ -583,7 +693,7 @@
                             <div class="comentario__lateral">
 
                                 <time class="comentario__fecha" datetime="2026-06-15">
-                                    15/06/26
+                                    15/02/26
                                 </time>
 
 
@@ -628,11 +738,11 @@
                             <div class="comentario__principal">
 
                                 <h3 class="comentario__usuario">
-                                    sugarcoma
+                                    sugarTalking
                                 </h3>
 
                                 <p class="comentario__texto">
-                                    Logré entender facilísimo con las instrucciones de abajo.
+                                    Me encantaaaaaa, quiero que saquen mil niveles
                                 </p>
 
                             </div>
@@ -641,7 +751,7 @@
                             <div class="comentario__lateral">
 
                                 <time class="comentario__fecha" datetime="2026-04-30">
-                                    30/04/26
+                                    30/01/26
                                 </time>
 
 
@@ -686,11 +796,11 @@
                             <div class="comentario__principal">
 
                                 <h3 class="comentario__usuario">
-                                    lovelesly
+                                    singinInTheShower
                                 </h3>
 
                                 <p class="comentario__texto">
-                                    No puedo ganar nada loco.
+                                    Me gustaron las imagenes la verdad
                                 </p>
 
                             </div>
@@ -699,7 +809,7 @@
                             <div class="comentario__lateral">
 
                                 <time class="comentario__fecha" datetime="2026-04-09">
-                                    9/04/26
+                                    9/01/26
                                 </time>
 
 
@@ -744,11 +854,11 @@
                             <div class="comentario__principal">
 
                                 <h3 class="comentario__usuario">
-                                    sadcherry
+                                    scarletMaroon
                                 </h3>
 
                                 <p class="comentario__texto">
-                                    Soy melancólico...
+                                    Me parece linda la estetica y el juego tmb
                                 </p>
 
                             </div>
@@ -757,7 +867,7 @@
                             <div class="comentario__lateral">
 
                                 <time class="comentario__fecha" datetime="2026-04-07">
-                                    7/04/26
+                                    7/12/25
                                 </time>
 
 
@@ -803,11 +913,11 @@
                             <div class="comentario__principal">
 
                                 <h3 class="comentario__usuario">
-                                    thebestintown
+                                    heyStephen
                                 </h3>
 
                                 <p class="comentario__texto">
-                                    Se hace lo que se puede con lo que se tiene...
+                                    Mmm no se si fue de mi agrado
                                 </p>
 
                             </div>
@@ -816,7 +926,7 @@
                             <div class="comentario__lateral">
 
                                 <time class="comentario__fecha" datetime="2026-04-07">
-                                    6/04/26
+                                    6/04/25
                                 </time>
 
 
@@ -866,7 +976,7 @@
                                 </h3>
 
                                 <p class="comentario__texto">
-                                    difícil pero entretenido
+                                    increible posta obsesionada
                                 </p>
 
                             </div>
@@ -875,7 +985,7 @@
                             <div class="comentario__lateral">
 
                                 <time class="comentario__fecha" datetime="2026-04-07">
-                                    17/03/26
+                                    17/03/25
                                 </time>
 
 
@@ -921,11 +1031,11 @@
                             <div class="comentario__principal">
 
                                 <h3 class="comentario__usuario">
-                                    sunShines4me
+                                    eternalSunshine4EvernEver
                                 </h3>
 
                                 <p class="comentario__texto">
-                                    Soy re crack, le gané al segundo a mi amigo.
+                                    entretenido pero hasta ahi
                                 </p>
 
                             </div>
@@ -934,7 +1044,7 @@
                             <div class="comentario__lateral">
 
                                 <time class="comentario__fecha" datetime="2026-04-07">
-                                    7/01/26
+                                    7/01/25
                                 </time>
 
 
@@ -1246,6 +1356,7 @@
 
     <script src="../js/home.js"></script>
     <script src="../js/botones.js"></script>
+    <script src="../js/blocka(2).js"></script>
 </body>
 
 </html>
