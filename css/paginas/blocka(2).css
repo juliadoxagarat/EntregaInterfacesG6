@@ -48,7 +48,7 @@ input {
     width: 94vw;
 
     margin: 0 auto;
-
+    
     padding-top: 1.8vw;
     padding-bottom: 3vw;
 }
@@ -189,18 +189,60 @@ input {
     overflow: hidden;
 }
 
-.detalle-juego__imagen {
+.blocka__contenedor-juego {
+    width: 90%;
+    max-width: 1400px;
+    min-height: 530px;
+
+    margin: 30px auto;
+    padding: 40px;
+
+    background-color: #223f66;
+
+    border-radius: 18px;
+    box-sizing: border-box;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* PANTALLA INICIAL */
+
+.blocka-pantalla--inicio {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
     width: 100%;
-    height: 100%;
+    min-height: 0;
 
-    display: block;
+    margin: 0;
 
-    object-fit: contain;
+    background-image: url("../../img/Blocka.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 18px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-img[src=""] {
-    visibility: hidden;
+.blocka-pantalla--inicio p {
+    color: white;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+
+    /* mismo espacio arriba y abajo */
+    margin: 24px 0;
 }
+
 
 
 /* =========================
