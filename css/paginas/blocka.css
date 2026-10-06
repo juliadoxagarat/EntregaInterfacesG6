@@ -336,24 +336,47 @@ input {
     margin-bottom: 0;
 }
 
-/* Grilla de imágenes del lado derecho (2 filas x 3 columnas) */
 .imagenes-grid {
-    flex: 1;
-    /* Ocupa la mitad derecha */
+    flex: 1.25;
+
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
 }
 
-.imagenes-grid img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    border-radius: 6px;
-    border: 1px solid #2d1891;
+
+.imagen-instruccion {
+    height: 135px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border: 1px solid #3b5d8d;
+    border-radius: 8px;
+
     background-color: #0c0538;
-    /* Placeholder visual mientras cargas las imágenes */
+}
+
+
+.imagen-instruccion img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transform: scale(1.08);
+}
+
+
+
+.contenido-texto {
+    flex: 0.85;
+    text-align: left;
 }
 
 /* =========================
@@ -803,36 +826,57 @@ input {
    ===================================================== */
 
 /* Selección de cantidad de piezas */
+/* Selección de cantidad de piezas */
 .blocka-tamanios-nuevo .blocka__tamanio {
     appearance: none;
     -webkit-appearance: none;
-    background: linear-gradient(145deg, #102d49, #172b55);
+
+    /* mismo color que el fondo de la página */
+    background-color: #12095b;
+
     border: 2px solid #3b5d8d;
     border-radius: 14px;
+
     color: white;
     cursor: pointer;
+
     box-shadow: 0 8px 18px rgba(0, 0, 0, .18);
-    transition: transform .2s ease, border-color .2s ease,
-        background-color .2s ease, box-shadow .2s ease;
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        background-color .2s ease,
+        box-shadow .2s ease;
 }
+
 
 .blocka-tamanios-nuevo .blocka__tamanio:hover {
+    background: linear-gradient(145deg, #3b1c68, #59205f);
     border-color: #ff4fa3;
-    background: linear-gradient(145deg, #183b5e, #202e63);
+
     transform: translateY(-3px);
-    box-shadow: 0 10px 22px rgba(255, 79, 163, .18);
+
+    box-shadow:
+        0 0 0 3px rgba(255, 79, 163, .16),
+        0 10px 25px rgba(255, 79, 163, .18);
 }
 
+
+/* SELECCIONADO */
 .blocka-tamanios-nuevo .blocka__tamanio--activo {
     background: linear-gradient(145deg, #3b1c68, #59205f);
     border-color: #ff4fa3;
-    box-shadow: 0 0 0 3px rgba(255, 79, 163, .16),
+
+    box-shadow:
+        0 0 0 3px rgba(255, 79, 163, .16),
         0 10px 25px rgba(255, 79, 163, .18);
 }
+
 
 .blocka-tamanios-nuevo .blocka__tamanio strong {
     color: #ff4fa3;
 }
+
 
 .blocka-tamanios-nuevo .blocka__tamanio span {
     color: #ffffff;
@@ -889,7 +933,7 @@ input {
 }
 
 .galeria-card--recorriendo {
-    border-color: #ffe45e !important;
+    border-color: #c4ff00;
     box-shadow: 0 0 0 3px rgba(255, 228, 94, .28),
         0 0 22px rgba(255, 228, 94, .55);
     transform: scale(1.045);
@@ -1057,3 +1101,179 @@ input {
     }
 }
 
+/* =====================================================
+   ANIMACIÓN NIVEL COMPLETADO - CHISPITAS
+   ===================================================== */
+
+.blocka-pantalla--completado {
+    position: relative;
+}
+
+
+/* Contenedor de las chispitas */
+
+.blocka-chispitas {
+    position: absolute;
+
+    top: 42%;
+    left: 50%;
+
+    width: 0;
+    height: 0;
+
+    pointer-events: none;
+}
+
+
+/* Cada chispita */
+
+.blocka-chispitas span {
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background-color: #ff4fa3;
+
+    opacity: 0;
+
+    animation: chispita 1.2s ease-out forwards;
+}
+
+
+/* Distintas direcciones */
+
+.blocka-chispitas span:nth-child(1) {
+    --x: -150px;
+    --y: -90px;
+}
+
+.blocka-chispitas span:nth-child(2) {
+    --x: -90px;
+    --y: -150px;
+
+    background-color: #ffe45e;
+}
+
+.blocka-chispitas span:nth-child(3) {
+    --x: 0px;
+    --y: -170px;
+
+    background-color: #65c56b;
+}
+
+.blocka-chispitas span:nth-child(4) {
+    --x: 90px;
+    --y: -150px;
+}
+
+.blocka-chispitas span:nth-child(5) {
+    --x: 150px;
+    --y: -90px;
+
+    background-color: #ffe45e;
+}
+
+.blocka-chispitas span:nth-child(6) {
+    --x: 170px;
+    --y: 0px;
+
+    background-color: #65c56b;
+}
+
+.blocka-chispitas span:nth-child(7) {
+    --x: 140px;
+    --y: 100px;
+}
+
+.blocka-chispitas span:nth-child(8) {
+    --x: 70px;
+    --y: 150px;
+
+    background-color: #ffe45e;
+}
+
+.blocka-chispitas span:nth-child(9) {
+    --x: -70px;
+    --y: 150px;
+
+    background-color: #65c56b;
+}
+
+.blocka-chispitas span:nth-child(10) {
+    --x: -140px;
+    --y: 100px;
+}
+
+.blocka-chispitas span:nth-child(11) {
+    --x: -170px;
+    --y: 0px;
+
+    background-color: #ffe45e;
+}
+
+.blocka-chispitas span:nth-child(12) {
+    --x: 40px;
+    --y: -120px;
+
+    background-color: #65c56b;
+}
+
+
+/* Explosión */
+
+@keyframes chispita {
+
+    0% {
+        transform:
+            translate(0, 0)
+            scale(0);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+        transform:
+            translate(
+                calc(var(--x) * 0.2),
+                calc(var(--y) * 0.2)
+            )
+            scale(1.3);
+    }
+
+    100% {
+        transform:
+            translate(
+                var(--x),
+                var(--y)
+            )
+            scale(0);
+
+        opacity: 0;
+    }
+}
+
+.blocka-check {
+    animation: checkCompletado .6s cubic-bezier(.34, 1.56, .64, 1);
+}
+
+@keyframes checkCompletado {
+
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // =====================================================
-    // IMÁGENES
-    // =====================================================
+// =====================================================
+// IMÁGENES SEGÚN CANTIDAD DE PIEZAS
+// =====================================================
 
-    //cargar tres arreglos de img segun el nivel
-    const imagenesBlocka = [
+const imagenesPorPiezas = {
+
+    4: [
         "../img/Simpsons/simpson-uno.png",
         "../img/Simpsons/simpson-dos.png",
         "../img/Simpsons/simpson-tres.png",
@@ -14,7 +15,33 @@ document.addEventListener("DOMContentLoaded", () => {
         "../img/Simpsons/simpson-seis.png",
         "../img/Simpsons/simpson-siete.png",
         "../img/Simpsons/simpson-ocho.png"
-    ];
+    ],
+
+    9: [
+        "../img/Futurama/futurama1.png",
+        "../img/Futurama/futurama2.jpg",
+        "../img/Futurama/futurama3.jpg",
+        "../img/Futurama/futurama4.avif",
+        "../img/Futurama/futurama5.jpg",
+        "../img/Futurama/futurama6.jpg",
+        "../img/Futurama/futurama7.jpg",
+        "../img/Futurama/futurama8.jpg"
+    ],
+
+    16: [
+        "../img/RickYMorty/rickYmorty-uno.png",
+        "../img/RickYMorty/rickYmorty-dos.png",
+        "../img/RickYMorty/rickYmorty-tres.jpg",
+        "../img/RickYMorty/rickYmorty-cuatro.png",
+        "../img/RickYMorty/rickYmorty-cinco.png",
+        "../img/RickYMorty/rickYmorty-seis.png",
+        "../img/RickYMorty/rickYmorty-siete.jpg",
+        "../img/RickYMorty/rickYmorty-ocho.png"
+    ]
+};
+
+
+let imagenesBlocka = imagenesPorPiezas[4];
 
 
     // =====================================================
@@ -288,6 +315,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     Number(
                         boton.dataset.filas
                     );
+
+                const cantidadPiezas =
+                    columnas * filas;
+
+                imagenesBlocka =
+                    imagenesPorPiezas[cantidadPiezas];
 
 
                 /*
