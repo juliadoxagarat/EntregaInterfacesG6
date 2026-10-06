@@ -1,0 +1,9 @@
+- agregar mas imagenes por cantidad de piezas (
+    primer nivel --> simpsons
+    segundo nivel --> futurama
+    tercer nivel --> rick y morty
+)
+- cambiar colores en botones, hovers y textos
+- cuando se completa el nivel capaz hacerlo con animacion o ponerle algun fondo mas lindo
+- centrar los 3 botones de siguiente nivel, selecionar nivel y menu
+- si pones siguiente nivel en el nivel 4 poner algo que diga felicitaciones llegaste al nivel maximo

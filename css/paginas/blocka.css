@@ -195,7 +195,7 @@ input {
     min-height: 575px;
     margin: 30px auto;
     padding: 10px 40px 20px;
-    background-color: #223f66;
+    background-color: #681278;
     border-radius: 18px;
     box-sizing: border-box;
     position: relative;
@@ -288,7 +288,7 @@ input {
 }
 
 .instrucciones-juego section {
-    background-color: #11084d;
+    background-color: #12095b;
     border: 1px solid #1f1271;
     border-radius: 8px;
     padding: 25px 30px;
@@ -409,7 +409,7 @@ input {
     height: 575px;
     margin: 30px auto;
     padding: 20px 40px;
-    background-color: #223f66;
+    background-color: #0c0538;
     border-radius: 18px;
     box-sizing: border-box;
     position: relative;
@@ -503,12 +503,13 @@ input {
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
     margin-bottom: 28px;
+    
 }
 
 .blocka-nivel {
     min-height: 175px;
     padding: 20px 12px;
-    background-color: #102d49;
+    background-color: #12095b;
     border: 2px solid #3b5d8d;
     border-radius: 12px;
     color: white;
@@ -518,7 +519,7 @@ input {
 
 .blocka-nivel:hover {
     border-color: #ff4fa3;
-    background-color: #183b5e;
+    background-color: #12095b;
     transform: translateY(-5px);
 }
 
@@ -598,7 +599,7 @@ input {
     overflow: hidden;
     border: 2px solid #3b5d8d;
     border-radius: 8px;
-    background-color: #102d49;
+    background-color: #12095b;
     cursor: pointer;
     transition: .2s ease;
 }
@@ -676,7 +677,7 @@ input {
     width: fit-content;
     margin: 14px auto 0;
     padding: 10px;
-    background-color: #102d49;
+    background-color: #12095b;
     border-radius: 12px;
 }
 
@@ -751,6 +752,7 @@ input {
 
 .blocka-pantalla--completado .blocka-pantalla__acciones {
     width: min(300px, 100%);
+    align-items: center;
 }
 
 @media (max-width: 900px) {
@@ -1054,3 +1056,4 @@ input {
         max-width: 340px;
     }
 }
+
