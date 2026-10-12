@@ -77,7 +77,6 @@
         opacity: 1;
     }
 
-
     45% {
         transform: scale(0.94);
         opacity: 0.8;
@@ -118,12 +117,10 @@
     .carrusel-juegos__lista {
         display: flex;
         align-items: stretch;
-        gap: 0 !important;
-        /* Cero espacio entre cards para que no asome la siguiente */
-        margin: 0 !important;
-        padding: 0 !important;
+        gap: 0.88vw !important;
+        /* Mantiene el espacio en desktop */
         transform: translateX(0);
-        transition: transform 0.35s ease;
+        transition: transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
         will-change: transform;
     }
 

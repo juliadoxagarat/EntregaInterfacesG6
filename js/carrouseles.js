@@ -60,7 +60,7 @@
             }
 
             const movimiento = obtenerDesplazamiento();
-            desplazamiento += delta > 0 ? movimiento : -movimiento;
+            desplazamiento += delta > 0 ? movimiento : -movimiento; 
 
             actualizarCarrusel();
 
