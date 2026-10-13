@@ -164,18 +164,6 @@ let imagenesBlocka = imagenesPorNivel[1];
     // CONFIGURACIÓN DE NIVELES
     // =====================================================
 
-    /*
-        Ya no guardamos filtros como:
-
-        grayscale()
-        brightness()
-        invert()
-        blur()
-
-        porque ahora los filtros los hacemos nosotros
-        modificando los píxeles de la imagen.
-    */
-
     const niveles = {
 
         1: {
@@ -329,19 +317,6 @@ let imagenesBlocka = imagenesPorNivel[1];
                     Number(
                         boton.dataset.filas
                     );
-
-                /*
-                    =========================================
-                    SELECCIÓN AUTOMÁTICA DE IMAGEN
-                    =========================================
-    
-                    El usuario ya eligió:
-                    - nivel
-                    - cantidad de piezas
-    
-                    Ahora automáticamente mostramos
-                    las 8 imágenes y empieza la animación.
-                */
 
             });
 
@@ -628,227 +603,6 @@ let imagenesBlocka = imagenesPorNivel[1];
     }
 
     // =====================================================
-    // SELECCIÓN ALEATORIA ANIMADA
-    // =====================================================
-
-    function iniciarSeleccionAleatoria() {
-
-        const tarjetas =
-            document.querySelectorAll(
-                ".galeria-card"
-            );
-
-
-        /*
-            Si por alguna razón no hay tarjetas,
-            no hacemos nada.
-        */
-
-        if (tarjetas.length === 0) {
-            return;
-        }
-
-
-        /*
-            Limpiamos cualquier selección anterior.
-        */
-
-        tarjetas.forEach(
-            tarjeta => {
-
-                tarjeta.classList.remove(
-                    "galeria-card--recorriendo"
-                );
-
-                tarjeta.classList.remove(
-                    "galeria-card--seleccionada"
-                );
-
-            }
-        );
-
-
-        /*
-            ESTA es la elección aleatoria real.
-    
-            Elegimos qué imagen va a terminar
-            siendo el rompecabezas.
-        */
-
-        const indiceFinal =
-            Math.floor(
-                Math.random() *
-                imagenesBlocka.length
-            );
-
-
-        /*
-            Hacemos varias vueltas por las imágenes
-            antes de llegar a la imagen final.
-    
-            3 vueltas completas + posición final.
-        */
-
-        const vueltas = 3;
-
-        const cantidadPasos =
-            vueltas *
-            tarjetas.length +
-            indiceFinal;
-
-
-        let pasoActual = 0;
-
-
-        function avanzarSeleccion() {
-
-            /*
-                Sacamos el borde de todas las tarjetas.
-            */
-
-            tarjetas.forEach(
-                tarjeta => {
-
-                    tarjeta.classList.remove(
-                        "galeria-card--recorriendo"
-                    );
-
-                }
-            );
-
-
-            /*
-                Calculamos qué imagen se está
-                recorriendo en este momento.
-            */
-
-            const indiceActual =
-                pasoActual %
-                tarjetas.length;
-
-
-            /*
-                Le ponemos el borde animado.
-            */
-
-            tarjetas[indiceActual]
-                .classList.add(
-                    "galeria-card--recorriendo"
-                );
-
-
-            pasoActual++;
-
-
-            /*
-                Todavía no llegamos a la imagen final.
-            */
-
-            if (
-                pasoActual <= cantidadPasos
-            ) {
-
-                /*
-                    Al principio pasa rápido.
-    
-                    Cerca del final se vuelve
-                    un poco más lento para dar
-                    sensación de que está por parar.
-                */
-
-                const progreso =
-                    pasoActual /
-                    cantidadPasos;
-
-
-                const velocidad =
-                    80 +
-                    Math.floor(
-                        progreso * 180
-                    );
-
-
-                setTimeout(
-                    avanzarSeleccion,
-                    velocidad
-                );
-
-
-                return;
-            }
-
-
-            /*
-                ==========================================
-                IMAGEN GANADORA
-                ==========================================
-            */
-
-            tarjetas.forEach(
-                tarjeta => {
-
-                    tarjeta.classList.remove(
-                        "galeria-card--recorriendo"
-                    );
-
-                    tarjeta.classList.remove(
-                        "galeria-card--seleccionada"
-                    );
-
-                }
-            );
-
-
-            /*
-                Dejamos marcada la imagen que
-                salió aleatoriamente.
-            */
-
-            tarjetas[indiceFinal]
-                .classList.add(
-                    "galeria-card--seleccionada"
-                );
-
-
-            /*
-                Guardamos el resultado de la
-                selección aleatoria.
-            */
-
-            imagenActual =
-                indiceFinal;
-
-
-            /*
-                Dejamos la imagen ganadora
-                visible un momento.
-            */
-
-            setTimeout(() => {
-
-                iniciarJuego();
-
-            }, 900);
-
-        }
-
-
-        /*
-            Arrancamos la animación.
-        */
-
-        avanzarSeleccion();
-
-    }
-
-    // =====================================================
-    // SELECCIONAR IMAGEN
-    // =====================================================
-
-
-
-
-    // =====================================================
     // INICIAR JUEGO
     // =====================================================
 
@@ -954,251 +708,139 @@ let imagenesBlocka = imagenesPorNivel[1];
 
 
         imagen.src = rutaImagen;
-        //aca iria el if para cargar el arreglo de img segun el nivel
     }
 
 
-    // =====================================================
-    // APLICAR FILTRO A LA IMAGEN
-    // =====================================================
 
-    function aplicarFiltro() {
+function aplicarFiltro() {
 
-        /*
-            El canvas auxiliar tiene el mismo
-            tamaño que la imagen original.
-        */
+    /*
+        El canvas auxiliar tiene el mismo
+        tamaño que la imagen original.
+    */
 
-        canvasFiltrado.width =
-            imagen.width;
+    canvasFiltrado.width = imagen.naturalWidth;
+    canvasFiltrado.height = imagen.naturalHeight;
 
-        canvasFiltrado.height =
-            imagen.height;
 
-        const filtrosPorNivel = {
-            1: "grayscale(100%)",
-            2: "brightness(130%)",
-            3: "invert(100%)",
-            4: "blur(5px)"
-        };
+    /*
+        Primero dibujamos la imagen original
+        en el canvas auxiliar.
+    */
 
-        ctxFiltrado.clearRect(
-            0,
-            0,
-            canvasFiltrado.width,
-            canvasFiltrado.height
-        );
+    ctxFiltrado.drawImage(
+        imagen,
+        0,
+        0,
+        canvasFiltrado.width,
+        canvasFiltrado.height
+    );
 
-        ctxFiltrado.filter =
-            filtrosPorNivel[nivelActual] || "none";
 
-        ctxFiltrado.drawImage(
-            imagen,
-            0,
-            0,
-            canvasFiltrado.width,
-            canvasFiltrado.height
-        );
+    /*
+        NIVEL 4: DESENFOQUE
 
-        ctxFiltrado.filter = "none";
+        El blur necesita consultar los píxeles
+        vecinos, por eso tiene su propia función.
+    */
+
+    if (nivelActual === 4) {
+
+        aplicarBlur();
 
         return;
+    }
 
 
-        /*
-            Primero dibujamos la imagen original
-            en el canvas auxiliar.
-        */
+    /*
+        Obtenemos los píxeles de la imagen.
+    */
 
-        ctxFiltrado.drawImage(
-            imagen,
-            0,
-            0,
-            canvasFiltrado.width,
-            canvasFiltrado.height
-        );
+    const imageData = ctxFiltrado.getImageData(
+        0,
+        0,
+        canvasFiltrado.width,
+        canvasFiltrado.height
+    );
 
+    const data = imageData.data;
 
-        /*
-            El nivel 4 es distinto porque el blur
-            necesita mirar los píxeles vecinos.
-
-            Por eso tiene su propia función.
-        */
-
-        if (nivelActual === 4) {
-
-            aplicarBlur();
-
-            return;
-        }
+    const width = canvasFiltrado.width;
+    const height = canvasFiltrado.height;
 
 
-        /*
-            Obtenemos todos los píxeles
-            de la imagen.
-        */
+    /*
+        Recorremos todos los píxeles.
 
-        const imageData =
-            ctxFiltrado.getImageData(
-                0,
-                0,
-                canvasFiltrado.width,
-                canvasFiltrado.height
-            );
+        Cada píxel ocupa 4 posiciones:
+        R, G, B y A.
+    */
 
+    for (let y = 0; y < height; y++) {
 
-        const data =
-            imageData.data;
+        for (let x = 0; x < width; x++) {
 
+            const i = (x + y * width) * 4;
 
-        const width =
-            canvasFiltrado.width;
-
-        const height =
-            canvasFiltrado.height;
+            const r = data[i];
+            const g = data[i + 1];
+            const b = data[i + 2];
 
 
-        /*
-            Recorremos la imagen como una matriz.
+            // NIVEL 1: ESCALA DE GRISES
 
-            En memoria, en realidad, los píxeles
-            están en un arreglo plano.
+            if (nivelActual === 1) {
 
-            Cada píxel ocupa 4 posiciones:
+                const gris =
+                    0.299 * r +
+                    0.587 * g +
+                    0.114 * b;
 
-            R
-            G
-            B
-            A
-        */
+                data[i] = gris;
+                data[i + 1] = gris;
+                data[i + 2] = gris;
 
-        for (let y = 0; y < height; y++) {
-
-            for (let x = 0; x < width; x++) {
-
-                const i =
-                    (x + y * width) * 4;
+            }
 
 
-                const r =
-                    data[i];
+            // NIVEL 2: BRILLO +30%
 
-                const g =
-                    data[i + 1];
+            else if (nivelActual === 2) {
 
-                const b =
-                    data[i + 2];
+                data[i] = r * 1.3;
+                data[i + 1] = g * 1.3;
+                data[i + 2] = b * 1.3;
 
-
-                // ==========================================
-                // NIVEL 1
-                // ESCALA DE GRISES
-                // ==========================================
-
-                if (nivelActual === 1) {
-
-                    /*
-                        Usamos la fórmula BT.601.
-
-                        El ojo humano no percibe
-                        R, G y B con la misma intensidad.
-
-                        Por eso el verde tiene
-                        un peso mayor.
-                    */
-
-                    const gris =
-                        0.299 * r +
-                        0.587 * g +
-                        0.114 * b;
+            }
 
 
-                    data[i] =
-                        gris;
+            // NIVEL 3: COLORES INVERTIDOS
 
-                    data[i + 1] =
-                        gris;
+            else if (nivelActual === 3) {
 
-                    data[i + 2] =
-                        gris;
-
-                }
-
-
-                // ==========================================
-                // NIVEL 2
-                // BRILLO +30%
-                // ==========================================
-
-                else if (nivelActual === 2) {
-
-                    /*
-                        Aumentamos cada canal
-                        un 30%.
-
-                        imageData.data es un
-                        Uint8ClampedArray.
-
-                        Si nos pasamos de 255,
-                        automáticamente queda en 255.
-                    */
-
-                    data[i] =
-                        r * 1.3;
-
-                    data[i + 1] =
-                        g * 1.3;
-
-                    data[i + 2] =
-                        b * 1.3;
-
-                }
-
-
-                // ==========================================
-                // NIVEL 3
-                // NEGATIVO
-                // ==========================================
-
-                else if (nivelActual === 3) {
-
-                    /*
-                        Para invertir un canal:
-
-                        nuevo valor = 255 - valor
-                    */
-
-                    data[i] =
-                        255 - r;
-
-                    data[i + 1] =
-                        255 - g;
-
-                    data[i + 2] =
-                        255 - b;
-
-                }
+                data[i] = 255 - r;
+                data[i + 1] = 255 - g;
+                data[i + 2] = 255 - b;
 
             }
 
         }
-
-
-        /*
-            Modificar imageData.data no cambia
-            automáticamente el canvas.
-
-            Hay que volver a escribir los datos.
-        */
-
-        ctxFiltrado.putImageData(
-            imageData,
-            0,
-            0
-        );
-
     }
+
+
+    /*
+        Escribimos los píxeles modificados
+        nuevamente en el canvas.
+    */
+
+    ctxFiltrado.putImageData(
+        imageData,
+        0,
+        0
+    );
+
+}
+
 
 
     // =====================================================

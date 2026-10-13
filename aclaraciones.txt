@@ -1,4 +1,3 @@
 
 - pasar al siguiente nivel 
 - si pones siguiente nivel en el nivel 4 poner algo que diga felicitaciones llegaste al nivel maximo
-- recortar las capturas de las instrucciones (recortar el archivo de la foto)
