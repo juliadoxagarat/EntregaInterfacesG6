@@ -488,15 +488,10 @@
                         <p class="blocka-juego__indicacion">Click izquierdo: gira a la izquierda · Click derecho: gira a
                             la derecha</p>
 
-                        <div class="blocka-pausa" id="blocka-pausa" hidden>
-                            <div>
-                                <strong>Juego pausado</strong>
-                                <button class="boton boton--blocka-principal" id="blocka-continuar"
-                                    type="button">Continuar</button>
-                            </div>
-                        </div>
                     </div>
 
+                    <!-- PAUSA: hija directa del contenedor del juego para que su
+                         inset:0 cubra TODO el contenedor, no solo la pantalla -->
                     <!-- NIVEL COMPLETADO -->
                     <div class="blocka-pantalla blocka-pantalla--completado" id="blocka-completado" hidden>
                         <div class="blocka-chispitas">
@@ -527,6 +522,16 @@
                                 type="button">Seleccionar nivel</button>
                             <button class="boton boton--blocka-secundario login__boton-animado" id="blocka-menu-final" type="button">Menú
                                 principal</button>
+                        </div>
+                    </div>
+
+                    <!-- PAUSA: hija directa del contenedor del juego para que su
+                         inset:0 cubra TODO el contenedor, no solo la pantalla -->
+                    <div class="blocka-pausa" id="blocka-pausa" hidden>
+                        <div>
+                            <strong>Juego pausado</strong>
+                            <button class="boton boton--blocka-principal" id="blocka-continuar"
+                                type="button">Continuar</button>
                         </div>
                     </div>
 

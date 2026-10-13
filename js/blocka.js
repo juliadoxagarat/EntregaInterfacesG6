@@ -21,7 +21,7 @@ const imagenesPorPiezas = {
         "../img/Futurama/futurama1.png",
         "../img/Futurama/futurama2.jpg",
         "../img/Futurama/futurama3.jpg",
-        "../img/Futurama/futurama4.avif",
+        "../img/Futurama/futurama4.png",
         "../img/Futurama/futurama5.jpg",
         "../img/Futurama/futurama6.jpg",
         "../img/Futurama/futurama7.jpg",

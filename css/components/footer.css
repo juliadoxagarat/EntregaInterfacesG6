@@ -150,7 +150,9 @@
 
 
 .pie-pagina__contacto a {
-    display: block;
+    /* display: table achica el link al ancho del texto (para que la línea
+       animada no se estire) pero igual lo deja en su propia línea */
+    display: table;
 
     margin-top: 0.2vw;
 }
