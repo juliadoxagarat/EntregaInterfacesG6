@@ -2259,3 +2259,66 @@ let imagenesBlocka = imagenesPorPiezas[4];
     );
 
 });
+
+
+/* ==========================================
+   CARRUSEL DE INSTRUCCIONES - ESCRITORIO
+   ========================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const carrusel = document.querySelector(".instrucciones-carrusel");
+
+    if (!carrusel) return;
+
+    const lista = carrusel.querySelector(".imagenes-grid");
+    const tarjetas = carrusel.querySelectorAll(".imagen-instruccion");
+
+    const anterior = document.querySelector("#instrucciones-anterior");
+    const siguiente = document.querySelector("#instrucciones-siguiente");
+
+    let indice = 0;
+
+    function actualizarCarrusel() {
+
+        // En mobile dejamos la disposición original
+        if (window.innerWidth < 600) {
+            lista.style.transform = "";
+            anterior.hidden = true;
+            siguiente.hidden = true;
+            return;
+        }
+
+        // Desplazamos una tarjeta completa
+        lista.style.transform = `translateX(-${indice * 100}%)`;
+
+        // Ocultar las flechas en los extremos
+        anterior.hidden = indice === 0;
+        siguiente.hidden = indice === tarjetas.length - 1;
+    }
+
+    // Siguiente tarjeta
+    siguiente.addEventListener("click", () => {
+
+        if (indice < tarjetas.length - 1) {
+            indice++;
+            actualizarCarrusel();
+        }
+
+    });
+
+    // Tarjeta anterior
+    anterior.addEventListener("click", () => {
+
+        if (indice > 0) {
+            indice--;
+            actualizarCarrusel();
+        }
+
+    });
+
+    window.addEventListener("resize", actualizarCarrusel);
+
+    actualizarCarrusel();
+
+});
