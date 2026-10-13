@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
 
 // =====================================================
-// IMÁGENES SEGÚN CANTIDAD DE PIEZAS
+// IMÁGENES SEGÚN NIVEL
 // =====================================================
 
-const imagenesPorPiezas = {
+const imagenesPorNivel = {
 
-    4: [
+    1: [
         "../img/Simpsons/simpson-uno.png",
         "../img/Simpsons/simpson-dos.png",
         "../img/Simpsons/simpson-tres.png",
@@ -17,7 +17,7 @@ const imagenesPorPiezas = {
         "../img/Simpsons/simpson-ocho.png"
     ],
 
-    9: [
+    2: [
         "../img/Futurama/futurama1.png",
         "../img/Futurama/futurama2.jpg",
         "../img/Futurama/futurama3.jpg",
@@ -28,7 +28,7 @@ const imagenesPorPiezas = {
         "../img/Futurama/futurama8.jpg"
     ],
 
-    16: [
+    3: [
         "../img/RickYMorty/rickYmorty-uno.png",
         "../img/RickYMorty/rickYmorty-dos.png",
         "../img/RickYMorty/rickYmorty-tres.jpg",
@@ -37,11 +37,22 @@ const imagenesPorPiezas = {
         "../img/RickYMorty/rickYmorty-seis.png",
         "../img/RickYMorty/rickYmorty-siete.jpg",
         "../img/RickYMorty/rickYmorty-ocho.png"
+    ],
+
+    4: [
+        "../img/Desencanto/des1.png",
+        "../img/Desencanto/des2.png",
+        "../img/Desencanto/des3.png",
+        "../img/Desencanto/des4.png",
+        "../img/Desencanto/des5.png",
+        "../img/Desencanto/des6.png",
+        "../img/Desencanto/des7.png",
+        "../img/Desencanto/des8.png"
     ]
 };
 
 
-let imagenesBlocka = imagenesPorPiezas[4];
+let imagenesBlocka = imagenesPorNivel[1];
 
 
     // =====================================================
@@ -264,6 +275,9 @@ let imagenesBlocka = imagenesPorPiezas[4];
                 nivelActual =
                     Number(boton.dataset.nivel);
 
+                imagenesBlocka =
+                    imagenesPorNivel[nivelActual];
+
                 nivelElegidoLabel.textContent =
                     "NIVEL " + nivelActual;
 
@@ -315,13 +329,6 @@ let imagenesBlocka = imagenesPorPiezas[4];
                     Number(
                         boton.dataset.filas
                     );
-
-                const cantidadPiezas =
-                    columnas * filas;
-
-                imagenesBlocka =
-                    imagenesPorPiezas[cantidadPiezas];
-
 
                 /*
                     =========================================
@@ -2189,6 +2196,9 @@ let imagenesBlocka = imagenesPorPiezas[4];
             ) {
 
                 nivelActual++;
+
+                imagenesBlocka =
+                    imagenesPorNivel[nivelActual];
 
 
                 nivelElegidoLabel.textContent =
