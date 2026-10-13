@@ -1,0 +1,272 @@
+.zona-carruseles {
+    width: 100%;
+}
+
+.carrusel-juegos {
+    width: 100%;
+    margin-bottom: 7vw;
+}
+
+.carrusel-juegos__contenedor {
+    width: 90vw;
+    margin: 0 auto;
+    padding: 0.8vw 1.5vw 3vw;
+    box-sizing: border-box;
+    background-color: #1B117F;
+    border-radius: 2.5vw;
+}
+
+.carrusel-juegos__titulo {
+    justify-self: center;
+    margin: 1vw;
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: 4vw;
+    letter-spacing: 0.1vw;
+}
+
+.carrusel-juegos__contenido {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1.5vw;
+}
+
+/* La ventana recorta la lista: sin esto en desktop se ven todos
+   los cards y el JS no tiene nada que desplazar */
+.carrusel-juegos__ventana {
+    min-width: 0;
+    flex: 1;
+    overflow: hidden;
+}
+
+.carrusel-juegos__flecha {
+    width: 2.8vw;
+    aspect-ratio: 1;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 3vw;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.carrusel-juegos__flecha i {
+    color: white;
+}
+
+.carrusel-juegos__flecha i:hover {
+    color: #FF35F1;
+    transform: scale(1.20);
+}
+
+
+/* ==========================================
+   ANIMACIÓN DEL CARRUSEL (GLOBAL)
+   ========================================== */
+
+@keyframes tarjetaPulso {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    45% {
+        transform: scale(0.94);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.carrusel-juegos__lista.animando .tarjeta-juego {
+    animation: tarjetaPulso 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.carrusel-juegos__lista.animando .tarjeta-juego:nth-child(2),
+.carrusel-juegos__lista.animando .tarjeta-juego:nth-child(3),
+.carrusel-juegos__lista.animando .tarjeta-juego:nth-child(4) {
+    animation-delay: 0.06s;
+}
+
+
+/* ==========================================
+   MOBILE (max-width: 599px)
+   1 sola tarjeta visible limpia
+   ========================================== */
+
+
+    .carrusel-juegos__ventana {
+        width: 100%;
+        min-width: 0;
+        flex: 1 1 100%;
+        overflow: hidden !important;
+        padding: 1vw 0;
+    }
+
+    .carrusel-juegos__lista {
+        display: flex;
+        align-items: stretch;
+        gap: 0.88vw !important;
+        /* Mantiene el espacio en desktop */
+        transform: translateX(0);
+        transition: transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+        will-change: transform;
+    }
+
+    .carrusel-juegos .tarjeta-juego {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        /* Ocupa el 100% justo de la ventana visible */
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        border-radius: 1.5vw;
+    }
+
+    .carrusel-juegos .tarjeta-juego__imagen {
+        width: 100%;
+        aspect-ratio: 2.2 / 1;
+        object-fit: cover;
+    }
+
+    .carrusel-juegos .tarjeta-juego__nombre {
+        padding: 1vw;
+        font-size: 2.7vw;
+    }
+
+    /* En mobile la flecha oculta DEJA de ocupar su lugar si se usa
+       display:none, y la ventana se achica cuando aparece la izquierda:
+       el translateX quedaba desalineado y se veia "una entera y un
+       poquito de la otra". Las ocultamos con visibility para que el
+       ancho de la ventana no cambie nunca. */
+    .carrusel-juegos__flecha[hidden] {
+        display: flex !important;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+/* =========================
+   TARJETAS
+   ========================= */
+
+.tarjeta-juego {
+    width: 35vw;
+    flex: 0 0 35vw;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 1.8vw;
+
+    transition:
+        transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1),
+        box-shadow 0.25s ease,
+        opacity 0.4s ease;
+}
+
+.tarjeta-juego:hover {
+    transform: translateY(-0.3vw);
+
+    box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.28);
+}
+
+.tarjeta-juego:hover .tarjeta-juego__nombre {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 10;
+
+    overflow: visible;
+
+    color: #000000;
+    background-color: #ff64f2;
+}
+
+.tarjeta-juego__nombre span {
+    display: block;
+
+    max-width: 100%;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tarjeta-juego:hover .tarjeta-juego__nombre span {
+    white-space: normal;
+
+    overflow: visible;
+
+    text-overflow: clip;
+
+    word-break: break-word;
+}
+
+.tarjeta-juego__link {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    color: white;
+
+    text-decoration: none;
+}
+
+.tarjeta-juego__imagen {
+    width: 100%;
+    height: 100%;
+
+    aspect-ratio: 1.35 / 1;
+
+    display: block;
+
+    object-fit: cover;
+
+    background-color: #0c0744;
+}
+
+.tarjeta-juego__nombre {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 2;
+
+    width: 100%;
+    min-height: auto;
+
+    margin: 0;
+
+    padding: 0.4vw 0.6vw;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: center;
+
+    text-align: center;
+
+    background-color: rgba(0, 0, 0, 0.65);
+
+    color: white;
+
+    font-size: 2.2vw;
+    line-height: 1.2;
+}
