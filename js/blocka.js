@@ -290,7 +290,7 @@ let imagenesBlocka = imagenesPorNivel[1];
         .forEach(boton => {
 
             boton.addEventListener("click", () => {
-
+//ya esta elegida la primer opcion por defecto en el html
                 document
                     .querySelectorAll(".blocka__tamanio")
                     .forEach(opcion => {
@@ -393,15 +393,7 @@ let imagenesBlocka = imagenesPorNivel[1];
                 >
             `;
 
-
-                /*
-                    Ya NO permitimos seleccionar
-                    manualmente una imagen.
-    
-                    La elección es solamente aleatoria.
-                */
-
-
+//agrega la tarjeta q creamos
                 galeria.appendChild(
                     tarjeta
                 );
@@ -453,7 +445,7 @@ let imagenesBlocka = imagenesPorNivel[1];
             la imagen final.
         */
 
-        const indiceFinal =
+        const indiceFinal = //esto se le suma a la cant de pasos para q sea siempre una pos distinta
             Math.floor(
                 Math.random() *
                 imagenesBlocka.length
@@ -470,7 +462,7 @@ let imagenesBlocka = imagenesPorNivel[1];
         const cantidadPasos =
             vueltas *
             tarjetas.length +
-            indiceFinal;
+            indiceFinal; //aca lo de random
 
 
         let pasoActual = 0;
@@ -520,7 +512,7 @@ let imagenesBlocka = imagenesPorNivel[1];
                 cantidadPasos
             ) {
 
-                const progreso =
+                const progreso = //q proporcion del recorrido esta hecho, de 0 a 1
                     pasoActual /
                     cantidadPasos;
 
@@ -530,7 +522,7 @@ let imagenesBlocka = imagenesPorNivel[1];
                     más lentamente.
                 */
 
-                const velocidad =
+                const velocidad = //cuando progreso es chico, va rapido y desp cada vez mas lento
                     70 +
                     Math.floor(
                         progreso * 180
@@ -540,10 +532,10 @@ let imagenesBlocka = imagenesPorNivel[1];
                 setTimeout(
                     avanzar,
                     velocidad
-                );
+                ); //programa la prox iteracion de avanzar porq aca no llego al final si entro a este if
 
 
-                return;
+                return; //termina esta iteracion pero ya habia programado la prox 
             }
 
 
@@ -598,7 +590,7 @@ let imagenesBlocka = imagenesPorNivel[1];
         }
 
 
-        avanzar();
+        avanzar(); //primer llamada q inicia toda la animacion, porq avanzar() esta detro de seleccionAleatoria()
 
     }
 
@@ -678,7 +670,7 @@ let imagenesBlocka = imagenesPorNivel[1];
                 aplicarFiltro();
             } catch (error) {
                 console.error("No se pudo aplicar el filtro:", error);
-
+//dibuja igual la img asignada pero sin el filtro
                 canvasFiltrado.width = imagen.naturalWidth;
                 canvasFiltrado.height = imagen.naturalHeight;
 
@@ -707,7 +699,7 @@ let imagenesBlocka = imagenesPorNivel[1];
         };
 
 
-        imagen.src = rutaImagen;
+        imagen.src = rutaImagen; //efectivamente le asigna la ruta a Imagen()
     }
 
 
@@ -763,7 +755,7 @@ function aplicarFiltro() {
         canvasFiltrado.height
     );
 
-    const data = imageData.data;
+    const data = imageData.data; //crea un array q tiene los valores de cada pixel (RGBA)
 
     const width = canvasFiltrado.width;
     const height = canvasFiltrado.height;
@@ -776,15 +768,15 @@ function aplicarFiltro() {
         R, G, B y A.
     */
 
-    for (let y = 0; y < height; y++) {
+    for (let y = 0; y < height; y++) { //recorro y del canvas
 
-        for (let x = 0; x < width; x++) {
+        for (let x = 0; x < width; x++) { //recorro x del canvas
 
-            const i = (x + y * width) * 4;
+            const i = (x + y * width) * 4; //q numero de pixel esta recorriendo
 
-            const r = data[i];
-            const g = data[i + 1];
-            const b = data[i + 2];
+            const r = data[i]; //valor del canal rojo
+            const g = data[i + 1]; //valor del canal verde
+            const b = data[i + 2]; //valor del canal azul
 
 
             // NIVEL 1: ESCALA DE GRISES
@@ -793,11 +785,11 @@ function aplicarFiltro() {
 
                 const gris =
                     0.299 * r +
-                    0.587 * g +
+                    0.587 * g +       //formula q convierte a gris
                     0.114 * b;
 
                 data[i] = gris;
-                data[i + 1] = gris;
+                data[i + 1] = gris;            //le asigno ese gris q calcule; cuando rgb tienen el mismo valor, el color es gris
                 data[i + 2] = gris;
 
             }
@@ -808,7 +800,7 @@ function aplicarFiltro() {
             else if (nivelActual === 2) {
 
                 data[i] = r * 1.3;
-                data[i + 1] = g * 1.3;
+                data[i + 1] = g * 1.3;  //multiplico cada valor por 1.3 para q sea 30% mas brillante
                 data[i + 2] = b * 1.3;
 
             }
@@ -818,9 +810,9 @@ function aplicarFiltro() {
 
             else if (nivelActual === 3) {
 
-                data[i] = 255 - r;
-                data[i + 1] = 255 - g;
-                data[i + 2] = 255 - b;
+                data[i] = 255 - r; 
+                data[i + 1] = 255 - g;   //le resto a 255 para q sea el color invertido
+                data[i + 2] = 255 - b; 
 
             }
 
@@ -848,8 +840,10 @@ function aplicarFiltro() {
     // FILTRO BORROSO
     // =====================================================
 
-    function aplicarBlur() {
+    function aplicarBlur() {  //reemplazo el valor de cada pixel por el promedio de sus vecinos, para q se vea borroso
 
+
+        //la img actual ya la dibujamos en el canvas aux en aplicarFiltro()
         const width =
             canvasFiltrado.width;
 
@@ -916,7 +910,7 @@ function aplicarFiltro() {
                 let g = 0;
                 let b = 0;
 
-                let n = 0;
+                let n = 0; //para ver cuantos vecinos existen realmente, porq si el pixel esta en un borde, no tiene 25 vecinos, sino menos (sirve para calcular desp el promedio)
 
 
                 /*
@@ -955,18 +949,18 @@ function aplicarFiltro() {
                             nx >= width ||
                             ny >= height
                         ) {
-                            continue;
+                            continue;  //salta el resto de la iteración actual del bucle y pasa a la siguiente iteracion
                         }
 
 
                         const j =
-                            (nx + ny * width) * 4;
+                            (nx + ny * width) * 4; //Obtenemos los colores del vecino, misma formula q en aplicarFiltro() para obtener el indice del pixel en el array de pixeles
 
 
                         r +=
                             src[j];
 
-                        g +=
+                        g +=                        //Acumulamos los valores RGB del vecino (j es la pos del vecino)
                             src[j + 1];
 
                         b +=
@@ -974,8 +968,9 @@ function aplicarFiltro() {
 
 
                         /*
-                            Contamos cuántos
-                            vecinos existen realmente.
+                            Sumamos 1 al contador de vecinos válidos.
+                            Si estamos en el centro de una imagen suficientemente grande, al terminar los bucles tendremos n = 25.
+                            Si estamos en una esquina, tendremos menos vecinos porque algunos quedarían fuera de la imagen (por el continue anterior)
                         */
 
                         n++;
@@ -991,7 +986,7 @@ function aplicarFiltro() {
                 */
 
                 const i =
-                    (x + y * width) * 4;
+                    (x + y * width) * 4;  //PIXEL NUEVO q estamos calculando
 
 
                 /*
@@ -1022,7 +1017,7 @@ function aplicarFiltro() {
 
 
         /*
-            Mostramos la imagen nueva.
+            ponemos la img nueva en el canvas aux, que luego la pasara al tablero con las piezas con la img ya con el filtro aplicado
         */
 
         ctxFiltrado.putImageData(
@@ -1038,11 +1033,13 @@ function aplicarFiltro() {
     // CREAR PIEZAS
     // =====================================================
 
+    //no corta ni dibuja la imagen; crea los objetos que representan cada pieza del rompecabezas
+
     function crearPiezas() {
 
         piezas = [];
 
-
+//recorro cada pieza del tablero q se definio mas arriba 
         for (
             let fila = 0;
             fila < filas;
@@ -1056,7 +1053,7 @@ function aplicarFiltro() {
             ) {
 
                 /*
-                    La pieza empieza girada.
+                    La pieza empieza girada. (0 serian 0 grados q es la pos correcta)
 
                     1 = 90°
                     2 = 180°
@@ -1068,7 +1065,7 @@ function aplicarFiltro() {
                         Math.random() * 3
                     ) + 1;
 
-
+//creo el objeto q representa la pieza y lo agrego al array de piezas
                 piezas.push({
 
                     fila: fila,
@@ -1076,10 +1073,10 @@ function aplicarFiltro() {
                     columna: columna,
 
                     rotacion:
-                        rotacionInicial,
+                        rotacionInicial, //esto no rota la pieza visualmente, es el valor q se usa para dibujar la pieza con la rotacion correspondiente
 
                     bloqueada:
-                        false
+                        false  //para la ayuda
 
                 });
 
@@ -1094,6 +1091,9 @@ function aplicarFiltro() {
     // DIBUJAR TABLERO
     // =====================================================
 
+    //toma las porciones de la imagen filtrada que tenemos en el canvas auxiliar, 
+    //las gira y las dibuja en el tablero principal
+
     function dibujarTablero() {
 
         if (!imagen) {
@@ -1102,7 +1102,7 @@ function aplicarFiltro() {
 
 
         /*
-            Limpiamos el canvas.
+            Limpiamos el canvas principal
         */
 
         ctx.clearRect(
@@ -1115,7 +1115,7 @@ function aplicarFiltro() {
 
         /*
             Tamaño que ocupa cada pieza
-            dentro del canvas del juego.
+            dentro del canvas del juego, segun la cantidad de piezas elegida
         */
 
         const anchoPieza =
@@ -1129,7 +1129,7 @@ function aplicarFiltro() {
 
         /*
             Tamaño de cada fragmento
-            dentro de la imagen original.
+            dentro de la imagen original (en el canvas auxiliar, que tiene el filtro aplicado)
         */
 
         const anchoImagen =
@@ -1144,8 +1144,8 @@ function aplicarFiltro() {
         piezas.forEach(pieza => {
 
             /*
-                Posición del fragmento
-                dentro de la imagen.
+                coordenadas donde comienza el fragmento que 
+                queremos extraer dentro del canvas auxiliar
             */
 
             const sx =
@@ -1158,8 +1158,8 @@ function aplicarFiltro() {
 
 
             /*
-                Posición de la pieza
-                dentro del tablero.
+                dónde se va a dibujar la pieza 
+                dentro del canvas principal
             */
 
             const x =
@@ -1170,6 +1170,10 @@ function aplicarFiltro() {
                 pieza.fila *
                 altoPieza;
 
+            /*
+                sx y sy indican de dónde sacamos el fragmento.
+                x e y indican dónde lo colocamos.
+            */
 
             /*
                 Guardamos el estado actual
@@ -1180,9 +1184,9 @@ function aplicarFiltro() {
 
 
             /*
-                Movemos el origen al centro
+                Movemos el origen de coordenadas al centro
                 de la pieza para poder girarla
-                alrededor de su centro.
+                alrededor de su centro (por def. esta en 0, 0 q es la esquina superior izquierda)
             */
 
             ctx.translate(
@@ -1197,15 +1201,15 @@ function aplicarFiltro() {
             */
 
             ctx.rotate(
-                pieza.rotacion *
-                Math.PI / 2
+                pieza.rotacion * //la rotacion la habiamos elegido al azar al crear la pieza; aca se rota efectivamente la pieza visualmente
+                Math.PI / 2 //porq js usa radianes y no grados
             );
 
 
             /*
-                Dibujamos el fragmento.
+            usa 9 parámetros, porq necesitamos seleccionar una región específica de la imagen y dibujarla en otro lugar.
 
-                IMPORTANTE:
+                Dibujamos el fragmento.
 
                 ahora usamos canvasFiltrado
                 como origen de la imagen.
@@ -1215,25 +1219,24 @@ function aplicarFiltro() {
             */
 
             ctx.drawImage(
-                canvasFiltrado,
+                canvasFiltrado, //Imagen de origen, ya filtrada
 
-                sx,
+                sx, //Coordenadas donde empieza el fragmento de origen
                 sy,
 
-                anchoImagen,
+                anchoImagen, //Tamaño del fragmento que queremos tomar
                 altoImagen,
 
-                -anchoPieza / 2,
-                -altoPieza / 2,
+                -anchoPieza / 2, //Posición donde empezamos a dibujarlo respecto del nuevo origen
+                -altoPieza / 2, //son negativos porq habiamos cambiado el origen de coordenadas al centro de la pieza
 
-                anchoPieza,
+                anchoPieza, //Tamaño con el que se dibuja la pieza en el tablero
                 altoPieza
             );
 
 
             /*
-                Recuperamos el estado
-                anterior del contexto.
+                para poder calcular el centro de la prox pieza despues
             */
 
             ctx.restore();
@@ -1321,10 +1324,10 @@ function aplicarFiltro() {
             */
 
             pieza.rotacion =
-                (pieza.rotacion + 3) % 4;
+                (pieza.rotacion + 3) % 4; //para q si retrocede de 0 vuelva a 3, en vez de ir a -1
 
 
-            dibujarTablero();
+            dibujarTablero(); //limpia el canvas y vuelve a dibujar todas las piezas con sus rotaciones actualizadas
 
             comprobarVictoria();
 
@@ -1337,7 +1340,7 @@ function aplicarFiltro() {
     // =====================================================
 
     canvas.addEventListener(
-        "contextmenu",
+        "contextmenu", //el menu q se abre normalmente al hacer click derecho
         event => {
 
             /*
@@ -1378,10 +1381,9 @@ function aplicarFiltro() {
             */
 
             pieza.rotacion =
-                (pieza.rotacion + 1) % 4;
+                (pieza.rotacion + 1) % 4; //para q si avanza de 3 vuelva a 0, en vez de ir a 4
 
-
-            dibujarTablero();
+            dibujarTablero(); //limpia el canvas y vuelve a dibujar todas las piezas con sus rotaciones actualizadas
 
             comprobarVictoria();
 
@@ -1396,19 +1398,20 @@ function aplicarFiltro() {
     function obtenerPieza(event) {
 
         const rect =
-            canvas.getBoundingClientRect();
+            canvas.getBoundingClientRect(); //devuelve un objeto con información sobre la posición y el tamaño de un elemento HTML en la pantalla.
+            //porq event click nos dice donde hicimos click con respecto al navegador, no al canvas
 
 
         /*
             El canvas puede verse a un tamaño
-            distinto al tamaño real de sus píxeles.
+            distinto al tamaño real de sus píxeles
 
-            Por eso calculamos la escala.
+            Por eso calculamos la escala
         */
 
         const escalaX =
-            canvas.width /
-            rect.width;
+            canvas.width /  //superficie de dibujo
+            rect.width;     //lo q ocupa en pantalla el canvas visualmente
 
         const escalaY =
             canvas.height /
@@ -1417,7 +1420,7 @@ function aplicarFiltro() {
 
         /*
             Coordenadas del click
-            dentro del canvas.
+            dentro del canvas
         */
 
         const x =
@@ -1446,7 +1449,7 @@ function aplicarFiltro() {
         /*
             Calculamos qué fila
             y qué columna recibió
-            el click.
+            el click, segun la cantidad de piezas elegida y el tamaño del canvas
         */
 
         const columna =
@@ -1463,10 +1466,10 @@ function aplicarFiltro() {
 
         /*
             Buscamos la pieza
-            correspondiente.
+            correspondiente
         */
 
-        return piezas.find(
+        return piezas.find( //find encuentra el primer elemento del array que cumpla la condicion:
             pieza =>
 
                 pieza.columna ===
@@ -1503,7 +1506,7 @@ function aplicarFiltro() {
             */
 
             const piezasIncorrectas =
-                piezas.filter(
+                piezas.filter( //nuevo array q cumpla las condiciones:
                     pieza =>
 
                         pieza.rotacion !== 0 &&
@@ -1521,7 +1524,7 @@ function aplicarFiltro() {
 
             /*
                 Elegimos una pieza
-                incorrecta al azar.
+                incorrecta al azar
             */
 
             const pieza =
@@ -1534,7 +1537,7 @@ function aplicarFiltro() {
 
 
             /*
-                La colocamos correctamente.
+                La colocamos correctamente
             */
 
             pieza.rotacion =
@@ -1546,7 +1549,7 @@ function aplicarFiltro() {
 
             /*
                 Usar ayuda suma
-                5 segundos.
+                5 segundos
             */
 
             segundos +=
@@ -1557,7 +1560,7 @@ function aplicarFiltro() {
 
             /*
                 La ayuda solo puede
-                usarse una vez.
+                usarse una vez
             */
 
             ayudaUsada =
@@ -1615,7 +1618,7 @@ function aplicarFiltro() {
 
     }
 
-
+//convierte la cantidad total de segundos al formato MM:SS
     function actualizarCronometro() {
 
         const minutos =
@@ -1631,11 +1634,10 @@ function aplicarFiltro() {
         cronometro.textContent =
 
             String(minutos)
-                .padStart(
+                .padStart( //completa una cadena por la izquierda hasta que tenga una longitud mínima determinada (2), con "0"
                     2,
                     "0"
                 ) +
-
             ":" +
 
             String(segundosRestantes)
