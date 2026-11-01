@@ -306,7 +306,7 @@ class Tablero {
         for (const casilla of this.casillas) {
 
             if (
-                casilla.fila === 2 &&
+                casilla.fila === 3 &&
                 casilla.columna === 3
             ) {
                 continue;
@@ -737,8 +737,24 @@ class JuegoPeg {
         this.fechaLimite = null;
 
         this.agregarEventos();
-        this.actualizarPantalla();
-        this.animar();
+
+// Ajustar el canvas al iniciar.
+this.ajustarCanvas();
+
+// Recalcular el tamaño si cambia la ventana.
+window.addEventListener(
+    "resize",
+    () => this.ajustarCanvas()
+);
+
+// Ajustar nuevamente al cargar la pagina.
+window.addEventListener(
+    "load",
+    () => this.ajustarCanvas()
+);
+
+this.actualizarPantalla();
+this.animar();
     }
 
     /*
@@ -1309,6 +1325,62 @@ class JuegoPeg {
 
         this.actualizarPantalla();
     }
+
+    
+/*
+ * Ajusta el tamaño visual del canvas
+ * para que entre completo en la pantalla.
+ *
+ * El canvas sigue teniendo 600x600 pixeles
+ * internos, pero se muestra mas pequeño
+ * cuando la altura disponible es menor.
+ */
+ajustarCanvas() {
+
+    const escenario =
+        document.querySelector(".peg__escenario");
+
+    const seccion =
+        document.querySelector(".peg");
+
+    const rectEscenario =
+        escenario.getBoundingClientRect();
+
+    const rectSeccion =
+        seccion.getBoundingClientRect();
+
+    // Espacio ocupado debajo del canvas.
+    const espacioInferior =
+        rectSeccion.bottom - rectEscenario.bottom;
+
+    // Posicion del canvas en la pagina.
+    const inicioEscenario =
+        rectEscenario.top + window.scrollY;
+
+    // Altura disponible para mostrar el juego.
+    const altoDisponible =
+        window.innerHeight -
+        inicioEscenario -
+        espacioInferior -
+        12;
+
+    // Ancho disponible dentro del contenedor.
+    const anchoDisponible =
+        seccion.clientWidth - 28;
+
+    // Mantener la proporcion cuadrada.
+    const lado = Math.max(
+        200,
+        Math.min(
+            MEDIDAS.ANCHO,
+            anchoDisponible,
+            altoDisponible
+        )
+    );
+
+    escenario.style.width = lado + "px";
+}
+
 }
 
 
