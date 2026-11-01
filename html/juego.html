@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>Arcade Time | Peg Solitaire</title>
+    <link rel="stylesheet" href="../css/paginas/peg-inicio.css">
     <link rel="stylesheet" href="../css/components/header.css">
     <link rel="stylesheet" href="../css/paginas/pegsolitaire.css">
     <link rel="stylesheet" href="../css/components/footer.css">
@@ -373,11 +374,47 @@
                 </div>
 
 
+
+<!-- PANTALLA DE INICIO -->
+
+<section class="peg-inicio" id="peg-inicio">
+
+    <div class="peg-inicio__contenido">
+
+        <h1 class="peg-inicio__titulo">
+            PEG SOLITAIRE
+        </h1>
+        <p class="peg-inicio__subtitulo">
+            Saltá sobre los fantasmitas y dejá solo uno.
+        </p>
+
+        <div class="peg-inicio__animacion">
+
+            <button
+                class="peg-inicio__boton"
+                id="btn-iniciar-peg"
+                type="button">
+
+                Jugar
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
                 
-<section class="peg" aria-label="Peg Solitaire jugable">
+<section class="peg peg--oculto"
+         id="peg-juego"
+         aria-label="Peg Solitaire jugable">
 
     <h2 class="peg__titulo">
-        PEG SOLITAIRE · GHOST EDITION
+        PEG SOLITAIRE 
     </h2>
 
     <div class="peg__barra">
@@ -1326,6 +1363,7 @@
     <script src="../js/peg-solitaire.js" defer></script>
     <script src="../js/home.js"></script>
     <script src="../js/botones.js"></script>
+    <script src="../js/peg-inicio.js" defer></script>
 </body>
 
 </html>

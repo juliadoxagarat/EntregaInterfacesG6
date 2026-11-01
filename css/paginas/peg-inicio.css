@@ -1,0 +1,212 @@
+
+/* =========================================
+   PEG SOLITAIRE - PANTALLA DE INICIO
+   ========================================= */
+
+/* Ocultar el juego al principio */
+
+.peg.peg--oculto {
+    display: none;
+}
+
+
+/* =========================================
+   PANTALLA DE INICIO
+   ========================================= */
+
+.peg-inicio {
+    width: 90%;
+    max-width: 1400px;
+
+    height: min(575px, calc(100vh - 210px));
+    min-height: 360px;
+
+    margin: 30px auto;
+    padding: 20px 40px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #0c0538;
+
+    /* Imagen de fondo que vas a agregar */
+
+    background-image: url("../../img/peg-portada.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   CONTENIDO
+   ========================================= */
+
+.peg-inicio__contenido {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    text-align: center;
+}
+
+
+/* Titulo */
+
+.peg-inicio__titulo {
+    color: white;
+
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: 42px;
+
+    letter-spacing: 2px;
+
+    margin: 0;
+
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+
+/* Subtitulo */
+
+.peg-inicio__subtitulo {
+    color: #c9c5e9;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    margin: 0 0 22px;
+
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+
+/* =========================================
+   BOTON JUGAR
+   ========================================= */
+
+.peg-inicio__boton {
+    min-width: 150px;
+    height: 48px;
+
+    padding: 0 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    background-color: #f52de8;
+
+    border: 2px solid #f52de8;
+    border-radius: 10px;
+
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* =========================================
+   ANIMACION SUAVE
+   ========================================= */
+
+.peg-inicio__animacion {
+    animation: peg-latido 2.5s ease-in-out infinite;
+}
+
+/* El boton se agranda y achica despacio */
+
+@keyframes peg-latido {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+
+/* =========================================
+   HOVER
+   ========================================= */
+
+/* Cambia de color al pasar el mouse */
+
+.peg-inicio__boton:hover {
+    background-color: #ff75ef;
+    border-color: #ff75ef;
+
+    color: #12095b;
+
+    transform: scale(1.08);
+}
+
+/* Pausar la animacion durante el hover */
+
+.peg-inicio__animacion:hover {
+    animation-play-state: paused;
+}
+
+
+/* Efecto al hacer click */
+
+.peg-inicio__boton:active {
+    transform: scale(0.97);
+}
+
+
+/* Flecha del boton */
+
+.peg-inicio__boton span {
+    font-size: 13px;
+}
+
+
+/* Accesibilidad */
+
+.peg-inicio__boton:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .peg-inicio__animacion {
+        animation: none;
+    }
+
+    .peg-inicio__boton {
+        transition: none;
+    }
+}
+
