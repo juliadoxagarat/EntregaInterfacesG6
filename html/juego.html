@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../css/components/footer.css">
     <link rel="stylesheet" href="../css/components/comentarios.css">
     <link rel="stylesheet" href="../css/components/botones.css">
+    <link rel="stylesheet" href="../css/paginas/peg-solitaire.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
@@ -372,12 +373,91 @@
                 </div>
 
 
-                <!-- imagen principal-->
-                <div class="detalle-juego__imagen-contenedor">
+                
+<section class="peg" aria-label="Peg Solitaire jugable">
 
-                    <img class="detalle-juego__imagen" src="../img/peg-jugando.png" alt="Peg Solitaire">
+    <h2 class="peg__titulo">
+        PEG SOLITAIRE · GHOST EDITION
+    </h2>
 
-                </div>
+    <div class="peg__barra">
+
+        <div class="peg__indicador">
+            ⏱ Tiempo
+            <strong id="peg-tiempo">05:00</strong>
+        </div>
+
+        <div class="peg__indicador">
+            👻 Fichas
+            <strong id="peg-fichas">36</strong>
+        </div>
+
+        <div class="peg__indicador">
+            ↗ Saltos
+            <strong id="peg-movimientos">0</strong>
+        </div>
+
+        <button class="peg__boton peg__boton--secundario"
+                id="peg-ayudas"
+                type="button"
+                aria-pressed="true">
+            Ayudas: activadas
+        </button>
+
+        <button class="peg__boton"
+                id="peg-reiniciar"
+                type="button">
+            ↻ Reiniciar
+        </button>
+
+    </div>
+
+    <div class="peg__escenario">
+
+        <canvas class="peg__canvas"
+                id="peg-canvas"
+                width="600"
+                height="600"
+                aria-label="Tablero circular de Peg Solitaire">
+            Tu navegador necesita soportar Canvas.
+        </canvas>
+
+        <div class="peg__modal"
+             id="peg-modal"
+             role="alertdialog"
+             aria-modal="true"
+             hidden>
+
+            <h3 id="peg-modal-titulo">
+                ¡Fin del juego!
+            </h3>
+
+            <p id="peg-modal-texto"></p>
+
+            <button class="peg__boton"
+                    id="peg-modal-reiniciar"
+                    type="button">
+                Volver a jugar
+            </button>
+
+        </div>
+    </div>
+
+    <p class="peg__estado"
+       id="peg-estado"
+       role="status"
+       aria-live="polite">
+    </p>
+
+    <div class="peg__instrucciones">
+        <span>Arrastra con el mouse</span>
+        <span>Salta sobre otra ficha</span>
+        <span>Las flechas indican destinos validos</span>
+        <span>El reloj empieza con el primer salto</span>
+    </div>
+
+</section>
+
 
 
 
@@ -1243,7 +1323,7 @@
 
 
     </div>
-
+    <script src="../js/peg-solitaire.js" defer></script>
     <script src="../js/home.js"></script>
     <script src="../js/botones.js"></script>
 </body>

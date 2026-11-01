@@ -1,58 +1,58 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-// =====================================================
-// IMÁGENES SEGÚN NIVEL
-// =====================================================
+    // =====================================================
+    // IMÁGENES SEGÚN NIVEL
+    // =====================================================
 
-const imagenesPorNivel = {
+    const imagenesPorNivel = {
 
-    1: [
-        "../img/Simpsons/simpson-uno.png",
-        "../img/Simpsons/simpson-dos.png",
-        "../img/Simpsons/simpson-tres.png",
-        "../img/Simpsons/simpson-cuatro.jpg",
-        "../img/Simpsons/simpson-cinco.png",
-        "../img/Simpsons/simpson-seis.png",
-        "../img/Simpsons/simpson-siete.png",
-        "../img/Simpsons/simpson-ocho.png"
-    ],
+        1: [
+            "../img/Simpsons/simpson-uno.png",
+            "../img/Simpsons/simpson-dos.png",
+            "../img/Simpsons/simpson-tres.png",
+            "../img/Simpsons/simpson-cuatro.jpg",
+            "../img/Simpsons/simpson-cinco.png",
+            "../img/Simpsons/simpson-seis.png",
+            "../img/Simpsons/simpson-siete.png",
+            "../img/Simpsons/simpson-ocho.png"
+        ],
 
-    2: [
-        "../img/Futurama/futurama1.png",
-        "../img/Futurama/futurama2.jpg",
-        "../img/Futurama/futurama3.jpg",
-        "../img/Futurama/futurama4.png",
-        "../img/Futurama/futurama5.jpg",
-        "../img/Futurama/futurama6.jpg",
-        "../img/Futurama/futurama7.jpg",
-        "../img/Futurama/futurama8.jpg"
-    ],
+        2: [
+            "../img/Futurama/futurama1.png",
+            "../img/Futurama/futurama2.jpg",
+            "../img/Futurama/futurama3.jpg",
+            "../img/Futurama/futurama4.png",
+            "../img/Futurama/futurama5.jpg",
+            "../img/Futurama/futurama6.jpg",
+            "../img/Futurama/futurama7.jpg",
+            "../img/Futurama/futurama8.jpg"
+        ],
 
-    3: [
-        "../img/RickYMorty/rickYmorty-uno.png",
-        "../img/RickYMorty/rickYmorty-dos.png",
-        "../img/RickYMorty/rickYmorty-tres.jpg",
-        "../img/RickYMorty/rickYmorty-cuatro.png",
-        "../img/RickYMorty/rickYmorty-cinco.png",
-        "../img/RickYMorty/rickYmorty-seis.png",
-        "../img/RickYMorty/rickYmorty-siete.jpg",
-        "../img/RickYMorty/rickYmorty-ocho.png"
-    ],
+        3: [
+            "../img/RickYMorty/rickYmorty-uno.png",
+            "../img/RickYMorty/rickYmorty-dos.png",
+            "../img/RickYMorty/rickYmorty-tres.jpg",
+            "../img/RickYMorty/rickYmorty-cuatro.png",
+            "../img/RickYMorty/rickYmorty-cinco.png",
+            "../img/RickYMorty/rickYmorty-seis.png",
+            "../img/RickYMorty/rickYmorty-siete.jpg",
+            "../img/RickYMorty/rickYmorty-ocho.png"
+        ],
 
-    4: [
-        "../img/Desencanto/des1.png",
-        "../img/Desencanto/des2.png",
-        "../img/Desencanto/des3.png",
-        "../img/Desencanto/des4.png",
-        "../img/Desencanto/des5.png",
-        "../img/Desencanto/des6.png",
-        "../img/Desencanto/des7.png",
-        "../img/Desencanto/des8.png"
-    ]
-};
+        4: [
+            "../img/Desencanto/des1.png",
+            "../img/Desencanto/des2.png",
+            "../img/Desencanto/des3.png",
+            "../img/Desencanto/des4.png",
+            "../img/Desencanto/des5.png",
+            "../img/Desencanto/des6.png",
+            "../img/Desencanto/des7.png",
+            "../img/Desencanto/des8.png"
+        ]
+    };
 
 
-let imagenesBlocka = imagenesPorNivel[1];
+    let imagenesBlocka = imagenesPorNivel[1];
 
 
     // =====================================================
@@ -290,7 +290,7 @@ let imagenesBlocka = imagenesPorNivel[1];
         .forEach(boton => {
 
             boton.addEventListener("click", () => {
-//ya esta elegida la primer opcion por defecto en el html
+                //ya esta elegida la primer opcion por defecto en el html
                 document
                     .querySelectorAll(".blocka__tamanio")
                     .forEach(opcion => {
@@ -393,7 +393,7 @@ let imagenesBlocka = imagenesPorNivel[1];
                 >
             `;
 
-//agrega la tarjeta q creamos
+                //agrega la tarjeta q creamos
                 galeria.appendChild(
                     tarjeta
                 );
@@ -670,7 +670,7 @@ let imagenesBlocka = imagenesPorNivel[1];
                 aplicarFiltro();
             } catch (error) {
                 console.error("No se pudo aplicar el filtro:", error);
-//dibuja igual la img asignada pero sin el filtro
+                //dibuja igual la img asignada pero sin el filtro
                 canvasFiltrado.width = imagen.naturalWidth;
                 canvasFiltrado.height = imagen.naturalHeight;
 
@@ -704,134 +704,134 @@ let imagenesBlocka = imagenesPorNivel[1];
 
 
 
-function aplicarFiltro() {
+    function aplicarFiltro() {
 
-    /*
-        El canvas auxiliar tiene el mismo
-        tamaño que la imagen original.
-    */
+        /*
+            El canvas auxiliar tiene el mismo
+            tamaño que la imagen original.
+        */
 
-    canvasFiltrado.width = imagen.naturalWidth;
-    canvasFiltrado.height = imagen.naturalHeight;
-
-
-    /*
-        Primero dibujamos la imagen original
-        en el canvas auxiliar.
-    */
-
-    ctxFiltrado.drawImage(
-        imagen,
-        0,
-        0,
-        canvasFiltrado.width,
-        canvasFiltrado.height
-    );
+        canvasFiltrado.width = imagen.naturalWidth;
+        canvasFiltrado.height = imagen.naturalHeight;
 
 
-    /*
-        NIVEL 4: DESENFOQUE
+        /*
+            Primero dibujamos la imagen original
+            en el canvas auxiliar.
+        */
 
-        El blur necesita consultar los píxeles
-        vecinos, por eso tiene su propia función.
-    */
-
-    if (nivelActual === 4) {
-
-        aplicarBlur();
-
-        return;
-    }
-
-
-    /*
-        Obtenemos los píxeles de la imagen.
-    */
-
-    const imageData = ctxFiltrado.getImageData(
-        0,
-        0,
-        canvasFiltrado.width,
-        canvasFiltrado.height
-    );
-
-    const data = imageData.data; //crea un array q tiene los valores de cada pixel (RGBA)
-
-    const width = canvasFiltrado.width;
-    const height = canvasFiltrado.height;
+        ctxFiltrado.drawImage(
+            imagen,
+            0,
+            0,
+            canvasFiltrado.width,
+            canvasFiltrado.height
+        );
 
 
-    /*
-        Recorremos todos los píxeles.
+        /*
+            NIVEL 4: DESENFOQUE
+    
+            El blur necesita consultar los píxeles
+            vecinos, por eso tiene su propia función.
+        */
 
-        Cada píxel ocupa 4 posiciones:
-        R, G, B y A.
-    */
+        if (nivelActual === 4) {
 
-    for (let y = 0; y < height; y++) { //recorro y del canvas
+            aplicarBlur2();
 
-        for (let x = 0; x < width; x++) { //recorro x del canvas
-
-            const i = (x + y * width) * 4; //q numero de pixel esta recorriendo
-
-            const r = data[i]; //valor del canal rojo
-            const g = data[i + 1]; //valor del canal verde
-            const b = data[i + 2]; //valor del canal azul
-
-
-            // NIVEL 1: ESCALA DE GRISES
-
-            if (nivelActual === 1) {
-
-                const gris =
-                    0.299 * r +
-                    0.587 * g +       //formula q convierte a gris
-                    0.114 * b;
-
-                data[i] = gris;
-                data[i + 1] = gris;            //le asigno ese gris q calcule; cuando rgb tienen el mismo valor, el color es gris
-                data[i + 2] = gris;
-
-            }
-
-
-            // NIVEL 2: BRILLO +30%
-
-            else if (nivelActual === 2) {
-
-                data[i] = r * 1.3;
-                data[i + 1] = g * 1.3;  //multiplico cada valor por 1.3 para q sea 30% mas brillante
-                data[i + 2] = b * 1.3;
-
-            }
-
-
-            // NIVEL 3: COLORES INVERTIDOS
-
-            else if (nivelActual === 3) {
-
-                data[i] = 255 - r; 
-                data[i + 1] = 255 - g;   //le resto a 255 para q sea el color invertido
-                data[i + 2] = 255 - b; 
-
-            }
-
+            return;
         }
+
+
+        /*
+            Obtenemos los píxeles de la imagen.
+        */
+
+        const imageData = ctxFiltrado.getImageData(
+            0,
+            0,
+            canvasFiltrado.width,
+            canvasFiltrado.height
+        );
+
+        const data = imageData.data; //crea un array q tiene los valores de cada pixel (RGBA)
+
+        const width = canvasFiltrado.width;
+        const height = canvasFiltrado.height;
+
+
+        /*
+            Recorremos todos los píxeles.
+    
+            Cada píxel ocupa 4 posiciones:
+            R, G, B y A.
+        */
+
+        for (let y = 0; y < height; y++) { //recorro y del canvas
+
+            for (let x = 0; x < width; x++) { //recorro x del canvas
+
+                const i = (x + y * width) * 4; //q numero de pixel esta recorriendo
+
+                const r = data[i]; //valor del canal rojo
+                const g = data[i + 1]; //valor del canal verde
+                const b = data[i + 2]; //valor del canal azul
+
+
+                // NIVEL 1: ESCALA DE GRISES
+
+                if (nivelActual === 1) {
+
+                    const gris =
+                        0.299 * r +
+                        0.587 * g +       //formula q convierte a gris
+                        0.114 * b;
+
+                    data[i] = gris;
+                    data[i + 1] = gris;            //le asigno ese gris q calcule; cuando rgb tienen el mismo valor, el color es gris
+                    data[i + 2] = gris;
+
+                }
+
+
+                // NIVEL 2: BRILLO +30%
+
+                else if (nivelActual === 2) {
+
+                    data[i] = r * 1.3;
+                    data[i + 1] = g * 1.3;  //multiplico cada valor por 1.3 para q sea 30% mas brillante
+                    data[i + 2] = b * 1.3;
+
+                }
+
+
+                // NIVEL 3: COLORES INVERTIDOS
+
+                else if (nivelActual === 3) {
+
+                    data[i] = 255 - r;
+                    data[i + 1] = 255 - g;   //le resto a 255 para q sea el color invertido
+                    data[i + 2] = 255 - b;
+
+                }
+
+            }
+        }
+
+
+        /*
+            Escribimos los píxeles modificados
+            nuevamente en el canvas.
+        */
+
+        ctxFiltrado.putImageData(
+            imageData,
+            0,
+            0
+        );
+
     }
-
-
-    /*
-        Escribimos los píxeles modificados
-        nuevamente en el canvas.
-    */
-
-    ctxFiltrado.putImageData(
-        imageData,
-        0,
-        0
-    );
-
-}
 
 
 
@@ -839,6 +839,211 @@ function aplicarFiltro() {
     // NIVEL 4
     // FILTRO BORROSO
     // =====================================================
+
+    function aplicarBlur2() {  //reemplazo el valor de cada pixel por el promedio de sus vecinos, para q se vea borroso
+
+
+        //la img actual ya la dibujamos en el canvas aux en aplicarFiltro()
+        const width =
+            canvasFiltrado.width;
+
+        const height =
+            canvasFiltrado.height;
+
+
+        /*
+            origen:
+            se usa solamente para LEER.
+
+            destino:
+            se usa solamente para ESCRIBIR.
+
+            Así no mezclamos píxeles nuevos
+            con los píxeles originales.
+        */
+
+        const origen =
+            ctxFiltrado.getImageData(
+                0,
+                0,
+                width,
+                height
+            );
+
+
+        const destino =
+            ctxFiltrado.createImageData(
+                width,
+                height
+            );
+
+
+
+        const src =
+            origen.data;
+
+        const dst =
+            destino.data;
+
+
+
+        /*
+            K = 2
+
+            Significa que miramos:
+
+            2 píxeles arriba
+            2 píxeles abajo
+            2 a la izquierda
+            2 a la derecha
+
+            formando una ventana de 5 x 5.
+        */
+
+        const K = 2;
+
+
+        for (let y = 0; y < height; y++) {
+
+            for (let x = 0; x < width; x++) {
+
+
+                let r = 0;
+                let g = 0;
+                let b = 0;
+
+                let mayorValor = -1;
+
+                let n = 0; //para ver cuantos vecinos existen realmente, porq si el pixel esta en un borde, no tiene 25 vecinos, sino menos (sirve para calcular desp el promedio)
+
+
+                /*
+                    Recorremos los vecinos
+                    del píxel actual.
+                */
+
+                for (
+                    let dy = -K;
+                    dy <= K;
+                    dy++
+                ) {
+
+                    for (
+                        let dx = -K;
+                        dx <= K;
+                        dx++
+                    ) {
+
+
+                        const nx =
+                            x + dx;
+
+                        const ny =
+                            y + dy;
+
+
+                        /*
+                            Si el vecino queda
+                            afuera de la imagen,
+                            lo ignoramos.
+                        */
+
+                        if (
+                            nx < 0 ||
+                            ny < 0 ||
+                            nx >= width ||
+                            ny >= height
+                        ) {
+                            continue;  //salta el resto de la iteración actual del bucle y pasa a la siguiente iteracion
+                        }
+
+
+
+
+                        const j =
+                            (nx + ny * width) * 4; //Obtenemos los colores del vecino, misma formula q en aplicarFiltro() para obtener el indice del pixel en el array de pixeles
+
+
+                        const valor = src[j] + src[j + 1] + src[j + 2];
+
+                        if (
+                            valor > mayorValor
+                        ) {
+                            mayorValor = valor;
+                            r = src[j];
+                            g = src[j + 1];
+                            b = src[j + 2];
+                        }
+
+
+                        r += src[j];
+
+                        g +=  src[j + 1];                      //Acumulamos los valores RGB del vecino (j es la pos del vecino)
+                            
+
+                        b += src[j + 2];
+
+
+                        /*
+                            Sumamos 1 al contador de vecinos válidos.
+                            Si estamos en el centro de una imagen suficientemente grande, al terminar los bucles tendremos n = 25.
+                            Si estamos en una esquina, tendremos menos vecinos porque algunos quedarían fuera de la imagen (por el continue anterior)
+                        */
+
+                        n++;
+
+                    }
+
+                }
+
+
+                /*
+                    Posición del píxel actual
+                    en el arreglo destino.
+                */
+
+                const i =
+                    (x + y * width) * 4;  //PIXEL NUEVO q estamos calculando
+
+
+                /*
+                    El nuevo color es el promedio
+                    de todos sus vecinos.
+                */
+
+                dst[i] =
+                    r / n;
+
+                dst[i + 1] =
+                    g / n;
+
+                dst[i + 2] =
+                    b / n;
+
+
+                /*
+                    Conservamos el alfa original.
+                */
+
+                dst[i + 3] =
+                    src[i + 3];
+
+            }
+
+        }
+
+
+        /*
+            ponemos la img nueva en el canvas aux, que luego la pasara al tablero con las piezas con la img ya con el filtro aplicado
+        */
+
+        ctxFiltrado.putImageData(
+            destino,
+            0,
+            0
+        );
+
+    }
 
     function aplicarBlur() {  //reemplazo el valor de cada pixel por el promedio de sus vecinos, para q se vea borroso
 
@@ -1039,7 +1244,7 @@ function aplicarFiltro() {
 
         piezas = [];
 
-//recorro cada pieza del tablero q se definio mas arriba 
+        //recorro cada pieza del tablero q se definio mas arriba 
         for (
             let fila = 0;
             fila < filas;
@@ -1065,7 +1270,7 @@ function aplicarFiltro() {
                         Math.random() * 3
                     ) + 1;
 
-//creo el objeto q representa la pieza y lo agrego al array de piezas
+                //creo el objeto q representa la pieza y lo agrego al array de piezas
                 piezas.push({
 
                     fila: fila,
@@ -1399,7 +1604,7 @@ function aplicarFiltro() {
 
         const rect =
             canvas.getBoundingClientRect(); //devuelve un objeto con información sobre la posición y el tamaño de un elemento HTML en la pantalla.
-            //porq event click nos dice donde hicimos click con respecto al navegador, no al canvas
+        //porq event click nos dice donde hicimos click con respecto al navegador, no al canvas
 
 
         /*
@@ -1618,7 +1823,7 @@ function aplicarFiltro() {
 
     }
 
-//convierte la cantidad total de segundos al formato MM:SS
+    //convierte la cantidad total de segundos al formato MM:SS
     function actualizarCronometro() {
 
         const minutos =
