@@ -1353,13 +1353,23 @@ this.animar();
  * internos, pero se muestra mas pequeño
  * cuando la altura disponible es menor.
  */
+
 ajustarCanvas() {
 
     const escenario =
         document.querySelector(".peg__escenario");
 
     const seccion =
-        document.querySelector(".peg");
+        document.querySelector("#peg-juego");
+
+    // No calcular mientras el juego este oculto.
+    if (
+        !escenario ||
+        !seccion ||
+        seccion.classList.contains("peg--oculto")
+    ) {
+        return;
+    }
 
     const rectEscenario =
         escenario.getBoundingClientRect();
@@ -1367,30 +1377,37 @@ ajustarCanvas() {
     const rectSeccion =
         seccion.getBoundingClientRect();
 
-    // Espacio ocupado debajo del canvas.
-    const espacioInferior =
-        rectSeccion.bottom - rectEscenario.bottom;
+    // Elementos que quedan debajo del tablero.
+    const espacioInferior = Math.max(
+        0,
+        rectSeccion.bottom - rectEscenario.bottom
+    );
 
-    // Posicion del canvas en la pagina.
-    const inicioEscenario =
-        rectEscenario.top + window.scrollY;
+    // Altura visible del navegador.
+    const altoPantalla =
+        window.visualViewport?.height ??
+        window.innerHeight;
 
-    // Altura disponible para mostrar el juego.
+    // Altura que realmente queda para el tablero.
     const altoDisponible =
-        window.innerHeight -
-        inicioEscenario -
+        altoPantalla -
+        rectEscenario.top -
         espacioInferior -
         12;
 
-    // Ancho disponible dentro del contenedor.
-    const anchoDisponible =
-        seccion.clientWidth - 28;
+    // Ancho interior del contenedor.
+    const estilos = getComputedStyle(seccion);
 
-    // Mantener la proporcion cuadrada.
+    const anchoDisponible =
+        seccion.clientWidth -
+        parseFloat(estilos.paddingLeft) -
+        parseFloat(estilos.paddingRight);
+
+    // Adaptar el tablero sin deformarlo.
     const lado = Math.max(
-        200,
+        150,
         Math.min(
-            MEDIDAS.ANCHO,
+            600,
             anchoDisponible,
             altoDisponible
         )
@@ -1398,6 +1415,7 @@ ajustarCanvas() {
 
     escenario.style.width = lado + "px";
 }
+
 
 }
 
