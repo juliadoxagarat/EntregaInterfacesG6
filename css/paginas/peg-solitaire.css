@@ -19,12 +19,9 @@
     border: 2px solid #f52de8;
     border-radius: 20px;
 
-    background: linear-gradient(
-        135deg,
-        #100933,
-        #221356 60%,
-        #0e0a36
-    );
+    background:
+        linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)),
+        #100933 url("../../img/tablero-peg.jpg") center / cover no-repeat;
 
     box-shadow: 0 0 22px rgba(245,45,232,.18);
 

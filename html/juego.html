@@ -487,7 +487,7 @@
 
         <button class="peg__boton peg__boton--secundario"
                 id="peg-ver-victoria"
-                type="button">
+                type="button" hidden>
             Ver victoria
         </button>
     </div>
@@ -542,7 +542,7 @@
                 <!-- instrucciones del juego -->
                 <div class="instrucciones-juego">
 
-                    <img class="instrucciones-juego__imagen" src="../img\cards_descripcion.png"
+                    <img class="instrucciones-juego__imagen" src="../img/instructions.png"
                         alt="Instrucciones para jugar a Peg Solitaire">
 
                 </div>
@@ -561,10 +561,13 @@
                     <div class="como-jugar__contenido">
 
                         <!-- aca va el video demo -->
-                        <a href="https://youtu.be/8aVEFADZ6bU?si=a4qRcN6qIbFcznBi" target="_blank"
-                            rel="noopener noreferrer">
+                        <a class="como-jugar__enlace-video" href="https://youtu.be/8aVEFADZ6bU?si=a4qRcN6qIbFcznBi" target="_blank"
+                            rel="noopener noreferrer" aria-label="Reproducir video de cómo jugar a Peg Solitaire">
 
-                            <img src="../img\video peg.png" alt="Video de cómo jugar" class="como-jugar__video">
+                            <img src="../img/ejemplo.png" alt="Video de cómo jugar" class="como-jugar__video">
+                            <span class="como-jugar__play" aria-hidden="true">
+                                <i class="fa-solid fa-play"></i>
+                            </span>
 
                         </a>
 

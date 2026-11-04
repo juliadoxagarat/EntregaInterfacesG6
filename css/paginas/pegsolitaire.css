@@ -304,6 +304,34 @@ img[src=""] {
     overflow: hidden;
 }
 
+.como-jugar__enlace-video {
+    position: relative;
+    display: block;
+}
+
+.como-jugar__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    place-items: center;
+    width: 72px;
+    height: 72px;
+    padding-left: 5px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .7);
+    color: white;
+    font-size: 28px;
+    transition: background .2s;
+}
+
+.como-jugar__enlace-video:hover .como-jugar__play,
+.como-jugar__enlace-video:focus-visible .como-jugar__play {
+    background: #a42ee8;
+}
+
 .como-jugar__video {
     width: 100%;
     height: auto;

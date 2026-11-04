@@ -1,4 +1,5 @@
 
+
 "use strict";
 
 /*
@@ -27,9 +28,6 @@ const MEDIDAS = {
     TIEMPO_LIMITE: 300
 };
 
-// Colores utilizados para generar las
-// imagenes SVG de los fantasmas.
-
 const COLORES_FANTASMAS = [
     ["#ffb4aa", "#ff566c", "#b92252"],
     ["#fff1fa", "#fc8bcf", "#c93c9c"],
@@ -37,11 +35,18 @@ const COLORES_FANTASMAS = [
     ["#fff2be", "#ffb557", "#e87542"]
 ];
 
-
-/*
- * Crea una imagen SVG de un fantasma.
- * Devuelve un objeto Image que puede
- * utilizarse con ctx.drawImage().
+/**
+ * Genera una imagen de fantasma para utilizarla como ficha.
+ *
+ * 1. Construye un SVG con los colores recibidos.
+ * 2. Aplica un degradado al cuerpo del fantasma.
+ * 3. Crea un objeto Image.
+ * 4. Asocia la funcion alCargar al evento onload.
+ * 5. Convierte el SVG en una URL de datos y la asigna a src.
+ *
+ * @param colores Arreglo con los tres colores del fantasma.
+ * @param alCargar Funcion ejecutada cuando termina de cargar.
+ * @returns Imagen que puede dibujarse en el canvas.
  */
 function crearImagenFantasma(colores, alCargar) {
 
@@ -126,21 +131,24 @@ function crearImagenFantasma(colores, alCargar) {
 // =========================================
 
 /*
- * Representa una ficha del juego.
+ * Representa una ficha del Peg Solitaire.
  *
- * Propiedades:
- * fila, columna, imagen, posX, posY.
- *
- * Metodos:
- * volverAlCentro(), contienePunto(),
- * dibujar().
+ * Cada ficha conoce su fila, columna,
+ * imagen y posicion visual en el canvas.
  */
 
 class Ficha {
 
-    /*
-     * Constructor de una ficha.
-     * Guarda su posicion logica y su imagen.
+    /**
+     * Construye una nueva ficha.
+     *
+     * Guarda la fila, columna e imagen recibidas.
+     * Luego llama a volverAlCentro() para calcular
+     * las coordenadas donde debe aparecer.
+     *
+     * @param fila Fila inicial de la ficha.
+     * @param columna Columna inicial.
+     * @param imagen Imagen que representa la ficha.
      */
     constructor(fila, columna, imagen) {
 
@@ -151,9 +159,14 @@ class Ficha {
         this.volverAlCentro();
     }
 
-    /*
-     * Calcula las coordenadas exactas
-     * del centro de la casilla.
+    /**
+     * Coloca visualmente la ficha en el centro de su casilla.
+     *
+     * Calcula posX y posY multiplicando la fila y columna
+     * por la distancia entre los huecos.
+     *
+     * Se utiliza al crear fichas, completar un movimiento
+     * valido o cancelar un arrastre incorrecto.
      */
     volverAlCentro() {
 
@@ -166,9 +179,17 @@ class Ficha {
             this.fila * MEDIDAS.DISTANCIA;
     }
 
-    /*
-     * Comprueba si el mouse se encuentra
-     * sobre esta ficha.
+    /**
+     * Comprueba si el mouse esta sobre la ficha.
+     *
+     * Calcula la distancia entre las coordenadas del mouse
+     * y el centro de la ficha usando Math.hypot().
+     * Si esa distancia es menor o igual al radio,
+     * significa que el usuario selecciono la ficha.
+     *
+     * @param x Coordenada horizontal del mouse.
+     * @param y Coordenada vertical del mouse.
+     * @returns true si el punto pertenece a la ficha.
      */
     contienePunto(x, y) {
 
@@ -180,12 +201,18 @@ class Ficha {
         return distancia <= MEDIDAS.TAM_FICHA / 2;
     }
 
-    /*
-     * Dibuja la imagen del fantasma
-     * sobre el canvas.
+    /**
+     * Dibuja la ficha sobre el canvas.
      *
-     * Si esta siendo arrastrada,
-     * aumenta ligeramente su tamaño.
+     * Calcula su tamaño y lo aumenta cuando esta siendo
+     * arrastrada. Configura una sombra y utiliza drawImage()
+     * cuando la imagen ya termino de cargar.
+     *
+     * save() y restore() impiden que los estilos de la ficha
+     * afecten a otros elementos del canvas.
+     *
+     * @param ctx Contexto 2D del canvas.
+     * @param arrastrando Indica si la ficha esta en movimiento.
      */
     dibujar(ctx, arrastrando = false) {
 
@@ -229,9 +256,15 @@ class Ficha {
 
 class Tablero {
 
-    /*
-     * Constructor del tablero.
-     * Crea los 37 huecos y las 36 fichas.
+    /**
+     * Inicializa el tablero del juego.
+     *
+     * Guarda las imagenes, crea los arreglos vacios
+     * de casillas y fichas e inicializa el fondo.
+     * Luego llama a crearCasillas() para generar los
+     * 37 huecos y a reiniciar() para colocar las 36 fichas.
+     *
+     * @param imagenes Arreglo de imagenes de fantasmas.
      */
     constructor(imagenes) {
 
@@ -246,14 +279,17 @@ class Tablero {
         this.reiniciar();
     }
 
-    /*
+    /**
      * Crea las posiciones del tablero.
      *
-     * Distribucion por filas:
-     * 3 - 5 - 7 - 7 - 7 - 5 - 3.
+     * 1. Define cuantas casillas tiene cada fila.
+     * 2. Recorre las siete filas mediante un for.
+     * 3. Calcula donde comienza cada fila para centrarla.
+     * 4. Crea cada casilla con fila, columna, x e y.
+     * 5. Guarda las casillas en el arreglo.
      *
-     * Cada casilla tiene fila, columna,
-     * coordenada X y coordenada Y.
+     * El resultado son 37 huecos distribuidos en
+     * filas de 3, 5, 7, 7, 7, 5 y 3 posiciones.
      */
     crearCasillas() {
 
@@ -291,11 +327,16 @@ class Tablero {
         }
     }
 
-    /*
-     * Reinicia las fichas.
+    /**
+     * Restablece la distribucion inicial de fichas.
      *
-     * Todos los huecos se llenan,
-     * excepto fila 2, columna 3.
+     * 1. Vacia el arreglo de fichas.
+     * 2. Recorre todas las casillas existentes.
+     * 3. Deja vacia la casilla central (fila 3, columna 3).
+     * 4. Crea una ficha en cada una de las restantes.
+     * 5. Alterna las imagenes utilizando el operador modulo.
+     *
+     * Asi el juego comienza con 36 fichas y un hueco libre.
      */
     reiniciar() {
 
@@ -329,9 +370,16 @@ class Tablero {
         }
     }
 
-    /*
-     * Busca una casilla mediante
-     * su fila y columna.
+    /**
+     * Busca una casilla por fila y columna.
+     *
+     * Recorre el arreglo de casillas utilizando find().
+     * Compara las coordenadas logicas de cada casilla
+     * con las recibidas como parametros.
+     *
+     * @param fila Fila buscada.
+     * @param columna Columna buscada.
+     * @returns La casilla encontrada o null.
      */
     buscarCasilla(fila, columna) {
 
@@ -342,9 +390,17 @@ class Tablero {
         ) || null;
     }
 
-    /*
-     * Busca una casilla segun las
-     * coordenadas del mouse.
+    /**
+     * Busca una casilla utilizando coordenadas del mouse.
+     *
+     * Recorre las casillas y calcula la distancia desde
+     * el punto recibido hasta el centro de cada hueco.
+     * Si esta a 29 pixeles o menos, considera que el
+     * jugador solto la ficha sobre esa casilla.
+     *
+     * @param x Coordenada horizontal del mouse.
+     * @param y Coordenada vertical del mouse.
+     * @returns La casilla encontrada o null.
      */
     buscarCasillaEn(x, y) {
 
@@ -356,9 +412,17 @@ class Tablero {
         ) || null;
     }
 
-    /*
-     * Busca una ficha dentro del arreglo
-     * usando fila y columna.
+    /**
+     * Busca una ficha utilizando su fila y columna.
+     *
+     * Recorre el arreglo de fichas mediante find().
+     * Sirve para determinar si una casilla esta ocupada
+     * o para identificar la ficha que sera eliminada
+     * durante un salto.
+     *
+     * @param fila Fila de la ficha.
+     * @param columna Columna de la ficha.
+     * @returns La ficha encontrada o null.
      */
     buscarFicha(fila, columna) {
 
@@ -369,9 +433,16 @@ class Tablero {
         ) || null;
     }
 
-    /*
-     * Busca sobre que ficha hizo clic
-     * el jugador.
+    /**
+     * Identifica la ficha sobre la que hizo clic el jugador.
+     *
+     * Recorre el arreglo de fichas desde el final.
+     * Para cada ficha llama a contienePunto(),
+     * que determina si el mouse esta dentro de ella.
+     *
+     * @param x Coordenada horizontal del clic.
+     * @param y Coordenada vertical del clic.
+     * @returns La ficha seleccionada o null.
      */
     buscarFichaEn(x, y) {
 
@@ -389,13 +460,22 @@ class Tablero {
         return null;
     }
 
-    /*
-     * Verifica si un movimiento es valido.
+    /**
+     * Comprueba si un salto cumple las reglas del juego.
      *
-     * Debe avanzar dos casillas en linea
-     * recta y saltar sobre otra ficha.
+     * 1. Verifica que existan la ficha y el destino.
+     * 2. Comprueba que la casilla de destino este vacia.
+     * 3. Calcula la diferencia de filas y columnas.
+     * 4. Exige avanzar dos casillas horizontal o verticalmente.
+     * 5. Calcula la posicion intermedia del salto.
+     * 6. Comprueba que exista una ficha en esa posicion.
      *
-     * El destino debe estar vacio.
+     * No se permiten movimientos diagonales, ni saltos
+     * sobre huecos vacios, ni destinos ocupados.
+     *
+     * @param ficha Ficha que intenta moverse.
+     * @param destino Casilla a la que quiere llegar.
+     * @returns true si el salto es valido.
      */
     esMovimientoValido(ficha, destino) {
 
@@ -440,9 +520,19 @@ class Tablero {
         ) !== null;
     }
 
-    /*
-     * Devuelve todas las casillas donde
-     * puede caer una ficha.
+    /**
+     * Obtiene los destinos validos para una ficha.
+     *
+     * Define las cuatro direcciones posibles:
+     * arriba, abajo, izquierda y derecha.
+     *
+     * Para cada direccion busca la casilla ubicada
+     * dos posiciones mas adelante. Luego llama a
+     * esMovimientoValido() y guarda solamente
+     * los destinos permitidos.
+     *
+     * @param ficha Ficha que se quiere analizar.
+     * @returns Arreglo de casillas validas.
      */
     destinosValidos(ficha) {
 
@@ -470,11 +560,19 @@ class Tablero {
         return destinos;
     }
 
-    /*
-     * Realiza el movimiento.
+    /**
+     * Realiza un movimiento y actualiza el tablero.
      *
-     * Elimina la ficha del medio
-     * y actualiza la ficha que se movio.
+     * 1. Comprueba que el movimiento sea valido.
+     * 2. Calcula donde esta la ficha intermedia.
+     * 3. Busca la ficha que sera eliminada.
+     * 4. La elimina del arreglo usando splice().
+     * 5. Actualiza fila y columna de la ficha que salto.
+     * 6. La centra visualmente en su nuevo destino.
+     *
+     * @param ficha Ficha que realiza el salto.
+     * @param destino Casilla de destino.
+     * @returns true si el movimiento se realizo.
      */
     moverFicha(ficha, destino) {
 
@@ -506,11 +604,18 @@ class Tablero {
         return true;
     }
 
-    /*
-     * Verifica si queda al menos
-     * un movimiento disponible.
+    /**
+     * Determina si quedan movimientos posibles.
      *
-     * Se ejecuta despues de cada salto.
+     * Recorre el arreglo de fichas mediante some().
+     * Para cada ficha obtiene sus destinos validos.
+     * Si encuentra al menos una que puede saltar,
+     * devuelve true.
+     *
+     * Si ninguna ficha puede moverse, devuelve false
+     * y el juego puede finalizar.
+     *
+     * @returns true si existe al menos un salto posible.
      */
     quedanMovimientos() {
 
@@ -520,11 +625,18 @@ class Tablero {
         );
     }
 
-    /*
+    /**
      * Dibuja el fondo circular del tablero.
      *
-     * Si hay una imagen, la utiliza.
-     * Si no, genera una textura provisoria.
+     * 1. Guarda el estado del contexto con save().
+     * 2. Crea un circulo y aplica clip() para recortar.
+     * 3. Si existe una imagen de fondo, la dibuja.
+     * 4. Si no existe, genera una textura de madera
+     *    utilizando un degradado y curvas.
+     * 5. Restaura el contexto con restore().
+     * 6. Dibuja los aros exterior e interior.
+     *
+     * @param ctx Contexto 2D del canvas.
      */
     dibujarBase(ctx) {
 
@@ -613,8 +725,16 @@ class Tablero {
         ctx.stroke();
     }
 
-    /*
-     * Dibuja cada uno de los 37 huecos.
+    /**
+     * Dibuja los 37 huecos del tablero.
+     *
+     * Recorre las casillas y para cada una dibuja
+     * un circulo utilizando sus coordenadas x e y.
+     * Rellena el circulo y le agrega un borde.
+     *
+     * Este metodo solo dibuja: no modifica las fichas.
+     *
+     * @param ctx Contexto 2D del canvas.
      */
     dibujarHuecos(ctx) {
 
@@ -653,9 +773,19 @@ class Tablero {
 
 class JuegoPeg {
 
-    /*
-     * Inicializa el juego y los elementos
-     * del documento HTML.
+    /**
+     * Inicializa el juego completo.
+     *
+     * 1. Obtiene el canvas y su contexto de dibujo.
+     * 2. Busca los contadores, botones y ventana modal.
+     * 3. Crea las imagenes SVG de los fantasmas.
+     * 4. Construye el tablero del juego.
+     * 5. Configura el fondo opcional.
+     * 6. Inicializa el estado del arrastre.
+     * 7. Inicializa las ayudas, el tiempo y los movimientos.
+     * 8. Registra los eventos del usuario.
+     * 9. Ajusta el tamaño visual del canvas.
+     * 10. Actualiza la pantalla e inicia la animacion.
      */
     constructor() {
 
@@ -686,7 +816,6 @@ class JuegoPeg {
             document.querySelector("#peg-modal");
 
         // Crear las imagenes de los fantasmas.
-
         this.imagenes = COLORES_FANTASMAS.map(
             colores =>
                 crearImagenFantasma(
@@ -696,11 +825,9 @@ class JuegoPeg {
         );
 
         // Crear el tablero.
-
         this.tablero = new Tablero(this.imagenes);
 
-        // ACA PODES COLOCAR TU IMAGEN DE FONDO.
-
+        // Ruta opcional de imagen de fondo.
         const RUTA_FONDO = "";
 
         // Ejemplo:
@@ -719,14 +846,12 @@ class JuegoPeg {
         }
 
         // Estado del arrastre.
-
         this.fichaSeleccionada = null;
 
         this.diferenciaX = 0;
         this.diferenciaY = 0;
 
         // Estado de la partida.
-
         this.ayudasActivas = true;
         this.terminado = false;
 
@@ -738,31 +863,40 @@ class JuegoPeg {
 
         this.agregarEventos();
 
-// Ajustar el canvas al iniciar.
-this.ajustarCanvas();
+        // Ajustar el canvas al iniciar.
+        this.ajustarCanvas();
 
-// Recalcular el tamaño si cambia la ventana.
-window.addEventListener(
-    "resize",
-    () => this.ajustarCanvas()
-);
+        // Adaptar el tablero cuando cambia la ventana.
+        window.addEventListener(
+            "resize",
+            () => this.ajustarCanvas()
+        );
 
-// Ajustar nuevamente al cargar la pagina.
-window.addEventListener(
-    "load",
-    () => this.ajustarCanvas()
-);
+        // Adaptar nuevamente al cargar toda la pagina.
+        window.addEventListener(
+            "load",
+            () => this.ajustarCanvas()
+        );
 
-this.actualizarPantalla();
-this.animar();
+        this.actualizarPantalla();
+        this.animar();
     }
 
-    /*
-     * Transforma las coordenadas del mouse
-     * en coordenadas internas del canvas.
+    /**
+     * Convierte las coordenadas del mouse a las del canvas.
      *
-     * Usa clientX/clientY, como se ve
-     * en la practica de eventos.
+     * Obtiene el tamaño visible del canvas con
+     * getBoundingClientRect().
+     *
+     * Resta la posicion del elemento respecto de la ventana
+     * y aplica un factor de escala entre el tamaño visible
+     * y su resolucion interna de 600x600.
+     *
+     * Esto permite que el mouse funcione correctamente
+     * incluso cuando el tablero se muestra mas pequeño.
+     *
+     * @param evento Evento de mouse.
+     * @returns Objeto con coordenadas x e y del canvas.
      */
     coordenadasMouse(evento) {
 
@@ -779,11 +913,16 @@ this.animar();
         };
     }
 
-    /*
-     * Registra los EventListeners.
+    /**
+     * Registra todos los eventos del juego.
      *
-     * Se separa la interaccion en:
-     * mousedown, mousemove y mouseup.
+     * Asocia mousedown con la seleccion de una ficha,
+     * mousemove con el arrastre y mouseup con el intento
+     * de realizar el salto.
+     *
+     * Tambien cancela arrastres si la ventana pierde el foco,
+     * evita el arrastre nativo del navegador y conecta
+     * los botones de reiniciar, ayudas y victoria.
      */
     agregarEventos() {
 
@@ -836,13 +975,18 @@ this.animar();
             );
     }
 
-    /*
-     * MOUSEDOWN.
+    /**
+     * Inicia el arrastre cuando se presiona una ficha.
      *
-     * Busca la ficha sobre la cual el
-     * usuario presiono el mouse.
+     * 1. Comprueba que se use el boton izquierdo.
+     * 2. Verifica que la partida no haya terminado.
+     * 3. Convierte las coordenadas del mouse.
+     * 4. Busca la ficha sobre la que se hizo clic.
+     * 5. Guarda esa ficha como seleccionada.
+     * 6. Calcula la distancia entre el mouse y su centro.
+     * 7. Cambia el cursor para indicar el arrastre.
      *
-     * La guarda como fichaSeleccionada.
+     * @param evento Evento mousedown.
      */
     mouseDown(evento) {
 
@@ -866,7 +1010,6 @@ this.animar();
         this.fichaSeleccionada = ficha;
 
         // Mantener la posicion relativa del clic.
-
         this.diferenciaX = ficha.posX - x;
         this.diferenciaY = ficha.posY - y;
 
@@ -875,12 +1018,19 @@ this.animar();
         evento.preventDefault();
     }
 
-    /*
-     * MOUSEMOVE.
+    /**
+     * Actualiza la posicion visual de la ficha arrastrada.
      *
-     * Si hay una ficha seleccionada,
-     * actualiza su posicion siguiendo
-     * las coordenadas del mouse.
+     * Si no hay ficha seleccionada, termina inmediatamente.
+     * Comprueba que el boton izquierdo siga presionado.
+     *
+     * Si el mouse sigue presionado, convierte sus coordenadas
+     * y actualiza posX y posY de la ficha.
+     *
+     * Todavia no modifica su fila ni columna, porque
+     * el movimiento se confirma recien al soltarla.
+     *
+     * @param evento Evento mousemove.
      */
     mouseMove(evento) {
 
@@ -890,7 +1040,6 @@ this.animar();
 
         // Comprobar que sigue presionado
         // el boton izquierdo.
-
         if ((evento.buttons & 1) === 0) {
 
             this.cancelarArrastre();
@@ -907,17 +1056,26 @@ this.animar();
             y + this.diferenciaY;
     }
 
-    /*
-     * MOUSEUP.
+    /**
+     * Procesa el movimiento al soltar el mouse.
      *
-     * Cuando se suelta el mouse, busca
-     * la casilla de destino.
+     * 1. Comprueba que exista una ficha seleccionada.
+     * 2. Obtiene las coordenadas del mouse.
+     * 3. Busca la casilla de destino.
+     * 4. Comprueba que no se haya agotado el tiempo.
+     * 5. Intenta mover la ficha mediante moverFicha().
      *
-     * Si el movimiento es valido,
-     * actualiza el tablero.
+     * Si el salto es valido:
+     * - Incrementa los movimientos.
+     * - Inicia el cronometro si es el primer salto.
+     * - Actualiza los contadores.
+     * - Comprueba si quedan movimientos.
      *
-     * Si no lo es, devuelve la ficha
-     * al lugar del que salio.
+     * Si el salto no es valido:
+     * - Devuelve la ficha a su posicion original.
+     * - Muestra un mensaje de error.
+     *
+     * @param evento Evento mouseup.
      */
     mouseUp(evento) {
 
@@ -938,7 +1096,6 @@ this.animar();
         this.canvas.style.cursor = "grab";
 
         // Comprobar si se agoto el tiempo.
-
         if (
             this.fechaLimite !== null &&
             Date.now() >= this.fechaLimite
@@ -951,13 +1108,11 @@ this.animar();
         }
 
         // Intentar realizar el salto.
-
         if (this.tablero.moverFicha(ficha, destino)) {
 
             this.movimientos++;
 
             // El timer arranca con el primer salto.
-
             if (this.fechaLimite === null) {
                 this.iniciarTimer();
             }
@@ -967,9 +1122,7 @@ this.animar();
 
             this.actualizarPantalla();
 
-            // Verificar fin de partida despues
-            // de CADA movimiento valido.
-
+            // Verificar fin de partida.
             if (!this.tablero.quedanMovimientos()) {
 
                 this.terminar("sinMovimientos");
@@ -985,9 +1138,14 @@ this.animar();
         }
     }
 
-    /*
-     * Cancela el arrastre y vuelve a
-     * ubicar la ficha en su casilla.
+    /**
+     * Cancela el arrastre de la ficha seleccionada.
+     *
+     * Si hay una ficha en movimiento, llama a
+     * volverAlCentro() para devolverla a su casilla.
+     * Luego limpia la seleccion y restaura el cursor.
+     *
+     * No modifica el estado logico del tablero.
      */
     cancelarArrastre() {
 
@@ -1001,14 +1159,18 @@ this.animar();
         this.canvas.style.cursor = "grab";
     }
 
-    /*
-     * Dibuja las ayudas animadas.
+    /**
+     * Dibuja las ayudas visuales del juego.
      *
-     * Sin ficha seleccionada:
-     * resalta los origenes posibles.
+     * Calcula un pulso animado mediante Math.sin().
      *
-     * Con ficha seleccionada:
-     * muestra flechas en sus destinos.
+     * Si no hay ficha seleccionada, recorre las fichas
+     * y resalta las que tienen al menos un salto posible.
+     *
+     * Si hay una ficha seleccionada, obtiene sus destinos
+     * validos y dibuja un aro y una flecha sobre cada uno.
+     *
+     * @param tiempo Tiempo utilizado para animar las ayudas.
      */
     dibujarAyudas(tiempo) {
 
@@ -1056,7 +1218,6 @@ this.animar();
                 this.ctx.save();
 
                 // Aro animado sobre el destino.
-
                 this.ctx.beginPath();
 
                 this.ctx.arc(
@@ -1078,7 +1239,6 @@ this.animar();
                 this.ctx.shadowBlur = 0;
 
                 // Flecha animada.
-
                 const y =
                     destino.y - 34 + pulso * 6;
 
@@ -1110,14 +1270,20 @@ this.animar();
         }
     }
 
-    /*
-     * Redibuja el contenido del canvas.
+    /**
+     * Redibuja todos los elementos del canvas.
      *
-     * Primero limpia y dibuja el tablero.
-     * Luego los huecos, ayudas y fichas.
+     * Primero limpia el contenido anterior.
+     * Luego dibuja el fondo y los huecos del tablero.
+     * Si las ayudas estan activadas, tambien las dibuja.
      *
-     * La ficha seleccionada se dibuja
-     * al final para quedar por encima.
+     * Recorre el arreglo de fichas para dibujarlas,
+     * excepto la que se encuentra seleccionada.
+     *
+     * Finalmente dibuja la ficha seleccionada por encima
+     * de las demas para destacar el arrastre.
+     *
+     * @param tiempo Instante utilizado para la animacion.
      */
     dibujar(tiempo = performance.now()) {
 
@@ -1144,7 +1310,6 @@ this.animar();
         }
 
         // Recorrer el arreglo de fichas.
-
         for (const ficha of this.tablero.fichas) {
 
             if (ficha !== this.fichaSeleccionada) {
@@ -1154,7 +1319,6 @@ this.animar();
         }
 
         // Dibujar la ficha que se arrastra.
-
         if (this.fichaSeleccionada) {
 
             this.fichaSeleccionada.dibujar(
@@ -1164,9 +1328,15 @@ this.animar();
         }
     }
 
-    /*
-     * Repite el dibujo en cada frame
-     * para animar las flechas y los aros.
+    /**
+     * Mantiene el ciclo continuo de dibujo del juego.
+     *
+     * Llama a dibujar() para actualizar el canvas
+     * y utiliza requestAnimationFrame() para programar
+     * el siguiente dibujo.
+     *
+     * Esto permite animar las ayudas y el movimiento
+     * de las fichas mientras se arrastran.
      */
     animar() {
 
@@ -1177,9 +1347,18 @@ this.animar();
         );
     }
 
-    /*
-     * Inicia el cronometro al realizar
-     * el primer movimiento valido.
+    /**
+     * Inicia el cronometro luego del primer salto valido.
+     *
+     * Calcula una fecha limite sumando cinco minutos
+     * a la hora actual obtenida mediante Date.now().
+     *
+     * Cada 200 milisegundos calcula cuantos segundos quedan.
+     * Utiliza Math.ceil() para redondear hacia arriba
+     * y Math.max() para evitar tiempos negativos.
+     *
+     * Actualiza la pantalla y, si llega a cero,
+     * finaliza la partida por tiempo agotado.
      */
     iniciarTimer() {
 
@@ -1206,9 +1385,18 @@ this.animar();
         }, 200);
     }
 
-    /*
-     * Actualiza los contadores visibles.
-     * Convierte segundos al formato mm:ss.
+    /**
+     * Actualiza los contadores visibles del juego.
+     *
+     * Calcula los minutos con Math.floor() y los
+     * segundos restantes con el operador modulo.
+     *
+     * Utiliza padStart() para mostrarlos como mm:ss.
+     * Cuando quedan 30 segundos o menos, activa
+     * una clase CSS para destacar el tiempo.
+     *
+     * Tambien actualiza las cantidades de fichas
+     * y movimientos realizados.
      */
     actualizarPantalla() {
 
@@ -1235,9 +1423,15 @@ this.animar();
             this.movimientos;
     }
 
-    /*
-     * Activa o desactiva las ayudas
-     * visuales del tablero.
+    /**
+     * Activa o desactiva las ayudas visuales.
+     *
+     * Invierte el valor booleano de ayudasActivas.
+     * Luego actualiza el texto del boton y su
+     * atributo aria-pressed.
+     *
+     * El metodo dibujar() consulta este valor
+     * para decidir si debe mostrar las ayudas.
      */
     cambiarAyudas() {
 
@@ -1254,22 +1448,49 @@ this.animar();
         );
     }
 
-    /*
-     * Finaliza la partida por falta de
-     * movimientos o por tiempo agotado.
+    /**
+     * Simula una victoria para probar la pantalla final.
+     *
+     * Cancela cualquier arrastre y reemplaza el arreglo
+     * de fichas por una sola ficha ubicada en el centro.
+     *
+     * Configura el contador de movimientos en 35,
+     * actualiza la pantalla y llama a terminar().
+     *
+     * Es una previsualizacion: no resuelve realmente
+     * todos los movimientos del tablero.
      */
     previsualizarVictoria() {
 
         this.cancelarArrastre();
+
         this.tablero.fichas = [
             new Ficha(3, 3, this.imagenes[0])
         ];
+
         this.movimientos = this.tablero.casillas.length - 2;
+
         this.terminado = false;
+
         this.actualizarPantalla();
+
         this.terminar("sinMovimientos");
     }
 
+    /**
+     * Finaliza la partida y muestra el resultado.
+     *
+     * 1. Comprueba que la partida no haya terminado.
+     * 2. Marca el juego como finalizado.
+     * 3. Detiene el cronometro con clearInterval().
+     * 4. Cancela cualquier arrastre.
+     * 5. Obtiene la cantidad de fichas restantes.
+     * 6. Determina si hubo victoria, falta de movimientos
+     *    o tiempo agotado.
+     * 7. Actualiza el texto y muestra la ventana modal.
+     *
+     * @param motivo Causa de finalizacion de la partida.
+     */
     terminar(motivo) {
 
         if (this.terminado) {
@@ -1313,9 +1534,18 @@ this.animar();
             "Podes reiniciar para volver a jugar.";
     }
 
-    /*
-     * Restaura las fichas, cronometro,
-     * contadores y estado de la partida.
+    /**
+     * Reinicia completamente la partida.
+     *
+     * Detiene el cronometro y cancela el arrastre.
+     * Luego llama a tablero.reiniciar() para volver
+     * a colocar todas las fichas en sus posiciones.
+     *
+     * Restaura los cinco minutos, pone los movimientos
+     * en cero y vuelve a habilitar la partida.
+     *
+     * Finalmente oculta la ventana modal y actualiza
+     * los contadores y el mensaje de instrucciones.
      */
     reiniciar() {
 
@@ -1344,79 +1574,82 @@ this.animar();
         this.actualizarPantalla();
     }
 
-    
-/*
- * Ajusta el tamaño visual del canvas
- * para que entre completo en la pantalla.
- *
- * El canvas sigue teniendo 600x600 pixeles
- * internos, pero se muestra mas pequeño
- * cuando la altura disponible es menor.
- */
+    /**
+     * Ajusta el tamaño visible del tablero a la pantalla.
+     *
+     * 1. Busca el contenedor del escenario y la seccion.
+     * 2. Comprueba que el juego este visible.
+     * 3. Mide la posicion y el espacio ocupado por los
+     *    elementos que se encuentran debajo del tablero.
+     * 4. Obtiene la altura disponible en el navegador.
+     * 5. Calcula el ancho disponible descontando paddings.
+     * 6. Elige un tamaño entre 150 y 600 pixeles.
+     * 7. Aplica ese tamaño al escenario.
+     *
+     * La resolucion interna del canvas permanece en 600x600,
+     * de modo que el tablero mantiene sus proporciones.
+     */
+    ajustarCanvas() {
 
-ajustarCanvas() {
+        const escenario =
+            document.querySelector(".peg__escenario");
 
-    const escenario =
-        document.querySelector(".peg__escenario");
+        const seccion =
+            document.querySelector("#peg-juego");
 
-    const seccion =
-        document.querySelector("#peg-juego");
+        // No calcular mientras el juego este oculto.
+        if (
+            !escenario ||
+            !seccion ||
+            seccion.classList.contains("peg--oculto")
+        ) {
+            return;
+        }
 
-    // No calcular mientras el juego este oculto.
-    if (
-        !escenario ||
-        !seccion ||
-        seccion.classList.contains("peg--oculto")
-    ) {
-        return;
+        const rectEscenario =
+            escenario.getBoundingClientRect();
+
+        const rectSeccion =
+            seccion.getBoundingClientRect();
+
+        // Espacio ocupado debajo del tablero.
+        const espacioInferior = Math.max(
+            0,
+            rectSeccion.bottom - rectEscenario.bottom
+        );
+
+        // Altura visible del navegador.
+        const altoPantalla =
+            window.visualViewport?.height ??
+            window.innerHeight;
+
+        // Altura disponible para el tablero.
+        const altoDisponible =
+            altoPantalla -
+            rectEscenario.top -
+            espacioInferior -
+            12;
+
+        // Ancho interior del contenedor.
+        const estilos = getComputedStyle(seccion);
+
+        const anchoDisponible =
+            seccion.clientWidth -
+            parseFloat(estilos.paddingLeft) -
+            parseFloat(estilos.paddingRight);
+
+        // Adaptar el tablero manteniendo sus proporciones.
+        const lado = Math.max(
+            150,
+            Math.min(
+                600,
+                anchoDisponible,
+                altoDisponible
+            )
+        );
+
+        escenario.style.width = lado + "px";
     }
-
-    const rectEscenario =
-        escenario.getBoundingClientRect();
-
-    const rectSeccion =
-        seccion.getBoundingClientRect();
-
-    // Elementos que quedan debajo del tablero.
-    const espacioInferior = Math.max(
-        0,
-        rectSeccion.bottom - rectEscenario.bottom
-    );
-
-    // Altura visible del navegador.
-    const altoPantalla =
-        window.visualViewport?.height ??
-        window.innerHeight;
-
-    // Altura que realmente queda para el tablero.
-    const altoDisponible =
-        altoPantalla -
-        rectEscenario.top -
-        espacioInferior -
-        12;
-
-    // Ancho interior del contenedor.
-    const estilos = getComputedStyle(seccion);
-
-    const anchoDisponible =
-        seccion.clientWidth -
-        parseFloat(estilos.paddingLeft) -
-        parseFloat(estilos.paddingRight);
-
-    // Adaptar el tablero sin deformarlo.
-    const lado = Math.max(
-        150,
-        Math.min(
-            600,
-            anchoDisponible,
-            altoDisponible
-        )
-    );
-
-    escenario.style.width = lado + "px";
-}
-
-
 }
 
 
@@ -1425,10 +1658,10 @@ ajustarCanvas() {
 // =========================================
 
 /*
- * Evento de pagina.
- *
- * Espera a que el documento HTML
- * este cargado antes de crear el juego.
+ * Espera a que el documento HTML termine de cargarse.
+ * Comprueba que exista el canvas del Peg Solitaire.
+ * Si existe, crea una instancia de JuegoPeg,
+ * que inicializa todos los elementos del juego.
  */
 
 document.addEventListener(
