@@ -377,13 +377,16 @@
 
 <!-- PANTALLA DE INICIO -->
 
-<section class="peg-inicio" id="peg-inicio">
+<section class="peg-inicio" id="peg-inicio" aria-labelledby="peg-inicio-titulo">
+
+    <!-- Portada: agregar la imagen como img/peg-portada.png. -->
+    <div class="peg-inicio__velo" aria-hidden="true"></div>
 
     <div class="peg-inicio__contenido">
 
-        <h1 class="peg-inicio__titulo">
+        <h2 class="peg-inicio__titulo" id="peg-inicio-titulo">
             PEG SOLITAIRE
-        </h1>
+        </h2>
         <p class="peg-inicio__subtitulo">
             Saltá sobre los fantasmitas y dejá solo uno.
         </p>
@@ -395,7 +398,8 @@
                 id="btn-iniciar-peg"
                 type="button">
 
-                Jugar
+                <span>Jugar ahora</span>
+                <i class="fa-solid fa-play" aria-hidden="true"></i>
 
             </button>
 

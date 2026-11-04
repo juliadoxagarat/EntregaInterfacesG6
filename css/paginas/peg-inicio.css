@@ -15,14 +15,22 @@
    ========================================= */
 
 .peg-inicio {
-    width: 90%;
-    max-width: 1400px;
+    /* Reemplazar esta ruta si la portada tiene otro nombre o formato. */
+    --peg-inicio-fondo: url("../../img/peg-portada.png");
 
-    height: min(575px, calc(100vh - 210px));
-    min-height: 360px;
+    /* Coincide con el contenedor .peg del juego. */
+    width: 100%;
+    max-width: 1000px;
 
-    margin: 30px auto;
-    padding: 20px 40px;
+    /*
+       El panel del juego mide 758px: tablero de 600px, barra, titulo,
+       estado e instrucciones. La portada conserva esa misma altura.
+    */
+    height: 758px;
+    min-height: 0;
+
+    margin: 12px auto 25px;
+    padding: 14px 40px;
 
     position: relative;
 
@@ -33,17 +41,30 @@
 
     background-color: #0c0538;
 
-    /* Imagen de fondo que vas a agregar */
-
-    background-image: url("../../img/peg-portada.png");
+    /* Espacio para la imagen de portada elegida por el equipo. */
+    background-image:
+        var(--peg-inicio-fondo),
+        radial-gradient(circle at 18% 18%, rgba(89, 250, 255, .34), transparent 26%),
+        radial-gradient(circle at 82% 76%, rgba(245, 45, 232, .38), transparent 30%),
+        linear-gradient(135deg, #0a0734, #271258 55%, #11083a);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
-    border-radius: 18px;
+    border: 2px solid #f52de8;
+    border-radius: 20px;
+
+    box-shadow: 0 0 22px rgba(245,45,232,.18);
 
     overflow: hidden;
     box-sizing: border-box;
+}
+
+.peg-inicio__velo {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(90deg, rgba(6, 4, 32, .73), rgba(13, 7, 53, .38), rgba(6, 4, 32, .73));
 }
 
 
@@ -62,6 +83,8 @@
     gap: 12px;
 
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -71,13 +94,13 @@
     color: white;
 
     font-family: "Arial Black", Arial, sans-serif;
-    font-size: 42px;
+    font-size: clamp(32px, 3.2vw, 52px);
 
     letter-spacing: 2px;
 
     margin: 0;
 
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+    text-shadow: 0 3px 12px rgba(0, 0, 0, .8), 0 0 18px rgba(89, 250, 255, .3);
 }
 
 
@@ -114,9 +137,9 @@
 
     gap: 10px;
 
-    background-color: #f52de8;
+    background: linear-gradient(135deg, #f52de8, #a42ee8);
 
-    border: 2px solid #f52de8;
+    border: 2px solid #ff9af5;
     border-radius: 10px;
 
     color: white;
@@ -127,10 +150,8 @@
 
     cursor: pointer;
 
-    transition:
-        background-color 0.25s ease,
-        color 0.25s ease,
-        transform 0.25s ease;
+    box-shadow: 0 0 0 0 rgba(245, 45, 232, .55), 0 8px 18px rgba(0, 0, 0, .36);
+    transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
 }
 
 
@@ -163,12 +184,10 @@
 /* Cambia de color al pasar el mouse */
 
 .peg-inicio__boton:hover {
-    background-color: #ff75ef;
-    border-color: #ff75ef;
-
-    color: #12095b;
-
-    transform: scale(1.08);
+    color: white;
+    filter: brightness(1.18);
+    transform: translateY(-3px) scale(1.06);
+    box-shadow: 0 0 0 7px rgba(245, 45, 232, .16), 0 12px 24px rgba(0, 0, 0, .42);
 }
 
 /* Pausar la animacion durante el hover */
@@ -181,7 +200,7 @@
 /* Efecto al hacer click */
 
 .peg-inicio__boton:active {
-    transform: scale(0.97);
+    transform: translateY(0) scale(.97);
 }
 
 
@@ -189,6 +208,27 @@
 
 .peg-inicio__boton span {
     font-size: 13px;
+}
+
+.peg-inicio__boton i {
+    font-size: 12px;
+    transition: transform .25s ease;
+}
+
+.peg-inicio__boton:hover i {
+    transform: translateX(3px);
+}
+
+.peg-inicio--saliendo {
+    animation: peg-salida .32s ease forwards;
+    pointer-events: none;
+}
+
+@keyframes peg-salida {
+    to {
+        opacity: 0;
+        transform: scale(.985);
+    }
 }
 
 

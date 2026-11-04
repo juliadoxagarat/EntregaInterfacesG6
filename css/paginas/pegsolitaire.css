@@ -250,7 +250,8 @@ img[src=""] {
 .instrucciones-juego {
     width: 92%;
 
-    margin: 0 auto;
+    /* Separa la imagen del texto de la descripcion */
+    margin: 30px auto 0;
 
     display: flex;
 
@@ -259,7 +260,7 @@ img[src=""] {
 }
 
 .instrucciones-juego__imagen {
-    width: 78%;
+    width: 55%;
     height: auto;
 
     margin-left: auto;

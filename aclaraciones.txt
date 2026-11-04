@@ -1,3 +1,0 @@
-
-- pasar al siguiente nivel 
-- si pones siguiente nivel en el nivel 4 poner algo que diga felicitaciones llegaste al nivel maximo
