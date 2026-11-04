@@ -828,6 +828,12 @@ this.animar();
             "click",
             () => this.cambiarAyudas()
         );
+
+        document.querySelector("#peg-ver-victoria")
+            .addEventListener(
+                "click",
+                () => this.previsualizarVictoria()
+            );
     }
 
     /*
@@ -1252,6 +1258,18 @@ this.animar();
      * Finaliza la partida por falta de
      * movimientos o por tiempo agotado.
      */
+    previsualizarVictoria() {
+
+        this.cancelarArrastre();
+        this.tablero.fichas = [
+            new Ficha(3, 3, this.imagenes[0])
+        ];
+        this.movimientos = this.tablero.casillas.length - 2;
+        this.terminado = false;
+        this.actualizarPantalla();
+        this.terminar("sinMovimientos");
+    }
+
     terminar(motivo) {
 
         if (this.terminado) {
@@ -1286,7 +1304,7 @@ this.animar();
             motivo === "tiempo"
                 ? `Quedaron ${quedan} fantasmitas.`
                 : `No quedan saltos posibles. ` +
-                  `Terminaste con ${quedan} fantasmitas.`;
+                  `Terminaste con ${quedan} fantasmita/s.`;
 
         this.modal.hidden = false;
 
