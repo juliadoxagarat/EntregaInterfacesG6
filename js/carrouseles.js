@@ -16,20 +16,17 @@
         let desplazamiento = 0;
         let animando = false;
 
-        function obtenerDesplazamiento() {
-            const anchoVentana = ventana.getBoundingClientRect().width;
-            const esMobile = window.innerWidth < 600;
+        const tarjetas = [...lista.querySelectorAll(".tarjeta-juego")];
 
-            if (esMobile) {
-                // En mobile el avance es exactamente 1 ancho completo de la ventana
-                return anchoVentana;
-            } else {
-                const tarjeta = lista.querySelector(".tarjeta-juego");
-                if (!tarjeta) return anchoVentana;
-                const estiloLista = window.getComputedStyle(lista);
-                const gap = parseFloat(estiloLista.gap) || 0;
-                return tarjeta.getBoundingClientRect().width + gap;
+        function obtenerDesplazamiento(delta) {
+            const inicio = tarjetas[0].offsetLeft;
+            const posiciones = tarjetas.map(tarjeta => tarjeta.offsetLeft - inicio);
+
+            if (delta > 0) {
+                return posiciones.find(posicion => posicion > desplazamiento + 1) ?? desplazamiento;
             }
+
+            return posiciones.findLast(posicion => posicion < desplazamiento - 1) ?? 0;
         }
 
         function actualizarCarrusel() {
@@ -52,15 +49,14 @@
         function mover(delta) {
             const maximoDesplazamiento = lista.scrollWidth - ventana.clientWidth;
 
-            if (maximoDesplazamiento <= 0) return;
+            if (maximoDesplazamiento <= 0 || tarjetas.length === 0) return;
 
             if ((delta > 0 && desplazamiento >= maximoDesplazamiento) ||
                 (delta < 0 && desplazamiento <= 0)) {
                 return;
             }
 
-            const movimiento = obtenerDesplazamiento();
-            desplazamiento += delta > 0 ? movimiento : -movimiento; 
+            desplazamiento = obtenerDesplazamiento(delta);
 
             actualizarCarrusel();
 

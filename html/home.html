@@ -243,11 +243,10 @@
                                 </a>
                             </article>
                             <article class="tarjeta-juego tarjeta-juego--top">
-                                <a class="tarjeta-juego__link" href="#">
-                                    <span class="tarjeta-juego__badge-top">Top 3</span>
-                                    <img class="tarjeta-juego__imagen" src="../img/juegos/freedomforce.jpg"
-                                        alt="Freedom Force">
-                                    <h3 class="tarjeta-juego__nombre"><span>Freedom Force</span></h3>
+                                <a class="tarjeta-juego__link" href="flappy-ghost.html">
+                                    <span class="tarjeta-juego__badge-top" aria-hidden="true">Top 3</span>
+                                    <img class="tarjeta-juego__imagen" src="../img/flappy-ghost/portada.webp" alt="">
+                                    <h3 class="tarjeta-juego__nombre"><span>Flappy Ghost</span></h3>
                                 </a>
                             </article>
                             <article class="tarjeta-juego tarjeta-juego--top">
@@ -963,9 +962,8 @@
                                             <h3 class="tarjeta-juego__nombre"><span>Mega Man</span></h3>
                                         </a>
                                     </article>
-                                    <article class="tarjeta-juego tarjeta-juego--top">
+                                    <article class="tarjeta-juego">
                                         <a class="tarjeta-juego__link" href="#">
-                                            <span class="tarjeta-juego__badge-top">Top 3</span>
                                             <img class="tarjeta-juego__imagen" src="../img/juegos/freedomforce.jpg"
                                                 alt="Freedom Force">
                                             <h3 class="tarjeta-juego__nombre"><span>Freedom Force</span></h3>
@@ -1194,13 +1192,21 @@
 
                         <div class="carrusel-juegos__contenido">
                             <button class="carrusel-juegos__flecha carrusel-juegos__flecha--izquierda" type="button"
-                                data-direccion="anterior">
+                                aria-label="Ver juegos anteriores" data-direccion="anterior">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </button>
 
                             <div class="carrusel-juegos__ventana">
                                 <div class="carrusel-juegos__lista">
                                     <!-- aca van las cards de mas juegos -->
+                                    <article class="tarjeta-juego tarjeta-juego--top">
+                                        <a class="tarjeta-juego__link" href="flappy-ghost.html">
+                                            <span class="tarjeta-juego__badge-top" aria-hidden="true">Top 3</span>
+                                            <img class="tarjeta-juego__imagen" src="../img/flappy-ghost/portada.webp"
+                                                alt="">
+                                            <h3 class="tarjeta-juego__nombre"><span>Flappy Ghost</span></h3>
+                                        </a>
+                                    </article>
                                     <article class="tarjeta-juego tarjeta-juego--top">
                                         <a class="tarjeta-juego__link" href="../html/blocka.html">
                                             <span class="tarjeta-juego__badge-top">Top 3</span>
@@ -1305,7 +1311,7 @@
                             </div>
 
                             <button class="carrusel-juegos__flecha carrusel-juegos__flecha--derecha" type="button"
-                                data-direccion="siguiente">
+                                aria-label="Ver más juegos" data-direccion="siguiente">
                                 <i class="fa-solid fa-chevron-right"></i>
                             </button>
                         </div>

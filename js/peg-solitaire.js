@@ -114,14 +114,17 @@ function crearImagenFantasma(colores, alCargar) {
         </svg>
     `;
 
+    // crea un objeto de la imagen
     const imagen = new Image();
 
     imagen.onload = alCargar;
 
+    // indica el origen de la imagen
     imagen.src =
         "data:image/svg+xml;charset=utf-8," +
         encodeURIComponent(svg);
 
+    // encode permite codificar el SVG para usarlo como una URL de datos
     return imagen;
 }
 
@@ -156,6 +159,7 @@ class Ficha {
         this.columna = columna;
         this.imagen = imagen;
 
+        // calcula donde tiene que dibujarse
         this.volverAlCentro();
     }
 
@@ -170,6 +174,8 @@ class Ficha {
      */
     volverAlCentro() {
 
+        // fila y pos representan la posicion en el tablero
+        // posX y posY representan la posicion en pixeles en el canvas
         this.posX =
             MEDIDAS.PRIMER_CENTRO +
             this.columna * MEDIDAS.DISTANCIA;
@@ -216,12 +222,14 @@ class Ficha {
      */
     dibujar(ctx, arrastrando = false) {
 
+        // calcula su tamaño, si esta siendo arrastrada aumenta tamaño
         const tam =
             MEDIDAS.TAM_FICHA *
             (arrastrando ? 1.15 : 1);
 
         ctx.save();
 
+        // cinfigura las sombras
         ctx.shadowColor = "rgba(0,0,0,.55)";
         ctx.shadowBlur = arrastrando ? 13 : 7;
         ctx.shadowOffsetY = 4;
@@ -231,6 +239,7 @@ class Ficha {
             this.imagen.naturalWidth > 0
         ) {
 
+            // dibuja la imahen
             ctx.drawImage(
                 this.imagen,
                 this.posX - tam / 2,
@@ -240,6 +249,9 @@ class Ficha {
             );
         }
 
+        // restaura el estado anterior del contexto
+        // sirven con save() para que los estilos que aplicas a una 
+        // figura no afecten a los dibujos posteriores 
         ctx.restore();
     }
 }
@@ -293,17 +305,21 @@ class Tablero {
      */
     crearCasillas() {
 
+        // cuantas casillas tiene cada una de las filas
         const cantidades = [3, 5, 7, 7, 7, 5, 3];
 
+        // recorre las filas 
         for (
             let fila = 0;
             fila < cantidades.length;
             fila++
         ) {
 
+            // permite centrar las filas mas cortas
             const primeraColumna =
                 (7 - cantidades[fila]) / 2;
 
+            // recorre las posiciones de cada fila
             for (
                 let i = 0;
                 i < cantidades[fila];
@@ -312,16 +328,17 @@ class Tablero {
 
                 const columna = primeraColumna + i;
 
+                // se crea un objeto, lo agrega al arreglo
                 this.casillas.push({
 
                     fila: fila,
                     columna: columna,
 
                     x: MEDIDAS.PRIMER_CENTRO +
-                       columna * MEDIDAS.DISTANCIA,
+                        columna * MEDIDAS.DISTANCIA,
 
                     y: MEDIDAS.PRIMER_CENTRO +
-                       fila * MEDIDAS.DISTANCIA
+                        fila * MEDIDAS.DISTANCIA
                 });
             }
         }
@@ -344,8 +361,10 @@ class Tablero {
 
         let numero = 0;
 
+        // recorrer todas las casillas
         for (const casilla of this.casillas) {
 
+            // si la casilla es la central, se salta la iteracion
             if (
                 casilla.fila === 3 &&
                 casilla.columna === 3
@@ -353,17 +372,19 @@ class Tablero {
                 continue;
             }
 
+            // se asigna una imagen 
             const imagen =
                 this.imagenes[
-                    numero % this.imagenes.length
+                numero % this.imagenes.length
                 ];
 
+            // se crea un objeto tipo ficha y se incorpora al arreglo
             const ficha = new Ficha(
                 casilla.fila,
                 casilla.columna,
                 imagen
             );
-
+            // lo incorporamos al arreglo
             this.fichas.push(ficha);
 
             numero++;
@@ -383,6 +404,7 @@ class Tablero {
      */
     buscarCasilla(fila, columna) {
 
+        // Busca una casilla cuya fila y columna coincidan con las recibidas
         return this.casillas.find(
             c =>
                 c.fila === fila &&
@@ -404,7 +426,9 @@ class Tablero {
      */
     buscarCasillaEn(x, y) {
 
+        // recibe coordenadas del mouse y busca la casilla mas cercana
         return this.casillas.find(
+            // hypot parala distancia entre el mouse y el centro
             c => Math.hypot(
                 c.x - x,
                 c.y - y
@@ -426,6 +450,7 @@ class Tablero {
      */
     buscarFicha(fila, columna) {
 
+        // me indica si una posicion esta ocupada.
         return this.fichas.find(
             f =>
                 f.fila === fila &&
@@ -446,12 +471,16 @@ class Tablero {
      */
     buscarFichaEn(x, y) {
 
+        // recorre el arreglo de fichas del final al inicio
+        // las fichas q se dibujan por encima de otras deberian tener prioridad cuando
+        // el usuario hace clic
         for (
             let i = this.fichas.length - 1;
             i >= 0;
             i--
         ) {
 
+            // llama a contiene punto que determina si el mouse esta dentro de ella
             if (this.fichas[i].contienePunto(x, y)) {
                 return this.fichas[i];
             }
@@ -479,6 +508,9 @@ class Tablero {
      */
     esMovimientoValido(ficha, destino) {
 
+        // Exista una ficha seleccionada.
+        // Exista una casilla de destino.
+        // El destino no esté ocupado por otra ficha.
         if (
             !ficha ||
             !destino ||
@@ -490,12 +522,15 @@ class Tablero {
             return false;
         }
 
+        // calcula la diferenca entre las posiciones 
+        // permite saber cuanto se desplazo la ficha
         const diferenciaFila =
             destino.fila - ficha.fila;
 
         const diferenciaColumna =
             destino.columna - ficha.columna;
 
+        // puede ser de dos o menos dos el salto para comer otra pieza
         const saltoVertical =
             Math.abs(diferenciaFila) === 2 &&
             diferenciaColumna === 0;
@@ -508,12 +543,15 @@ class Tablero {
             return false;
         }
 
+        // calcula la posicion intermedia 
+        // divide por dos porque la ficha salta sobre otra ficha que esta en el medio
         const filaMedio =
             (ficha.fila + destino.fila) / 2;
 
         const columnaMedio =
             (ficha.columna + destino.columna) / 2;
 
+        // compueba que existe una ficha en esa posicion intermedia
         return this.buscarFicha(
             filaMedio,
             columnaMedio
@@ -536,6 +574,7 @@ class Tablero {
      */
     destinosValidos(ficha) {
 
+        // arreglo que representa todas las direcciones posibles
         const direcciones = [
             [-2, 0],
             [2, 0],
@@ -547,16 +586,19 @@ class Tablero {
 
         for (const [df, dc] of direcciones) {
 
+            // busca la casilla correspondiente
             const destino = this.buscarCasilla(
                 ficha.fila + df,
                 ficha.columna + dc
             );
 
+            // comprueba se se puede llegar hasta ella
             if (this.esMovimientoValido(ficha, destino)) {
                 destinos.push(destino);
             }
         }
 
+        // devuelve un arreglo con todos los destinos permitidos
         return destinos;
     }
 
@@ -579,26 +621,32 @@ class Tablero {
         if (!this.esMovimientoValido(ficha, destino)) {
             return false;
         }
-
+    
+        //calcula la posicion intermedia 
         const filaMedio =
             (ficha.fila + destino.fila) / 2;
 
         const columnaMedio =
             (ficha.columna + destino.columna) / 2;
 
+        //  busca la ficha que va a desaparecer
         const comida = this.buscarFicha(
             filaMedio,
             columnaMedio
         );
 
+        // la elimina del arreglo a partir de su indice
         this.fichas.splice(
             this.fichas.indexOf(comida),
             1
         );
 
+        // actualiza la ficha que relizo el salto
+        // cambia su posicion logica 
         ficha.fila = destino.fila;
         ficha.columna = destino.columna;
-
+        
+        // calcula su posicion visual 
         ficha.volverAlCentro();
 
         return true;
@@ -619,6 +667,7 @@ class Tablero {
      */
     quedanMovimientos() {
 
+        // true si almenos un elemento del arreglo tiene un destino valido
         return this.fichas.some(
             ficha =>
                 this.destinosValidos(ficha).length > 0
@@ -665,18 +714,21 @@ class Tablero {
             );
 
         } else {
-
+            // crea un degradado radial
             const madera = ctx.createRadialGradient(
                 185, 150, 15,
                 300, 300, 420
             );
 
+            // define los colores y en que punto del degradado aparecen
             madera.addColorStop(0, "#a96b37");
             madera.addColorStop(.60, "#774027");
             madera.addColorStop(1, "#2c1b2c");
 
+
             ctx.fillStyle = madera;
 
+            // dibuja el rectangulo relleno con ese degradado
             ctx.fillRect(0, 0, 600, 600);
 
             ctx.strokeStyle = "rgba(28,9,15,.12)";
@@ -789,11 +841,14 @@ class JuegoPeg {
      */
     constructor() {
 
+        // seleccionas el canvas del html
         this.canvas =
             document.querySelector("#peg-canvas");
 
+        // obtiene el contexto del dibujo bidimensional
         this.ctx = this.canvas.getContext("2d");
 
+        // resolucion interna de 600 x 600 px
         this.canvas.width = MEDIDAS.ANCHO;
         this.canvas.height = MEDIDAS.ANCHO;
 
@@ -816,6 +871,8 @@ class JuegoPeg {
             document.querySelector("#peg-modal");
 
         // Crear las imagenes de los fantasmas.
+        // cuando la imagen termina de cargarse, se ejcuta dibujar para actualizar el canvas
+        // evita dibujar una imagen que todavia no esta lista
         this.imagenes = COLORES_FANTASMAS.map(
             colores =>
                 crearImagenFantasma(
@@ -845,9 +902,10 @@ class JuegoPeg {
             this.tablero.fondo = imagenFondo;
         }
 
-        // Estado del arrastre.
+        // que ficha se esta arrastrando
         this.fichaSeleccionada = null;
 
+        // si se muestran las indicaciones
         this.diferenciaX = 0;
         this.diferenciaY = 0;
 
@@ -855,10 +913,16 @@ class JuegoPeg {
         this.ayudasActivas = true;
         this.terminado = false;
 
+        // segundos restantes
         this.tiempo = MEDIDAS.TIEMPO_LIMITE;
+
+        //cantidad de saltos realizados
         this.movimientos = 0;
 
+        // identificador dedl temporizador
         this.intervalo = null;
+
+        // momento en el q se termina el tiempo
         this.fechaLimite = null;
 
         this.agregarEventos();
@@ -900,9 +964,12 @@ class JuegoPeg {
      */
     coordenadasMouse(evento) {
 
+        // Obtiene la posición y el tamaño que tiene el Canvas en la pantalla.
         const rect =
             this.canvas.getBoundingClientRect();
 
+        // clientX y clientY
+        // Son las coordenadas del mouse respecto de la ventana del navegador.
         return {
 
             x: (evento.clientX - rect.left) *
@@ -926,21 +993,31 @@ class JuegoPeg {
      */
     agregarEventos() {
 
+        // el programa identifica que ficha se selecciono, guarda la referencia del objeto
         this.canvas.addEventListener(
             "mousedown",
             e => this.mouseDown(e)
         );
 
+        // estan sobre window para que se soga detectando ek movimiento y la liberacion 
+        // aunque el mouse salga de los limites del tablero mientras se arrastra una ficha
+        // Mientras el mouse se mueve, se actualizan las coordenadas visuales de la ficha 
+        // para que siga al cursor 
         window.addEventListener(
             "mousemove",
             e => this.mouseMove(e)
         );
 
+        // Cuando se libera el mouse, se busca la casilla de destino y se comprueba 
+        // que el movimiento cumpla con las reglas
         window.addEventListener(
             "mouseup",
             e => this.mouseUp(e)
         );
 
+
+        // Si el movimiento es válido, se elimina la ficha intermedia y se actualiza 
+        // la posición de la ficha que saltó. Si no es válido, la ficha vuelve a su lugar.
         window.addEventListener(
             "blur",
             () => this.cancelarArrastre()
@@ -990,6 +1067,7 @@ class JuegoPeg {
      */
     mouseDown(evento) {
 
+        // si se apreto y el boton izquierdo y la partida no termino
         if (
             evento.button !== 0 ||
             this.terminado
@@ -997,9 +1075,11 @@ class JuegoPeg {
             return;
         }
 
+        // obtiene las coordenadas del click
         const { x, y } =
             this.coordenadasMouse(evento);
 
+        // busca que ficha esta debajo del mouse
         const ficha =
             this.tablero.buscarFichaEn(x, y);
 
@@ -1007,9 +1087,11 @@ class JuegoPeg {
             return;
         }
 
+        // guarda la referencia al objeto seleccionado
         this.fichaSeleccionada = ficha;
 
-        // Mantener la posicion relativa del clic.
+        // Calcula la distancia entre el punto donde se hizo clic y el centro de la ficha.
+        // Asi la ficha no se nueve debajo del cursor
         this.diferenciaX = ficha.posX - x;
         this.diferenciaY = ficha.posY - y;
 
@@ -1049,6 +1131,9 @@ class JuegoPeg {
         const { x, y } =
             this.coordenadasMouse(evento);
 
+
+        // Solo cambias posX e Y, todavua no fila y columna xq no abemos si el movimeinto
+        // va a ser valido.
         this.fichaSeleccionada.posX =
             x + this.diferenciaX;
 
@@ -1088,6 +1173,7 @@ class JuegoPeg {
         const { x, y } =
             this.coordenadasMouse(evento);
 
+        // busca la casilla donde se solto
         const destino =
             this.tablero.buscarCasillaEn(x, y);
 
@@ -1108,6 +1194,7 @@ class JuegoPeg {
         }
 
         // Intentar realizar el salto.
+        // Si devuelve true, es valido el movimiento.
         if (this.tablero.moverFicha(ficha, destino)) {
 
             this.movimientos++;
@@ -1130,6 +1217,7 @@ class JuegoPeg {
 
         } else {
 
+            // devuelve la ficha a su posicion inicial
             ficha.volverAlCentro();
 
             this.textoEstado.textContent =
@@ -1174,11 +1262,14 @@ class JuegoPeg {
      */
     dibujarAyudas(tiempo) {
 
+        // genera un valor entre 0 y 1, genera efecto de pulsacion
         const pulso =
             (Math.sin(tiempo / 220) + 1) / 2;
 
+        // si no hay una ficha seleccionada
         if (!this.fichaSeleccionada) {
 
+            // recorre las fichas, destaca las que tienen movimientos posibles
             for (const ficha of this.tablero.fichas) {
 
                 if (
@@ -1207,7 +1298,8 @@ class JuegoPeg {
             }
 
         } else {
-
+            // si hay una ficha seleccionada
+            // obtiene sus destinos validos 
             const destinos =
                 this.tablero.destinosValidos(
                     this.fichaSeleccionada
@@ -1220,6 +1312,7 @@ class JuegoPeg {
                 // Aro animado sobre el destino.
                 this.ctx.beginPath();
 
+                // debuja un aro y una flecha sobre cada destino
                 this.ctx.arc(
                     destino.x,
                     destino.y,
@@ -1297,6 +1390,7 @@ class JuegoPeg {
             this.canvas.height
         );
 
+        // dibujas primero el fondo, dsps los huecos y finalmente las fichas
         this.tablero.dibujarBase(this.ctx);
 
         this.tablero.dibujarHuecos(this.ctx);
@@ -1311,16 +1405,13 @@ class JuegoPeg {
 
         // Recorrer el arreglo de fichas.
         for (const ficha of this.tablero.fichas) {
-
             if (ficha !== this.fichaSeleccionada) {
-
                 ficha.dibujar(this.ctx);
             }
         }
 
         // Dibujar la ficha que se arrastra.
         if (this.fichaSeleccionada) {
-
             this.fichaSeleccionada.dibujar(
                 this.ctx,
                 true
@@ -1340,8 +1431,11 @@ class JuegoPeg {
      */
     animar() {
 
+        // se dibuja nuevamente el tablero
         this.dibujar();
 
+        // se programa una nueva ejecucion de animar()
+        // Genera un ciclo continuo de dibujo
         requestAnimationFrame(
             () => this.animar()
         );
@@ -1400,6 +1494,7 @@ class JuegoPeg {
      */
     actualizarPantalla() {
 
+        // divide el tiempo en minutos y segundos
         const minutos =
             Math.floor(this.tiempo / 60);
 
@@ -1416,9 +1511,11 @@ class JuegoPeg {
             this.tiempo <= 30
         );
 
+        // actualiza la cantidad de fichas
         this.textoFichas.textContent =
             this.tablero.fichas.length;
 
+        // y la cantidad de movimientos
         this.textoMovimientos.textContent =
             this.movimientos;
     }
@@ -1497,17 +1594,22 @@ class JuegoPeg {
             return;
         }
 
+        // marca la partida como terminada y detiene el cronometro
         this.terminado = true;
 
+        // cancela el intervalo 
         clearInterval(this.intervalo);
 
         this.intervalo = null;
 
         this.cancelarArrastre();
 
+        // obtiene la cantidad de fichas restantes
         const quedan =
             this.tablero.fichas.length;
 
+
+        // si se acabo el tiempo 
         document.querySelector(
             "#peg-modal-titulo"
         ).textContent =
@@ -1521,14 +1623,15 @@ class JuegoPeg {
         document.querySelector(
             "#peg-modal-texto"
         ).textContent =
-
+        // si te quedan fantasmitas pero no saltos
             motivo === "tiempo"
                 ? `Quedaron ${quedan} fantasmitas.`
                 : `No quedan saltos posibles. ` +
-                  `Terminaste con ${quedan} fantasmita/s.`;
+                `Terminaste con ${quedan} fantasmita/s.`;
 
         this.modal.hidden = false;
 
+        // si se gano se muestra esto
         this.textoEstado.textContent =
             "Partida terminada. " +
             "Podes reiniciar para volver a jugar.";
@@ -1549,6 +1652,7 @@ class JuegoPeg {
      */
     reiniciar() {
 
+        // detiene el cronometro, vuelve a colocar las fichas
         clearInterval(this.intervalo);
 
         this.intervalo = null;

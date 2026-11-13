@@ -209,7 +209,7 @@
         font-size: 2vw;
     }
 
-    .carrusel-juegos__flecha--izquierda[hidden] {
+    .carrusel-juegos__flecha[hidden] {
         display: flex !important;
         visibility: hidden;
         pointer-events: none;

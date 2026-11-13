@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade Time | Flappy Ghost</title>
+    <link rel="stylesheet" href="../css/components/header.css">
+    <link rel="stylesheet" href="../css/components/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/paginas/flappy-ghost.css">
+    <script src="../js/home.js" defer></script>
+    <script src="../js/flappy-ghost.js" defer></script>
+</head>
+<body class="flappy-ghost">
+        <header class="encabezado">
+            <div class="encabezado__contenedor">
+                <!-- boton hamburguesa -->
+                <button class="encabezado__menu-boton" type="button" data-boton-menu aria-label="Categorías" aria-controls="menu-categorias" aria-expanded="false">
+                    <!-- aca va el icono hamburguesa -->
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <!-- logo y nombre, al tocar vuelve al home -->
+                <a class="encabezado__logo" href="home.html" aria-label="Ir al inicio">
+                    <img class="encabezado__logo-imagen" src="../img/logo(2).png" alt="Arcade Time">
+                </a>
+
+                <!-- decoracion q esta al lado del logo -->
+                <div class="encabezado__separador"></div>
+
+                <!-- buscador -->
+                <form class="buscador" action="#" method="get" role="search">
+                    <label class="buscador__label" for="buscar-juego">
+                        Buscar juego
+                    </label>
+
+                    <div class="buscador__contenedor">
+                        <input class="buscador__input" type="search" id="buscar-juego" name="buscar"
+                            placeholder="Buscar juego">
+                        <button class="buscador__boton" type="submit">
+                            <!-- aca va la lupa -->
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- boton del perfil -->
+                <button class="encabezado__perfil-boton" type="button" data-boton-perfil aria-label="Perfil" aria-controls="menu-usuario" aria-expanded="false">
+                    <!-- aca va el icono de la personita -->
+                    <i class="fa-solid fa-user"></i>
+                </button>
+            </div>
+
+            <!-- menu q se abre con la hamburguesa -->
+            <nav class="menu-categorias" id="menu-categorias" hidden>
+                <ul class="menu-categorias__lista">
+                    <li class="menu-categorias__item">
+                        <a class="menu-categorias__link" href="home.html#accion">
+                            Acción
+                        </a>
+                    </li>
+                    <li class="menu-categorias__item">
+                        <a class="menu-categorias__link" href="home.html#terror">
+                            Terror
+                        </a>
+                    </li>
+                    <li class="menu-categorias__item">
+                        <a class="menu-categorias__link" href="home.html#aventura">
+                            Aventura
+                        </a>
+                    </li>
+                    <li class="menu-categorias__item">
+                        <a class="menu-categorias__link" href="home.html#carreras">
+                            Carreras
+                        </a>
+                    </li>
+                    <li class="menu-categorias__item">
+                        <a class="menu-categorias__link" href="home.html#supervivencia">
+                            Supervivencia
+                        </a>
+                    </li>
+                    <li class="menu-categorias__item">
+                        <a class="menu-categorias__link" href="home.html#superheroes">
+                            Superhéroes
+                        </a>
+                    </li>
+                    <li class="menu-categorias__item">
+                        <a class="menu-categorias__link" href="home.html#dos-jugadores">
+                            Dos jugadores
+                        </a>
+                    </li>
+                    <li class="menu-categorias__item">
+                        <a class="menu-categorias__link" href="home.html#mas-juegos">
+                            Más juegos
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- menu q se abre con la personita -->
+            <div class="menu-usuario" id="menu-usuario" hidden>
+                <!-- avatar y nombre -->
+                <div class="menu-usuario__perfil">
+                    <div class="menu-usuario__avatar-contenedor">
+                        <img class="menu-usuario__avatar" src="../img/avatares/avatar6.png" alt="Avatar del usuario">
+                    </div>
+                    <p class="menu-usuario__nombre">
+                        i_love_taylor
+                    </p>
+                </div>
+
+                <!-- titulo del menu -->
+                <div class="menu-usuario__encabezado">
+                    <p class="menu-usuario__titulo">
+                        Configuraciones de la cuenta
+                    </p>
+                </div>
+
+                <!-- opciones -->
+                <nav class="menu-usuario__opciones">
+                    <ul class="menu-usuario__lista">
+                        <li class="menu-usuario__item">
+                            <a class="menu-usuario__link" href="#">
+                                Contraseña
+                            </a>
+                        </li>
+                        <li class="menu-usuario__item">
+                            <a class="menu-usuario__link" href="#">
+                                Correo electrónico
+                            </a>
+                        </li>
+                        <li class="menu-usuario__item">
+                            <a class="menu-usuario__link" href="#">
+                                Editar avatar
+                            </a>
+                        </li>
+                        <li class="menu-usuario__item">
+                            <a class="menu-usuario__link" href="#">
+                                Editar nombre de usuario
+                            </a>
+                        </li>
+                        <li class="menu-usuario__item">
+                            <a class="menu-usuario__link" href="#">
+                                Idioma
+                            </a>
+                        </li>
+                        <li class="menu-usuario__item">
+                            <a class="menu-usuario__link menu-usuario__link--salir" href="./login.html">
+                                Cerrar sesion
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    <main class="fg-pagina">
+        <nav class="fg-ruta" aria-label="Ruta de navegación">
+            <a href="home.html">Inicio</a><span aria-hidden="true">›</span>
+            <a href="home.html#mas-juegos">Más juegos</a><span aria-hidden="true">›</span>
+            <span aria-current="page">Flappy Ghost</span>
+        </nav>
+
+        <section class="fg-juego" aria-label="Flappy Ghost">
+            <div class="fg-marco">
+                <div class="fg-escenario" id="fg-escenario" data-estado="portada" tabindex="-1"
+                    role="region" aria-label="Área de juego" aria-describedby="fg-controles">
+                    <div class="fg-capa fg-cielo" data-parallax="0.12" data-mosaico="1496"></div>
+                    <div class="fg-capa fg-ciudad" data-parallax="0.31" data-mosaico="1496"></div>
+                    <div class="fg-capa fg-laberinto" data-parallax="0.59" data-mosaico="1496"></div>
+                    <div id="fg-obstaculos" class="fg-obstaculos" aria-hidden="true"></div>
+                    <div id="fg-fantasma" class="fg-fantasma" aria-hidden="true">
+                        <div class="fg-fantasma-accion"><div class="fg-fantasma-sprite"></div></div>
+                    </div>
+                    <div class="fg-capa fg-piso" data-parallax="1" data-mosaico="96"></div>
+
+                    <div class="fg-hud" hidden>
+                        <div class="fg-vidas">
+                            <svg aria-hidden="true" viewBox="0 0 16 16"><path d="M1 2h5v2h4V2h5v2h1v5h-2v2h-2v2h-2v2H6v-2H4v-2H2V9H0V4h1z"/></svg>
+                            <div><span>Vidas</span><strong id="fg-vidas">3</strong></div>
+                        </div>
+                        <div class="fg-puntaje"><strong id="fg-puntos">0</strong><span>Tubos</span></div>
+                        <div class="fg-bonus">Próxima vida <strong id="fg-bonus">en 5 tubos</strong></div>
+                    </div>
+                    <p id="fg-aviso" class="fg-aviso" aria-live="polite"></p>
+
+                    <div class="fg-portada" id="fg-portada">
+                        <div class="fg-portada-texto">
+                            <p class="fg-etiqueta">Arcade Time · Runner</p>
+                            <h1><span>Flappy</span> Ghost</h1>
+                            <p class="fg-intro">Esquivá los tubos y escapá de Pac-Man en un laberinto de neón.</p>
+                            <button class="fg-boton" id="fg-jugar" type="button">
+                                <span aria-hidden="true">▶</span> Jugar
+                            </button>
+                        </div>
+                        <div class="fg-portada-arte" aria-hidden="true">
+                            <div class="fg-orbita"></div>
+                            <div class="fg-portada-fantasma"><div class="fg-portada-sprite"></div></div>
+                            <div class="fg-portada-pacman"></div>
+                            <div class="fg-portada-moneda"></div>
+                        </div>
+                    </div>
+
+                    <div id="fg-listo" class="fg-mensaje fg-mensaje--listo" hidden>
+                        <div class="fg-panel">
+                            <p class="fg-etiqueta">Flappy Ghost</p>
+                            <h2>¿Listo para volar?</h2>
+                            <p>Hacé clic o pulsá <kbd>Espacio</kbd> para empezar.</p>
+                        </div>
+                    </div>
+
+                    <div id="fg-fin" class="fg-mensaje fg-mensaje--fin" hidden>
+                        <div class="fg-panel">
+                            <p id="fg-motivo" class="fg-etiqueta"></p>
+                            <h2>Fin de la partida</h2>
+                            <p class="fg-resultado"><strong id="fg-resultado">0</strong><span>Tubos superados</span></p>
+                            <button class="fg-boton" id="fg-reiniciar" type="button">Volver a jugar</button>
+                            <p>Pulsá otra vez para empezar</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fg-solo-escritorio">
+                    <h1>Flappy Ghost</h1>
+                    <p>Abrí el juego en una computadora para jugar con el mouse o el teclado.</p>
+                </div>
+            </div>
+            <div class="fg-controles" id="fg-controles">
+                <span><kbd>Espacio</kbd> o <kbd>Clic</kbd> para saltar</span>
+                <a href="#como-jugar">Cómo jugar <span aria-hidden="true">↓</span></a>
+            </div>
+        </section>
+
+        <section class="fg-info" aria-labelledby="sobre-flappy">
+            <div class="fg-descripcion">
+                <h2 id="sobre-flappy">Sobre Flappy Ghost</h2>
+                <p>Esta vez te toca ser el fantasma. Mantenete en el aire, atravesá las tuberías del laberinto y esquivá a Pac-Man cuando se asome desde arriba. Cada par de tubos que dejás atrás vale un punto. A medida que avanzás, los tubos se mueven más rápido y los huecos se hacen más chicos.</p>
+            </div>
+            <div class="fg-ayuda" id="como-jugar">
+                <h2>Cómo jugar</h2>
+                <div class="fg-instrucciones">
+                    <article>
+                        <span class="fg-icono fg-icono--fantasma" aria-hidden="true"></span>
+                        <h3>Mantené el vuelo</h3>
+                        <p>Usá el clic o Espacio para subir. Soltá y dejá que el fantasma baje. Si toca el piso, la partida termina.</p>
+                    </article>
+                    <article>
+                        <span class="fg-icono fg-icono--pacman" aria-hidden="true"></span>
+                        <h3>Esquivá los choques</h3>
+                        <p>Empezás con 3 vidas. Un choque con Pac-Man o un tubo resta ½ vida y te da 2 segundos de invulnerabilidad.</p>
+                    </article>
+                    <article>
+                        <span class="fg-icono fg-icono--moneda" aria-hidden="true"></span>
+                        <h3>Ganate otra vida</h3>
+                        <p>Cada moneda suma ½ vida. Cada 5 pares de tubos que superás ganás 1 vida entera.</p>
+                    </article>
+                </div>
+            </div>
+            <section class="fg-galeria" aria-labelledby="fg-galeria-titulo">
+                <h2 id="fg-galeria-titulo">Escenas del juego</h2>
+                <div>
+                    <figure>
+                        <img src="../img/flappy-ghost/escena-tubos.webp" width="920" height="427" loading="lazy"
+                            alt="El fantasma celeste a punto de pasar por un tubo con una moneda en el hueco">
+                        <figcaption>Tubos y monedas</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../img/flappy-ghost/escena-pacman.webp" width="920" height="427" loading="lazy"
+                            alt="Pac-Man sale del tubo superior y deja libre la parte de abajo del hueco">
+                        <figcaption>La emboscada de Pac-Man</figcaption>
+                    </figure>
+                </div>
+            </section>
+        </section>
+    </main>
+
+        <footer class="pie-pagina">
+            <div class="pie-pagina__contenedor">
+                <!-- columna explorar -->
+                <div class="pie-pagina__columna">
+                    <h2 class="pie-pagina__titulo">
+                        Explora
+                    </h2>
+
+                    <ul class="pie-pagina__lista">
+                        <li><a href="#">Juegos populares</a></li>
+                        <li><a href="#">Nuevos ingresos</a></li>
+                        <li><a href="#">Juego sorpresa</a></li>
+                        <li><a href="#">Clásicos favoritos</a></li>
+                        <li><a href="#">Más jugados</a></li>
+                        <li><a href="#">Joyitas ocultas</a></li>
+                        <li><a href="#">Arcade de la semana</a></li>
+                        <li><a href="#">Todos los juegos</a></li>
+                        <li><a href="#">Top de los ochentas</a></li>
+                    </ul>
+                </div>
+
+                <!-- columna arcade time -->
+                <div class="pie-pagina__columna">
+                    <h2 class="pie-pagina__titulo">
+                        Arcade time
+                    </h2>
+
+                    <ul class="pie-pagina__lista">
+                        <li><a href="#">Sobre nosotros</a></li>
+                        <li><a href="#">Nuestro equipo</a></li>
+                        <li><a href="#">Trabaja con nosotros</a></li>
+                        <li><a href="#">Producto</a></li>
+                        <li><a href="#">Términos de servicio</a></li>
+                        <li><a href="#">Reseñas</a></li>
+                    </ul>
+
+                    <h2 class="pie-pagina__titulo">
+                        Acerca de
+                    </h2>
+
+                    <ul class="pie-pagina__lista">
+                        <li><a href="#como-jugar">Cómo jugar</a></li>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li><a href="#">Soporte técnico</a></li>
+                        <li><a href="#">Leer comentarios</a></li>
+                    </ul>
+                </div>
+
+                <!-- columna legal y contacto -->
+                <div class="pie-pagina__columna">
+                    <h2 class="pie-pagina__titulo">
+                        Legal
+                    </h2>
+
+                    <ul class="pie-pagina__lista">
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Licencias y derechos</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Seguridad</a></li>
+                        <li><a href="#">Centro de atención</a></li>
+                    </ul>
+
+                    <div class="pie-pagina__contacto">
+                        <h2 class="pie-pagina__titulo">
+                            Contacto
+                        </h2>
+
+                        <p>
+                            arcadeinfotime@gmail.com
+                        </p>
+
+                        <p>
+                            Tel: +54 2494 655789
+                        </p>
+
+                        <a href="#">
+                            Documentación
+                        </a>
+
+                        <a href="#">
+                            Contactar ventas
+                        </a>
+                    </div>
+                </div>
+
+                <!-- redes y logo -->
+                <div class="pie-pagina__columna">
+                    <div class="pie-pagina__redes">
+                        <h2 class="pie-pagina__titulo">
+                            Seguinos en
+                        </h2>
+
+                        <div class="pie-pagina__redes-lista">
+                            <a href="#">
+                                <!-- icono youtube -->
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                            <a href="#">
+                                <!-- icono instagram -->
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="#">
+                                <!-- icono facebook -->
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="#">
+                                <!-- icono twitter -->
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="pie-pagina__descubrir">
+                        <p>
+                            <strong>
+                                INSERT COIN - descubre nuevos juegos,
+                                clásicos y reversionados.
+                            </strong>
+                        </p>
+                    </div>
+
+                    <div class="pie-pagina__logo">
+                        <!-- aca va el logo arcade time -->
+                        <img src="../img/logo(2).png" alt="Arcade Time">
+                    </div>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>

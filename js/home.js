@@ -13,31 +13,33 @@ let porcentaje = 0;
 // aumenta 1% cada 50 milisegundos
 // 100 x 50ms = 5000ms = 5 segundos
 
-const intervaloLoading = setInterval(() => {
+if (loading && loadingProgreso && loadingPorcentaje) {
+    const intervaloLoading = setInterval(() => {
 
-    porcentaje++;
-
-
-    // actualiza el numero
-    loadingPorcentaje.textContent = porcentaje + "%";
+        porcentaje++;
 
 
-    // actualiza el ancho de la barra
-    loadingProgreso.style.width = porcentaje + "%";
+        // actualiza el numero
+        loadingPorcentaje.textContent = porcentaje + "%";
 
 
-    // cuando llega a 100 termina el loading
-    if (porcentaje >= 100) {
+        // actualiza el ancho de la barra
+        loadingProgreso.style.width = porcentaje + "%";
 
-        clearInterval(intervaloLoading);
 
-        loading.hidden = true;
+        // cuando llega a 100 termina el loading
+        if (porcentaje >= 100) {
 
-        document.body.classList.remove("cargando");
+            clearInterval(intervaloLoading);
 
-    }
+            loading.hidden = true;
 
-}, 50); //aca cambias si queres un tiempo de carga distinto  !!!
+            document.body.classList.remove("cargando");
+
+        }
+
+    }, 50); //aca cambias si queres un tiempo de carga distinto  !!!
+}
 
 
 //menu HAmburguesa
@@ -46,6 +48,7 @@ const menuCategorias = document.querySelector("#menu-categorias");
 
 botonMenu.addEventListener("click", () => {
     menuCategorias.hidden = !menuCategorias.hidden;
+    botonMenu.setAttribute("aria-expanded", String(!menuCategorias.hidden));
 });
 
 
@@ -55,4 +58,5 @@ const menuUsuario = document.querySelector("#menu-usuario");
 
 botonPerfil.addEventListener("click", () => {
     menuUsuario.hidden = !menuUsuario.hidden;
+    botonPerfil.setAttribute("aria-expanded", String(!menuUsuario.hidden));
 });
