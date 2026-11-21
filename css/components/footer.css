@@ -233,6 +233,15 @@
     object-fit: contain;
 }
 
+/* El contenedor define el tamaño: la imagen no debe conservar su ancho
+   intrínseco y desbordar la columna del footer. */
+.pie-pagina__logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 
 /* =========================================================
    RESPONSIVE
