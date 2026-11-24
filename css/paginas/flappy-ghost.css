@@ -200,6 +200,7 @@
 
 .fg-fantasma-sprite {
     filter: drop-shadow(0 0 7px #32dcfd80);
+    /*dura 0.48 segundos, lo divide en 3 pasos*/
     animation: fg-patitas .48s steps(3) infinite;
 }
 
@@ -245,7 +246,8 @@
     filter: drop-shadow(0 0 8px #ffd3429c);
 }
 
-.fg-moneda, .fg-portada-moneda { animation: fg-giro .85s steps(6) infinite; }
+/* Las monedas quedan estáticas; se desplazan sólo junto con su tubo. */
+.fg-moneda, .fg-portada-moneda { animation: none; }
 
 @keyframes fg-mordida { to { background-position-x: 133.333333%; } }
 @keyframes fg-giro { to { background-position-x: 120%; } }
@@ -282,6 +284,24 @@
 }
 
 .fg-vidas strong, .fg-bonus strong { font: 700 20px/1 var(--fg-mono); color: var(--fg-texto); }
+
+/* Cronómetro opcional: sacar "hidden" del HTML para hacerlo visible.
+   El temporizador del juego sigue activo aunque este indicador no se muestre. */
+.fg-cronometro {
+    margin-top: 6px;
+    border: 1px solid #5660a4;
+    border-radius: 6px;
+    padding: 5px 10px;
+    background: #101638e8;
+    color: var(--fg-amarillo);
+    font: 700 12px var(--fg-mono);
+}
+.fg-puntaje .fg-cronometro span {
+    color: inherit;
+    font: inherit;
+    letter-spacing: 0;
+    text-transform: none;
+}
 .fg-bonus { justify-self: end; text-align: right; }
 .fg-bonus strong { font-size: 14px; color: var(--fg-amarillo); }
 .fg-puntaje { display: grid; justify-items: center; gap: 3px; }
@@ -423,6 +443,14 @@
 
 .fg-mensaje--listo { padding-left: 185px; }
 .fg-mensaje--fin { background: #090b23a8; }
+.fg-mensaje--fin[data-resultado="victoria"] .fg-panel {
+    border-color: var(--fg-amarillo);
+    box-shadow: 0 0 35px #ffdb6540, 0 14px 38px #04041d91;
+}
+.fg-mensaje--fin[data-resultado="victoria"] #fg-titulo-fin,
+.fg-mensaje--fin[data-resultado="victoria"] .fg-resultado strong {
+    color: var(--fg-amarillo);
+}
 
 .fg-panel {
     min-width: 370px;

@@ -211,7 +211,14 @@
                             </svg>
                             <div><span>Vidas</span><strong id="fg-vidas">3</strong></div>
                         </div>
-                        <div class="fg-puntaje"><strong id="fg-puntos">0</strong><span>Tubos</span></div>
+                        <div class="fg-puntaje">
+                            <strong id="fg-puntos">0</strong><span>Tubos / 25</span>
+                            <!-- Quitar el atributo hidden para MOSTRAR el reloj en la defensa.
+                                 La cuenta regresiva y la derrota a los 2 minutos funcionan siempre. -->
+                            <div id="fg-cronometro" class="fg-cronometro" hidden>
+                                <span>Tiempo: <output id="fg-tiempo">00:00</output> / 02:00</span>
+                            </div>
+                        </div>
                         <div class="fg-bonus">Próxima vida <strong id="fg-bonus">en 5 tubos</strong></div>
                     </div>
                     <p id="fg-aviso" class="fg-aviso" aria-live="polite"></p>
@@ -246,7 +253,7 @@
                     <div id="fg-fin" class="fg-mensaje fg-mensaje--fin" hidden>
                         <div class="fg-panel">
                             <p id="fg-motivo" class="fg-etiqueta"></p>
-                            <h2>Fin de la partida</h2>
+                            <h2 id="fg-titulo-fin">Perdiste</h2>
                             <p class="fg-resultado"><strong id="fg-resultado">0</strong><span>Tubos superados</span></p>
                             <button class="fg-boton" id="fg-reiniciar" type="button">Volver a jugar</button>
                             <p>Pulsá otra vez para empezar</p>
@@ -269,7 +276,9 @@
                 <h2 id="sobre-flappy">Sobre Flappy Ghost</h2>
                 <p>Esta vez te toca ser el fantasma. Mantenete en el aire, atravesá las tuberías del laberinto y esquivá
                     a Pac-Man cuando se asome desde arriba. Cada par de tubos que dejás atrás vale un punto. A medida
-                    que avanzás, los tubos se mueven más rápido y los huecos se hacen más chicos.</p>
+                    que avanzás, los tubos se mueven más rápido y los huecos se hacen más chicos.
+                    ¡Si superás 25 pares de tubos, ganás! Si pasan 2 minutos sin alcanzar esa meta,
+                    se termina la partida.</p>
             </div>
             <div class="fg-ayuda" id="como-jugar">
                 <h2>Cómo jugar</h2>

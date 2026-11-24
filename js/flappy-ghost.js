@@ -10,6 +10,7 @@
     const contador = document.querySelector('#fg-puntos');
     const vidas = document.querySelector('#fg-vidas');
     const bonus = document.querySelector('#fg-bonus');
+    const cronometro = document.querySelector('#fg-tiempo');
     const aviso = document.querySelector('#fg-aviso');
     const jugar = document.querySelector('#fg-jugar');
     const reiniciar = document.querySelector('#fg-reiniciar');
@@ -31,15 +32,19 @@
     const ANCHO_TUBO = 88;
     const TAM_PACMAN = 44;
     const TAM_MONEDA = 32;
-    const GRAVEDAD = 660;
-    const IMPULSO = -245;
+    const GRAVEDAD = 1000;
+    const IMPULSO = -350;
     const INVULNERABILIDAD = 2;
     const TIEMPO_PARA_ACELERAR = 14;
     const VELOCIDAD_INICIAL = 152;
     const VELOCIDAD_MAXIMA = 264;
     const PASO = 1 / 120;
+    const META_TUBOS = 25;
+    const LIMITE_TIEMPO = 2 * 60; // Segundos. Funciona aunque el cronómetro esté oculto en HTML.
 
     let estado = 'portada';
+    let resultadoActual = 'derrota';
+    let ultimoSegundoMostrado = -1;
     let y = 242;
     let velocidadY = 0;
     let mediasVidas = 6;
@@ -86,6 +91,15 @@
         bonus.textContent = `en ${restantes} ${restantes === 1 ? 'tubo' : 'tubos'}`;
     }
 
+    function actualizarCronometro() {
+        const segundosTranscurridos = Math.min(Math.floor(tiempo), LIMITE_TIEMPO);
+        if (segundosTranscurridos === ultimoSegundoMostrado) return;
+        ultimoSegundoMostrado = segundosTranscurridos;
+        const minutos = Math.floor(segundosTranscurridos / 60).toString().padStart(2, '0');
+        const segundos = (segundosTranscurridos % 60).toString().padStart(2, '0');
+        cronometro.textContent = `${minutos}:${segundos}`;
+    }
+
     function mostrarAviso(texto, tipo) {
         aviso.dataset.tipo = tipo;
         aviso.textContent = texto;
@@ -97,6 +111,7 @@
         const posicion = ultimoTubo ? ultimoTubo.x + aleatorio(232, 327) : 485;
         const abertura = Math.max(172, 236 - puntos * 3);
         const centroAnterior = ultimoTubo ? ultimoTubo.centro : 249;
+        // modificamos la altura anterior en un rango de 55 pixeles arriba o abajo
         const centro = limitar(centroAnterior + aleatorio(-55, 55), abertura / 2 + 55, PISO - abertura / 2 - 63);
         const techo = Math.round(centro - abertura / 2);
         const base = Math.round(centro + abertura / 2);
@@ -135,18 +150,23 @@
         mediasVidas = 6;
         puntos = 0;
         tiempo = 0;
+        ultimoSegundoMostrado = -1;
+        resultadoActual = 'derrota';
         distancia = 0;
         invulnerableHasta = 0;
         impulsoHasta = 0;
         avisoHasta = 0;
         aviso.textContent = '';
         actualizarHud();
+        actualizarCronometro();
         cambiarEstado('listo');
         dibujar();
         escenario.focus({ preventScroll: true });
     }
 
     function saltar() {
+        // hace que se mueva en y para arriba
+        // la gravedad sigue actuando, entonces se frena, alcanza una altura maxima y despues vuelve a caer
         velocidadY = IMPULSO;
         impulsoHasta = tiempo + .27;
         fantasma.classList.remove('impulso');
@@ -174,8 +194,12 @@
         if (estado === 'jugando') saltar();
     }
 
-    function terminar(motivo) {
+    function terminar(motivo, resultado = 'derrota') {
+        // Un único panel de finalización para victoria, derrota por tiempo o derrota por daño.
+        resultadoActual = resultado;
+        fin.dataset.resultado = resultado;
         document.querySelector('#fg-motivo').textContent = motivo;
+        document.querySelector('#fg-titulo-fin').textContent = resultado === 'victoria' ? '¡Victoria!' : 'Perdiste';
         document.querySelector('#fg-resultado').textContent = puntos;
         puedeReiniciarEn = performance.now() + 380;
         aviso.textContent = '';
@@ -184,6 +208,7 @@
     }
 
     function recibirDano(fuente) {
+        // chequeo q no este en el periodo de invunerabilidad
         if (tiempo < invulnerableHasta) return;
         mediasVidas--;
         invulnerableHasta = tiempo + INVULNERABILIDAD;
@@ -214,6 +239,7 @@
         return tubo.centro + 13 * Math.sin(tiempo * 3.6 + tubo.numero);
     }
 
+    // calcula la distancia del fantasma con el objeto a ver si colisiona
     function tocaCirculo(xCirculo, yCirculo, radio) {
         const xCercana = limitar(xCirculo, X_FANTASMA - SEMIANCHO_FANTASMA, X_FANTASMA + SEMIANCHO_FANTASMA);
         const yCercana = limitar(yCirculo, y - SEMIALTO_FANTASMA, y + SEMIALTO_FANTASMA);
@@ -247,6 +273,11 @@
         if (!tubo.contado && derecha < X_FANTASMA - SEMIANCHO_FANTASMA) {
             tubo.contado = true;
             puntos++;
+            if (puntos >= META_TUBOS) {
+                actualizarHud();
+                terminar(`¡Superaste los ${META_TUBOS} tubos!`, 'victoria');
+                return;
+            }
             if (puntos % 5 === 0) {
                 sumarVidas(2, `${puntos} tubos · +1 vida`);
             } else {
@@ -257,6 +288,11 @@
 
     function actualizar(paso) {
         tiempo += paso;
+        actualizarCronometro();
+        if (tiempo >= LIMITE_TIEMPO) {
+            terminar('Se terminaron los 2 minutos');
+            return;
+        }
         velocidadY = Math.min(420, velocidadY + GRAVEDAD * paso);
         y += velocidadY * paso;
 
@@ -292,7 +328,7 @@
         const giro = limitar(velocidadY / 18, -11, 20);
         fantasma.style.transform = `translate(${X_FANTASMA - TAM_FANTASMA / 2}px, ${y - TAM_FANTASMA / 2}px) rotate(${giro}deg)`;
         fantasma.classList.toggle('danado', estado === 'jugando' && tiempo < invulnerableHasta);
-        fantasma.classList.toggle('caido', estado === 'fin');
+        fantasma.classList.toggle('caido', estado === 'fin' && resultadoActual !== 'victoria');
         if (tiempo >= impulsoHasta || estado !== 'jugando') fantasma.classList.remove('impulso');
 
         for (const tubo of tubos) {
